@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+html, body {
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    background: #EDEDED 0% 0% no-repeat padding-box;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EDEDED 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #683FFF80;
+    opacity: 1;
+    height: 72px;
+    position: relative;
+}
+
+.text-logo {
+    font-family: 'Quicksand', sans-serif;
+    background-color: purple;
+    background-image: linear-gradient(105deg, #FF948D 0%, #FA9093 0%, #EE85A6 0%, #DB74C5 0%, #BF5CF0 0%, #B755FF 0%, #C843FF 0%, #E22BFF 0%, #683FFF 100%, #E62AFF 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    font-size: 42px;
+    font-weight: 300;
+    height: 100%;
+
+    text-align: center;
+
+    /* margin-left: auto; */
+    z-index: 2;
+}
+
+.vertical-ctr {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+.shadowed {
+    position: absolute;
+    /* opacity: 0; */
+    color: rgba(0,0,0,0);
+    margin-left: auto;
+    text-shadow: 1px 2px 2px gray;
+    z-index: 1;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+#login-btn {
+    /* margin-left: auto; */
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}

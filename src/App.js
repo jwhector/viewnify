@@ -1,15 +1,24 @@
 import NavBar from "./components/NavBar";
-import HomePage from "./components/Home/HomePage";
+import LandingPage from "./components/Landing/LandingPage";
+import useToken from "./useToken";
 
 function App() {
-  // const toRender = 
+  const { token, setToken } = useToken();
+
+  if (!token) {
+    return (
+      <>
+        <NavBar showLogin={true} setToken={setToken} />
+        <LandingPage setToken={setToken} />
+      </>
+    );
+  }
 
   return (
     <>
-      <NavBar />
-      <HomePage />
+      <NavBar showLogin={false} />
     </>
-  );
+  )
 }
 
 export default App;
