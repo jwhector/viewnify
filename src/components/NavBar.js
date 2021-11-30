@@ -19,7 +19,7 @@ export default function NavBar(props) {
             <h1 className="text-logo shadowed"><span className="vertical-ctr">view<span className="bold">nify</span></span></h1>
             {props.showLogin ?
                 <>
-                    <button onClick={setLogin} id="login-btn">Log In</button>
+                    <button onClick={setLogin} id="login-btn" className="styled-btn title-txt">Log In</button>
                     <LoginModal modalOpen={modalOpen} closeModal={closeModal} isLogin={true}  />
                 </> : <></>}
         </div>

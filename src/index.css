@@ -20,6 +20,10 @@ html, body {
     position: relative;
 }
 
+.title-txt {
+    font-family: 'Quicksand', sans-serif;
+}
+
 .text-logo {
     font-family: 'Quicksand', sans-serif;
     background-color: purple;
@@ -29,7 +33,7 @@ html, body {
 
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
 
@@ -52,7 +56,7 @@ html, body {
 .shadowed {
     position: absolute;
     /* opacity: 0; */
-    color: rgba(0,0,0,0);
+    color: rgba(0, 0, 0, 0);
     margin-left: auto;
     text-shadow: 1px 2px 2px gray;
     z-index: 1;
@@ -67,4 +71,14 @@ html, body {
     position: absolute;
     right: 0;
     margin-right: 20px;
+}
+
+.styled-btn {
+    background: radial-gradient(circle, rgba(104,63,255,1) 0%, rgba(226,43,255,1) 100%);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+    box-shadow: gray 1px 1px 2px;
+    font-weight: 500;
 }

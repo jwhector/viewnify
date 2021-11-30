@@ -1,0 +1,29 @@
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#slogan {
+    position: absolute;
+    margin: auto;
+    font-size: 56px;
+    color: white;
+    transform: translate(4.5%);
+}
+
+.tm {
+    font-size: 16px;
+    vertical-align: top;
+    margin-top: 10px;
+}
+
+#logo-img {
+    height: 75vh;
+}
+
+#signup-btn {
+    
+}
