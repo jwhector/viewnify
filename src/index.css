@@ -6,7 +6,7 @@ html, body {
 
 #root {
     min-height: 100vh;
-    background: #EDEDED 0% 0% no-repeat padding-box;
+    background: #CBCBCB 0% 0% no-repeat padding-box;
 }
 
 #nav {
@@ -31,7 +31,6 @@ html, body {
     background-size: 100%;
     background-repeat: repeat;
 
-    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
