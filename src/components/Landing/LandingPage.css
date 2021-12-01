@@ -1,4 +1,4 @@
-#home {
+#landing {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +24,37 @@
     height: 75vh;
 }
 
-#signup-btn {
-    
+#signup-btn {}
+
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-modal {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    /* justify-self: center; */
+    justify-content: space-around;
+    background-color: #BABABA;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 25px;
+    transition: .5s;
+    transform: translateY(20%);
+    opacity: 1;
+}
+
+.login-modal h2 {
+    font-size: 42px;
+    margin-bottom: 1rem;
 }

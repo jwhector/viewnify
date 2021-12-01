@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import LoginModal from '../LoginModal';
+import LoginModal from './LoginModal';
 import './LandingPage.css';
 import logo from './viewnify-logo.png';
 
-export default function LandingPage() {
+export default function LandingPage(props) {
     const [modalOpen, setModalOpen] = useState(false);
     const [isLogin, setIsLogin] = useState(false);
 
@@ -15,6 +15,7 @@ export default function LandingPage() {
 
     const closeModal = () => {
         setModalOpen(false);
+        console.log(props);
     }
 
     ReactModal.setAppElement('#root');
@@ -25,7 +26,7 @@ export default function LandingPage() {
             <img id="logo-img" alt="Viewnify 'V' logo." src={logo} />
             <h2 id="slogan" className="title-txt">Everyone's entertained.<span className="tm">™</span></h2>
             <button id="signup-btn" onClick={setSignup} className="styled-btn title-txt">Sign Up</button>
-            <LoginModal modalOpen={modalOpen} closeModal={closeModal} isLogin={isLogin} />
+            <LoginModal setToken={props.setToken} modalOpen={modalOpen} closeModal={closeModal} isLogin={isLogin} />
         </div>
     );
 }

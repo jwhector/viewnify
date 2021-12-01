@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LoginModal from './LoginModal';
+import LoginModal from './Landing/LoginModal';
 //3005
 
 export default function NavBar(props) {
@@ -20,7 +20,7 @@ export default function NavBar(props) {
             {props.showLogin ?
                 <>
                     <button onClick={setLogin} id="login-btn" className="styled-btn title-txt">Log In</button>
-                    <LoginModal modalOpen={modalOpen} closeModal={closeModal} isLogin={true}  />
+                    <LoginModal setToken={props.setToken} modalOpen={modalOpen} closeModal={closeModal} isLogin={true}  />
                 </> : <></>}
         </div>
     );
