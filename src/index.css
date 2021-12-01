@@ -131,25 +131,28 @@ html, body {
   margin: 0;
   margin-left: 75px;
   color: #707070;
-  margin: 80px;
-  flex-direction: column;
-  display: block;
+  flex-direction: row;
+  display: flex;
   border: 1px #683fff;
   /* box-shadow: 2px 2px 4px 0px #683fff; */
   transition: 0.2s;
   width: 50%;
   top: 416px;
   left: 196px;
-  width: 160px;
+  width: 200px;
   height: 59px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000080;
   border-radius: 32px;
   opacity: 1;
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  
 }
 
 .main-links, .invite-link{
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .invite-link {
@@ -411,4 +414,73 @@ body {
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: transparent linear-gradient(180deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: transparent linear-gradient(180deg, #00D7F4 0%, #006CD8 100%) 0% 0% no-repeat padding-box;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  overflow: hidden;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
