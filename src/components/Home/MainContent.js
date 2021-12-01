@@ -31,16 +31,26 @@ return (
 <div class="right-container">
 
 <div class="body-container">
+<div class="swipe-status">
+          <i class="fa fa-remove"></i>
+          <i class="fa fa-heart"></i>
+        </div>
 
   <div class="card">
    <div id="media-main">
      <div id="content-img">
-     {`<img goes here, has a width of 100% and height of 80% of card>`}
      </div>
      <div id="content-description">
-       {`content about media goes here, has a width of 75% and height of 20%`}
      </div>
    </div>
+   <div class="swipe-buttons">
+          <button id="nope">
+            <i class="fa fa-remove"></i>
+          </button>
+          <button id="love">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
     <div id="play-pause">
       <button id="play-btn">
         <div id="play-symbol"></div>
