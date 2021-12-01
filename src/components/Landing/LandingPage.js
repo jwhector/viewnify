@@ -20,7 +20,7 @@ export default function LandingPage() {
     ReactModal.setAppElement('#root');
 
     return (
-        <div id="home">
+        <div id="landing">
             {/* <img id="home-img" alt="Two people on phones, connected via Viewnify." src="" /> */}
             <img id="logo-img" alt="Viewnify 'V' logo." src={logo} />
             <h2 id="slogan" className="title-txt">Everyone's entertained.<span className="tm">™</span></h2>
