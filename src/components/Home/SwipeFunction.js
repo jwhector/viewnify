@@ -1,5 +1,6 @@
 import React from 'react';
 'use strict';
+import Home from "./MainContent"
 
 var tinderContainer = document.querySelector('.body-container');
 var allCards = document.querySelectorAll('.card');

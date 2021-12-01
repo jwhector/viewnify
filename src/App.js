@@ -4,6 +4,9 @@ import NavBar from "./components/NavBar";
 import LandingPage from "./components/Landing/LandingPage";
 import useToken from "./useToken";
 import Home from "./components/Home/Home";
+import Liked from "./components/Home/Liked";
+import Button from "./components/Home/Button"
+
 
 function App() {
   const { token, setToken } = useToken();
@@ -13,6 +16,7 @@ function App() {
       <div id="main">
         <NavBar showLogin={false} />
         <Home></Home>
+        
         {/* <NavBar showLogin={true} setToken={setToken} />
         <LandingPage setToken={setToken} /> */}
       </div>
