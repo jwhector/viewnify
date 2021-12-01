@@ -192,17 +192,6 @@ p {
   opacity: 1;
 }
 
-/* nav {
-    width: 100vw;
-    height: 5vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-family: Quicksand;
-    font-size: 30px;
-    background-color: #EDEDED;
-  } */
-
 #viewnify {
   background: transparent linear-gradient(180deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
   color: #ffffff;
