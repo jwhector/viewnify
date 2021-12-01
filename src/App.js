@@ -10,29 +10,39 @@ function App() {
   const { token, setToken } = useToken();
   const [genres, setGenres] = useState('');
   const [providers, setProviders] = useState('');
-  // const [redirect, setRedirect] = useState('false');
+  const [user, setUser] = useState();
 
   useEffect(() => {
-    console.log(token);
     if (token) {
       fetch('http://localhost:3005/api/users', {
         method: 'GET',
         headers: {
-            // 'Content-Type': 'application/json',
             'Authorization': `Bearer: ${token}`
         }
-      }).then(res => {
-        if (!res.ok) {
-          // setToken(null);
-          localStorage.removeItem('token');
-          setToken(null);
-          console.log(token);
-          // setRedirect(true);
+      }).then(async res => {
+        if (res.ok) {
+          const data = await res.json();
+          console.log(data);
+          delete data.password;
+          setUser(data);
         }
       }).catch(err => console.log(err));
+    }
+  }, [token]);
 
-      // console.log(checkToken);
-        // body: JSON.stringify(credentials)
+  useEffect(() => {
+    if (token) {
+      fetch('http://localhost:3005/api/users', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer: ${token}`
+        }
+      }).then(async res => {
+        if (!res.ok) {
+          localStorage.removeItem('token');
+          setToken(null);
+        }
+      }).catch(err => console.log(err));
     }
   });
 
@@ -52,7 +62,7 @@ function App() {
   return (
     <>
       <NavBar showLogin={false} />
-      <Home />
+      <Home user={user} />
     </>
   )
 }
