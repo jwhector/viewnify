@@ -24,7 +24,7 @@ export default function Home(props) {
         </button>
       </div>
       <div className="right-container">
-        <Discover />
+        <Discover user={props.user} />
       </div>
     </div>
   );
