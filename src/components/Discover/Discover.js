@@ -21,7 +21,7 @@ export default function Discover(props) {
     }, []);
 
     const getEntries = async () => {
-        const entries = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`)
+        const entries = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2&with_watch_monetization_types=flatrate`)
             .then(data => data.json());
         console.log(entries);
         return entries;
@@ -63,8 +63,8 @@ export default function Discover(props) {
                             <div id="up-symbol"></div>
                         </button> */}
                         <button id="play-btn" onClick={changeIdx}>
-                            {/* <div id="next-symbol"></div>
-                            <div id="next-symbol"></div> */}
+                            <div id="next-symbol"></div>
+                            <div id="next-symbol"></div>
                         </button>
                     </div>
 
