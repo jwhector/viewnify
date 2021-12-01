@@ -9,7 +9,7 @@ export default function Discover(props) {
 
     useEffect(async () => {
         const entries = await getEntries();
-        setCurImg(`https://image.tmdb.org/t/p/w500${entries.results[7].poster_path}`);
+        setCurImg(`https://image.tmdb.org/t/p/w500${entries.results[10].poster_path}`);
     });
 
     const getEntries = async () => {
