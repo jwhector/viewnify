@@ -92,17 +92,16 @@ html, body {
 }
 
 .right-container {
-  float: right;
   /* position: absolute; */
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   font-family: Quicksand;
   /* width: 53vw; */
   /* height: 95vh; */
   flex-grow: 1;
   text-align: center;
   display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
@@ -245,6 +244,8 @@ body {
 .body-container {
   display: flex;
   justify-content: center;
+  justify-self: center;
+  align-self: center;
   flex-direction: row;
   /* top: 1px; */
   left: 0px;
@@ -275,6 +276,7 @@ body {
   border-bottom: solid 1px #683fff80;
   border-radius: 33px;
   /* box-shadow: 0px 4px 8px #683fff80; */
+  line-height: 0;
 
 }
 
@@ -290,7 +292,7 @@ body {
 }
 
 .card {
-    overflow: hidden;
+    /* overflow: hidden; */
     /* position: absolute; */
     will-change: transform;
     transition: all 0.3s ease-in-out;
@@ -457,7 +459,6 @@ body {
 
 .card {
   flex-grow: 1;
-  padding-top: 40px;
   text-align: center;
   /* display: flex; */
   justify-content: center;

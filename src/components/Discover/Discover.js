@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './discover.css';
+import MediaInfo from './MediaInfo';
+import './mediaInfo.css'
 
 export default function Discover(props) {
     const apiKey = '3516458404b8ed5f73b3b631421314e1';
@@ -33,46 +35,50 @@ export default function Discover(props) {
 
     return (
         <div id="discover">
-            <div className="body-container">
-                <div className="card">
-                    <div id="media-main">
-                        <div id="content-img">
-                            {/* {`<img goes here, has a width of 100% and height of 80% of card>`} */}
-                            <img src={images[curIdx]} />
+            <div className='int-container'>
+                <div className="body-container">
+                    <div className="card">
+                        <div id="media-main">
+                            <div id="content-img">
+                                {/* {`<img goes here, has a width of 100% and height of 80% of card>`} */}
+                                <img src={images[curIdx]} />
+                            </div>
+                            {/* <div id="content-description">
+                                {`content about media goes here, has a width of 75% and height of 20%`}
+                            </div> */}
                         </div>
-                        {/* <div id="content-description">
-                            {`content about media goes here, has a width of 75% and height of 20%`}
+                        {/* <div id="media-main-2">
+                            <div id="content-img">
+                                <img src={images[1]} />
+                            </div>
                         </div> */}
-                    </div>
-                    {/* <div id="media-main-2">
-                        <div id="content-img">
-                            <img src={images[1]} />
+                        <div id="play-pause">
+                            <button id="play-btn">
+                                <div id="play-symbol"></div>
+                                <div id="play-symbol"></div>
+                            </button>
+                            {/* <button id="play-btn">
+                                <div id="back-symbol"></div>
+                                <div id="back-symbol"></div>
+                            </button>
+                            <button id="play-btn">
+                                <div id="up-symbol"></div>
+                                <div id="up-symbol"></div>
+                            </button> */}
+                            <button id="play-btn" onClick={changeIdx}>
+                                <div id="next-symbol"></div>
+                                <div id="next-symbol"></div>
+                            </button>
                         </div>
-                    </div> */}
-                    <div id="play-pause">
-                        <button id="play-btn">
-                            <div id="play-symbol"></div>
-                            <div id="play-symbol"></div>
-                        </button>
-                        {/* <button id="play-btn">
-                            <div id="back-symbol"></div>
-                            <div id="back-symbol"></div>
-                        </button>
-                        <button id="play-btn">
-                            <div id="up-symbol"></div>
-                            <div id="up-symbol"></div>
-                        </button> */}
-                        <button id="play-btn" onClick={changeIdx}>
-                            <div id="next-symbol"></div>
-                            <div id="next-symbol"></div>
-                        </button>
-                    </div>
 
-                    <div className="watch-container">
-                        {/* <h4>ryan</h4> */}
+                        <div className="watch-container">
+                            {/* <h4>ryan</h4> */}
+                        </div>
                     </div>
                 </div>
+
             </div>
+            <MediaInfo />
         </div>
     );
 }

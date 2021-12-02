@@ -9,11 +9,11 @@ class Burger extends React.Component {
   render() {
     return (
         <Menu>
-            <button id='discover' className='main-links' >Discover</button>
-            <button id='watch-party' className='main-links' >Watch Party</button>
-            <button id='library' className='main-links' >Library</button>
-            <button id='chatroom' className='main-links' >Chat</button>
-            <button id='invite' className='invite-link' >Invite</button>
+            <button id='discover-btn' className='main-links' >Discover</button>
+            <button id='watch-party-btn' className='main-links' >Watch Party</button>
+            <button id='library-btn' className='main-links' >Library</button>
+            <button id='chatroom-btn' className='main-links' >Chat</button>
+            <button id='invite-btn' className='invite-link' >Invite</button>
         </Menu>
     )
   }
