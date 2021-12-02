@@ -14,7 +14,7 @@ return (
     <div class="match-watch">match</div>
     </div>
     <ul class="discover">Discover
-        <link to={Discover}></link>
+        <link to="/discover"></link>
     </ul>
     <ul class="create-party">Create Party
         <link to={Invite}></link>

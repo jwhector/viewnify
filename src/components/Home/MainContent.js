@@ -8,11 +8,10 @@ return (
     <div class="side-bar">
       <div class="buttons">
       <ul class="main-links">
-        <Link to="/discover">
-        <li>discover</li>
+        <link to="/discover">Discover</link>
       </ul>
       <ul class="main-links">
-        <li>watch liarty</li>
+        <link to="/watchparty">Watch Party</link>
       </ul>
       <ul class="main-links">
         <li>library</li>

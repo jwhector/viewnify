@@ -10,7 +10,7 @@ import WatchParty from "./components/WatchParty/WatchParty";
 import Library from "./components/Library/Library";
 import Chatroom from "./components/Chatroom/Chatroom";
 import Invite from "./components/Invite/Invite";
-import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom";
 
 
 
