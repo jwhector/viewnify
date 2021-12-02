@@ -18,6 +18,7 @@
     "react-spring": "^9.3.2",
     "react-swipe-card": "^0.1.4",
     "react-with-gesture": "^4.0.8",
+    "testing-library": "^0.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.1"
   }
 }
