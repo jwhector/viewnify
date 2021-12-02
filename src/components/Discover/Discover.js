@@ -1,6 +1,8 @@
 import userEvent from '@testing-library/user-event';
 import React, { useState, useEffect } from 'react';
 import './discover.css';
+import playIco from './play_ico.png';
+import pauseIco from './pause_ico.png';
 
 async function fetchChoice(type, mediaData, token) {
     fetch(`http://localhost:3005/api/${type}`, {
@@ -88,7 +90,10 @@ export default function Discover(props) {
     }
 
     const saveDislike = () => {
-
+        fetchChoice('dislikes', media[curIdx], props.token).then(data => {
+            console.log(data);
+            setCurIdx(curIdx + 1);
+        });
     }
 
     return (
@@ -112,8 +117,7 @@ export default function Discover(props) {
                         </div> */}
                         <div id="play-pause" onClick={saveDislike}>
                             <button id="play-btn">
-                                <div id="play-symbol"></div>
-                                <div id="play-symbol"></div>
+                                <img className="discover-btn pause-ico" src={pauseIco} />
                             </button>
                             {/* <button id="play-btn">
                                 <div id="back-symbol"></div>
@@ -124,8 +128,7 @@ export default function Discover(props) {
                                 <div id="up-symbol"></div>
                             </button> */}
                             <button id="play-btn" onClick={saveLike}>
-                                <div id="next-symbol"></div>
-                                <div id="next-symbol"></div>
+                                <img className="discover-btn play-ico" src={playIco} />
                             </button>
                         </div>
 

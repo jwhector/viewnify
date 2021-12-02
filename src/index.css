@@ -249,7 +249,8 @@ body {
   flex-direction: row;
   /* top: 1px; */
   left: 0px;
-  width: 375px;
+  /* width: 375px; */
+  width: 20rem;
   /* height: 267px; */
   max-height: calc(100vh - 48px);
   /* max-width: calc(65vw - 350px); */
@@ -314,7 +315,7 @@ body {
   margin-top: 20px;
   /* left: 30px; */
   /* width: 333px; */
-  height: 135px;
+  /* height: 135px; */
   background: #ffffffc3 0% 0% no-repeat padding-box;
   box-shadow: 0px 4px 8px #683fff80;
   border-radius: 33px;
@@ -343,8 +344,8 @@ body {
 #play-btn {
   /* top: 579px;
   left: 30px; */
-  width: 65px;
-  height: 65px;
+  /* width: 65px;
+  height: 65px; */
   background: #ffffffc3 0% 0% no-repeat padding-box;
   /* box-shadow: 0px 1.5px 3px #00000029; */
   opacity: 1;
@@ -353,7 +354,7 @@ body {
   margin: 2px;
   justify-content: center;
   align-items: center;
-  margin-top: 33.5px;
+  /* margin-top: 33.5px; */
   border: none;
 }
 
