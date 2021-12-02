@@ -20,8 +20,8 @@
     "react-spring": "^9.3.2",
     "react-swipe-card": "^0.1.4",
     "react-with-gesture": "^4.0.8",
-    "testing-library": "^0.0.2",
     "styled-components": "^5.3.3",
+    "testing-library": "^0.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -50,5 +50,8 @@
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
