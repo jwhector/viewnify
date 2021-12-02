@@ -7,15 +7,27 @@ export default function Discover(props) {
     // const services = props.services;
     const [images, setImages] = useState([]);
     const [curIdx, setCurIdx] = useState(0);
+    const [entries, setEntries] = useState([]);
+    const [media, setMedia] = useState([]);
 
     useEffect(() => {
         getEntries().then(entries => {
+            const mediaHolder = [];
             const imageHolder = [];
             entries.results.forEach(result => {
+                mediaHolder.push({
+                    tmdb_id: result.id,
+                    image: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+                    title: result.original_title,
+                    release_date: result.release_date,
+                    overview: result.overview,
+                    rating: result.rating
+                    // popularity
+                });
                 imageHolder.push(`https://image.tmdb.org/t/p/w500${result.poster_path}`);
             });
             setImages(imageHolder);
-            console.log(images);
+            // console.log(images);
         });
         // setImages(`https://image.tmdb.org/t/p/w500${entries.results[12].poster_path}`);
     }, []);
@@ -29,6 +41,18 @@ export default function Discover(props) {
 
     const changeIdx = () => {
         setCurIdx(curIdx + 1);
+    }
+
+    const getCurInfo = () => {
+
+    }
+
+    const saveLike = () => {
+
+    }
+
+    const saveDislike = () => {
+
     }
 
     return (
@@ -49,7 +73,7 @@ export default function Discover(props) {
                             <img src={images[1]} />
                         </div>
                     </div> */}
-                    <div id="play-pause">
+                    <div id="play-pause" onClick={saveDislike}>
                         <button id="play-btn">
                             <div id="play-symbol"></div>
                             <div id="play-symbol"></div>
@@ -62,7 +86,7 @@ export default function Discover(props) {
                             <div id="up-symbol"></div>
                             <div id="up-symbol"></div>
                         </button> */}
-                        <button id="play-btn" onClick={changeIdx}>
+                        <button id="play-btn" onClick={saveLike}>
                             <div id="next-symbol"></div>
                             <div id="next-symbol"></div>
                         </button>

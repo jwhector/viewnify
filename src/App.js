@@ -67,6 +67,8 @@ function App() {
           setProviders={setProviders} />
       </div>
     );
+  } else {
+    // location.href = `${process.env.PUBLIC_URL}/discover`;
   }
 
   return (
@@ -75,6 +77,7 @@ function App() {
       <Router>
         <Routes>
 
+        <Route path="/" element={<Home page="discover" />} />
         <Route path="/discover" element={<Home page="discover" />} />
         <Route path="/watchparty" element={<Home page="watchparty" />} />
         <Route path="/library" element={<Home page="library" />} />
