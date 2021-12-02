@@ -14,19 +14,19 @@ export default function Home(props) {
 
   const renderPage = () => {
     if(props.page==="discover") {
-      return <Discover user={props.user} />;
+      return <Discover user={props.user} token={props.token} />;
     }
     if(props.page==="watchparty") {
-      return <WatchParty user={props.user}/>;
+      return <WatchParty user={props.user} token={props.token} />;
     }
     if(props.page==="library") {
-      return <Library user={props.user} />;
+      return <Library user={props.user} token={props.token} />;
     }
     if(props.page==="chatroom") {
-      return <Chatroom user={props.user}/>;
+      return <Chatroom user={props.user} token={props.token} />;
     }
     if(props.page==="invite") {
-      return <Invite user={props.user}/>;
+      return <Invite user={props.user} token={props.token} />;
     }
   };
 

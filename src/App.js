@@ -71,13 +71,21 @@ function App() {
     return (
       <div id="main">
         <NavBar showLogin={true} setToken={setToken} />
-        <LandingPage setToken={setToken}
+        <LandingPage token={token}
+          setToken={setToken}
           genres={genres}
           setGenres={setGenres}
           providers={providers}
           setProviders={setProviders} />
       </div>
     );
+  } else if (!user) {
+    // location.href = `${process.env.PUBLIC_URL}/discover`;
+    return (
+      <>
+        <NavBar showLogin={false} />
+      </>
+    )
   }
 
   return (
@@ -91,12 +99,12 @@ function App() {
       <Router>
         <Routes>
 
-        <Route path="/discover" element={<Home page="discover" />} />
-        <Route path="/watchparty" element={<Home page="watchparty" />} />
-        <Route path="/library" element={<Home page="library" />} />
-        <Route path="/chatroom" element={<Home page="chatroom" />} />
-        <Route path="/invite" element={<Home page="invite" />} />
-
+        <Route path="/" element={<Home page="discover" user={user} token={token} />} />
+        <Route path="/discover" element={<Home page="discover" user={user}  token={token} />} />
+        <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} />} />
+        <Route path="/library" element={<Home page="library" user={user}  token={token} />} />
+        <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} />} />
+        <Route path="/invite" element={<Home page="invite" user={user} token={token} />} />
         {/* <Route path="/watchparty" exact component={WatchParty} />
         <Route path="library" exact component={Library} />
         <Route path="chatroom" exact component={Chatroom} />

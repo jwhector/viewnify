@@ -21,6 +21,39 @@
 
 }
 
+#media-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    /* align-self: flex-end; */
+    right: 0;
+    height: 100%;
+    width: 30%;
+    top: 0;
+    background-color: rgba(.5,.5,.5,.8);
+    z-index: 2;
+}
+
+.bg-img {
+    /* height: 100%;
+    width: 100%; */
+    flex-grow: 1;
+    background-color: rgba(.5,.5,.5,.5);
+    background-image: url('https://image.tmdb.org/t/p/original/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg');
+    /* position: absolute; */
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: blur(3px) opacity(.9);
+    filter: opacity(.9) blur(3px);
+    /* top: 0;
+    left: 0; */
+    z-index:1;
+}
+
+.discover-btn {
+    height: 3rem;
+}
+
 /* #play-btn {
     transform: matrix(0, 1, -1, 0, 0, 0);
     background: transparent linear-gradient(180deg, #00D7F4 0%, #006CD8 100%) 0% 0% no-repeat padding-box;
