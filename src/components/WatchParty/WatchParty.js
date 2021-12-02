@@ -20,6 +20,7 @@ return (
         <link to={Invite}></link>
     </ul>
     <div class="watch-content">Parties</div>
+    <div class="watch-content">Parties</div>
     </>
 )
 }

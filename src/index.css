@@ -121,7 +121,6 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
 }
 
 .side-bar {
@@ -170,6 +169,33 @@ body {
   display: flex !important;
 }
 
+#dark-light {
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  border-spacing: 50px;
+  font-family: Quicksand;
+  color: #ffffff;
+  flex-direction: row;
+  border: 1px #683fff;
+  transition: 0.2s;
+  margin: 1rem;
+  width: 20%;
+  max-width: 100px;
+  top: 416px;
+  left: 196px;
+  height: 50px;
+  background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000080;
+  border-radius: 32px;
+  opacity: 1;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  /* display: flex !important; */
+}
+
 element.style {
   display: flex;
 }
@@ -183,7 +209,7 @@ element.style {
   margin: 0;
   margin: 75px;
   /* margin-right: 5px; */
-  color: #707070;
+  /* color: #707070; */
   flex-direction: row;
   display: flex;
   border: 1px #683fff;
@@ -194,7 +220,7 @@ element.style {
   left: 196px;
   width: 200px;
   height: 59px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+  /* background: #ffffff 0% 0% no-repeat padding-box; */
   box-shadow: 0px 3px 6px #00000080;
   border-radius: 32px;
   opacity: 1;
@@ -343,7 +369,7 @@ body {
 }
 
 #media-main:hover {
-  box-shadow: 4px 4px 8px 0 #e22bff;
+  box-shadow: 4px 4px 8px 4px #e22bff;
 }
 
 .card {
@@ -371,7 +397,7 @@ body {
   /* width: 333px; */
   height: 135px;
   background: #ffffffc3 0% 0% no-repeat padding-box;
-  box-shadow: 0px 4px 8px #683fff80;
+  box-shadow: 4px 4px 8px 0 #e22bff;
   border-radius: 33px;
   opacity: 1;
   justify-content: center;
@@ -379,7 +405,7 @@ body {
 }
 
 #play-pause:hover {
-  box-shadow: 4px 4px 8px 0 #e22bff;
+  box-shadow: 4px 4px 8px 2px #e22bff;
 }
 
 #media-main {
@@ -389,7 +415,7 @@ body {
   height: 475px; */
   /* margin: 20px; */
   opacity: 1;
-  box-shadow: 0px 4px 8px #683fff80;
+  box-shadow: 4px 4px 8px 0 #e22bff;
   border-radius: 33px;
   background-color: #ffffffc3;
   color: #00000080;
@@ -471,50 +497,6 @@ body {
   opacity: 1;
 }
 
-.tinder {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
-}
-
-.loaded.tinder {
-  opacity: 1;
-}
-
-.swipe-status {
-  position: absolute;
-  top: 50%;
-  margin-top: -30px;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-}
-
-.swipe-status i {
-  font-size: 100px;
-  opacity: 0;
-  transform: scale(0.3);
-  transition: all 0.2s ease-in-out;
-  position: absolute;
-  width: 100px;
-  margin-left: -50px;
-}
-
-.body-container_love .fa-heart {
-  opacity: 0.7;
-  transform: scale(1);
-}
-
-.body-container_nope .fa-remove {
-  opacity: 0.7;
-  transform: scale(1);
-}
 
 .card {
   flex-grow: 1;
