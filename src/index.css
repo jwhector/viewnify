@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 html, body {
   min-height: 100vh;
@@ -197,17 +197,6 @@ p {
   opacity: 1;
 }
 
-/* nav {
-    width: 100vw;
-    height: 5vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-family: Quicksand;
-    font-size: 30px;
-    background-color: #EDEDED;
-  } */
-
 #viewnify {
   background: transparent linear-gradient(180deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
   color: #ffffff;
@@ -220,7 +209,6 @@ p {
   align-items: center;
   text-align: left;
   text-indent: 85px;
-
 }
 
 html,
@@ -293,12 +281,22 @@ body {
 #content-description {
   width: 100%;
   height: 15%;
+  z-index: 500;
   /* object-fit: cover; */
-
 }
 
 #media-main:hover {
   box-shadow: 4px 4px 8px 0 #e22bff;
+}
+
+.card {
+    overflow: hidden;
+    /* position: absolute; */
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
 }
 
 .card .watch-container {
@@ -366,6 +364,9 @@ body {
   margin-top: 4px;
   display: inline-block;
   background: transparent linear-gradient(180deg, #20f794 0%, #3fefef 100%) 0% 0% no-repeat padding-box;
+  /* background-image: url(./components/Home/heart-next.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat; */
   border-radius: 5px;
   opacity: 1;
 }
@@ -409,6 +410,136 @@ body {
   opacity: 1;
 }
 
+.tinder {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loaded.tinder {
+  opacity: 1;
+}
+
+.swipe-status {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.swipe-status i {
+  font-size: 100px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  width: 100px;
+  margin-left: -50px;
+}
+
+.body-container_love .fa-heart {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.body-container_nope .fa-remove {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.card {
+  flex-grow: 1;
+  padding-top: 40px;
+  text-align: center;
+  /* display: flex; */
+  justify-content: center;
+  /* align-items: flex-end; */
+  z-index: 1;
+}
+
+/* .card {
+  display: inline-block;
+  width: 90vw;
+  max-width: 400px;
+  height: 70vh;
+  background: #ffffff;
+  padding-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+} */
+
+.moving.card {
+  transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+.card img {
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.card h3 {
+  margin-top: 32px;
+  font-size: 32px;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.card p {
+  margin-top: 24px;
+  font-size: 20px;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.swipe-buttons {
+  flex: 0 0 100px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.swipe-buttons button {
+  border-radius: 50%;
+  line-height: 60px;
+  width: 60px;
+  border: 0;
+  background: black;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.swipe-buttons button:focus {
+  outline: 0;
+}
+
+.swipe-buttons i {
+  font-size: 32px;
+  vertical-align: middle;
+}
+
+.fa-heart {
+  color: #fface4;
+}
+
+.fa-remove {
+  color: #cdd6dd;
+}
 .buttons {
   display: flex;
   flex-direction: column;
@@ -483,4 +614,66 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.watch-header {
+  background: transparent linear-gradient(180deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+  border: solid;
+  display: flex;
+  /* display: block; */
+  width: 15%;
+  max-width: 100px;
+  height: 0.2rem;
+  margin: 2rem;
+  padding: 20px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch-content, .discover, .create-party {
+  background: transparent linear-gradient(180deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+  border: solid;
+  display: flex;
+  /* display: block; */
+  margin: 2rem;
+  padding: 20px;
+  width: 15%;
+  max-width: 100px;
+  height: 0.2rem;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-watch, .match-watch {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-color:transparent;
+  border-radius: 50%;
+  border: solid;
+  flex-direction: row;
+  display: inline-block;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+/* #happy {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.user-watch {
+  position: relative;
+  overflow: hidden;
+} */
+
+.profile-circles {
+  /* margin: 3rem; */
+  /* position: absolute; */
+  /* overflow: hidden; */
+  justify-content: space-between;
 }

@@ -4,6 +4,30 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    background-image: url("./stream1.jpeg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.fade {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    /* opacity: 0.5; */
+}
+
+.fade::after {
+    content: "";
+    background-image: url("./tvshows.jpeg");
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 #slogan {
@@ -37,24 +61,36 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 1;
 }
 
 .login-modal {
     display: flex;
     flex-direction: column;
     width: 40%;
+    max-width: 300px;
+    color: white;
     /* justify-self: center; */
     justify-content: space-around;
-    background-color: #BABABA;
-    padding: 3rem;
+    background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%);
+  background-size: 100%;
+  background-repeat: repeat;
+    padding: 2rem;
     text-align: center;
     border-radius: 25px;
     transition: .5s;
     transform: translateY(20%);
     opacity: 1;
+    
 }
 
 .login-modal h2 {
     font-size: 42px;
     margin-bottom: 1rem;
+}
+
+.modal-in, .close-btn {
+    margin: 5px;
+
+    
 }
