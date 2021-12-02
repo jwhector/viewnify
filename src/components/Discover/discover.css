@@ -1,5 +1,6 @@
 #content-img img {
-    width: 100%;
+    /* width: 100%; <--------------- ENABLE FOR MOBILE */
+    width: 500px;
 }
 
 /* #play-btn {
