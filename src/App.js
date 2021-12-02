@@ -10,14 +10,24 @@ import WatchParty from "./components/WatchParty/WatchParty";
 import Library from "./components/Library/Library";
 import Chatroom from "./components/Chatroom/Chatroom";
 import Invite from "./components/Invite/Invite";
-import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { render } from "@testing-library/react";
+import {BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom";
+import {ThemeProvider} from "styled-components";
+import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
+import styled, { css } from "styled-components";
 
 
+const StyledApp = styled.div`
+  color: ${(props) => props.theme.background};
+`;
 
 // async function login()
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  }
   const { token, setToken } = useToken();
   const [genres, setGenres] = useState('');
   const [providers, setProviders] = useState('');
@@ -80,7 +90,12 @@ function App() {
 
   return (
     <>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <StyledApp class="styleme">
+      <GlobalStyles />
+
       <NavBar showLogin={false} />
+        <button id="dark-light"onClick={() => themeToggler()}>Change Theme</button>
       <Router>
         <Routes>
 
@@ -93,11 +108,13 @@ function App() {
         {/* <Route path="/watchparty" exact component={WatchParty} />
         <Route path="library" exact component={Library} />
         <Route path="chatroom" exact component={Chatroom} />
-        <Route path="invite" exact component={Invite} /> */}
+      <Route path="invite" exact component={Invite} /> */}
         
         </Routes>
 
       </Router>
+      </StyledApp>
+      </ThemeProvider>
     </>
   )
 }

@@ -31,7 +31,7 @@ export default function Home(props) {
   };
 
   return (
-    <div className="home">
+    <div className="home" id="homer">
       <Menu />
       <div className="right-container">
         {renderPage()}
