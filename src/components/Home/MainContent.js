@@ -7,21 +7,22 @@ return (
     <nav id="viewnify">viewnify</nav>
     <div class="side-bar">
       <div class="buttons">
-      <button class="main-links">
-        <p>discover</p>
-      </button>
-      <button class="main-links">
-        <p>watch party</p>
-      </button>
-      <button class="main-links">
-        <p>library</p>
-      </button>
-      <button class="main-links">
-        <p>chatroom</p>
-      </button>
-      <button class="invite-link">
-        <p>invite</p>
-      </button>
+      <ul class="main-links">
+        <Link to="/discover">
+        <li>discover</li>
+      </ul>
+      <ul class="main-links">
+        <li>watch liarty</li>
+      </ul>
+      <ul class="main-links">
+        <li>library</li>
+      </ul>
+      <ul class="main-links">
+        <li>chatroom</li>
+      </ul>
+      <ul class="invite-link">
+        <li>invite</li>
+      </ul>
       </div>
       {/* <div class="side-info">
         <button>hello</button>
@@ -40,7 +41,7 @@ return (
    <div id="media-main">
      <div id="content-img">
      </div>
-     <div id="content-description">
+     <div id="content-description"> 
      </div>
    </div>
    <div class="swipe-buttons">
@@ -54,7 +55,6 @@ return (
     <div id="play-pause">
       <button id="play-btn">
         <div id="play-symbol"></div>
-        <div id="play-symbol"></div>
       </button>
       <button id="play-btn">
       <div id="back-symbol"></div>
@@ -65,13 +65,11 @@ return (
         <div id="up-symbol"></div>
       </button>
       <button id="play-btn">
-      <div id="next-symbol"></div>
-        <div id="next-symbol"></div>
+      <div id="play-symbol"></div><div id="play-symbol"></div>
       </button>
     </div>
     
     <div class="watch-container">
-      {/* <h4>ryan</h4> */}
     </div>
   </div>
 </div>

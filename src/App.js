@@ -5,6 +5,13 @@ import useToken from "./useToken";
 import Home from "./components/Home/Home";
 import Liked from "./components/Home/Liked";
 import Button from "./components/Home/Button"
+import Discover from "./components/Discover/Discover";
+import WatchParty from "./components/WatchParty/WatchParty";
+import Library from "./components/Library/Library";
+import Chatroom from "./components/Chatroom/Chatroom";
+import Invite from "./components/Invite/Invite";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 
 // async function login()
@@ -65,7 +72,22 @@ function App() {
   return (
     <>
       <NavBar showLogin={false} />
-      <Home user={user} />
+      <Router>
+        <Routes>
+
+        <Route path="/discover" element={<Home page="discover" />} />
+        <Route path="/watchparty" element={<Home page="watchparty" />} />
+        <Route path="/library" element={<Home page="library" />} />
+        <Route path="/chatroom" element={<Home page="chatroom" />} />
+        <Route path="/invite" element={<Home page="invite" />} />
+        {/* <Route path="/watchparty" exact component={WatchParty} />
+        <Route path="library" exact component={Library} />
+        <Route path="chatroom" exact component={Chatroom} />
+        <Route path="invite" exact component={Invite} /> */}
+        
+        </Routes>
+
+      </Router>
     </>
   )
 }
