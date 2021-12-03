@@ -1,5 +1,5 @@
 import userEvent from '@testing-library/user-event';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './discover.css';
 import playIco from './play_ico.png';
 import pauseIco from './pause_ico.png';
@@ -9,6 +9,7 @@ import FastAverageColor from 'fast-average-color';
 // import complementaryColor from 'complementary-color';
 import complementaryColors from 'complementary-colors';
 import Color from 'color';
+import swipe from './swipe';
 
 async function fetchChoice(type, mediaData, token) {
     fetch(`http://localhost:3005/api/${type}`, {
@@ -33,6 +34,8 @@ export default function Discover(props) {
     const [entries, setEntries] = useState([]);
     const [media, setMedia] = useState([]);
     const [bgColor, setBgColor] = useState('');
+    
+    const cardContainerRef = useRef(null);
     
     const seenMedia = [];
     const fac = new FastAverageColor();
@@ -88,6 +91,13 @@ export default function Discover(props) {
         // setImages(`https://image.tmdb.org/t/p/w500${entries.results[12].poster_path}`);
     }, []);
 
+    useEffect(() => {
+        if (cardContainerRef.current) {
+            const allCards = cardContainerRef.current.querySelectorAll('.media-main');
+            swipe(cardContainerRef.current, allCards);
+        }
+    })
+
     const getEntries = async () => {
         const entries = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2&with_watch_monetization_types=flatrate`)
             .then(data => data.json());
@@ -123,16 +133,13 @@ export default function Discover(props) {
     return (
         <div id="discover">
             <div className='int-container' style={{background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`}}>
-                <div className="body-container">
+                <div className="body-container" ref={cardContainerRef}>
                     <div className="card">
                         <div className="media-main" style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}>
                             <div id="content-img">
-                                {/* {`<img goes here, has a width of 100% and height of 80% of card>`} */}
                                 <img id='cur-content-img' src={images[curIdx]} />
                             </div>
-                            {/* <div id="content-description">
-                                {`content about media goes here, has a width of 75% and height of 20%`}
-                            </div> */}
+
                         </div>
                         {/* <div id="media-main-2">
                             <div id="content-img">

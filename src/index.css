@@ -342,7 +342,7 @@ body {
 }
 
 .media-main {
-  transition: 0.2s;
+  /* transition: 0.2s; */
   justify-content: center;
   align-items: center;
   text-align: center;
