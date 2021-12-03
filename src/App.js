@@ -93,7 +93,11 @@ function App() {
     <>
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <StyledApp className="styleme">
-        <GlobalStyles />
+      <GlobalStyles />
+
+      <NavBar showLogin={false} themeToggler={themeToggler}/>
+      <Router>
+        <Routes>
 
         <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler} />
         <Router>
