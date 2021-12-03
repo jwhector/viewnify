@@ -51,7 +51,7 @@
 }
 
 .discover-btn {
-    height: 3rem;
+    height: 7rem;
 }
 
 .media-main {
@@ -78,6 +78,13 @@
 .back {
     z-index: 4 !important;
 }
+
+.content-description {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
 /* #play-btn {
     transform: matrix(0, 1, -1, 0, 0, 0);
     background: transparent linear-gradient(180deg, #00D7F4 0%, #006CD8 100%) 0% 0% no-repeat padding-box;

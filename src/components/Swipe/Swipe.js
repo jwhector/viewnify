@@ -60,20 +60,20 @@ export default function Swipe(props) {
     );
   };
 
-  const initCards = (tinderContainer, card, index) => {
-    var newCards = document.querySelectorAll(".media-main:not(.removed)");
+//   const initCards = (tinderContainer, card, index) => {
+//     var newCards = document.querySelectorAll(".media-main:not(.removed)");
 
-    //   newCards.forEach(function (card, index) {
-    //     card.style.zIndex = allCards.length - index;
-    //     card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
-    //     card.style.opacity = (10 - index) / 10;
-    //   });
+//     //   newCards.forEach(function (card, index) {
+//     //     card.style.zIndex = allCards.length - index;
+//     //     card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
+//     //     card.style.opacity = (10 - index) / 10;
+//     //   });
 
-    tinderContainer.classList.add("loaded");
-  };
+//     tinderContainer.classList.add("loaded");
+//   };
 
   const addSwipe = (tinderContainer, allCards) => {
-    initCards(tinderContainer);
+    // initCards(tinderContainer);
 
     const hammers = [];
 
@@ -143,7 +143,7 @@ export default function Swipe(props) {
           // hammertime.off('');
           setDraggable(false);
           el.style.transform ="translate(" +toX +"px, " +(toY + event.deltaY) +"px) rotate(" +rotate +"deg)";
-          initCards(tinderContainer);
+        //   initCards(tinderContainer);
           let nextCard;
           if (el.classList.contains("media-A")) {
             nextCard = tinderContainer.querySelector(".media-B");
@@ -199,6 +199,9 @@ export default function Swipe(props) {
           <div id="content-img">
             <img id="cur-content-img" src={props.images[bIdx]} />
           </div>
+          <div className="content-description">
+              <img className="content-background" src={props.media[bIdx]?.backdrop} />
+          </div>
         </div>
         <div
           className="media-main media-A front"
@@ -206,6 +209,9 @@ export default function Swipe(props) {
         >
           <div id="content-img">
             <img id="cur-content-img" src={props.images[aIdx]} />
+          </div>
+          <div className="content-description">
+              <img className="content-background" src={props.media[aIdx]?.backdrop} />
           </div>
         </div>
         {/* <div
@@ -221,13 +227,17 @@ export default function Swipe(props) {
                                 <img src={images[1]} />
                             </div>
                         </div> */}
-        <div
+        
+
+        <div className="watch-container">{/* <h4>ryan</h4> */}</div>
+      </div>
+      <div
           id="play-pause"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
         >
-          <button id="play-btn" onClick={saveDislike}>
+          <div id="play-btn" onClick={saveDislike}>
             <img className="discover-btn pause-ico" src={pauseIco} />
-          </button>
+          </div>
           {/* <button id="play-btn">
                                 <div id="back-symbol"></div>
                                 <div id="back-symbol"></div>
@@ -236,13 +246,10 @@ export default function Swipe(props) {
                                 <div id="up-symbol"></div>
                                 <div id="up-symbol"></div>
                             </button> */}
-          <button id="play-btn" onClick={saveLike}>
+          <div id="play-btn" onClick={saveLike}>
             <img className="discover-btn play-ico" src={playIco} />
-          </button>
+          </div>
         </div>
-
-        <div className="watch-container">{/* <h4>ryan</h4> */}</div>
-      </div>
     </div>
   );
 }
