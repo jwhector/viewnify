@@ -6,7 +6,7 @@ import Hammer from 'hammerjs';
 // var nope = document.getElementById('nope');
 // var love = document.getElementById('love');
 
-export default function swipe(tinderContainer, allCards) {
+export default function swipefn(tinderContainer, allCards, addLike, addDislike) {
     function initCards(card, index) {
         var newCards = document.querySelectorAll('.media-main:not(.removed)');
       
