@@ -91,4 +91,5 @@ export default function Burger(props) {
         <button id='chatroom' className='main-links' >Chat</button>
         <button id='invite' className='invite-link' >Invite</button> */}
     </Menu>
-)
+  )
+}
