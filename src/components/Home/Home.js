@@ -13,8 +13,11 @@ export default function Home(props) {
   const [page, setPage] = useState('')
 
   const renderPage = () => {
+    if(props.page !== "discover") {
+      props.setComplementary('#683fff80');
+    }
     if(props.page==="discover") {
-      return <Discover user={props.user} token={props.token} />;
+      return <Discover user={props.user} token={props.token} complementary={props.complementary} setComplementary={props.setComplementary} />;
     }
     if(props.page==="watchparty") {
       return <WatchParty user={props.user} token={props.token} />;
