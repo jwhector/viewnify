@@ -95,11 +95,11 @@ function App() {
       <StyledApp className="styleme">
       <GlobalStyles />
 
-      <NavBar showLogin={false} themeToggler={themeToggler}/>
+      {/* <NavBar showLogin={false} themeToggler={themeToggler}/>
       <Router>
-        <Routes>
+        <Routes> */}
 
-        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} />
+        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler} />
         <Router>
           <Routes>
 
@@ -117,6 +117,8 @@ function App() {
           </Routes>
 
           </Router>
+          {/* </Routes>
+          </Router> */}
         </StyledApp>
       </ThemeProvider>
     </>
