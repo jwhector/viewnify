@@ -45,20 +45,23 @@ export default function Home(props) {
   const [page, setPage] = useState('')
 
   const renderPage = () => {
+    if(props.page !== "discover") {
+      props.setComplementary('#683fff80');
+    }
     if(props.page==="discover") {
-      return <Discover user={props.user} />;
+      return <Discover user={props.user} token={props.token} complementary={props.complementary} setComplementary={props.setComplementary} />;
     }
     if(props.page==="watchparty") {
-      return <WatchParty user={props.user}/>;
+      return <WatchParty user={props.user} token={props.token} />;
     }
     if(props.page==="library") {
-      return <Library user={props.user} />;
+      return <Library user={props.user} token={props.token} />;
     }
     if(props.page==="chatroom") {
-      return <Chatroom user={props.user}/>;
+      return <Chatroom user={props.user} token={props.token} />;
     }
     if(props.page==="invite") {
-      return <Invite user={props.user}/>;
+      return <Invite user={props.user} token={props.token} />;
     }
   };
 

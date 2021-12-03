@@ -5,7 +5,7 @@ body {
   min-height: 100vh;
 }
 
-#root {
+#root, .styleme {
   min-height: 100vh;
   background: #cbcbcb 0% 0% no-repeat padding-box;
   display: flex;
@@ -337,7 +337,9 @@ body {
   flex-direction: row;
   /* top: 1px; */
   left: 0px;
-  width: 375px;
+  /* width: 375px; */
+  /* width: 20rem; */
+  width: 500px;
   /* height: 267px; */
   max-height: calc(100vh - 48px);
   /* max-width: calc(65vw - 350px); */
@@ -346,8 +348,8 @@ body {
   z-index: 1;
 }
 
-#media-main {
-  transition: 0.2s;
+.media-main {
+  /* transition: 0.2s; */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -361,7 +363,7 @@ body {
   overflow: hidden;
   /* background-color: #ededed; */
   z-index: -1;
-  border-bottom: solid 1px #683fff80;
+  /* border-bottom: solid 1px #683fff80; */
   border-radius: 33px;
   /* box-shadow: 0px 4px 8px #683fff80; */
   line-height: 0;
@@ -375,7 +377,7 @@ body {
   /* object-fit: cover; */
 }
 
-#media-main:hover {
+.media-main:hover {
   box-shadow: 4px 4px 8px 4px #e22bff;
 }
 
@@ -402,7 +404,7 @@ body {
   margin-top: 20px;
   /* left: 30px; */
   /* width: 333px; */
-  height: 135px;
+  /* height: 135px; */
   background: #ffffffc3 0% 0% no-repeat padding-box;
   box-shadow: 4px 4px 8px 0 #e22bff;
   border-radius: 33px;
@@ -415,7 +417,7 @@ body {
   box-shadow: 4px 4px 8px 2px #e22bff;
 }
 
-#media-main {
+.media-main {
   /* top: 71px;
   left: 30px; */
   /* width: 333px; <---------------------------------------8 DON CHANGE FOR MOBILE
@@ -431,8 +433,8 @@ body {
 #play-btn {
   /* top: 579px;
   left: 30px; */
-  width: 65px;
-  height: 65px;
+  /* width: 65px;
+  height: 65px; */
   background: #ffffffc3 0% 0% no-repeat padding-box;
   /* box-shadow: 0px 1.5px 3px #00000029; */
   opacity: 1;
@@ -441,7 +443,7 @@ body {
   margin: 2px;
   justify-content: center;
   align-items: center;
-  margin-top: 33.5px;
+  /* margin-top: 33.5px; */
   border: none;
 }
 
@@ -589,6 +591,7 @@ body {
 .bm-cross-button {
   height: 24px;
   width: 24px;
+  visibility: hidden;
 }
 
 /* Color/shape of close button cross */
