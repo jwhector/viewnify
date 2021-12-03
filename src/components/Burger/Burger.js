@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 export const lightTheme = {
   body: 'white',
-  fontColor: 'white',
+  fontColor: 'black',
   background: 'white',
   root: 'white',
   homer: 'white',
@@ -16,12 +16,13 @@ export const lightTheme = {
   playPause: '#ededed',
   bmMenu: '#FFFFF',
   darkLight: 'white',
+  MuiPaperRoot: "white",
 
 }
 // #EDEDED for text
 export const darkTheme = {
   body: '#181818',
-  fontColor: "black",
+  fontColor: "white",
   background: "#181818",
   root: '#181818',
   homer: '#181818',
@@ -33,6 +34,7 @@ export const darkTheme = {
   discoverBtn: "#ededed",
   watchParty: "#222222",
   boxShadow: "white",
+  MuiPaperRoot: "#181818",
 
 };
 
@@ -90,6 +92,17 @@ background: ${(props) => {
   color: ${(props) => props.theme.discoverBtn};
   background-color: ${(props) => props.theme.watchParty};
   
+}
+
+ .MuiToolbar-root, .MTableHeader-header-13, .MuiTableCell-head, .MuiTableFooter-root, .MTablePaginationInner-root-14   {
+  color: ${(props) => props.theme.fontColor} !important;
+  background-color: ${(props) => props.theme.MuiPaperRoot} !important;
+}
+
+
+.MuiSelect-root, .MuiSvgIcon-root, .MuiButtonBase-root, .MuiTable-root, .MuiInputBase-root, .MuiInputAdornment-root, .MuiIcon-root   {
+  color: ${(props) => props.theme.fontColor} !important;
+  background-color: ${(props) => props.theme.MuiPaperRoot} !important;
 }
 
 `

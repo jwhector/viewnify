@@ -722,3 +722,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .library-content h1 {
   color: white;
 }
+
+ .MuiPaper-root, .MuiToolbar-root, .MuiTypography-body2 {
+  box-shadow:0px 1px 1px 3px rgba(226, 43, 255, 1) !important;
+  font-family: Quicksand !important;
+}
+
+.MuiInputBase-root, .MuiTable-root, .MTablePaginationInner-root-14, .MuiTypography-h6, .MuiTableRow-root, .MuiButtonBase-root {
+  font-family: Quicksand !important;
+}
+
+/* .MuiInputAdornment-root {
+  max-height: 2rem !important;
+  height: 250px important!;
+} */
+
+.MTableHeader-header-13 {
+  z-index: 0 !important;
+}
