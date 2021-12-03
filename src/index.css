@@ -73,7 +73,7 @@ body {
   /* opacity: 0; */
   color: rgba(0, 0, 0, 0);
   margin-left: auto;
-  text-shadow: 1px 2px 2px gray;
+  text-shadow: 1px 2px 2px darkgray;
   z-index: 1;
 }
 
@@ -175,26 +175,33 @@ body {
   list-style-type: none;
   border-spacing: 50px;
   font-family: Quicksand;
-  color: #ffffff;
+  color: #f70bc1;
   flex-direction: row;
   border: 1px #683fff;
   transition: 0.2s;
   margin: 1rem;
-  width: 20%;
-  max-width: 100px;
-  top: 416px;
-  left: 196px;
-  height: 50px;
+  width: 5%;
+  max-width: 75px;
+  min-width: 45px;
+  /* top:1px; */
+  position: absolute;
+  right: 10px;
+  height: 40px;
   background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
     0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000080;
+    background-image: url('./components/transparent.png');backround-size:contain; background-repeat:no-repeat;
+    object-fit: cover;
+  box-shadow: 2px 2px 1px 0.7px #f70bc1;
   border-radius: 32px;
   opacity: 1;
   text-decoration: none;
   text-align: center;
-  font-size: 15px;
+  font-size: 25px;
+  display: flex;
   /* display: flex !important; */
 }
+
+
 
 element.style {
   display: flex;
@@ -664,6 +671,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-align: center;
   justify-content: center;
   align-items: center;
+  display:inline-flex
 }
 
 .user-watch,
@@ -673,9 +681,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 200px;
   background-color: transparent;
   border-radius: 50%;
-  border: solid;
+  border: dotted;
+  border-width: 2px;
   flex-direction: row;
   display: inline-block;
+  border-color: #f70bc1;
   /* justify-content: space-around; */
   align-items: center;
 }
@@ -696,4 +706,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* position: absolute; */
   /* overflow: hidden; */
   justify-content: space-between;
+  display: inline-block;
 }
