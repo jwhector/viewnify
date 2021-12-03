@@ -348,6 +348,8 @@ body {
   min-height: 375px;
   opacity: 1;
   z-index: 1;
+  width: 80%;
+  max-width: 500px;
 }
 
 .media-main {
@@ -392,6 +394,12 @@ body {
     cursor: -moz-grab;
     cursor: grab;
     height: 750px;
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .card .watch-container {
@@ -435,6 +443,8 @@ body {
   transition: all 0.3s ease-in-out;
   position: absolute;
   overflow: hidden;
+  width: 80%;
+  max-width: 500px;
 }
 
 #play-btn {
@@ -452,6 +462,7 @@ body {
   align-items: center;
   /* margin-top: 33.5px; */
   border: none;
+  display: none;
 }
 
 #play-symbol {
@@ -514,14 +525,6 @@ body {
 }
 
 
-.card {
-  flex-grow: 1;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
 
 /* .card {
   display: inline-block;
