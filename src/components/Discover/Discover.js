@@ -1,28 +1,10 @@
-import userEvent from "@testing-library/user-event";
 import React, { useState, useEffect, useRef } from "react";
 import "./discover.css";
 
 import FastAverageColor from "fast-average-color";
-import complementaryColors from "complementary-colors";
 import Color from "color";
-import swipe from "./swipe";
-import Swipe from '../Swipe';
-
-async function fetchChoice(type, mediaData, token) {
-  fetch(`http://localhost:3005/api/${type}`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer: ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(mediaData),
-  })
-    .then((res) => {
-      console.log(res);
-      return res.json();
-    })
-    .catch((err) => console.log(err));
-}
+// import swipe from "../Swipe/swipefn";
+import Swipe from '../Swipe/Swipe';
 
 export default function Discover(props) {
   const apiKey = "3516458404b8ed5f73b3b631421314e1";
@@ -64,7 +46,6 @@ export default function Discover(props) {
           console.log(err);
         });
     }
-    // }
   });
 
   useEffect(() => {
@@ -88,17 +69,15 @@ export default function Discover(props) {
       });
       setImages(imageHolder);
       setMedia(mediaHolder);
-      // console.log(images);
     });
-    // setImages(`https://image.tmdb.org/t/p/w500${entries.results[12].poster_path}`);
   }, []);
 
-  useEffect(() => {
-    if (cardContainerRef.current) {
-      const allCards = cardContainerRef.current.querySelectorAll(".media-main");
-      swipe(cardContainerRef.current, allCards);
-    }
-  });
+//   useEffect(() => {
+//     if (cardContainerRef.current) {
+//       const allCards = cardContainerRef.current.querySelectorAll(".media-main");
+//       swipe(cardContainerRef.current, allCards);
+//     }
+//   });
 
   const getEntries = async () => {
     const entries = await fetch(
@@ -108,16 +87,8 @@ export default function Discover(props) {
     const results = entries.results.filter(
       (elem) => !seenMedia.includes(elem.id)
     );
-    // console.log(seenMedia);
-    // console.log(results);
     return results;
   };
-
-  const changeIdx = () => {
-    setCurIdx(curIdx + 1);
-  };
-
-  const getCurInfo = () => {};
 
   return (
     <div id="discover">
@@ -127,7 +98,7 @@ export default function Discover(props) {
           background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`,
         }}
       >
-        <Swipe />
+        <Swipe media={media} images={images} curIdx={curIdx} setCurIdx={setCurIdx} complementary={props.complementary} token={props.token} />
         {/* <div className="body-container" ref={cardContainerRef}>
           <div className="card">
             <div

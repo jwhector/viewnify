@@ -95,7 +95,7 @@ function App() {
       <StyledApp className="styleme">
         <GlobalStyles />
 
-        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} />
+        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler} />
         <Router>
           <Routes>
 

@@ -57,6 +57,7 @@
 .media-main {
     will-change: transform;
     transition: all 0.3s ease-in-out;
+    position: absolute;
 }
 
 .moving.media-main {
@@ -66,6 +67,17 @@
     cursor: grabbing;
 }
 
+.removed {
+    display: none;
+}
+
+.front {
+    z-index: 5 !important;
+}
+
+.back {
+    z-index: 4 !important;
+}
 /* #play-btn {
     transform: matrix(0, 1, -1, 0, 0, 0);
     background: transparent linear-gradient(180deg, #00D7F4 0%, #006CD8 100%) 0% 0% no-repeat padding-box;
