@@ -6,30 +6,33 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 export const lightTheme = {
-  body: '#999',
+  body: 'white',
   fontColor: 'white',
   background: 'white',
   root: 'white',
   homer: 'white',
   nav: '#FFFFF',
   rightContainer: 'white',
-  playPause: '#FFFFF',
-  bmMenu: 'blue',
-  darkLight: 'purple',
+  playPause: '#ededed',
+  bmMenu: '#FFFFF',
+  darkLight: 'white',
 
 }
-
+// #EDEDED for text
 export const darkTheme = {
-  body: '#555',
+  body: '#181818',
   fontColor: "black",
-  background: "#010101",
-  root: '#010101',
-  homer: '#010101',
-  nav: '#080808',
-  rightContainer: '#010101',
-  playPause: 'blue',
-  bmMenu: 'yellow',
-  darkLight: 'pink'
+  background: "#181818",
+  root: '#181818',
+  homer: '#181818',
+  nav: '#181818',
+  rightContainer: '#181818',
+  playPause: '#181818',
+  bmMenu: '#181818',
+  darkLight: '#181818',
+  discoverBtn: "#ededed",
+  watchParty: "#222222",
+  boxShadow: "white",
 
 };
 
@@ -37,37 +40,57 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   background-color: ${(props) => props.theme.body};
+  transition: 0.3s;
 ;
 
 }
 
 #root {
 background-color: ${(props) => props.theme.root};
+transition: 0.3s;
 }
 
 #nav {
-background-color: ${(props) => props.theme.nav}
+background-color: ${(props) => props.theme.nav};
+transition: 0.3s;
 }
 
 #homer {
-background-color: ${(props) => props.theme.homer}
+background-color: ${(props) => props.theme.homer};
+transition: 0.3s;
 }
 
-rightContainer {
-background-color: ${(props) => props.theme.rightContainer}
+.right-container {
+background-color: ${(props) => props.theme.rightContainer};
+transition: 0.3s;
 }
 
-#playPause {
-background-color: ${(props) => props.theme.playPause}
+#play-pause {
+background-color: ${(props) => props.theme.playPause};
+transition: 0.3s;
 }
 
-#bmMenu {
-background-color: ${(props) => props.theme.bmMenu}
+.bm-menu {
+  transition: 0.3s;
+  z-index: 1;
+background: ${(props) => {
+  console.log(props)
+  return props.theme.bmMenu
+}};
 }
 
-#darkLight {
-  background-color: ${(props) => props.theme.fontColor}
+#dark-light {
+  background-color: ${(props) => props.theme.nav};
+  transition: 0.3s;
   }
+
+#discover-btn, #watch-party, #library, #chatroom, #invite {
+  transition: 0.5s;
+  box-shadow: background-color: ${(props) => props.theme.boxShadow};
+  color: ${(props) => props.theme.discoverBtn};
+  background-color: ${(props) => props.theme.watchParty};
+  
+}
 
 `
 
@@ -75,14 +98,13 @@ export default function Burger(props) {
   const showSettings = (event) => {
     event.preventDefault()
   }
-
   return (
     <Menu>
-        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
-        <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
-        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">Chatroom</NavLink>
-        <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
+        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>discover</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>watch party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/library" id="library">library</NavLink>
+        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">chatroom</NavLink>
+        <NavLink exact activeClassName="main-links" to="/invite" id="invite">invite</NavLink>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
       

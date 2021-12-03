@@ -14,6 +14,8 @@ import {BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom
 import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
 import styled, { css } from "styled-components";
+import MTable from './components/Library/LibTable';
+import MaterialTable from "material-table";
 
 
 const StyledApp = styled.div`
@@ -92,6 +94,7 @@ function App() {
   return (
     <>
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+
       <StyledApp className="styleme">
       <GlobalStyles />
 
@@ -120,6 +123,7 @@ function App() {
           {/* </Routes>
           </Router> */}
         </StyledApp>
+        <MaterialTable />
       </ThemeProvider>
     </>
   )
