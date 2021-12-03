@@ -75,7 +75,7 @@ export default function Burger(props) {
   const showSettings = (event) => {
     event.preventDefault()
   }
-  
+
   return (
     <Menu>
         <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
@@ -92,5 +92,3 @@ export default function Burger(props) {
         <button id='invite' className='invite-link' >Invite</button> */}
     </Menu>
 )
-}
-
