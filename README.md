@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# <Viewnify>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## License
 
-## Available Scripts
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+ Viewnify is a movie matching, watch party app that allows you and your friends to swipe, like and dislike movies. Your choices are then matched to other friends, allowing you to create a watch party to enjoy movies that both of you want to watch.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ ## Table of Contents
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [Credits](#credits)
+ - [Questions](#questions)
 
-### `npm test`
+ ## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ## Usage
+ 
+ Create an account, select the movie genres you want to watch and streaming platforms you want to use, then start swiping.
+ The movies that you like can then be compared and matched to the movies your friends liked, creating a list of movies that you've both liked.
+ 
+ 
+ example of how to do a screenshot:
+ ![alt text](assets/images/screenshot.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ ## Credits
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ Project Manager - Jared Hector
+ Front End Developer - Ryan Allen
+ Front End Developer - Don Cathcart
+ Backend Developer - Ken Felix
+ Backend Developer - David Abbey
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ ## How to Contribute
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ Venmo Jared lots of money
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ ## Links
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - https://opensource.org/licenses/MIT
+  - https://viewnify.com
 
-## Learn More
+ 
+ ## Questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ If you have any further questions, message me on:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - GitHub: [jwhector](https://github.com/jwhector)
+  - Email: 
+ 
+ 
