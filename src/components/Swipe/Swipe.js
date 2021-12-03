@@ -201,6 +201,9 @@ export default function Swipe(props) {
           </div>
           <div className="content-description">
               <img className="content-background" src={props.media[bIdx]?.backdrop} />
+              <div className="media-a-info">
+
+              </div>
           </div>
         </div>
         <div

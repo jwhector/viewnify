@@ -100,11 +100,12 @@ export default function Burger(props) {
   }
   return (
     <Menu>
-        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>watch party</NavLink>
-        <NavLink exact activeClassName="main-links" to="/library" id="library">library</NavLink>
-        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">chatroom</NavLink>
-        <NavLink exact activeClassName="main-links" to="/invite" id="invite">invite</NavLink>
+        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
+        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">Chatroom</NavLink>
+        <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
+        <div className="main-links" id="preferences" >Preferences</div>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
       
