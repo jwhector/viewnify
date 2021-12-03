@@ -83,6 +83,7 @@ export default function Burger(props) {
         <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
         <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">Chatroom</NavLink>
         <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
+        <div className="main-links" id="preferences" >Preferences</div>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
       
