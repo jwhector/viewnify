@@ -86,8 +86,7 @@ function App() {
       <StyledApp class="styleme">
       <GlobalStyles />
 
-      <NavBar showLogin={false} />
-        <button id="dark-light"onClick={() => themeToggler()}>Change Theme</button>
+      <NavBar showLogin={false} themeToggler={themeToggler}/>
       <Router>
         <Routes>
 

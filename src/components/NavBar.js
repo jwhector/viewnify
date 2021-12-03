@@ -13,6 +13,7 @@ export default function NavBar(props) {
         setModalOpen(false);
     }
 
+    
     return (
         <div id="nav">
             <h1 className="text-logo"><span className="vertical-ctr">view<span className="bold">nify</span></span></h1>
@@ -22,6 +23,8 @@ export default function NavBar(props) {
                     <button onClick={setLogin} id="login-btn" className="styled-btn title-txt">Log In</button>
                     <LoginModal setToken={props.setToken} modalOpen={modalOpen} closeModal={closeModal} isLogin={true}  />
                 </> : <></>}
+                <button id="dark-light"onClick={() => props.themeToggler()}>☼
+                </button>
         </div>
     );
 }
