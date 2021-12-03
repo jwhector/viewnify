@@ -15,6 +15,7 @@ import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
 import styled, { css } from "styled-components";
 import MTable from './components/Library/LibTable';
+import MaterialTable from "material-table";
 
 
 const StyledApp = styled.div`
@@ -122,6 +123,7 @@ function App() {
           {/* </Routes>
           </Router> */}
         </StyledApp>
+        <MaterialTable />
       </ThemeProvider>
     </>
   )

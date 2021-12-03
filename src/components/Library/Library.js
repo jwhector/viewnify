@@ -6,7 +6,7 @@ function Library() {
 
 return (
     <>
-    <LibTable />
+    <LibTable className="library-table-body"/>
     <div class="library-content">
     </div>
     </>
