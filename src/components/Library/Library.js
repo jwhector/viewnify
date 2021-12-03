@@ -1,11 +1,13 @@
-import React from 'react'
+import MaterialTable from 'material-table';
+import React from 'react';
+import LibTable from './LibTable';
 
 function Library() {
 
 return (
     <>
-    <div>
-        <h1>Library Page</h1>
+    <LibTable />
+    <div class="library-content">
     </div>
     </>
 )

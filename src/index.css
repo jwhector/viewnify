@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #ededed 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #683fff80;
+  box-shadow: 0px 2px 4px #683fff80;
   opacity: 1;
   height: 72px;
   position: relative;
@@ -150,22 +150,22 @@ body {
   border-spacing: 50px;
   margin: 1rem;
   font-family: Quicksand;
-  color: #ffffff;
+  color: #00000080;
   flex-direction: row;
   border: 1px #683fff;
   transition: 0.2s;
   width: 85%;
   top: 416px;
+  margin-top: 61px;
   left: 196px;
   height: 59px;
-  background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
-    0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000080;
+  background: #FFFFFF;
+  box-shadow: 0.2px 2px 1px 0.3px #b3b3b3;
   border-radius: 32px;
-  opacity: 1;
+  opacity: 1 !important;
   text-decoration: none;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   display: flex !important;
 }
 
@@ -606,6 +606,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  z-index: 2 !important;
+
 }
 
 /* General sidebar styles */
@@ -614,6 +616,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
   overflow: hidden;
+  /* z-index: 2 !important; */
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -636,6 +639,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+  z-index: 2 !important;
 }
 
 .watch-header {
@@ -707,4 +711,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* overflow: hidden; */
   justify-content: space-between;
   display: inline-block;
+}
+
+.library-content h1 {
+  color: white;
 }
