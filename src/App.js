@@ -32,6 +32,7 @@ function App() {
   const [genres, setGenres] = useState('');
   const [providers, setProviders] = useState('');
   const [user, setUser] = useState();
+  const [complementary, setComplementary] = useState('#ffffff');
 
   useEffect(() => {
     if (token) {
@@ -91,29 +92,28 @@ function App() {
   return (
     <>
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <StyledApp class="styleme">
-      <GlobalStyles />
+      <StyledApp className="styleme">
+        <GlobalStyles />
 
-      <NavBar showLogin={false} />
-        <button id="dark-light"onClick={() => themeToggler()}>Change Theme</button>
-      <Router>
-        <Routes>
+        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} />
+        <Router>
+          <Routes>
 
-        <Route path="/" element={<Home page="discover" user={user} token={token} />} />
-        <Route path="/discover" element={<Home page="discover" user={user}  token={token} />} />
-        <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} />} />
-        <Route path="/library" element={<Home page="library" user={user}  token={token} />} />
-        <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} />} />
-        <Route path="/invite" element={<Home page="invite" user={user} token={token} />} />
-        {/* <Route path="/watchparty" exact component={WatchParty} />
-        <Route path="library" exact component={Library} />
-        <Route path="chatroom" exact component={Chatroom} />
-      <Route path="invite" exact component={Invite} /> */}
-        
-        </Routes>
+          <Route path="/" element={<Home page="discover" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} />
+          <Route path="/discover" element={<Home page="discover" user={user}  token={token} complementary={complementary} setComplementary={setComplementary} />} />
+          <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} setComplementary={setComplementary} />} />
+          <Route path="/library" element={<Home page="library" user={user}  token={token} setComplementary={setComplementary} />} />
+          <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} setComplementary={setComplementary} />} />
+          <Route path="/invite" element={<Home page="invite" user={user} token={token} />} setComplementary={setComplementary} />
+          {/* <Route path="/watchparty" exact component={WatchParty} />
+          <Route path="library" exact component={Library} />
+          <Route path="chatroom" exact component={Chatroom} />
+        <Route path="invite" exact component={Invite} /> */}
+          
+          </Routes>
 
-      </Router>
-      </StyledApp>
+          </Router>
+        </StyledApp>
       </ThemeProvider>
     </>
   )
