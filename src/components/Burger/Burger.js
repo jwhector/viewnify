@@ -4,10 +4,14 @@ import { render } from '@testing-library/react';
 import {NavLink} from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { cgSun } from "react-icons/cg";
+import { HiMoon } from "react-icons/hi"
+
+
 
 export const lightTheme = {
   body: 'white',
-  fontColor: 'white',
+  fontColor: 'black',
   background: 'white',
   root: 'white',
   homer: 'white',
@@ -16,12 +20,15 @@ export const lightTheme = {
   playPause: '#ededed',
   bmMenu: '#FFFFF',
   darkLight: 'white',
+  MuiPaperRoot: "white",
+  darkLightFont: '#ad33ff',
+  darkLightText: '☽'
 
 }
 // #EDEDED for text
 export const darkTheme = {
   body: '#181818',
-  fontColor: "black",
+  fontColor: "white",
   background: "#181818",
   root: '#181818',
   homer: '#181818',
@@ -31,8 +38,11 @@ export const darkTheme = {
   bmMenu: '#181818',
   darkLight: '#181818',
   discoverBtn: "#ededed",
-  watchParty: "#222222",
+  watchParty: "#181818",
   boxShadow: "white",
+  MuiPaperRoot: "#181818",
+  darkLightFont: '#d32dff',
+  darkLightText: '☼'
 
 };
 
@@ -82,14 +92,32 @@ background: ${(props) => {
 #dark-light {
   background-color: ${(props) => props.theme.nav};
   transition: 0.3s;
+  color: ${(props) => props.theme.darkLightFont};
+  text: ${(props) => props.theme.darkLightText};
+  transition: 0.3s;
   }
 
-#discover-btn, #watch-party, #library, #chatroom, #invite {
-  transition: 0.5s;
-  box-shadow: background-color: ${(props) => props.theme.boxShadow};
+#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, .watch-header, .create-party, .discover, .watch-content {
+  transition: 0.3s;
+  box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
   background-color: ${(props) => props.theme.watchParty};
   
+}
+
+ .MuiToolbar-root, .MTableHeader-header-13, .MuiTableCell-head, .MuiTableFooter-root, .MTablePaginationInner-root-14   {
+  color: ${(props) => props.theme.fontColor} !important;
+  background-color: ${(props) => props.theme.MuiPaperRoot} !important;
+}
+
+
+.MuiSelect-root, .MuiSvgIcon-root, .MuiButtonBase-root, .MuiTable-root, .MuiInputBase-root, .MuiInputAdornment-root, .MuiIcon-root   {
+  color: ${(props) => props.theme.fontColor} !important;
+  background-color: ${(props) => props.theme.MuiPaperRoot} !important;
+}
+
+.shadowed {
+  color: ${(props) => props.theme.fontColor} !important;
 }
 
 `
