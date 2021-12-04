@@ -81,7 +81,7 @@ const LibTable = () => {
       <MaterialTable
         columns={columns}
         data={data}
-        title="Your Favorite Entertainment"
+        title="{user} Library"
       />
     </div>
   );
