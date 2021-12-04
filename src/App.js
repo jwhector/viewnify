@@ -61,7 +61,7 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:3005/api/users', {
+      fetch('http://localhost:3005/api/users/verify', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer: ${token}`
@@ -128,7 +128,7 @@ function App() {
           {/* </Routes>
           </Router> */}
         </StyledApp>
-        <MaterialTable />
+        {/* <MaterialTable /> */}
       </ThemeProvider>
     </>
   )

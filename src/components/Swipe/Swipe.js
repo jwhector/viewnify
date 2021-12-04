@@ -27,9 +27,8 @@ export default function Swipe(props) {
   const [bIdx, setBIdx] = useState(props.curIdx + 1);
   const [draggable, setDraggable] = useState(true);
   const cardContainerRef = useRef(null);
-  const cardARef = useRef(null);
-  const cardBRef = useRef(null);
 
+    
   useEffect(() => {
     if (cardContainerRef.current) {
       const allCards = cardContainerRef.current.querySelectorAll(".media-main");
@@ -40,9 +39,15 @@ export default function Swipe(props) {
     }
   });
 
-  // useEffect(() => {
+  useEffect(() => {
+    console.log(props.media.length);
+    if (props.curIdx > props.media.length - 2 && props.media.length > 0) {
+        props.setCurPage(props.curPage + 1);
+    }
+  }, [props.curIdx]);
 
-  // }, [props.curIdx]);
+//   if (!props.media.length) return null;
+
 
   const saveLike = () => {
     fetchChoice("likes", props.media[props.curIdx], props.token).then(
@@ -62,21 +67,8 @@ export default function Swipe(props) {
     );
   };
 
-//   const initCards = (tinderContainer, card, index) => {
-//     var newCards = document.querySelectorAll(".media-main:not(.removed)");
-
-//     //   newCards.forEach(function (card, index) {
-//     //     card.style.zIndex = allCards.length - index;
-//     //     card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
-//     //     card.style.opacity = (10 - index) / 10;
-//     //   });
-
-//     tinderContainer.classList.add("loaded");
-//   };
 
   const addSwipe = (tinderContainer, allCards) => {
-    // initCards(tinderContainer);
-
     const hammers = [];
 
     allCards.forEach(function (el) {
@@ -87,10 +79,11 @@ export default function Swipe(props) {
         const descEl = el.querySelector('.content-description');
 
       hammertime.on('tap', function (e) {
-        if (e.target.classList.contains('card-prev')) {
+        const isLeftClick = getCursorPosition(el, e);
+        if (isLeftClick) {
             imgEl.classList.remove('hidden');
             descEl.classList.add('hidden');
-        } else if (e.target.classList.contains('card-next')) {
+        } else {
             imgEl.classList.add('hidden');
             descEl.classList.remove('hidden');
         }
@@ -104,10 +97,6 @@ export default function Swipe(props) {
         if (event.deltaX === 0) return;
         if (event.center.x === 0 && event.center.y === 0) return;
         if (!draggable) return;
-        // if (el.classList.contains('removed')) return;
-
-        // tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
-        // tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
 
         var xMulti = event.deltaX * 0.03;
         var yMulti = (event.deltaY + 100) / 80;
@@ -125,8 +114,6 @@ export default function Swipe(props) {
 
       hammertime.on("panend", function (event) {
         el.classList.remove("moving");
-        // tinderContainer.classList.remove('tinder_love');
-        // tinderContainer.classList.remove('tinder_nope');
 
         var moveOutWidth = document.body.clientWidth;
         var keep =
@@ -152,13 +139,8 @@ export default function Swipe(props) {
             saveDislike();
           }
 
-          //   tinderContainer.
-
-          // el.classList.toggle('removed', !keep);
-          // hammertime.off('');
           setDraggable(false);
           el.style.transform ="translate(" +toX +"px, " +(toY + event.deltaY) +"px) rotate(" +rotate +"deg)";
-        //   initCards(tinderContainer);
           let nextCard;
           if (el.classList.contains("media-A")) {
             nextCard = tinderContainer.querySelector(".media-B");
@@ -171,12 +153,27 @@ export default function Swipe(props) {
           el.classList.toggle("front");
           imgEl.classList.remove('hidden');
             descEl.classList.add('hidden');
+            props.setIsFirstInFocus(!props.isFirstInFocus);
           returnCard(el);
         }
       });
     });
     return hammers;
   };
+
+  function getCursorPosition(el, event) {
+    const rect = el.getBoundingClientRect()
+    const x = event.center.x - rect.left
+    const y = event.center.y - rect.top
+    // console.log("x: " + x + " y: " + y)
+    if (x < rect.width / 2) {
+        // console.log('LEFT CLICK');
+        return true;
+    } else {
+        // console.log('RIGHT CLICK');
+        return false;
+    }
+}
 
   const returnCard = (el) => {
     waitForElementTransition(el).then(() => {
@@ -226,17 +223,19 @@ export default function Swipe(props) {
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
             onClick={handleClick}
         >
-            <div className="card-prev" onClick={handleClickLeft} />
-            <div className="card-next" onClick={handleClickRight} />
+            {/* <div className="card-prev" onClick={handleClickLeft} />
+            <div className="card-next" onClick={handleClickRight} /> */}
             <div className="content-gradient-overlay" />
           <div className="content-img">
             <img className="cur-content-img" src={props.images[bIdx]} />
           </div>
           <div className="content-description hidden">
               <img className="content-background" src={props.media[bIdx]?.backdrop} />
+              <div className="content-title">
               <h2>{props.media[bIdx]?.title}</h2>
-              <div className="media-a-info">
-                {props.media[bIdx]?.overview}
+              </div>
+              <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
+                <p>{props.media[bIdx]?.overview}</p>
               </div>
           </div>
             <div className="bottom-border"></div>
@@ -245,17 +244,19 @@ export default function Swipe(props) {
           className="media-main media-A front"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
         >
-            <div className="card-prev" onClick={handleClickLeft} />
-            <div className="card-next" onClick={handleClickRight} />
+            {/* <div className="card-prev" onClick={handleClickLeft} />
+            <div className="card-next" onClick={handleClickRight} /> */}
             <div className="content-gradient-overlay" />
           <div className="content-img ">
             <img className="cur-content-img" src={props.images[aIdx]} />
           </div>
           <div className="content-description hidden">
               <img className="content-background" src={props.media[aIdx]?.backdrop} />
-              <h2>{props.media[aIdx]?.title}</h2>
-              <div className="media-a-info">
-                {props.media[aIdx]?.overview}
+              <div className="content-title">
+                <h2>{props.media[aIdx]?.title}</h2>
+            </div>
+              <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
+                <p>{props.media[aIdx]?.overview}</p>
               </div>
           </div>
           <div className="bottom-border" />
