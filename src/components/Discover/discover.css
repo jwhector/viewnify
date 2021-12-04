@@ -1,6 +1,6 @@
-#content-img img {
+.content-img img {
     /* width: 100%; <--------------- ENABLE FOR MOBILE */
-    width: 500px;
+    /* width: 500px; */
 }
 
 #discover{
@@ -83,6 +83,7 @@
     width: 100%;
     position: absolute;
     top: 0;
+    transition: .3s;
 }
 
 /* #play-btn {
