@@ -74,7 +74,7 @@ body {
   /* opacity: 0; */
   color: rgba(0, 0, 0, 0);
   margin-left: auto;
-  text-shadow: 1px 2px 2px darkgray;
+  text-shadow: 1px 1.5px 1.5px rgb(187, 180, 180);
   z-index: 1;
 }
 
@@ -162,13 +162,17 @@ body {
   left: 196px;
   height: 59px;
   background: #FFFFFF;
-  box-shadow: 0.2px 2px 1px 0.3px #b3b3b3;
+  box-shadow: 0.2px 1.7px 1px 0.2px #f70bc1;
   border-radius: 32px;
   opacity: 1 !important;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
   display: flex !important;
+}
+
+ a.main-links:hover {
+  color: purple;
 }
 
 #dark-light {
@@ -194,7 +198,7 @@ body {
     background-image: url('./components/transparent.png');
     background-size:contain; background-repeat:no-repeat;
     object-fit: cover;
-  box-shadow: 2px 2px 1px 0.7px #f70bc1;
+  box-shadow: 2px 2px 1px 0.7px #a535ff;
   border-radius: 32px;
   opacity: 1;
   text-decoration: none;
@@ -713,41 +717,35 @@ Note: Beware of modifying this element as it can break the animations - you shou
   z-index: 2 !important;
 }
 
-.watch-header {
-  background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
-    0% no-repeat padding-box;
-  border: solid;
-  display: flex;
-  /* display: block; */
-  width: 15%;
-  max-width: 100px;
-  height: 0.2rem;
-  margin: 2rem;
-  padding: 20px;
-  color: white;
-  justify-content: center;
-  align-items: center;
+.watch-header, .create-party, .discover, .watch-content {
+  /* background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
+    0% no-repeat padding-box; */
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    border-spacing: 50px;
+    margin: 1rem;
+    font-family: Quicksand;
+    color: #00000080;
+    flex-direction: row;
+    border: 1px #683fff;
+    transition: 0.2s;
+    width: 55%;
+    max-width: 175px;
+    top: 416px;
+    margin-top: 61px;
+    left: 196px;
+    height: 59px;
+    background: #FFFFFF;
+    box-shadow: 0.25px 0.2px 1px 1px #f70bc1;
+    border-radius: 32px;
+    opacity: 1 !important;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    display: flex !important;
 }
 
-.watch-content,
-.discover,
-.create-party {
-  background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
-    0% no-repeat padding-box;
-  border: solid;
-  display: flex;
-  /* display: block; */
-  margin: 2rem;
-  padding: 20px;
-  width: 15%;
-  max-width: 100px;
-  height: 0.2rem;
-  color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display:inline-flex
-}
 
 .user-watch,
 .match-watch {
@@ -786,6 +784,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .library-content h1 {
   color: white;
 }
+
 
 .card-prev {
   height: 100%;
@@ -852,4 +851,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
     .content-gradient-overlay, .card-prev, .card-next {
       height: 900px;
     }
+
+ .MuiPaper-root, .MuiToolbar-root, .MuiTypography-body2 {
+  box-shadow:0px 1px 1px 3px rgba(226, 43, 255, 1) !important;
+  font-family: Quicksand !important;
+}
+
+.MuiInputBase-root, .MuiTable-root, .MTablePaginationInner-root-14, .MuiTypography-h6, .MuiTableRow-root, .MuiButtonBase-root {
+  font-family: Quicksand !important;
+}
+
+/* .MuiInputAdornment-root {
+  max-height: 2rem !important;
+  height: 250px important!;
+} */
+
+.MTableHeader-header-13 {
+  z-index: 0 !important;
+
 }

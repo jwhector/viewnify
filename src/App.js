@@ -16,6 +16,10 @@ import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
 import styled, { css } from "styled-components";
 import MTable from './components/Library/LibTable';
 import MaterialTable from "material-table";
+import axios from 'axios';
+import { cgSun } from "react-icons/cg";
+import { HiMoon } from "react-icons/hi"
+
 
 
 const StyledApp = styled.div`
@@ -30,6 +34,7 @@ function App() {
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   }
+
   const { token, setToken } = useToken();
   const [genres, setGenres] = useState('');
   const [providers, setProviders] = useState('');
@@ -102,7 +107,7 @@ function App() {
       <Router>
         <Routes> */}
 
-        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler} />
+        <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler}  />
         <Router>
           <Routes>
 
