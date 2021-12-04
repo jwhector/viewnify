@@ -17,6 +17,7 @@ export const lightTheme = {
   bmMenu: '#FFFFF',
   darkLight: 'white',
   MuiPaperRoot: "white",
+  darkLightFont: '#703dff',
 
 }
 // #EDEDED for text
@@ -35,6 +36,7 @@ export const darkTheme = {
   watchParty: "#222222",
   boxShadow: "white",
   MuiPaperRoot: "#181818",
+  darkLightFont: '#f70bc1',
 
 };
 
@@ -84,10 +86,12 @@ background: ${(props) => {
 #dark-light {
   background-color: ${(props) => props.theme.nav};
   transition: 0.3s;
+  color: ${(props) => props.theme.darkLightFont};
+  transition: 0.3s;
   }
 
 #discover-btn, #watch-party, #library, #chatroom, #invite {
-  transition: 0.5s;
+  transition: 0.3s;
   box-shadow: background-color: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
   background-color: ${(props) => props.theme.watchParty};
@@ -103,6 +107,10 @@ background: ${(props) => {
 .MuiSelect-root, .MuiSvgIcon-root, .MuiButtonBase-root, .MuiTable-root, .MuiInputBase-root, .MuiInputAdornment-root, .MuiIcon-root   {
   color: ${(props) => props.theme.fontColor} !important;
   background-color: ${(props) => props.theme.MuiPaperRoot} !important;
+}
+
+.shadowed {
+  color: ${(props) => props.theme.fontColor} !important;
 }
 
 `
