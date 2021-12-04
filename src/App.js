@@ -51,6 +51,8 @@ const StyledApp = styled.div`
   color: ${(props) => props.theme.background};
 `;
 
+const UserContext = React.createContext(undefined);
+
 // async function login()
 
 function App() {
@@ -61,35 +63,33 @@ function App() {
   };
 
   const { token, setToken } = useToken();
-  const [genres, setGenres] = useState("");
-  const [providers, setProviders] = useState("");
-  const [user, setUser] = useState();
-  const [complementary, setComplementary] = useState("#ffffff");
+  const [genres, setGenres] = useState('');
+  const [providers, setProviders] = useState('');
+  const [user, setUser] = useState({});
+  const [complementary, setComplementary] = useState('#ffffff');
 
   useEffect(() => {
     if (token) {
       fetch("http://localhost:3005/api/users", {
         method: "GET",
         headers: {
-          Authorization: `Bearer: ${token}`,
-        },
-      })
-        .then(async (res) => {
-          if (res.ok) {
-            const data = await res.json();
-            console.log(data);
-            delete data.password;
-            setUser(data);
-          }
-        })
-        .catch((err) => console.log(err));
+            'Authorization': `Bearer: ${token}`
+        }
+      }).then(async res => {
+        if (res.ok) {
+          const data = await res.json();
+          // console.log(data);
+          delete data.password;
+          setUser(data);
+        }
+      }).catch(err => console.log(err));
     }
   }, [token]);
 
   useEffect(() => {
     if (token) {
-      fetch("http://localhost:3005/api/users", {
-        method: "GET",
+      fetch('http://localhost:3005/api/users/verify', {
+        method: 'GET',
         headers: {
           Authorization: `Bearer: ${token}`,
         },
@@ -128,102 +128,35 @@ function App() {
   }
 
   return (
-    <>
+    <UserContext.Provider value={user}>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+
         <StyledApp className="styleme">
-          <GlobalStyles />
+        <GlobalStyles />
 
-          {/* <NavBar showLogin={false} themeToggler={themeToggler}/>
-      <Router>
-    <Routes> */}
+        {/* <NavBar showLogin={false} themeToggler={themeToggler}/>
+        <Router>
+          <Routes> */}
 
-          <NavBar
-            showLogin={false}
-            complementary={complementary}
-            setComplementary={setComplementary}
-            themeToggler={themeToggler}
-          />
-          {/* <LibraryContainer>
-            <Movies />
-            <Title>Entertainment Center</Title>
-          </LibraryContainer> */}
+          <NavBar showLogin={false} complementary={complementary} setComplementary={setComplementary} themeToggler={themeToggler}  />
           <Router>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Home
-                    page="discover"
-                    user={user}
-                    token={token}
-                    complementary={complementary}
-                    setComplementary={setComplementary}
-                  />
-                }
-              />
-              <Route
-                path="/discover"
-                element={
-                  <Home
-                    page="discover"
-                    user={user}
-                    token={token}
-                    complementary={complementary}
-                    setComplementary={setComplementary}
-                  />
-                }
-              />
-              <Route
-                path="/watchparty"
-                element={
-                  <Home
-                    page="watchparty"
-                    user={user}
-                    token={token}
-                    setComplementary={setComplementary}
-                  />
-                }
-              />
-              <Route
-                path="/library"
-                element={
-                  <Home
-                    page="library"
-                    user={user}
-                    token={token}
-                    setComplementary={setComplementary}
-                  />
-                }
-              />
-              <Route
-                path="/chatroom"
-                element={
-                  <Home
-                    page="chatroom"
-                    user={user}
-                    token={token}
-                    setComplementary={setComplementary}
-                  />
-                }
-              />
-              <Route
-                path="/invite"
-                element={<Home page="invite" user={user} token={token} />}
-                setComplementary={setComplementary}
-              />
-              {/* <Route path="/watchparty" exact component={WatchParty} />
-          <Route path="library" exact component={Library} />
-          <Route path="chatroom" exact component={Chatroom} />
-        <Route path="invite" exact component={Invite} /> */}
+
+            <Route path="/" element={<Home page="discover" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} />
+            <Route path="/discover" element={<Home page="discover" user={user}  token={token} complementary={complementary} setComplementary={setComplementary} />} />
+            <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} setComplementary={setComplementary} />} />
+            <Route path="/library" element={<Home page="library" user={user}  token={token} setComplementary={setComplementary} />} />
+            <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} setComplementary={setComplementary} />} />
+            <Route path="/invite" element={<Home page="invite" user={user} token={token} />} setComplementary={setComplementary} />
+            
             </Routes>
-          </Router>
-          {/* </Routes>
-          </Router> */}
-        </StyledApp>
-        <MaterialTable />
-      </ThemeProvider>
-    </>
-  );
+
+            </Router>
+          </StyledApp>
+        </ThemeProvider>
+    </UserContext.Provider>
+  )
 }
 
 export default App;
+export { UserContext };

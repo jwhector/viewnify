@@ -49,19 +49,19 @@ export default function Home(props) {
       props.setComplementary('#683fff80');
     }
     if(props.page==="discover") {
-      return <Discover user={props.user} token={props.token} complementary={props.complementary} setComplementary={props.setComplementary} />;
+      return <Discover token={props.token} complementary={props.complementary} setComplementary={props.setComplementary} />;
     }
     if(props.page==="watchparty") {
-      return <WatchParty user={props.user} token={props.token} />;
+      return <WatchParty token={props.token} />;
     }
     if(props.page==="library") {
-      return <Library user={props.user} token={props.token} />;
+      return <Library token={props.token} />;
     }
     if(props.page==="chatroom") {
-      return <Chatroom user={props.user} token={props.token} />;
+      return <Chatroom token={props.token} />;
     }
     if(props.page==="invite") {
-      return <Invite user={props.user} token={props.token} />;
+      return <Invite token={props.token} />;
     }
   };
 
