@@ -28,6 +28,7 @@ export default function Swipe(props) {
   const [draggable, setDraggable] = useState(true);
   const cardContainerRef = useRef(null);
 
+  // console.log(props.media);
     
   useEffect(() => {
     if (cardContainerRef.current) {
@@ -222,6 +223,10 @@ export default function Swipe(props) {
               <h2>{props.media[bIdx]?.title}</h2>
               </div>
               <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
+                <div className='release-rating'>
+                  <p className='release-date'>Release Date: {props.media[bIdx]?.release_date}</p>
+                  <p className='rating'>Rating: {props.media[bIdx]?.rating}</p>
+                </div>
                 <p>{props.media[bIdx]?.overview}</p>
               </div>
           </div>
@@ -243,6 +248,10 @@ export default function Swipe(props) {
                 <h2>{props.media[aIdx]?.title}</h2>
             </div>
               <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
+                <div className='release-rating'>
+                  <p className='release-date'>Release Date: {props.media[aIdx]?.release_date}</p>
+                  <p className='rating'>Rating: {props.media[aIdx]?.rating}</p>
+                </div>
                 <p>{props.media[aIdx]?.overview}</p>
               </div>
           </div>
