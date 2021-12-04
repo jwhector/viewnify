@@ -23,6 +23,7 @@ export const lightTheme = {
   MuiPaperRoot: "white",
   darkLightFont: '#ad33ff',
   darkLightText: '☽',
+  bottomBorder: 'linear-gradient (0deg, white 0%, transparent 20%)'
 
 }
 // #EDEDED for text
@@ -43,7 +44,8 @@ export const darkTheme = {
   MuiPaperRoot: "#0E0E0E",
   darkLightFont: '#d32dff',
   darkLightText: '☼',
-  shadowColor: "1px 1.2px 1.2px #7f7f7f"
+  shadowColor: "1px 1.2px 1.2px #7f7f7f",
+  bottomBorder: 'black'
 
 };
 
@@ -120,6 +122,8 @@ background: ${(props) => {
 .shadowed {
   text-shadow: ${(props) => props.theme.shadowColor} !important;
 }
+
+
 
 `
 

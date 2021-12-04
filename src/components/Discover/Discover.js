@@ -95,7 +95,7 @@ export default function Discover(props) {
       <div
         className="int-container"
         style={{
-          background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`,
+          background: `radial-gradient(circle, ${bgColor} 50%, #000000 100%)`,
         }}
       >
         <Swipe media={media} images={images} curIdx={curIdx} setCurIdx={setCurIdx} complementary={props.complementary} token={props.token} />
