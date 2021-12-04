@@ -270,10 +270,6 @@ element.style {
   border-radius: 5px;
 }
 
-.pause-btn:hover {
-  color: white;
-}
-
 
 .play-pause {
   justify-content: center;
