@@ -220,7 +220,7 @@ element.style {
   /* margin-right: 5px; */
   /* color: #707070; */
   flex-direction: row;
-  display: flex;
+  display: none;
   border: 1px #683fff;
   /* box-shadow: 2px 2px 4px 0px #683fff; */
   transition: 0.2s;
@@ -400,6 +400,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    line-height: 0;
 }
 
 .card .watch-container {
@@ -717,7 +718,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .profile-circles {
   /* margin: 3rem; */
-  /* position: absolute; */
   /* overflow: hidden; */
   justify-content: space-between;
   display: inline-block;
@@ -725,4 +725,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .library-content h1 {
   color: white;
+}
+
+.card-prev {
+  height: 100%;
+  width: 50%;
+  margin-right: auto;
+  z-index: 7;
+  pointer-events: none;
+}
+
+.card-next {
+  height: 100%;
+  width: 50%;
+  z-index: 7;
+  pointer-events: none;
+}
+
+.content-description {
+  line-height: 1;
 }

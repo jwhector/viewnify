@@ -81,6 +81,10 @@ export default function Swipe(props) {
       var hammertime = new Hammer(el);
       hammers.push(hammertime);
 
+      hammertime.on('tap', function (event) {
+        
+      });
+
       hammertime.on("pan", function (event) {
         el.classList.add("moving");
       });
@@ -189,9 +193,15 @@ export default function Swipe(props) {
     });
   };
 
+  const logClick = () => {
+      console.log('CLICKED');
+  }
+
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
+        <div className="card-prev" onClick={logClick} />
+        <div className="card-next" onClick={logClick} />
         <div
           className="media-main media-B back"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
@@ -201,8 +211,9 @@ export default function Swipe(props) {
           </div>
           <div className="content-description">
               <img className="content-background" src={props.media[bIdx]?.backdrop} />
+              <h2>{props.media[bIdx]?.title}</h2>
               <div className="media-a-info">
-
+                {props.media[bIdx]?.overview}
               </div>
           </div>
         </div>
@@ -210,11 +221,15 @@ export default function Swipe(props) {
           className="media-main media-A front"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
         >
-          <div id="content-img">
+          <div id="content-img ">
             <img id="cur-content-img" src={props.images[aIdx]} />
           </div>
-          <div className="content-description">
+          <div className="content-description ">
               <img className="content-background" src={props.media[aIdx]?.backdrop} />
+              <h2>{props.media[aIdx]?.title}</h2>
+              <div className="media-a-info">
+                {props.media[aIdx]?.overview}
+              </div>
           </div>
         </div>
         {/* <div
