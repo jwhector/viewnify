@@ -201,6 +201,9 @@ export default function Swipe(props) {
           </div>
           <div className="content-description">
               <img className="content-background" src={props.media[bIdx]?.backdrop} />
+              <div className="media-a-info">
+
+              </div>
           </div>
         </div>
         <div
@@ -212,6 +215,22 @@ export default function Swipe(props) {
           </div>
           <div className="content-description">
               <img className="content-background" src={props.media[aIdx]?.backdrop} />
+          </div>
+        </div>
+        <div className='btn-container'>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
+          </div>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
           </div>
         </div>
         {/* <div

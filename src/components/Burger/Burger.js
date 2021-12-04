@@ -4,6 +4,10 @@ import { render } from '@testing-library/react';
 import {NavLink} from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { cgSun } from "react-icons/cg";
+import { HiMoon } from "react-icons/hi"
+
+
 
 export const lightTheme = {
   body: 'white',
@@ -17,7 +21,8 @@ export const lightTheme = {
   bmMenu: '#FFFFF',
   darkLight: 'white',
   MuiPaperRoot: "white",
-  darkLightFont: '#703dff',
+  darkLightFont: '#ad33ff',
+  darkLightText: '☽'
 
 }
 // #EDEDED for text
@@ -33,10 +38,11 @@ export const darkTheme = {
   bmMenu: '#181818',
   darkLight: '#181818',
   discoverBtn: "#ededed",
-  watchParty: "#222222",
+  watchParty: "#181818",
   boxShadow: "white",
   MuiPaperRoot: "#181818",
-  darkLightFont: '#f70bc1',
+  darkLightFont: '#d32dff',
+  darkLightText: '☼'
 
 };
 
@@ -87,12 +93,13 @@ background: ${(props) => {
   background-color: ${(props) => props.theme.nav};
   transition: 0.3s;
   color: ${(props) => props.theme.darkLightFont};
+  text: ${(props) => props.theme.darkLightText};
   transition: 0.3s;
   }
 
-#discover-btn, #watch-party, #library, #chatroom, #invite {
+#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, .watch-header, .create-party, .discover, .watch-content {
   transition: 0.3s;
-  box-shadow: background-color: ${(props) => props.theme.boxShadow};
+  box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
   background-color: ${(props) => props.theme.watchParty};
   
@@ -121,11 +128,12 @@ export default function Burger(props) {
   }
   return (
     <Menu>
-        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>watch party</NavLink>
-        <NavLink exact activeClassName="main-links" to="/library" id="library">library</NavLink>
-        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">chatroom</NavLink>
-        <NavLink exact activeClassName="main-links" to="/invite" id="invite">invite</NavLink>
+        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
+        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">Chatroom</NavLink>
+        <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
+        <div className="main-links" id="preferences" >Preferences</div>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
       

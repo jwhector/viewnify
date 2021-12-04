@@ -1,14 +1,16 @@
 import MaterialTable from 'material-table';
 import React from 'react';
 import LibTable from './LibTable';
+import APIData, { LibraryData } from "./APIData"
 
 function Library() {
 
 return (
     <>
     <LibTable className="library-table-body"/>
-    <div class="library-content">
-    </div>
+    <div className="library-content"></div>
+    {/* <LibraryData /> */}
+
     </>
 )
 }
