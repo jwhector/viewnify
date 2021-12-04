@@ -27,6 +27,8 @@ export default function Swipe(props) {
   const [bIdx, setBIdx] = useState(props.curIdx + 1);
   const [draggable, setDraggable] = useState(true);
   const cardContainerRef = useRef(null);
+  const cardARef = useRef(null);
+  const cardBRef = useRef(null);
 
   useEffect(() => {
     if (cardContainerRef.current) {
@@ -81,8 +83,17 @@ export default function Swipe(props) {
       var hammertime = new Hammer(el);
       hammers.push(hammertime);
 
-      hammertime.on('tap', function (event) {
-        
+      const imgEl = el.querySelector('.content-img');
+        const descEl = el.querySelector('.content-description');
+
+      hammertime.on('tap', function (e) {
+        if (e.target.classList.contains('card-prev')) {
+            imgEl.classList.remove('hidden');
+            descEl.classList.add('hidden');
+        } else if (e.target.classList.contains('card-next')) {
+            imgEl.classList.add('hidden');
+            descEl.classList.remove('hidden');
+        }
       });
 
       hammertime.on("pan", function (event) {
@@ -158,6 +169,8 @@ export default function Swipe(props) {
           nextCard.classList.toggle("front");
           el.classList.toggle("back");
           el.classList.toggle("front");
+          imgEl.classList.remove('hidden');
+            descEl.classList.add('hidden');
           returnCard(el);
         }
       });
@@ -189,47 +202,78 @@ export default function Swipe(props) {
 
   const removeSwipe = (hammers) => {
     hammers.forEach((hammertime) => {
-      hammertime.off("pan panend");
+      hammertime.off("pan panend tap");
     });
   };
 
-  const logClick = () => {
-      console.log('CLICKED');
+  const handleClickLeft = (e) => {
+      
+  }
+
+  const handleClickRight = (e) => {
+
+  }
+
+  const handleClick = (e) => {
+    
   }
 
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
-        <div className="card-prev" onClick={logClick} />
-        <div className="card-next" onClick={logClick} />
         <div
           className="media-main media-B back"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
+            onClick={handleClick}
         >
-          <div id="content-img">
-            <img id="cur-content-img" src={props.images[bIdx]} />
+            <div className="card-prev" onClick={handleClickLeft} />
+            <div className="card-next" onClick={handleClickRight} />
+            <div className="content-gradient-overlay" />
+          <div className="content-img">
+            <img className="cur-content-img" src={props.images[bIdx]} />
           </div>
-          <div className="content-description">
+          <div className="content-description hidden">
               <img className="content-background" src={props.media[bIdx]?.backdrop} />
               <h2>{props.media[bIdx]?.title}</h2>
               <div className="media-a-info">
                 {props.media[bIdx]?.overview}
               </div>
           </div>
+            <div className="bottom-border"></div>
         </div>
         <div
           className="media-main media-A front"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
         >
-          <div id="content-img ">
-            <img id="cur-content-img" src={props.images[aIdx]} />
+            <div className="card-prev" onClick={handleClickLeft} />
+            <div className="card-next" onClick={handleClickRight} />
+            <div className="content-gradient-overlay" />
+          <div className="content-img ">
+            <img className="cur-content-img" src={props.images[aIdx]} />
           </div>
-          <div className="content-description ">
+          <div className="content-description hidden">
               <img className="content-background" src={props.media[aIdx]?.backdrop} />
               <h2>{props.media[aIdx]?.title}</h2>
               <div className="media-a-info">
                 {props.media[aIdx]?.overview}
               </div>
+          </div>
+          <div className="bottom-border" />
+        </div>
+        <div className='btn-container'>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
+          </div>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
           </div>
         </div>
         {/* <div

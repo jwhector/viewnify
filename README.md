@@ -30,11 +30,11 @@
 
  ## Credits
 
- Project Manager - Jared Hector
- Front End Developer - Ryan Allen
- Front End Developer - Don Cathcart
- Backend Developer - Ken Felix
- Backend Developer - David Abbey
+  - Project Manager - Jared Hector
+  - Front End Developer - Ryan Allen
+  - Front End Developer - Don Cathcart
+  - Backend Developer - Ken Felix
+  - Backend Developer - David Abbey
 
 
  ## How to Contribute

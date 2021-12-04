@@ -191,7 +191,8 @@ body {
   height: 40px;
   background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
     0% no-repeat padding-box;
-    background-image: url('./components/transparent.png');backround-size:contain; background-repeat:no-repeat;
+    background-image: url('./components/transparent.png');
+    background-size:contain; background-repeat:no-repeat;
     object-fit: cover;
   box-shadow: 2px 2px 1px 0.7px #f70bc1;
   border-radius: 32px;
@@ -207,6 +208,63 @@ body {
 
 element.style {
   display: flex;
+}
+
+.btn-container {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  width: 90%;
+  height: 125px;
+  bottom: 0;
+  position: absolute;
+  border-radius: 33px;
+  z-index: 9;
+}
+
+.btn-background {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background: black;
+  border-radius: 50%;
+  z-index: 8;
+  opacity: .3;
+}
+
+.pause-btn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #7503FA;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px #00000029;
+  z-index: 6;
+}
+
+.bar-container{
+  width: 65px;
+  height: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9;
+}
+
+.pause-bars {
+  display: flex;
+  width: 16px;
+  height: 70px;
+  background: transparent linear-gradient(0deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+  border-radius: 5px;
 }
 
 
@@ -341,7 +399,7 @@ body {
   left: 0px;
   /* width: 375px; */
   /* width: 20rem; */
-  width: 500px;
+  /* width: 450px; */
   /* height: 267px; */
   max-height: calc(100vh - 48px);
   /* max-width: calc(65vw - 350px); */
@@ -349,7 +407,7 @@ body {
   opacity: 1;
   z-index: 1;
   width: 80%;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .media-main {
@@ -360,7 +418,7 @@ body {
   z-index: 3;
 }
 
-#content-img {
+.content-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -368,10 +426,10 @@ body {
   /* background-color: #ededed; */
   z-index: -1;
   /* border-bottom: solid 1px #683fff80; */
-  border-radius: 33px;
+  border-radius: 33px 33px 0 0;
   /* box-shadow: 0px 4px 8px #683fff80; */
   line-height: 0;
-
+  transition: .3s;
 }
 
 #content-description {
@@ -401,6 +459,7 @@ body {
     align-items: center;
     z-index: 1;
     line-height: 0;
+    position: relative;
 }
 
 .card .watch-container {
@@ -423,6 +482,7 @@ body {
   opacity: 1;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 #play-pause:hover {
@@ -444,8 +504,8 @@ body {
   transition: all 0.3s ease-in-out;
   position: absolute;
   overflow: hidden;
-  width: 80%;
-  max-width: 500px;
+  width: 100%;
+  /* max-width: 500px; */
 }
 
 #play-btn {
@@ -730,18 +790,66 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .card-prev {
   height: 100%;
   width: 50%;
-  margin-right: auto;
-  z-index: 7;
-  pointer-events: none;
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  /* pointer-events: none; */
 }
 
 .card-next {
   height: 100%;
   width: 50%;
-  z-index: 7;
-  pointer-events: none;
+  z-index: 9;
+  position: absolute;
+  right: 0;
+  /* pointer-events: none; */
 }
 
 .content-description {
   line-height: 1;
+}
+
+.bottom-border {
+  background-color: black;
+  height: 125px;
+}
+
+.content-gradient-overlay {
+  width: 100%;
+  height: 675px;
+  position: absolute;
+  z-index: 8;
+  background: linear-gradient(0deg, black 0%, transparent 20%);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media screen and (min-height: 1050px) {
+    .body-container {
+      max-width: 550px;
+    }
+
+    .card {
+      height: 950px;
+    }
+
+    .content-gradient-overlay, .card-prev, .card-next {
+      height: 825px;
+    }
+}
+
+@media screen and (min-height: 1200px) {
+    .body-container {
+      max-width: 600px;
+    }
+
+    .card {
+      height: 1025px;
+    }
+
+    .content-gradient-overlay, .card-prev, .card-next {
+      height: 900px;
+    }
 }
