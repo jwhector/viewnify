@@ -230,14 +230,15 @@ element.style {
 
 .btn-background {
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   justify-content: center;
   height: 100px;
   width: 100px;
-  background: black;
+  /* background: black; */
   border-radius: 50%;
   z-index: 8;
-  opacity: .3;
+  /* opacity: .3; */
+  border: 3px solid #006CD8;
 }
 
 .pause-btn {
@@ -616,7 +617,7 @@ body {
 }
 
 .card img {
-  max-width: 100%;
+  /* max-width: 100%; */
   pointer-events: none;
 }
 
@@ -880,6 +881,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .cur-content-img {
   width: 600px;
   height: 900px;
+}
+
+.play-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-img {
+    position: absolute;
+    height: 70px;
+    z-index: 9;
+    transform: translateX(8%);
 }
 
 @media screen and (min-height: 1050px) {

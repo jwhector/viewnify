@@ -52,7 +52,7 @@ export default function Swipe(props) {
   const saveLike = () => {
     fetchChoice("likes", props.media[props.curIdx], props.token).then(
       (data) => {
-        console.log(data);
+        // console.log(data);
         props.setCurIdx(props.curIdx + 1);
       }
     );
@@ -61,7 +61,7 @@ export default function Swipe(props) {
   const saveDislike = () => {
     fetchChoice("dislikes", props.media[props.curIdx], props.token).then(
       (data) => {
-        console.log(data);
+        // console.log(data);
         props.setCurIdx(props.curIdx + 1);
       }
     );
@@ -177,7 +177,7 @@ export default function Swipe(props) {
 
   const returnCard = (el) => {
     waitForElementTransition(el).then(() => {
-        console.log("ENDING TRANSITION");
+        // console.log("ENDING TRANSITION");
         // // el.classList.toggle('front');
         if (el.classList.contains("media-A")) {
           setAIdx(props.curIdx + 2);
@@ -203,25 +203,12 @@ export default function Swipe(props) {
     });
   };
 
-  const handleClickLeft = (e) => {
-      
-  }
-
-  const handleClickRight = (e) => {
-
-  }
-
-  const handleClick = (e) => {
-    
-  }
-
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
         <div
           className="media-main media-B back"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
-            onClick={handleClick}
         >
             {/* <div className="card-prev" onClick={handleClickLeft} />
             <div className="card-next" onClick={handleClickRight} /> */}
@@ -267,13 +254,14 @@ export default function Swipe(props) {
               <div className='pause-bars'></div>
               <div className='pause-bars'></div>
             </div>
-            <div className='btn-background'></div>
+            {/* <div className='btn-background'></div> */}
           </div>
-          <div className='pause-btn'>
-            <div className='bar-container'>
+          <div className='play-btn'>
+            {/* <div className='bar-container'>
               <div className='pause-bars'></div>
               <div className='pause-bars'></div>
-            </div>
+            </div> */}
+            <img className='play-img' src={playIco} />
             <div className='btn-background'></div>
           </div>
         </div>

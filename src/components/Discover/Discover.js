@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "./discover.css";
 
 import FastAverageColor from "fast-average-color";
 import Color from "color";
 // import swipe from "../Swipe/swipefn";
 import Swipe from '../Swipe/Swipe';
+import { UserContext } from '../../App';
 
 export default function Discover(props) {
   const apiKey = "3516458404b8ed5f73b3b631421314e1";
@@ -20,6 +21,7 @@ export default function Discover(props) {
   const [isFirstInFocus, setIsFirstInFocus] = useState(true);
   const discoverBg_a = useRef(null);
   const discoverBg_b = useRef(null);
+  const user = useContext(UserContext);
 
   const seenMedia = [];
   const fac = new FastAverageColor();
@@ -32,7 +34,7 @@ export default function Discover(props) {
     // props.user.dislikes.forEach(dislike => {
     //     seenMedia.push(parseInt(dislike.tmdb_id));
     // });
-    console.log(curPage);
+    // console.log(curPage);
     if (images[curIdx]) {
       fac
         .getColorAsync(images[curIdx])
@@ -90,7 +92,7 @@ export default function Discover(props) {
         });
         setImages(imageHolder);
         setMedia(mediaHolder);
-        console.log(media);
+        // console.log(media);
       });
   }
 
