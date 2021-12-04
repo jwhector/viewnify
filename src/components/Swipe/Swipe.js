@@ -217,6 +217,22 @@ export default function Swipe(props) {
               <img className="content-background" src={props.media[aIdx]?.backdrop} />
           </div>
         </div>
+        <div className='btn-container'>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
+          </div>
+          <div className='pause-btn'>
+            <div className='bar-container'>
+              <div className='pause-bars'></div>
+              <div className='pause-bars'></div>
+            </div>
+            <div className='btn-background'></div>
+          </div>
+        </div>
         {/* <div
           className="media-main media-last removed"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}

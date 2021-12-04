@@ -209,6 +209,63 @@ element.style {
   display: flex;
 }
 
+.btn-container {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  width: 90%;
+  height: 15%;
+  bottom: 5%;
+  position: absolute;
+  border-radius: 33px;
+  z-index: 9;
+}
+
+.btn-background {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background: black;
+  border-radius: 50%;
+  z-index: 8;
+  opacity: .3;
+}
+
+.pause-btn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #7503FA;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px #00000029;
+  z-index: 6;
+}
+
+.bar-container{
+  width: 65px;
+  height: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9;
+}
+
+.pause-bars {
+  display: flex;
+  width: 16px;
+  height: 70px;
+  background: transparent linear-gradient(0deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+}
+
 
 .play-pause {
   justify-content: center;
@@ -400,6 +457,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    position: relative;
 }
 
 .card .watch-container {
@@ -443,7 +501,7 @@ body {
   transition: all 0.3s ease-in-out;
   position: absolute;
   overflow: hidden;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
 }
 
