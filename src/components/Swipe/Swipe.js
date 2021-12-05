@@ -239,8 +239,8 @@ export default function Swipe(props) {
               </div>
               <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
                 <div className='release-rating'>
-                  <p className='release-date'>Release Date: {props.media[bIdx]?.release_date}</p>
-                  <p className='rating'>Rating: {props.media[bIdx]?.rating}</p>
+                  <p className='release-date'>{props.media[bIdx]?.release_date}</p>
+                  <p className='rating'>{props.media[bIdx]?.rating}/5</p>
                 </div>
                 <p>{props.media[bIdx]?.overview}</p>
               </div>
@@ -264,8 +264,8 @@ export default function Swipe(props) {
             </div>
               <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
                 <div className='release-rating'>
-                  <p className='release-date'>Release Date: {props.media[aIdx]?.release_date}</p>
-                  <p className='rating'>Rating: {props.media[aIdx]?.rating}</p>
+                  <p className='release-date'>{props.media[aIdx]?.release_date}</p>
+                  <p className='rating'>{props.media[aIdx]?.rating}/5</p>
                 </div>
                 <p>{props.media[aIdx]?.overview}</p>
               </div>
