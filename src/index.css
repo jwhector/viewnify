@@ -426,13 +426,22 @@ body {
 }
 
 .card p {
-  margin: 15px 0;
+  margin: 10px;
   /* overflow: scroll; */
-  /* padding: 5px; */
+  padding: 10px;
 }
 
 .media-a-info::-webkit-scrollbar {
-  display: none;
+  width: 4px;
+}
+.media-a-info::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.media-a-info::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.media-a-info::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #play-pause {
@@ -616,6 +625,11 @@ body {
   z-index: 2 !important;
 }
 
+.info-title {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 .watch-header, .create-party, .discover, .watch-content {
     justify-content: center;
     align-items: center;
@@ -697,6 +711,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 8;
+
 }
 
 .content-description::-webkit-scrollbar {
@@ -723,6 +738,7 @@ body {
 .hidden {
   opacity: 0;
   filter:brightness(0%);
+  z-index: -1;
 }
 
 .content-title {
@@ -754,7 +770,9 @@ body {
   align-items: center;
   /* margin: 0px 15px 0px 15px; */
   height: 62.5%;
-  overflow: scroll;
+  /* overflow-y: scroll; */
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 
 .release-rating {
@@ -800,6 +818,10 @@ body {
     height: 70px;
     z-index: 9;
     transform: translateX(8%);
+}
+
+.card-info {
+  /* touch-action: pan-x pan-y !important; */
 }
 
 

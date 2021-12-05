@@ -14,8 +14,6 @@ import {BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom
 import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
 import styled, { css } from "styled-components";
-import MTable from './components/Library/LibTable';
-import MaterialTable from "material-table";
 import axios from 'axios';
 import { cgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi"
