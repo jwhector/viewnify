@@ -625,6 +625,11 @@ body {
   z-index: 2 !important;
 }
 
+.info-title {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 .watch-header, .create-party, .discover, .watch-content {
     justify-content: center;
     align-items: center;
@@ -706,6 +711,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 8;
+
 }
 
 .content-description::-webkit-scrollbar {
@@ -732,6 +738,7 @@ body {
 .hidden {
   opacity: 0;
   filter:brightness(0%);
+  z-index: -1;
 }
 
 .content-title {
@@ -763,8 +770,9 @@ body {
   align-items: center;
   /* margin: 0px 15px 0px 15px; */
   height: 62.5%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-y: scroll; */
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 
 .release-rating {
@@ -810,6 +818,10 @@ body {
     height: 70px;
     z-index: 9;
     transform: translateX(8%);
+}
+
+.card-info {
+  /* touch-action: pan-x pan-y !important; */
 }
 
 
