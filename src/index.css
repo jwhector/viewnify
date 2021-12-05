@@ -78,8 +78,9 @@ body {
 
 #login-btn {
   position: absolute;
-  right: 0;
-  margin-right: 20px;
+  left: 0;
+  margin-left: 20px;
+  margin-top: 7px;
 }
 
 #main {
@@ -137,19 +138,19 @@ body {
   align-items: center;
   list-style-type: none;
   border-spacing: 50px;
-  margin: 1rem;
+  margin: 2.3rem;
   font-family: Quicksand;
   color: #00000080;
   flex-direction: row;
-  border: 1px #683fff;
+  border: solid 2px #a435ff;
   transition: 0.2s;
-  width: 85%;
+  width: 65%;
   top: 416px;
-  margin-top: 61px;
+  margin-top: 30px;
   left: 196px;
   height: 59px;
   background: #FFFFFF;
-  box-shadow: 0.2px 1.7px 1px 0.2px #a435ff;
+  /* box-shadow: 1px 1.5px 1.5px 1.5px #a435ff; */
   border-radius: 32px;
   opacity: 1 !important;
   text-decoration: none;
@@ -173,12 +174,12 @@ body {
   border: 1px #683fff;
   transition: 0.2s;
   margin: 1rem;
-  width: 5%;
+  width: 10%;
   max-width: 75px;
   min-width: 45px;
   position: absolute;
   right: 10px;
-  height: 40px;
+  height: 34px;
   background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
     0% no-repeat padding-box;
     background-image: url('./components/transparent.png');
@@ -206,7 +207,7 @@ element.style {
   align-items: center;
   flex-grow: 1;
   width: 90%;
-  height: 125px;
+  height: 75px;
   bottom: 0;
   position: absolute;
   border-radius: 33px;
@@ -427,6 +428,12 @@ body {
 
 .card p {
   margin: 15px 0;
+  /* overflow: scroll; */
+  /* padding: 5px; */
+}
+
+.media-a-info::-webkit-scrollbar {
+  display: none;
 }
 
 #play-pause {
@@ -514,7 +521,7 @@ body {
   top: 679px;
   left: 80px;
   width: 14px;
-  height: 44px;
+  height: 36px;
   margin: 2px;
   margin-top: 4px;
   display: inline-block;
@@ -552,9 +559,9 @@ body {
 .bm-burger-button {
   position: fixed;
   width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 20px;
+  height: 29px;
+  left: 25px;
+  top: 23px;
 }
 
 .bm-burger-bars {
@@ -563,7 +570,7 @@ body {
 }
 
 .bm-burger-bars-hover {
-  background: transparent linear-gradient(180deg, #00d7f4 0%, #006cd8 100%) 0%
+  background: transparent linear-gradient(180deg, #f70bc1 0%, #7503fa 100%) 0%
     0% no-repeat padding-box;
 }
 
@@ -606,7 +613,7 @@ body {
 }
 
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: #0e0e0e;
   z-index: 2 !important;
 }
 
@@ -690,6 +697,11 @@ body {
   background: #ededed;
   display: flex;
   flex-direction: column;
+  z-index: 8;
+}
+
+.content-description::-webkit-scrollbar {
+  display: none;
 }
 
 .content-background {
@@ -715,14 +727,14 @@ body {
 }
 
 .content-title {
-  height: 100%;
+  height: 37.5%;
   position: absolute;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 54px;
+  font-size: 30px;
   background: black;
   color: #ededed;
   opacity: .8;
@@ -735,13 +747,15 @@ body {
 }
 
 .media-a-info {
-  font-size: 35px;
+  font-size: 22px;
   text-align: center;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 15px 0px 15px;
+  /* margin: 0px 15px 0px 15px; */
+  height: 62.5%;
+  overflow: scroll;
 }
 
 .release-rating {
@@ -749,7 +763,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .release-date{
@@ -770,8 +784,8 @@ body {
 }
 
 .cur-content-img {
-  width: 600px;
-  height: 900px;
+  width: 450px;
+  height: 675px;
 }
 
 .play-btn {
@@ -788,113 +802,436 @@ body {
     z-index: 9;
     transform: translateX(8%);
 }
+/* iPhone 5/5S/5C/5SE */
+/* iPhone 5/SE  */
 
 
-@media screen and (max-width: 600px) {
-  .body-container {
-    max-width: 400px;
+@media only screen 
+  and (device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .cur-content-img {
+      max-width: 256px;
+      max-height: 343px;
+    }
+    .media-a-info {
+      font-size: 13px;
+    }
+    .release-rating {
+      font-size: 12px;
+    }
+    .content-title {
+      font-size: 20px;
+      height: 21.3%;
+    }
+    .btn-container {
+      height: 178px;
+    }
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 28px;
+      left: 17px;
+      top: 23.5px;
+    }
+    #dark-light {
+      right:0px;
+      height:32px;
+    }
+    
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .cur-content-img {
+      max-width: 300px;
+      max-height: 440px;
+    }
+    .media-a-info {
+      font-size: 13px;
+    }
+    .release-rating {
+      font-size: 11px;
+    }
+    .content-title {
+      font-size: 22px;
+      height: 25%;
+    }
+    .btn-container {
+      height: 181px;
+    }
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 28px;
+      left: 30px;
+      top: 23.5px;
+    }
+    #dark-light {
+      right:8px;
+      height:32px;
+    }
+
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    /* .cur-content-img {
+      max-width: 400px;
+      min-height: 500px;
+    } */
+    .cur-content-img {
+      min-width: 331px;
+      max-height: 496.5px;
+    }
+    .media-a-info {
+      font-size: 16px;
+    }
+    .release-rating {
+      font-size: 14px;
+    }
+    .content-title {
+      font-size: 30px;
+      height: 27%;
+    }
+    .btn-container {
+      height: 192px;
+    }
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 28px;
+      left: 30px;
+      top: 23.5px;
+    }
+    #dark-light {
+      right:10px;
+      height:32px;
+    }
+}
+
+/* Portr
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .cur-content-img {
+      max-width: 300px;
+      max-height: 450px;
+    }
+    .media-a-info {
+      font-size: 13px;
+    }
+    .release-rating {
+      font-size: 11px;
+    }
+    .content-title {
+      font-size: 22px;
+      height: 25%;
+    }
+    .btn-container {
+      height: 300px;
+    }
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 28px;
+      left: 30px;
+      top: 23.5px;
+    }
+    #dark-light {
+      right:10px;
+      height:32px;
+    }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .cur-content-img {
+      max-width: 452px;
+      max-height: 630px;
+    }
+    .media-a-info {
+      font-size: 25px;
+    }
+    .release-rating {
+      font-size: 20px;
+    }
+    .content-title {
+      font-size: 40px;
+      height: 37.5%;
+    }
+    .btn-container {
+      height: 76px;
+    }
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 28px;
+      left: 30px;
+      top: 22.5px;
+    }
+    #dark-light {
+      right:10px;
+      height:32px;
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+
+/* Galaxy Fold */
+
+/* Moto G4 */
+@media only screen and (device-width: 360px) and (device-height: 640px){ 
+  .cur-content-img {
+    max-width: 288px;
+    max-height: 396px;
   }
-  
-  .card {
-    height: 600px;
-  }
-  
-  .content-gradient-overlay, .card-prev, .card-next, .cur-content-img {
-    width: 400px;
-    height: 500px;
-  }
-
-
-  .content-description, .content-title {
-    height: 500px;
-  }
-
   .media-a-info {
-    font-size: 20px;
+    font-size: 15px;
   }
-  
-  .card img{
-    max-width: 100%;
+  .release-rating {
+    font-size: 12px;
   }
-
-  .release-date{
+  .content-title {
     font-size: 20px;
-    margin: 30px 0 5px 0;
+    height: 24%;
+  }
+  .btn-container {
+    height: 190px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 27px;
+    top: 17.5px;
+  }
+  #dark-light {
+    right:10px;
+    height:32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin: 2.3rem;
+    margin-top: 0px;
   }
 }
 
-@media screen and (max-height: 725px) {
-  .body-container {
+/* Galaxy S5 and Pixel 2 */
+@media only screen and (device-width: 411px) and (device-height: 731px){ 
+  .cur-content-img {
+    max-width: 329px;
+    max-height: 493px;
+  }
+  .media-a-info {
+    font-size: 15px;
+  }
+  .release-rating {
+    font-size: 12px;
+  }
+  .content-title {
+    font-size: 22px;
+    height: 27.4%;
+  }
+  .btn-container {
+    height: 190px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 27px;
+    top: 17.5px;
+  }
+  #dark-light {
+    right:10px;
+    height:32px;
+  }
+
+}
+
+/* Pixel 2 XL */
+@media only screen and (device-width: 411px) and (device-height: 823px){ 
+  .cur-content-img {
+    max-width: 329px;
+    max-height: 493.5px;
+  }
+  .media-a-info {
+    font-size: 15px;
+  }
+  .release-rating {
+    font-size: 12px;
+  }
+  .content-title {
+    font-size: 22px;
+    height: 27.4%;
+  }
+  .btn-container {
+    height: 257px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 27px;
+    top: 23.5px;
+  }
+  #dark-light {
+    right:10px;
+    height:32px;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px){ 
+  .cur-content-img{
+    max-width: 300px;
+    max-height: 450px;
+  }
+  .media-a-info {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px){ 
+  .cur-content-img {
     max-width: 500px;
+    max-height: 675px;
   }
+}
 
-  .card {
-    height: 450px;
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px){ 
+  .cur-content-img {
+    max-width: 500px;
+    max-height: 675px;
   }
+}
 
-  .content-gradient-overlay, .card-prev, .card-next, .cur-content-img {
-    width: 500px;
-    height: 350px;
+@media only screen and (min-device-width: 540px) and (max-device-height: 720px){ 
+  .cur-content-img {
+    max-width: 432px;
+    max-height: 489px;
   }
-
-  .content-background{
-    display: none;
+  .media-a-info {
+    font-size: 20px;
   }
-
-  .content-description, .content-title {
-    height: 350px;
+  .release-rating {
+    font-size: 15px;
+  }
+  .content-title {
     font-size: 35px;
+    height: 35.5%;
   }
+  .btn-container {
+    height: 185px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 30px;
+    top: 22.5px;
+  }
+  #dark-light {
+    right:10px;
+    height:32px;
+  }
+}
 
+@media only screen and (device-width: 280px) and (max-device-height: 653px){ 
+  .cur-content-img {
+    max-width: 224px;
+    max-height: 336px;
+  }
+  .media-a-info {
+    font-size: 15px;
+  }
+  .release-rating {
+    font-size: 12px;
+  }
+  .content-title {
+    font-size: 20px;
+    height: 18.5%;
+  }
+  .btn-container {
+    height: 271px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 24px;
+    left: 12.5px;
+    top: 24px;
+  }
+  #dark-light {
+    right: -9px;
+    height:28px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-height: 600px){ 
+  .cur-content-img {
+    max-width: 450px;
+    max-height: 364px;
+  }
+  .media-a-info {
+    font-size: 15px;
+  }
+  .release-rating {
+    font-size: 12px;
+  }
+  .content-title {
+    font-size: 40px;
+    height: 37.5%;
+  }
+} 
+
+@media only screen and (device-width: 1280px) and (device-height: 800px){ 
+  .cur-content-img {
+    max-width: 450px;
+    max-height: 565px;
+  }
   .media-a-info {
     font-size: 20px;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .body-container {
-    max-width: 500px;
+  .release-rating {
+    font-size: 20px;
   }
-
-  .card {
-    height: 800px;
+  .content-title {
+    font-size: 40px;
+    height: 37.5%;
   }
-
-  .content-gradient-overlay, .card-prev, .card-next, .content-description, .cur-content-img {
-    width: 500px;
-    height: 725px;
+  .btn-container {
+    height: 187px;
   }
 }
-
-@media screen and (min-width: 992px) {
-    .body-container {
-      max-width: 500px;
-    }
-
-    .card {
-      height: 800px;
-    }
-
-    .content-gradient-overlay, .card-prev, .card-next, .content-description, .cur-content-img {
-      width: 500px;
-      height: 725px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .body-container {
-      max-width: 500px;
-    }
-
-    .card {
-      height: 800px;
-    }
-
-    .content-gradient-overlay, .card-prev, .card-next, .content-description, .cur-content-img {
-      width: 500px;
-      height: 725px;
-    }
-  }
 
  .MuiPaper-root, .MuiToolbar-root, .MuiTypography-body2 {
   font-family: Quicksand !important;
