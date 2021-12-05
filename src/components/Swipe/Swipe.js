@@ -225,6 +225,18 @@ export default function Swipe(props) {
     });
   };
 
+  const handleClickLeft = (e) => {
+      
+  }
+
+  const handleClickRight = (e) => {
+
+  }
+
+  const handleClick = (e) => {
+    
+  }
+
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">

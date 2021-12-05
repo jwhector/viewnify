@@ -22,27 +22,31 @@ export const lightTheme = {
   darkLight: 'white',
   MuiPaperRoot: "white",
   darkLightFont: '#ad33ff',
-  darkLightText: '☽'
+  darkLightText: '☽',
+  bottomBorder: 'linear-gradient (0deg, white 0%, transparent 20%)'
 
 }
 // #EDEDED for text
 export const darkTheme = {
-  body: '#181818',
+  body: '#0E0E0E',
   fontColor: "white",
-  background: "#181818",
-  root: '#181818',
-  homer: '#181818',
-  nav: '#181818',
-  rightContainer: '#181818',
-  playPause: '#181818',
-  bmMenu: '#181818',
-  darkLight: '#181818',
+  background: "#0E0E0E",
+  root: '#0E0E0E',
+  homer: '#0E0E0E',
+  nav: '#0E0E0E',
+  rightContainer: '#0E0E0E',
+  playPause: '#0E0E0E',
+  bmMenu: '#0E0E0E',
+  darkLight: '#0E0E0E',
   discoverBtn: "#ededed",
-  watchParty: "#181818",
+  watchParty: "#0E0E0E",
   boxShadow: "white",
-  MuiPaperRoot: "#181818",
+  MuiPaperRoot: "#0E0E0E",
   darkLightFont: '#d32dff',
-  darkLightText: '☼'
+  darkLightText: '☼',
+  shadowColor: "1px 1.2px 1.2px #7f7f7f",
+  bottomBorder: 'black',
+  navBtnBackground: "#212121"
 
 };
 
@@ -101,7 +105,7 @@ background: ${(props) => {
   transition: 0.3s;
   box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
-  background-color: ${(props) => props.theme.watchParty};
+  background-color: ${(props) => props.theme.navBtnBackground};
   
 }
 
@@ -117,8 +121,10 @@ background: ${(props) => {
 }
 
 .shadowed {
-  color: ${(props) => props.theme.fontColor} !important;
+  text-shadow: ${(props) => props.theme.shadowColor} !important;
 }
+
+
 
 `
 
