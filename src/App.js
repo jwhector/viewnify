@@ -4,22 +4,28 @@ import LandingPage from "./components/Landing/LandingPage";
 import useToken from "./useToken";
 import Home from "./components/Home/Home";
 import Liked from "./components/Home/Liked";
-import Button from "./components/Home/Button"
+import Button from "./components/Home/Button";
 import Discover from "./components/Discover/Discover";
 import WatchParty from "./components/WatchParty/WatchParty";
 import Library from "./components/Library/Library";
 import Chatroom from "./components/Chatroom/Chatroom";
 import Invite from "./components/Invite/Invite";
-import {BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom";
-import {ThemeProvider} from "styled-components";
-import {lightTheme, darkTheme, GlobalStyles} from "./components/Burger/Burger"
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Routes,
+} from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import {
+  lightTheme,
+  darkTheme,
+  GlobalStyles,
+} from "./components/Burger/Burger";
 import styled, { css } from "styled-components";
-import MTable from './components/Library/LibTable';
-import MaterialTable from "material-table";
 import axios from 'axios';
 import { cgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi"
-
 
 
 const StyledApp = styled.div`
@@ -35,7 +41,7 @@ function App() {
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
-  }
+  };
 
   const { token, setToken } = useToken();
   const [genres, setGenres] = useState('');
@@ -45,8 +51,8 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:3005/api/users', {
-        method: 'GET',
+      fetch("http://localhost:3005/api/users", {
+        method: "GET",
         headers: {
             'Authorization': `Bearer: ${token}`
         }
@@ -66,14 +72,16 @@ function App() {
       fetch('http://localhost:3005/api/users/verify', {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer: ${token}`
-        }
-      }).then(async res => {
-        if (!res.ok) {
-          localStorage.removeItem('token');
-          setToken(null);
-        }
-      }).catch(err => console.log(err));
+          Authorization: `Bearer: ${token}`,
+        },
+      })
+        .then(async (res) => {
+          if (!res.ok) {
+            localStorage.removeItem("token");
+            setToken(null);
+          }
+        })
+        .catch((err) => console.log(err));
     }
   });
 
@@ -81,12 +89,14 @@ function App() {
     return (
       <div id="main">
         <NavBar showLogin={true} setToken={setToken} />
-        <LandingPage token={token}
+        <LandingPage
+          token={token}
           setToken={setToken}
           genres={genres}
           setGenres={setGenres}
           providers={providers}
-          setProviders={setProviders} />
+          setProviders={setProviders}
+        />
       </div>
     );
   } else if (!user) {
@@ -95,7 +105,7 @@ function App() {
       <>
         <NavBar showLogin={false} />
       </>
-    )
+    );
   }
 
   return (
