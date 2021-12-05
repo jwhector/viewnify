@@ -427,13 +427,22 @@ body {
 }
 
 .card p {
-  margin: 15px 0;
+  margin: 10px;
   /* overflow: scroll; */
-  /* padding: 5px; */
+  padding: 10px;
 }
 
 .media-a-info::-webkit-scrollbar {
-  display: none;
+  width: 4px;
+}
+.media-a-info::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.media-a-info::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.media-a-info::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #play-pause {
@@ -617,6 +626,11 @@ body {
   z-index: 2 !important;
 }
 
+.info-title {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 .watch-header, .create-party, .discover, .watch-content {
     justify-content: center;
     align-items: center;
@@ -724,6 +738,7 @@ body {
 .hidden {
   opacity: 0;
   filter:brightness(0%);
+  z-index: -1;
 }
 
 .content-title {
@@ -755,7 +770,9 @@ body {
   align-items: center;
   /* margin: 0px 15px 0px 15px; */
   height: 62.5%;
-  overflow: scroll;
+  /* overflow-y: scroll; */
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 
 .release-rating {
@@ -804,6 +821,10 @@ body {
 }
 /* iPhone 5/5S/5C/5SE */
 /* iPhone 5/SE  */
+
+.card-info {
+  /* touch-action: pan-x pan-y !important; */
+}
 
 
 @media only screen 

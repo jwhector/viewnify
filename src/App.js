@@ -23,24 +23,10 @@ import {
   GlobalStyles,
 } from "./components/Burger/Burger";
 import styled, { css } from "styled-components";
-import MTable from "./components/Library/LibTable";
-import MaterialTable from "material-table";
-import tw from "twin.macro";
-import { jsx } from "@emotion/react";
-import Movies from "./components/Library/index.jsx";
+import axios from 'axios';
+import { cgSun } from "react-icons/cg";
+import { HiMoon } from "react-icons/hi"
 
-const LibraryContainer = tw.div`
-  w-full
-  max-w-full
-  flex
-  flex-col
-  items-center
-  justify-center
-  pt-6
-  pb-10
-  pl-10
-  pr-10
-`;
 
 const Title = tw.h1`
   text-2xl
