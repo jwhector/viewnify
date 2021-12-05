@@ -73,6 +73,7 @@ export default function Discover(props) {
 
   const fillMedia = () => {
     getEntries().then((results) => {
+      console.log(results);
         const mediaHolder = [...media];
         const imageHolder = [...images];
         results.forEach((result) => {
@@ -105,13 +106,27 @@ export default function Discover(props) {
 
   const getEntries = async () => {
     const entries = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${curPage}&with_watch_monetization_types=flatrate`
-    ).then((data) => data.json());
-    // console.log(entries);
-    const results = entries.results.filter(
-      (elem) => !seenMedia.includes(elem.id)
+      // `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${curPage}&with_watch_monetization_types=flatrate`
+      'http://localhost:3005/tmdbSearch', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer: ${props.token}`
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // redirect: 'follow', // manual, *follow, error
+        // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({ format: 'movie', curPg: {curPage}}) // body data type must match "Content-Type" header
+      }
     );
-    return results;
+    // console.log(entries);
+    // const results = entries.results.filter(
+    //   (elem) => !seenMedia.includes(elem.id)
+    // );
+    return entries.json();
   };
 
   return (
