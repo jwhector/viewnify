@@ -28,11 +28,6 @@ import { cgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi"
 
 
-const Title = tw.h1`
-  text-2xl
-  font-semibold
-`;
-
 const StyledApp = styled.div`
   color: ${(props) => props.theme.background};
 `;

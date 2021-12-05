@@ -45,7 +45,8 @@ export const darkTheme = {
   darkLightFont: '#d32dff',
   darkLightText: '☼',
   shadowColor: "1px 1.2px 1.2px #7f7f7f",
-  bottomBorder: 'black'
+  bottomBorder: 'black',
+  navBtnBackground: "#212121"
 
 };
 
@@ -104,7 +105,7 @@ background: ${(props) => {
   transition: 0.3s;
   box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
-  background-color: ${(props) => props.theme.watchParty};
+  background-color: ${(props) => props.theme.navBtnBackground};
   
 }
 
