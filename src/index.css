@@ -824,6 +824,35 @@ body {
   /* touch-action: pan-x pan-y !important; */
 }
 
+.library-grid {
+
+}
+
+.library-list {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  justify-content: center;
+}
+
+.library-list li {
+  margin: 25px;
+}
+
+.mini-card {
+  max-width: 150px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px white;
+}
+
+.mini-cur-content-img {
+  width: 150px;
+  height: 225px;
+}
+
 
 @media screen and (max-width: 600px) {
   .body-container {
