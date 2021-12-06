@@ -113,10 +113,10 @@ export default function LoginModal(props) {
                 style={{ overlay: { zIndex: 3 } }}>
                 <h2 className="title-txt">Log In</h2>
                 <h3>{confirmText}</h3>
-                <input class="modal-in" type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} />
-                <input class="modal-in" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} />
-                <button class="modal-in" onClick={handleLogin}>Submit</button>
-                <button class="modal-in" onClick={clearModal} className="close-btn">Close</button>
+                <input className="modal-in" type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} />
+                <input className="modal-in" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} />
+                {/* <p>or</p> */}
+                <button className="submit-btn" onClick={handleLogin}>Submit</button>
             </ReactModal>
         );
     }
@@ -131,11 +131,11 @@ export default function LoginModal(props) {
             style={{ overlay: { zIndex: 3 } }}>
             <h2 className="title-txt">Sign Up</h2>
             <h3>{confirmText}</h3>
-            <input class="modal-in" type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} />
-            <input class="modal-in" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} />
-            <input class="modal-in" type="password" placeholder="Confirm Password" onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
-            <button class="modal-in" onClick={handleSignup}>Submit</button>
-            <button class="modal-in" onClick={clearModal} className="close-btn">Close</button>
+            <input className="modal-in" type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} />
+            <input className="modal-in" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} />
+            <input className="modal-in" type="password" placeholder="Confirm Password" onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
+            {/* <p>or</p> */}
+            <button className="submit-btn" onClick={handleSignup}>Submit</button>
         </ReactModal>
     );
 }

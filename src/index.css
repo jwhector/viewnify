@@ -27,6 +27,7 @@ body {
 
 .title-txt {
   font-family: "Quicksand", sans-serif;
+  color: #7503fa;
 }
 
 .text-logo {
@@ -101,6 +102,7 @@ body {
   font-size: 24px;
   box-shadow: gray 1px 1px 2px;
   font-weight: 500;
+  font-family: 'Quicksand';
 }
 
 .right-container {
