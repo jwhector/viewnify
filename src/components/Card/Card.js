@@ -29,6 +29,7 @@ export default function Card(props) {
         
         const imgEl = el.querySelector('.content-img');
         const descEl = el.querySelector('.content-description');
+        const gradient = el.querySelector('.content-gradient-overlay');
         
         hammertimeTap.on('tap', function (e) {
             const isLeftClick = getCursorPosition(el, e);
@@ -36,9 +37,11 @@ export default function Card(props) {
             if (isLeftClick && !isTopDesc) {
                 imgEl.classList.remove('hidden');
                 descEl.classList.add('hidden');
+                gradient.classList.remove('hidden');
             } else {
                 imgEl.classList.add('hidden');
                 descEl.classList.remove('hidden');
+                gradient.classList.add('hidden');
             }
         });
 

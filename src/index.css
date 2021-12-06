@@ -113,6 +113,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  background-color: #ededed;
 }
 
 .side-bar {
@@ -733,6 +734,7 @@ body {
   height: 675px;
   position: absolute;
   z-index: 8;
+  transition: .3s;
   background: linear-gradient(0deg, black 0%, transparent 20%);
 }
 

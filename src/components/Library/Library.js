@@ -3,6 +3,8 @@ import MiniCard from '../Card/MiniCard';
 import ReactModal from 'react-modal';
 import Card from '../Card/Card';
 import './Library.css';
+import FastAverageColor from 'fast-average-color';
+import Color from 'color';
 
 function MiniCards(props) {
     const media = props.media;
@@ -28,6 +30,11 @@ export default function Library(props) {
     const [images, setImages] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [modalIdx, setModalIdx] = useState(0);
+    const [bgColor, setBgColor] = useState('#ededed');
+    const [complementary, setComplementary] = useState('#ededed');
+
+    const fac = new FastAverageColor();
+
 
     useEffect(() => {
         fetch('http://localhost:3005/api/likes/user/tmdb', {
@@ -62,6 +69,24 @@ export default function Library(props) {
       });
     }, []);
 
+    useEffect(() => {
+        if (images[modalIdx]) {
+          fac
+            .getColorAsync(images[modalIdx])
+            .then((color) => {
+              setBgColor(color.hex);
+              let myColor = Color(color.hex);
+              myColor = myColor.lighten(0.5);
+              myColor = myColor.saturate(1);
+              myColor = myColor.negate();
+              setComplementary(myColor.hex());
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      });
+
     const openModal = (e) => {
         const idx = e.target.getAttribute('dataIndex');
         setModalIdx(idx);
@@ -86,9 +111,9 @@ export default function Library(props) {
                 onRequestClose={clearModal}
                 shouldCloseOnEsc={true}
                 shouldCloseOnOverlayClick={true}
-                // style={{ overlay: { zIndex: 3 } }}>
+                style={{ overlay: { background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)` } }}
                 >
-                <Card idx={modalIdx} complementary='#ededed' images={images} isFront={true} bgColor={'#ededed'} media={media} />
+                <Card idx={modalIdx} complementary={complementary} images={images} isFront={true} bgColor={bgColor} media={media} />
             </ReactModal>
         </div>
     );
