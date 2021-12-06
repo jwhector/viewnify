@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import Hammer from 'hammerjs';
 /* PROPS
     idx
     complementary
@@ -9,10 +10,53 @@ import React from "react";
     isFront
 */
 export default function Card(props) {
-  
+    const elem = useRef(null);
 
+    useEffect(() => {
+        let hammertimeTap;
+        if (elem.current !== null) {
+            hammertimeTap = handleTap();
+        }
+        return function clearHammer() {
+            if(hammertimeTap) hammertimeTap.off('tap');
+        }
+    });
+
+    function handleTap() {
+        const el = elem.current;
+        console.log(el);
+        var hammertimeTap = new Hammer(el);
+        
+        const imgEl = el.querySelector('.content-img');
+        const descEl = el.querySelector('.content-description');
+        
+        hammertimeTap.on('tap', function (e) {
+            const isLeftClick = getCursorPosition(el, e);
+            const isTopDesc = imgEl.classList.contains('hidden') && e.target.classList.contains('info-title') ? true : false;
+            if (isLeftClick && !isTopDesc) {
+                imgEl.classList.remove('hidden');
+                descEl.classList.add('hidden');
+            } else {
+                imgEl.classList.add('hidden');
+                descEl.classList.remove('hidden');
+            }
+        });
+
+        return hammertimeTap;
+    }
+
+    function getCursorPosition(el, event) {
+        const rect = el.getBoundingClientRect()
+        const x = event.center.x - rect.left
+        if (x < rect.width / 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
   return (
-    <div className={`media-main ${props.aOrB ? props.aOrB : ''} ${props.isFront ? 'front' : 'back'}`} style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}>
+    <div className={`media-main ${props.aOrB ? props.aOrB : ''} ${props.isFront ? 'front' : 'back'}`} style={{ boxShadow: `4px 4px 8px ${props.complementary}` }} ref={elem}>
         <div className="content-gradient-overlay" />
         <div className="content-img">
             <img className="cur-content-img" src={props.images[props.idx]} />

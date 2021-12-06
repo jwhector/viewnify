@@ -3,8 +3,9 @@ import playIco from "./play_ico.png";
 import pauseIco from "./pause_ico.png";
 import Hammer from "hammerjs";
 import waitForElementTransition from "wait-for-element-transition";
-import { waitFor } from "@testing-library/react";
 // import swipefn from './swipefn';
+import Card from '../Card/Card';
+import { AutoInit } from "materialize-css";
 
 async function fetchChoice(type, mediaData, token) {
   fetch(`http://localhost:3005/api/${type}`, {
@@ -25,8 +26,11 @@ async function fetchChoice(type, mediaData, token) {
 export default function Swipe(props) {
   const [aIdx, setAIdx] = useState(props.curIdx);
   const [bIdx, setBIdx] = useState(props.curIdx + 1);
+  const [isFront_a, setIsFront_a] = useState(true);
   const [draggable, setDraggable] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
   const cardContainerRef = useRef(null);
+  const cardInfoRef = useRef(null);
 
   // console.log(props.media);
     
@@ -46,9 +50,6 @@ export default function Swipe(props) {
         props.setCurPage(props.curPage + 1);
     }
   }, [props.curIdx]);
-
-//   if (!props.media.length) return null;
-
 
   const saveLike = () => {
     fetchChoice("likes", props.media[props.curIdx], props.token).then(
@@ -73,7 +74,13 @@ export default function Swipe(props) {
     const hammers = [];
 
     allCards.forEach(function (el) {
-      var hammertime = new Hammer(el);
+      var hammertime = new Hammer(el, {
+        // touchAction: 'auto',
+        recognizers: [
+          [Hammer.Tap],
+          [Hammer.Pan]
+        ]
+      });
       hammers.push(hammertime);
 
       const imgEl = el.querySelector('.content-img');
@@ -81,7 +88,8 @@ export default function Swipe(props) {
 
       hammertime.on('tap', function (e) {
         const isLeftClick = getCursorPosition(el, e);
-        if (isLeftClick) {
+        const isTopDesc = imgEl.classList.contains('hidden') && e.target.classList.contains('info-title') ? true : false;
+        if (isLeftClick && !isTopDesc) {
             imgEl.classList.remove('hidden');
             descEl.classList.add('hidden');
         } else {
@@ -90,14 +98,18 @@ export default function Swipe(props) {
         }
       });
 
-      hammertime.on("pan", function (event) {
-        el.classList.add("moving");
-      });
+      // hammertime.on("panstart", function (event) {
+
+      // });
 
       hammertime.on("pan", function (event) {
         if (event.deltaX === 0) return;
         if (event.center.x === 0 && event.center.y === 0) return;
+        
+        // if (event.target.classList.contains('card-info')) return;
         if (!draggable) return;
+
+        el.classList.add("moving");
 
         var xMulti = event.deltaX * 0.03;
         var yMulti = (event.deltaY + 100) / 80;
@@ -148,10 +160,11 @@ export default function Swipe(props) {
           } else {
             nextCard = tinderContainer.querySelector(".media-A");
           }
-          nextCard.classList.toggle("back");
-          nextCard.classList.toggle("front");
-          el.classList.toggle("back");
-          el.classList.toggle("front");
+          // nextCard.classList.toggle("back");
+          // nextCard.classList.toggle("front");
+          setIsFront_a(!isFront_a);
+          // el.classList.toggle("back");
+          // el.classList.toggle("front");
           imgEl.classList.remove('hidden');
             descEl.classList.add('hidden');
             props.setIsFirstInFocus(!props.isFirstInFocus);
@@ -166,12 +179,9 @@ export default function Swipe(props) {
     const rect = el.getBoundingClientRect()
     const x = event.center.x - rect.left
     const y = event.center.y - rect.top
-    // console.log("x: " + x + " y: " + y)
     if (x < rect.width / 2) {
-        // console.log('LEFT CLICK');
         return true;
     } else {
-        // console.log('RIGHT CLICK');
         return false;
     }
 }
@@ -200,62 +210,27 @@ export default function Swipe(props) {
 
   const removeSwipe = (hammers) => {
     hammers.forEach((hammertime) => {
-      hammertime.off("pan panend tap");
+      hammertime.off("panstart pan panend tap");
     });
   };
+
+  const handleClickLeft = (e) => {
+      
+  }
+
+  const handleClickRight = (e) => {
+
+  }
+
+  const handleClick = (e) => {
+    
+  }
 
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
-        <div
-          className="media-main media-B back"
-          style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}>
-            {/* <div className="card-prev" onClick={handleClickLeft} />
-            <div className="card-next" onClick={handleClickRight} /> */}
-            <div className="content-gradient-overlay" />
-          <div className="content-img">
-            <img className="cur-content-img" src={props.images[bIdx]} />
-          </div>
-          <div className="content-description hidden">
-              <img className="content-background" src={props.media[bIdx]?.backdrop} />
-              <div className="content-title">
-              <h2>{props.media[bIdx]?.title}</h2>
-              </div>
-              <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
-                <div className='release-rating'>
-                  <p className='release-date'>Release Date: {props.media[bIdx]?.release_date}</p>
-                  <p className='rating'>Rating: {props.media[bIdx]?.rating}</p>
-                </div>
-                <p>{props.media[bIdx]?.overview}</p>
-              </div>
-          </div>
-            <div className="bottom-border"></div>
-        </div>
-        <div
-          className="media-main media-A front"
-          style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
-        >
-            {/* <div className="card-prev" onClick={handleClickLeft} />
-            <div className="card-next" onClick={handleClickRight} /> */}
-            <div className="content-gradient-overlay" />
-          <div className="content-img ">
-            <img className="cur-content-img" src={props.images[aIdx]} />
-          </div>
-          <div className="content-description hidden">
-              <img className="content-background" src={props.media[aIdx]?.backdrop} />
-              <div className="content-title">
-                <h2>{props.media[aIdx]?.title}</h2>
-            </div>
-              <div className="media-a-info" style={{ background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)` }}>
-                <div className='release-rating'>
-                  <p className='release-date'>Release Date: {props.media[aIdx]?.release_date}</p>
-                  <p className='rating'>Rating: {props.media[aIdx]?.rating}</p>
-                </div>
-                <p>{props.media[aIdx]?.overview}</p>
-              </div>
-          </div>
-          <div className="bottom-border" />
-        </div>
+        <Card idx={bIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-B'} isFront={!isFront_a} />
+        <Card idx={aIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-A'} isFront={isFront_a} />
         <div className='btn-container'>
           <div className='pause-btn'>
             <div className='bar-container'>
@@ -273,21 +248,7 @@ export default function Swipe(props) {
             <div className='btn-background'></div>
           </div>
         </div>
-        {/* <div
-          className="media-main media-last removed"
-          style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
-        >
-          <div id="content-img">
-            <img id="cur-content-img" src={props.images[props.curIdx - 1]} />
-          </div>
-        </div> */}
-        {/* <div id="media-main-2">
-                            <div id="content-img">
-                                <img src={images[1]} />
-                            </div>
-                        </div> */}
-        
-
+    
         <div className="watch-container">{/* <h4>ryan</h4> */}</div>
       </div>
       <div
