@@ -1,0 +1,44 @@
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.card-modal {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    /* max-width: 300px; */
+    color: white;
+    /* justify-self: center; */
+    justify-content: space-around;
+    /* background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%); */
+    background-size: 100%;
+    background-repeat: repeat;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 25px;
+    transition: .5s;
+    transform: translateY(20%);
+    opacity: 1;
+    
+}
+
+.card-modal h2 {
+    font-size: 42px;
+    margin-bottom: 1rem;
+}
+
+.modal-in, .close-btn {
+    margin: 5px;
+
+    
+}
