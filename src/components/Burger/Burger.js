@@ -46,7 +46,9 @@ export const darkTheme = {
   darkLightText: '☼',
   shadowColor: "1px 1.2px 1.2px #7f7f7f",
   bottomBorder: 'black',
-  navBtnBackground: "#212121"
+  navBtnBackground: "#212121",
+  miniCard: "solid 2px white",
+
 
 };
 
