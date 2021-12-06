@@ -8,7 +8,6 @@ export default function NavBar(props) {
     const [shadowColor, setShadowColor] = useState('#683fff80')
 
     // const shadowColor = props.complementary || '#683fff80';
-
     useEffect(() => {
         if (props.complementary !== '#683fff80') {
             let myColor = Color(props.complementary);
@@ -38,8 +37,7 @@ export default function NavBar(props) {
                     <button onClick={setLogin} id="login-btn" className="styled-btn title-txt">Log In</button>
                     <LoginModal setToken={props.setToken} modalOpen={modalOpen} closeModal={closeModal} isLogin={true}  />
                 </> : <></>}
-                <button id="dark-light"onClick={() => props.themeToggler()}>☼
-                </button>
+                {props.showLogin ? <></> : <button id="dark-light"onClick={() => props.themeToggler()}>☼</button>}
         </div>
     );
 }
