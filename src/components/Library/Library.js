@@ -4,14 +4,22 @@ import MiniCard from '../Card/MiniCard';
 function MiniCards(props) {
     const media = props.media;
     const miniCards = media.map((medium) => {
-        const poster = `https://image.tmdb.org/t/p/original${medium.poster_path}`;
+        const poster = `https://image.tmdb.org/t/p/w200${medium.poster_path}`;
         const backdrop = `https://image.tmdb.org/t/p/original${medium.backdrop_path}`;
         const title = medium.title;
         const runtime = medium.runtime;
         const overview = medium.overview;
         const rating = medium.vote_average;
         // const poster = 
-        return <li key={medium.id}><MiniCard poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} /></li>
+        return (
+
+            <li key={medium.id}>
+            <MiniCard poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} />
+            <div class="mini-card-title"><p class="mini-title">{title}</p>
+            <p class="mini-title">{rating}</p>
+                </div>
+            </li>
+            )
     });
     return <ul className="library-list">{miniCards}</ul>
 }
@@ -43,10 +51,9 @@ export default function Library(props) {
     return (
         <div className="library" id="library-header">
             <h2>Library</h2>
-            <hr/>
             <div className="library-grid">
-                <MiniCards media={media} />
-                <div className="content-gradient"></div>
+                <MiniCards media={media} 
+                />
             </div>
         </div>
     );

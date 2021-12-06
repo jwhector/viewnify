@@ -87,24 +87,26 @@ function App() {
 
   if (!token) {
     return (
-      <div id="main">
-        <NavBar showLogin={true} setToken={setToken} />
-        <LandingPage
-          token={token}
-          setToken={setToken}
-          genres={genres}
-          setGenres={setGenres}
-          providers={providers}
-          setProviders={setProviders}
-        />
-      </div>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <div id="main">
+          <NavBar showLogin={true} setToken={setToken} themeToggler={themeToggler} />
+          <LandingPage
+            token={token}
+            setToken={setToken}
+            genres={genres}
+            setGenres={setGenres}
+            providers={providers}
+            setProviders={setProviders}
+          />
+        </div>
+      </ThemeProvider>
     );
   } else if (!user) {
     // location.href = `${process.env.PUBLIC_URL}/discover`;
     return (
-      <>
-        <NavBar showLogin={false} />
-      </>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <NavBar showLogin={false} themeToggler={themeToggler} />
+        </ThemeProvider>
     );
   }
 

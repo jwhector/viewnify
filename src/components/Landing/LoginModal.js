@@ -72,7 +72,7 @@ export default function LoginModal(props) {
                     // username: 'testtesttesties',
                     password: password,
                     email: email,
-                    genres: '12,35,99',
+                    genres: '12,35,80',
                     streaming_service: 'Netflix'
                 }).catch(err => console.error(err));
 
