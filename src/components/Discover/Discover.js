@@ -8,9 +8,6 @@ import Swipe from '../Swipe/Swipe';
 import { UserContext } from '../../App';
 
 export default function Discover(props) {
-  const apiKey = "3516458404b8ed5f73b3b631421314e1";
-  // const genres = props.genres;
-  // const services = props.services;
   const [images, setImages] = useState([]);
   const [curIdx, setCurIdx] = useState(0);
   const [entries, setEntries] = useState([]);
@@ -27,14 +24,6 @@ export default function Discover(props) {
   const fac = new FastAverageColor();
 
   useEffect(() => {
-    // if (props.user) {
-    // props.user.likes.forEach(like => {
-    //     seenMedia.push(parseInt(like.tmdb_id));
-    // });
-    // props.user.dislikes.forEach(dislike => {
-    //     seenMedia.push(parseInt(dislike.tmdb_id));
-    // });
-    // console.log(curPage);
     if (images[curIdx]) {
       fac
         .getColorAsync(images[curIdx])
@@ -73,7 +62,11 @@ export default function Discover(props) {
 
   const fillMedia = () => {
     getEntries().then((results) => {
-      console.log(results);
+        console.log(results);
+        if (!results.length) {
+          setCurPage(curPage + 1);
+          return;
+        }
         const mediaHolder = [...media];
         const imageHolder = [...images];
         results.forEach((result) => {
