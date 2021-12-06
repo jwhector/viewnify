@@ -8,9 +8,6 @@ import Swipe from '../Swipe/Swipe';
 import { UserContext } from '../../App';
 
 export default function Discover(props) {
-  const apiKey = "3516458404b8ed5f73b3b631421314e1";
-  // const genres = props.genres;
-  // const services = props.services;
   const [images, setImages] = useState([]);
   const [curIdx, setCurIdx] = useState(0);
   const [entries, setEntries] = useState([]);
@@ -27,26 +24,16 @@ export default function Discover(props) {
   const fac = new FastAverageColor();
 
   useEffect(() => {
-    // if (props.user) {
-    // props.user.likes.forEach(like => {
-    //     seenMedia.push(parseInt(like.tmdb_id));
-    // });
-    // props.user.dislikes.forEach(dislike => {
-    //     seenMedia.push(parseInt(dislike.tmdb_id));
-    // });
-    // console.log(curPage);
     if (images[curIdx]) {
       fac
         .getColorAsync(images[curIdx])
         .then((color) => {
-        //   console.log(color);
           setBgColor(color.hex);
           let myColor = Color(color.hex);
           myColor = myColor.lighten(0.5);
           myColor = myColor.saturate(1);
           myColor = myColor.negate();
           props.setComplementary(myColor.hex());
-        //   console.log(props.complementary);
         })
         .catch((err) => {
           console.log(err);
@@ -73,6 +60,10 @@ export default function Discover(props) {
 
   const fillMedia = () => {
     getEntries().then((results) => {
+        if (!results.length) {
+          setCurPage(curPage + 1);
+          return;
+        }
         const mediaHolder = [...media];
         const imageHolder = [...images];
         results.forEach((result) => {
@@ -84,7 +75,6 @@ export default function Discover(props) {
             release_date: result.release_date,
             overview: result.overview,
             rating: result.rating,
-            // popularity
           });
           imageHolder.push(
             `https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -92,48 +82,32 @@ export default function Discover(props) {
         });
         setImages(imageHolder);
         setMedia(mediaHolder);
-        // console.log(media);
       });
   }
 
-//   useEffect(() => {
-//     if (discoverBg_a.current && discoverBg_b.current) {
-//         discoverBg_a.current.classList.toggle('hidden');
-//         discoverBg_b.current.classList.toggle('hidden');
-//     }
-//   }, [bgColor])
-
   const getEntries = async () => {
     const entries = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${curPage}&with_watch_monetization_types=flatrate`
-    ).then((data) => data.json());
-    // console.log(entries);
-    const results = entries.results.filter(
-      (elem) => !seenMedia.includes(elem.id)
+      'http://localhost:3005/tmdbSearch', {
+        method: 'POST', 
+        mode: 'cors', 
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer: ${props.token}`
+        },
+        body: JSON.stringify({ format: 'movie', curPg: {curPage}}) // body data type must match "Content-Type" header
+      }
     );
-    return results;
+    return entries.json();
   };
 
   return (
     <div id="discover">
-      <div
-        className="int-container"
-        // style={{
-        //   background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`,
-        // }}
-      >
+      <div className="int-container">
         <div className={`discover-bg ${isFirstInFocus ? '' : ''}`} ref={discoverBg_a} style={{
-          background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`,
-        //   transition: `${isFirstInFocus ? '.3s' : 'none'}`,
-        //   z-index: `${isFirstInFocus ? :}`,
-            // opacity: `${isFirstInFocus ? 1 : 0}`
+          background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`
         }}/>
-        {/* <div className={`discover-bg ${isFirstInFocus ? 'hidden' : 'hidden'}`} ref={discoverBg_b} style={{
-          background: `radial-gradient(circle, ${isFirstInFocus ? bgColor_b : bgColor} 33%, #000000 100%)`,
-        //   z-index: `${isFirstInFocus ? :}`
-        //   transition: `${isFirstInFocus ? 'none' : '.3'}`,
-        //   opacity: `${isFirstInFocus ? 0 : 1}`
-        }}/> */}
         <Swipe media={media} images={images} curIdx={curIdx} setCurIdx={setCurIdx} bgColor={bgColor} complementary={props.complementary} token={props.token} curPage={curPage} setCurPage={setCurPage} discoverBg_a={discoverBg_a} discoverBg_b={discoverBg_b} isFirstInFocus={isFirstInFocus} setIsFirstInFocus={setIsFirstInFocus} />
       </div>
     </div>
