@@ -18,7 +18,7 @@
 .card-modal {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 21.5%;
     height: 100%;
     color: white;
     background-size: 100%;
@@ -41,6 +41,10 @@
     margin: 5px;
 
     
+}
+
+.ReactModalPortal{
+    animation: Fade_Out .5s ease;
 }
 
 @keyframes Fade_In {
