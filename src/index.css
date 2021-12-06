@@ -136,7 +136,9 @@ body {
 #library,
 #chatroom,
 #invite,
-#preferences {
+#logout,
+#preferences
+{
   justify-content: center;
   align-items: center;
   list-style-type: none;

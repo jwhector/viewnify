@@ -6,8 +6,7 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import { cgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi"
-
-
+import useToken from "../../useToken";
 
 export const lightTheme = {
   body: '#ededed',
@@ -104,7 +103,7 @@ background: ${(props) => {
   transition: 0.3s;
   }
 
-#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, .watch-header, .create-party, .discover, .watch-content {
+#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, #logout,.watch-header, .create-party, .discover, .watch-content {
   transition: 0.3s;
   box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
@@ -132,11 +131,16 @@ background: ${(props) => {
 }
 
 `
-
 export default function Burger(props) {
   const showSettings = (event) => {
     event.preventDefault()
   }
+  const { token, setToken } = useToken();
+  const removeToken = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+  }
+
   return (
     <Menu>
         <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
@@ -144,6 +148,7 @@ export default function Burger(props) {
         <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
         <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
         <div className="main-links" id="preferences" >Preferences</div>
+        <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">Log Out</NavLink>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
       
