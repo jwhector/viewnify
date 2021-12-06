@@ -15,7 +15,7 @@
 .card-modal {
     display: flex;
     flex-direction: column;
-    width: 450px;
+    width: 100%;
     /* max-width: 300px; */
     color: white;
     /* justify-self: center; */
@@ -29,6 +29,7 @@
     transition: .3s;
     transform: translateY(20%);
     opacity: 1;
+    align-items: center;
     
 }
 
