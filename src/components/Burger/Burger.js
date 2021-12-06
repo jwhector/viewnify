@@ -23,7 +23,8 @@ export const lightTheme = {
   MuiPaperRoot: "white",
   darkLightFont: '#ad33ff',
   darkLightText: '☽',
-  bottomBorder: 'linear-gradient (0deg, white 0%, transparent 20%)'
+  bottomBorder: 'linear-gradient (0deg, white 0%, transparent 20%)',
+  miniCard: "solid 2px 000000"
 
 }
 // #EDEDED for text
@@ -46,7 +47,9 @@ export const darkTheme = {
   darkLightText: '☼',
   shadowColor: "1px 1.2px 1.2px #7f7f7f",
   bottomBorder: 'black',
-  navBtnBackground: "#212121"
+  navBtnBackground: "#212121",
+  miniCard: "solid 2px white",
+
 
 };
 
@@ -124,6 +127,13 @@ background: ${(props) => {
   text-shadow: ${(props) => props.theme.shadowColor} !important;
 }
 
+.mini-card {
+  border: ${(props) => props.theme.miniCard} !important;
+}
+
+#library-header {
+  color: ${(props) => props.theme.fontColor} !important;
+}
 
 
 `

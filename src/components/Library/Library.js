@@ -41,11 +41,12 @@ export default function Library(props) {
     // }
 
     return (
-        <div className="library">
+        <div className="library" id="library-header">
             <h2>Library</h2>
             <hr/>
             <div className="library-grid">
                 <MiniCards media={media} />
+                <div className="content-gradient"></div>
             </div>
         </div>
     );

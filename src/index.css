@@ -846,9 +846,11 @@ body {
 
 .mini-card {
   max-width: 150px;
+  max-height: 225px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 3px 3px 3px white;
+  border: solid 2px #ededed;
+  /* box-shadow: 3px 3px 3px white; */
 }
 
 .mini-cur-content-img {
