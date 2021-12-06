@@ -23,9 +23,9 @@
 #slogan {
     position: absolute;
     margin: auto;
-    font-size: 56px;
+    font-size: 75px;
     color: white;
-    transform: translate(4.5%);
+    transform: translate(3.3%);
     letter-spacing: 2px;
     animation: Squish 1s ease;
 }
@@ -39,6 +39,28 @@
 #logo-img {
     height: 75vh;
     animation: Slide_Up 1s ease;
+}
+
+#login-btn {
+    padding: 7px 20px 7px 20px;
+    background:white;
+    color:rgba(226, 43, 255, 1)
+}
+
+#signup-btn {
+    padding: 10px 20px 10px 20px;
+    background:white;
+    color:rgba(226, 43, 255, 1)
+}
+
+#signup-btn:hover, #login-btn:hover{
+    background: radial-gradient(
+    circle,
+    rgba(104, 63, 255, 1) 0%,
+    rgba(226, 43, 255, 1) 100%
+    );
+    color: white;
+    animation: Hover .5s ease;
 }
 
 .login-modal-overlay {
@@ -132,4 +154,21 @@
 @keyframes Squish {
     from {letter-spacing: 25px;}
     to {letter-spacing: 2px;}
+}
+
+@keyframes Hover {
+    from {
+        background: white;
+        color: rgba(226, 43, 255, 1);
+    }
+
+    to { 
+        background: radial-gradient(
+        circle,
+        rgba(104, 63, 255, 1) 0%,
+        rgba(226, 43, 255, 1) 100%
+        );
+        color: white;
+    }
+
 }
