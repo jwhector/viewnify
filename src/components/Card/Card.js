@@ -24,7 +24,7 @@ export default function Card(props) {
 
     function handleTap() {
         const el = elem.current;
-        console.log(el);
+        // console.log(el);
         var hammertimeTap = new Hammer(el);
         
         const imgEl = el.querySelector('.content-img');

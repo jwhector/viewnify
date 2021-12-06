@@ -15,12 +15,12 @@
 .card-modal {
     display: flex;
     flex-direction: column;
-    /* width: 40%; */
+    width: 40%;
     /* max-width: 300px; */
     color: white;
     /* justify-self: center; */
     justify-content: space-around;
-    background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%);
+    /* background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%); */
     background-size: 100%;
     background-repeat: repeat;
     padding: 2rem;
