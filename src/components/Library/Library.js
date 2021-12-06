@@ -110,7 +110,7 @@ export default function Library(props) {
                 onRequestClose={clearModal}
                 shouldCloseOnEsc={true}
                 shouldCloseOnOverlayClick={true}
-                style={{ overlay: { background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)` } }}
+                style={{ overlay: { background: `radial-gradient(circle, ${bgColor} 33%, rgba(0,0,0,0.5) 100%)` } }}
                 >
                 <Card idx={modalIdx} complementary={complementary} images={images} isFront={true} bgColor={bgColor} media={media} />
             </ReactModal>

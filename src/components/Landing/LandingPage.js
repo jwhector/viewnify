@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import LoginModal from './LoginModal';
 import './LandingPage.css';
-import logo from './Viewnify-logo.png';
+import logo from './viewnify-logo.png';
 
 export default function LandingPage(props) {
     const [modalOpen, setModalOpen] = useState(false);
