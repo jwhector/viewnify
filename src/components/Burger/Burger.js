@@ -10,21 +10,20 @@ import { HiMoon } from "react-icons/hi"
 
 
 export const lightTheme = {
-  body: 'white',
+  body: '#ededed',
   fontColor: 'black',
-  background: 'white',
-  root: 'white',
-  homer: 'white',
+  background: '#ededed',
+  root: '#ededed',
+  homer: '#ededed',
   nav: '#FFFFF',
-  rightContainer: 'white',
+  rightContainer: '#ededed',
   playPause: '#ededed',
   bmMenu: '#FFFFF',
-  darkLight: 'white',
-  MuiPaperRoot: "white",
+  darkLight: '#ededed',
+  MuiPaperRoot: "#ededed",
   darkLightFont: '#ad33ff',
   darkLightText: '☽',
-  bottomBorder: 'linear-gradient (0deg, white 0%, transparent 20%)',
-  miniCard: "solid 2px 000000"
+  bottomBorder: 'linear-gradient (0deg, #ededed 0%, transparent 20%)'
 
 }
 // #EDEDED for text
@@ -128,13 +127,8 @@ background: ${(props) => {
 }
 
 .mini-card {
-  border: ${(props) => props.theme.miniCard} !important;
+  box-shadow: ${(props) => `3px 3px 3px ${props.theme.fontColor}`}
 }
-
-#library-header {
-  color: ${(props) => props.theme.fontColor} !important;
-}
-
 
 `
 
