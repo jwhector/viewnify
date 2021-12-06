@@ -4,7 +4,7 @@ import MiniCard from '../Card/MiniCard';
 function MiniCards(props) {
     const media = props.media;
     const miniCards = media.map((medium) => {
-        const poster = `https://image.tmdb.org/t/p/original${medium.poster_path}`;
+        const poster = `https://image.tmdb.org/t/p/w200${medium.poster_path}`;
         const backdrop = `https://image.tmdb.org/t/p/original${medium.backdrop_path}`;
         const title = medium.title;
         const runtime = medium.runtime;
