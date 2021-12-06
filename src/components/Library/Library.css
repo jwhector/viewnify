@@ -15,7 +15,7 @@
 .card-modal {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 450px;
     /* max-width: 300px; */
     color: white;
     /* justify-self: center; */
@@ -23,7 +23,7 @@
     /* background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%); */
     background-size: 100%;
     background-repeat: repeat;
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: center;
     border-radius: 25px;
     transition: .3s;

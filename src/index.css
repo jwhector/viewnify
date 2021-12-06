@@ -6,9 +6,10 @@ body {
   overflow: hidden;
 }
 
-#root, .styleme {
+#root,
+.styleme {
   min-height: 100vh;
-  background: #cbcbcb 0% 0% no-repeat padding-box;
+  background: black 0% 0% no-repeat padding-box;
   display: flex;
   flex-direction: column;
 }
@@ -79,8 +80,8 @@ body {
 
 #login-btn {
   position: absolute;
-  left: 0;
-  margin-left: 20px;
+  right: 0;
+  margin-right: 20px;
   margin-top: 7px;
 }
 
@@ -102,7 +103,7 @@ body {
   font-size: 24px;
   box-shadow: gray 1px 1px 2px;
   font-weight: 500;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .right-container {
@@ -135,26 +136,25 @@ body {
 #library,
 #chatroom,
 #invite,
-#preferences
-{
+#preferences {
   justify-content: center;
   align-items: center;
   list-style-type: none;
   /* border-spacing: 50px; */
-  margin-top: 3.92rem;
+  margin-top: 5.3rem;
   font-family: Quicksand;
   color: #00000080;
   flex-direction: row;
   border-bottom: solid 1.7px #a435ff;
-  border-top: solid 1.7px #a435ff;
+  /* border-top: solid 1.7px #a435ff; */
   transition: 0.2s;
   width: 100%;
   top: 416px;
   /* margin-top: 30px; */
   left: 196px;
   height: 59px;
-  background: #FFFFFF;
-  box-shadow: 0px 1px 1px .25px #d32dff;
+  background: #ffffff;
+  box-shadow: 0px 1px 1px 0.25px #d32dff;
 
   opacity: 1 !important;
   text-decoration: none;
@@ -163,7 +163,7 @@ body {
   display: flex !important;
 }
 
- /* a.main-links:hover {
+/* a.main-links:hover {
   color: purple;
 } */
 
@@ -186,9 +186,10 @@ body {
   height: 34px;
   background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
     0% no-repeat padding-box;
-    background-image: url('./components/transparent.png');
-    background-size:contain; background-repeat:no-repeat;
-    object-fit: cover;
+  background-image: url("./components/transparent.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
   box-shadow: 2px 2px 1px 0.7px #a535ff;
   border-radius: 32px;
   opacity: 1;
@@ -197,8 +198,6 @@ body {
   font-size: 25px;
   display: flex;
 }
-
-
 
 element.style {
   display: flex;
@@ -225,7 +224,7 @@ element.style {
   width: 100px;
   border-radius: 50%;
   z-index: 8;
-  border: 3px solid #006CD8;
+  border: 3px solid #006cd8;
 }
 
 .pause-btn {
@@ -240,7 +239,7 @@ element.style {
   z-index: 6;
 }
 
-.bar-container{
+.bar-container {
   width: 65px;
   height: 100px;
   position: absolute;
@@ -255,10 +254,10 @@ element.style {
   display: flex;
   width: 16px;
   height: 70px;
-  background: transparent linear-gradient(0deg, #7503FA 0%, #F70BC1 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #7503fa 0%, #f70bc1 100%) 0% 0%
+    no-repeat padding-box;
   border-radius: 5px;
 }
-
 
 .play-pause {
   justify-content: center;
@@ -390,14 +389,14 @@ body {
 }
 
 .content-img {
-  width: 100%;
-  height: 100%;
+  width: 450px;
+  height: 600px;
   object-fit: cover;
   overflow: hidden;
   z-index: -1;
   border-radius: 33px 33px 0 0;
   line-height: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 #content-description {
@@ -411,19 +410,19 @@ body {
 }
 
 .card {
-    transition: all 0.3s ease-in-out;
-    cursor: -webkit-grab;
-    cursor: -moz-grab;
-    cursor: grab;
-    height: 750px;
-    flex-grow: 1;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    line-height: 0;
-    position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  height: 750px;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  line-height: 0;
+  position: relative;
 }
 
 .card .watch-container {
@@ -440,10 +439,10 @@ body {
   width: 4px;
 }
 .media-a-info::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 .media-a-info::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 .media-a-info::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -468,7 +467,7 @@ body {
   opacity: 1;
   box-shadow: 4px 4px 8px 0 #e22bff;
   border-radius: 33px;
-  background-color: #ffffffc3;
+  background-color: black;
   color: #00000080;
   will-change: transform;
   transition: all 0.3s ease-in-out;
@@ -601,7 +600,6 @@ body {
   position: fixed;
   height: 100%;
   z-index: 2 !important;
-
 }
 
 .bm-menu {
@@ -635,33 +633,35 @@ body {
   overflow: hidden;
 }
 
-.watch-header, .create-party, .discover, .watch-content {
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    border-spacing: 50px;
-    margin: 1rem;
-    font-family: Quicksand;
-    color: #00000080;
-    flex-direction: row;
-    border: 1px #683fff;
-    transition: 0.2s;
-    width: 55%;
-    max-width: 175px;
-    top: 416px;
-    margin-top: 61px;
-    left: 196px;
-    height: 59px;
-    background: #FFFFFF;
-    box-shadow: 0.25px 0.2px 1px 1px #a535ff;
-    border-radius: 32px;
-    opacity: 1 !important;
-    text-decoration: none;
-    text-align: center;
-    font-size: 20px;
-    display: flex !important;
+.watch-header,
+.create-party,
+.discover,
+.watch-content {
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  border-spacing: 50px;
+  margin: 1rem;
+  font-family: Quicksand;
+  color: #00000080;
+  flex-direction: row;
+  border: 1px #683fff;
+  transition: 0.2s;
+  width: 55%;
+  max-width: 175px;
+  top: 416px;
+  margin-top: 61px;
+  left: 196px;
+  height: 59px;
+  background: #ffffff;
+  box-shadow: 0.25px 0.2px 1px 1px #a535ff;
+  border-radius: 32px;
+  opacity: 1 !important;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  display: flex !important;
 }
-
 
 .user-watch,
 .match-watch {
@@ -691,7 +691,6 @@ body {
 .library-content h1 {
   color: white;
 }
-
 
 .card-prev {
   height: 100%;
@@ -732,17 +731,17 @@ body {
 }
 
 .content-gradient-overlay {
-  width: 100%;
+  width: 450px;
   height: 675px;
   position: absolute;
   z-index: 8;
-  transition: .3s;
+  transition: 0.3s;
   background: linear-gradient(0deg, black 0%, transparent 20%);
 }
 
 .hidden {
   opacity: 0;
-  filter:brightness(0%);
+  filter: brightness(0%);
   z-index: -1;
 }
 
@@ -757,8 +756,8 @@ body {
   font-size: 30px;
   background: black;
   color: #ededed;
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
   z-index: 10;
 }
 
@@ -788,12 +787,12 @@ body {
   font-size: 15px;
 }
 
-.release-date{
-  margin: 25px 0px 20px 0px;  
+.release-date {
+  margin: 25px 0px 20px 0px;
 }
 
 .rating {
-  margin: 25px 0px 20px 0px;  
+  margin: 25px 0px 20px 0px;
 }
 
 .discover-bg {
@@ -819,20 +818,15 @@ body {
 }
 
 .play-img {
-    position: absolute;
-    height: 70px;
-    z-index: 9;
-    transform: translateX(8%);
+  position: absolute;
+  height: 70px;
+  z-index: 9;
+  transform: translateX(8%);
 }
 /* iPhone 5/5S/5C/5SE */
 /* iPhone 5/SE  */
 
-.card-info {
-  /* touch-action: pan-x pan-y !important; */
-}
-
 .library-grid {
-
 }
 
 .library-list {
@@ -849,141 +843,169 @@ body {
 }
 
 .mini-card {
-  max-width: 150px;
-  max-height: 225px;
+  /* width: 300px;
+  height: 450px; */
   border-radius: 18px;
   overflow: hidden;
-  border: solid 2px #ededed;
+  /* border: solid 2px #ededed; */
   /* box-shadow: 3px 3px 3px white; */
 }
 
 .mini-cur-content-img {
-  width: 150px;
-  height: 225px;
+  /* width: 300px;
+  height: 450px; */
 }
 
 .mini-card-title {
-  max-width: 150px;
+  width: 150px;
   font-size: 8px;
   margin-top: 3.5px;
   color: #a1a1a1;
 }
 
-
-@media only screen 
-  and (device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .cur-content-img, .body-container {
-      max-width: 225px;
-      max-height: 300px;
-    }
-    .media-a-info {
-      font-size: 13px;
-    }
-    .release-rating {
-      font-size: 12px;
-    }
-    .content-title {
-      font-size: 20px;
-      height: 21.3%;
-    }
-    .btn-container {
-      height: 75px;
-    }
-    .bm-burger-button {
-      position: fixed;
-      width: 36px;
-      height: 28px;
-      left: 17px;
-      top: 23.5px;
-    }
-    #dark-light {
-      right:0px;
-      height:32px;
-    }
-    
-
+@media only screen and (device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .cur-content-img,
+  .body-container {
+    max-width: 225px;
+    max-height: 300px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 110px;
+    max-height: 165px;
+  }
+  .media-a-info {
+    font-size: 13px;
+  }
+  .release-rating {
+    font-size: 12px;
+  }
+  .content-title {
+    font-size: 20px;
+    height: 21.3%;
+  }
+  .btn-container {
+    height: 75px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 17px;
+    top: 23.5px;
+  }
+  #dark-light {
+    right: 0px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 2rem;
+  }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-    .cur-content-img, .body-container {
-      max-width: 300px;
-      max-height: 450px;
-    }
-    .media-a-info {
-      font-size: 13px;
-    }
-    .release-rating {
-      font-size: 11px;
-    }
-    .content-title {
-      font-size: 22px;
-      height: 25%;
-    }
-    .btn-container {
-      height: 0px;
-    }
-    .bm-burger-button {
-      position: fixed;
-      width: 36px;
-      height: 28px;
-      left: 30px;
-      top: 23.5px;
-    }
-    #dark-light {
-      right:8px;
-      height:32px;
-    }
-
-
+@media only screen and (device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .cur-content-img,
+  .body-container {
+    max-width: 300px;
+    max-height: 450px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 130px;
+    max-height: 190px;
+  }
+  .media-a-info {
+    font-size: 13px;
+  }
+  .release-rating {
+    font-size: 11px;
+  }
+  .content-title {
+    font-size: 22px;
+    height: 25%;
+  }
+  .btn-container {
+    height: 0px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 30px;
+    top: 23.5px;
+  }
+  #dark-light {
+    right: 8px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 3rem;
+  }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-    /* .cur-content-img {
+@media only screen and (device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  /* .cur-content-img {
       max-width: 400px;
       min-height: 500px;
     } */
-    .cur-content-img, .body-container {
-      max-width: 300px;
-      max-height: 450px;
-    }
-    .media-a-info {
-      font-size: 16px;
-    }
-    .release-rating {
-      font-size: 14px;
-    }
-    .content-title {
-      font-size: 30px;
-      height: 27%;
-    }
-    .btn-container {
-      height: 0px;
-    }
-    .bm-burger-button {
-      position: fixed;
-      width: 36px;
-      height: 28px;
-      left: 30px;
-      top: 23.5px;
-    }
-    #dark-light {
-      right:10px;
-      height:32px;
-    }
+  .cur-content-img,
+  .body-container {
+    max-width: 300px;
+    max-height: 450px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 150px;
+    max-height: 225px;
+  }
+  .media-a-info {
+    font-size: 16px;
+  }
+  .release-rating {
+    font-size: 14px;
+  }
+  .content-title {
+    font-size: 30px;
+    height: 27%;
+  }
+  .btn-container {
+    height: 0px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 30px;
+    top: 23.5px;
+  }
+  #dark-light {
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 3.6rem;
+  }
 }
 
 /* Portr
@@ -991,75 +1013,96 @@ body {
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-    .cur-content-img {
-      max-width: 300px;
-      max-height: 450px;
-    }
-    .media-a-info {
-      font-size: 13px;
-    }
-    .release-rating {
-      font-size: 11px;
-    }
-    .content-title {
-      font-size: 22px;
-      height: 25%;
-    }
-    .btn-container {
-      height: 0px;
-    }
-    .bm-burger-button {
-      position: fixed;
-      width: 36px;
-      height: 28px;
-      left: 30px;
-      top: 23.5px;
-    }
-    #dark-light {
-      right:10px;
-      height:32px;
-    }
+@media only screen and (device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .cur-content-img {
+    max-width: 300px;
+    max-height: 450px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 130px;
+    max-height: 190px;
+  }
+  .media-a-info {
+    font-size: 13px;
+  }
+  .release-rating {
+    font-size: 11px;
+  }
+  .content-title {
+    font-size: 22px;
+    height: 25%;
+  }
+  .btn-container {
+    height: 0px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 30px;
+    top: 23.5px;
+  }
+  #dark-light {
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 4.4rem;
+  }
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .cur-content-img, .body-container {
-      max-width: 450px;
-      max-height: 675px;
-    }
-    .media-a-info {
-      font-size: 25px;
-    }
-    .release-rating {
-      font-size: 20px;
-    }
-    .content-title {
-      font-size: 40px;
-      height: 37.5%;
-    }
-    .btn-container {
-      height: 0px;
-    }
-    .bm-burger-button {
-      position: fixed;
-      width: 36px;
-      height: 28px;
-      left: 30px;
-      top: 22.5px;
-    }
-    #dark-light {
-      right:10px;
-      height:32px;
-    }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .cur-content-img,
+  .body-container {
+    max-width: 450px;
+    max-height: 675px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 150px;
+    max-height: 225px;
+  }
+  .media-a-info {
+    font-size: 25px;
+  }
+  .release-rating {
+    font-size: 20px;
+  }
+  .content-title {
+    font-size: 40px;
+    height: 37.5%;
+  }
+  .btn-container {
+    height: 0px;
+  }
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 28px;
+    left: 30px;
+    top: 22.5px;
+  }
+  #dark-light {
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 6.6rem;
+  }
 }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
@@ -1069,10 +1112,21 @@ body {
 /* Galaxy Fold */
 
 /* Moto G4 */
-@media only screen and (device-width: 360px) and (device-height: 640px){ 
-  .cur-content-img, .body-container {
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+  .cur-content-img,
+  .body-container {
     max-width: 225px;
     max-height: 337.5px;
+  }
+
+  .mini-cur-content-img {
+    width: 125px;
+    height: 187.5px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 125px;
+    max-height: 187.5px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1097,16 +1151,30 @@ body {
     top: 17.5px;
   }
   #dark-light {
-    right:10px;
-    height:32px;
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 2.6rem;
   }
 }
 
 /* Galaxy S5 and Pixel 2 */
-@media only screen and (device-width: 411px) and (device-height: 731px){ 
-  .cur-content-img, .body-container {
+@media only screen and (device-width: 411px) and (device-height: 731px) {
+  .cur-content-img,
+  .body-container {
     max-width: 275px;
     max-height: 412.5px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 150px;
+    max-height: 225px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1129,17 +1197,30 @@ body {
     top: 17.5px;
   }
   #dark-light {
-    right:10px;
-    height:32px;
+    right: 10px;
+    height: 32px;
   }
-
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 3.6rem;
+  }
 }
 
 /* Pixel 2 XL */
-@media only screen and (device-width: 411px) and (device-height: 823px){ 
-  .cur-content-img, .body-container {
+@media only screen and (device-width: 411px) and (device-height: 823px) {
+  .cur-content-img,
+  .body-container {
     max-width: 300px;
     max-height: 450px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 150px;
+    max-height: 225px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1162,13 +1243,21 @@ body {
     top: 23.5px;
   }
   #dark-light {
-    right:10px;
-    height:32px;
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 4.6rem;
   }
 }
 
-@media only screen and (device-width: 375px) and (device-height: 812px){ 
-  .cur-content-img{
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+  .cur-content-img {
     max-width: 300px;
     max-height: 450px;
   }
@@ -1177,24 +1266,54 @@ body {
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-height: 1024px){ 
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
   .cur-content-img {
     max-width: 500px;
     max-height: 675px;
   }
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px){ 
-  .cur-content-img, .body-container {
-    max-width: 450px;
-    max-height: 675px;
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 200px;
+    max-height: 300px;
   }
 }
 
-@media only screen and (min-device-width: 540px) and (max-device-height: 720px){ 
-  .cur-content-img, .body-container {
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) {
+  .cur-content-img,
+  .body-container {
+    max-width: 450px;
+    max-height: 675px;
+  }
+  .content-img {
+    width: 400px;
+    max-height: 100%; 
+  }
+
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 200px;
+    max-height: 300px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 9.8rem;
+  }
+}
+
+@media only screen and (min-device-width: 540px) and (max-device-height: 720px) {
+  .cur-content-img,
+  .body-container {
     max-width: 300px;
     max-height: 450px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 125px;
+    max-height: 187.5px;
   }
   .media-a-info {
     font-size: 20px;
@@ -1217,15 +1336,29 @@ body {
     top: 22.5px;
   }
   #dark-light {
-    right:10px;
-    height:32px;
+    right: 10px;
+    height: 32px;
+  }
+  #discover-btn,
+  #watch-party,
+  #library,
+  #chatroom,
+  #invite,
+  #preferences {
+    margin-top: 3.6rem;
   }
 }
 
-@media only screen and (device-width: 280px) and (max-device-height: 653px){ 
-  .cur-content-img, .body-container {
+@media only screen and (device-width: 280px) and (max-device-height: 653px) {
+  .cur-content-img,
+  .body-container {
     max-width: 225px;
     max-height: 337.5px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 200px;
+    max-height: 300px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1249,14 +1382,27 @@ body {
   }
   #dark-light {
     right: -9px;
-    height:28px;
+    height: 28px;
   }
+  #discover-btn,
+    #watch-party,
+    #library,
+    #chatroom,
+    #invite,
+    #preferences {
+      margin-top: 2.9rem;
+    } 
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-height: 600px){ 
+@media only screen and (min-device-width: 1024px) and (max-device-height: 600px) {
   .cur-content-img {
     max-width: 300px;
     max-height: 325px;
+  }
+  .mini-card,
+  .mini-cur-content-img {
+    max-width: 200px;
+    max-height: 300px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1271,10 +1417,19 @@ body {
   .btn-container {
     height: 125px;
   }
-} 
+  #discover-btn,
+    #watch-party,
+    #library,
+    #chatroom,
+    #invite,
+    #preferences {
+      margin-top: 2.4rem;
+    } 
+}
 
-@media only screen and (device-width: 1280px) and (device-height: 800px){ 
-  .cur-content-img, .body-container {
+@media only screen and (device-width: 1280px) and (device-height: 800px) {
+  .cur-content-img,
+  .body-container {
     max-width: 400px;
     max-height: 500px;
   }
@@ -1291,40 +1446,65 @@ body {
   .btn-container {
     height: 187px;
   }
+  #discover-btn,
+    #watch-party,
+    #library,
+    #chatroom,
+    #invite,
+    #preferences {
+      margin-top: 4.3rem;
+    } 
 }
 
 @media only screen and (min-device-width: 1280px) {
-    .cur-content-img, .body-container {
-      max-width: 400px;
-      max-height: 600px;
-    }
-    .body-container {
-      max-width: 400px;
-      max-height: 600px;
-    }
-    .media-a-info {
-      font-size: 20px;
-    }
-    .release-rating {
-      font-size: 20px;
-    }
-    .content-title {
-      font-size: 40px;
-      height: 37.5%;
-    }
-    .btn-container {
-      height: 0px;
-    }
+  .cur-content-img,
+  .body-container {
+    max-width: 400px;
+    max-height: 600px;
+  }
+
+  .body-container {
+    max-width: 400px;
+    max-height: 600px;
+  }
+  .media-a-info {
+    font-size: 20px;
+  }
+  .release-rating {
+    font-size: 20px;
+  }
+  .content-title {
+    font-size: 40px;
+    height: 33.5%;
+  }
+  .btn-container {
+    height: 0px;
+  }
+  #discover-btn,
+    #watch-party,
+    #library,
+    #chatroom,
+    #invite,
+    #preferences {
+      margin-top: 5.1rem;
+    } 
 }
 
- .MuiPaper-root, .MuiToolbar-root, .MuiTypography-body2 {
+.MuiPaper-root,
+.MuiToolbar-root,
+.MuiTypography-body2 {
   font-family: Quicksand !important;
 }
 
-.MuiInputBase-root, .MuiTable-root, .MTablePaginationInner-root-14, .MuiTypography-h6, .MuiTableRow-root, .MuiButtonBase-root {
+.MuiInputBase-root,
+.MuiTable-root,
+.MTablePaginationInner-root-14,
+.MuiTypography-h6,
+.MuiTableRow-root,
+.MuiButtonBase-root {
   font-family: Quicksand !important;
 }
 
 .MTableHeader-header-13 {
   z-index: 0 !important;
-} 
+}
