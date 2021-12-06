@@ -132,7 +132,7 @@ function App() {
             <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/library" element={<Home page="library" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} setComplementary={setComplementary} />} />
-            <Route path="/invite" element={<Home page="invite" user={user} token={token} />} setComplementary={setComplementary} />
+            <Route path="/invite" element={<Home page="invite" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} setComplementary={setComplementary} />
             <Route path="/" element={<Home page="logout" user={user} token={token} />} setComplementary={setComplementary} />
             
             </Routes>

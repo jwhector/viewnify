@@ -22,7 +22,8 @@ export const lightTheme = {
   MuiPaperRoot: "#ededed",
   darkLightFont: '#ad33ff',
   darkLightText: '☽',
-  bottomBorder: 'linear-gradient (0deg, #ededed 0%, transparent 20%)'
+  bottomBorder: 'linear-gradient (0deg, #ededed 0%, transparent 20%)',
+  miniBox: '#000000'
 
 }
 // #EDEDED for text
@@ -46,7 +47,7 @@ export const darkTheme = {
   shadowColor: "1px 1.2px 1.2px #7f7f7f",
   bottomBorder: 'black',
   navBtnBackground: "#212121",
-  miniCard: "solid 2px white",
+  miniBox: '#ededed',
 
 
 };
@@ -126,7 +127,7 @@ background: ${(props) => {
 }
 
 .mini-card {
-  box-shadow: ${(props) => `3px 3px 3px ${props.theme.fontColor}`}
+  box-shadow: ${(props) => `2px 2px ${props.theme.miniBox}`}
 }
 
 `
@@ -145,7 +146,6 @@ export default function Burger(props) {
         <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
         <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
         <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
-        <NavLink exact activeClassName="main-links" to="/chatroom" id="chatroom">Chatroom</NavLink>
         <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
         <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">Log Out</NavLink>
         <div className="main-links" id="preferences" >Preferences</div>

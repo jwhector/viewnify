@@ -9,7 +9,7 @@ import Color from 'color';
 function MiniCards(props) {
     const media = props.media;
     const miniCards = media.map((medium, idx) => {
-        const poster = `https://image.tmdb.org/t/p/w200${medium.poster_path}`;
+        const poster = `https://image.tmdb.org/t/p/w300${medium.poster_path}`;
         const backdrop = `https://image.tmdb.org/t/p/original${medium.backdrop_path}`;
         const title = medium.title;
         const runtime = medium.runtime;
