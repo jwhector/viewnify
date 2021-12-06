@@ -8,7 +8,7 @@ body {
 
 #root, .styleme {
   min-height: 100vh;
-  background: #cbcbcb 0% 0% no-repeat padding-box;
+  background: black 0% 0% no-repeat padding-box;
   display: flex;
   flex-direction: column;
 }

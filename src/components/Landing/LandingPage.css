@@ -4,10 +4,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url("./stream1.jpeg");
+    background: radial-gradient(circle, rgb(89, 0, 148) 33%, rgb(0,0,0) 100%);
     object-fit: cover;
     background-repeat: no-repeat;
     height: 100%;
+    animation: Fade_In 1s ease;
 }
 
 .fade {
@@ -15,19 +16,9 @@
     width: 100%;
     display: block;
     position: relative;
+
 }
 
-.fade::after {
-    content: "";
-    background-image: url("./tvshows.jpeg");
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
 
 #slogan {
     position: absolute;
@@ -35,6 +26,8 @@
     font-size: 56px;
     color: white;
     transform: translate(4.5%);
+    letter-spacing: 2px;
+    animation: Squish 1s ease;
 }
 
 .tm {
@@ -45,6 +38,7 @@
 
 #logo-img {
     height: 75vh;
+    animation: Slide_Up 1s ease;
 }
 
 .login-modal-overlay {
@@ -59,7 +53,7 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
-    animation: Fade_In 5s ease;
+    animation: Fade_In .5s ease;
 }
 
 .login-modal {
@@ -78,7 +72,7 @@
     border-radius: 25px;
     opacity: 1;
     box-shadow: 2px 2px 10px 1px #a535ff;
-    animation: Slide_Up 5s ease;
+    animation: Slide_Up .5s ease;
 }
 
 .login-modal h2 {
@@ -119,9 +113,14 @@
   font-family: 'Quicksand';
 }
 
+@keyframes Fade_In {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 @keyframes Slide_Up {
-    from {background-color: transparent;}
-    to {background-color: white;}
+    from {opacity: 0;}
+    to {opacity: 1;}
     0% {
         transform: translateY(60%);
     }
@@ -130,7 +129,7 @@
     }
 }
 
-@keyframes Fade_In {
-    from {background-color: transparent;}
-    to {background-color: ededed;}
+@keyframes Squish {
+    from {letter-spacing: 25px;}
+    to {letter-spacing: 2px;}
 }
