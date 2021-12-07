@@ -142,7 +142,9 @@ body {
 #chatroom,
 #invite,
 #logout,
-#preferences, #logout
+#preferences,
+#logout,
+#preferences-btn
 {
   justify-content: center;
   align-items: center;
@@ -873,17 +875,39 @@ body {
   /* box-shadow: 3px 3px 3px white; */
 }
 
+.mini-card:hover {
+  cursor: grab;
+  opacity: .2;
+  transition: .3s;
+  color: white;
+}
+
 .mini-cur-content-img {
   /* width: 300px;
   height: 450px; */
   display: block;
 }
 
+.mini-card-title-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .mini-card-title {
+
+  /* max-width: 300px; */
+  /* width: 100%; */
+  font-size: 20px;
+  margin-top: 5.5px;
+  color: #872ed0
+
   width: 100%;
   font-size: 10px;
   margin-top: 5.5px;
   color: #a1a1a1;
+
 }
 
 @media only screen and (device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -893,9 +917,12 @@ body {
     max-height: 300px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 110px;
     max-height: 165px;
+  }
+  .mini-card-title {
+    font-size: 13px;
   }
   .media-a-info {
     font-size: 13px;
@@ -941,9 +968,10 @@ body {
     max-height: 450px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title {
     max-width: 130px;
     max-height: 190px;
+    font-size: 14px;
   }
   .media-a-info {
     font-size: 13px;
@@ -993,9 +1021,12 @@ body {
     max-height: 450px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 150px;
     max-height: 225px;
+  }
+  .mini-card-title {
+    font-size: 15px;
   }
   .media-a-info {
     font-size: 16px;
@@ -1094,6 +1125,12 @@ body {
     max-width: 150px;
     max-height: 225px;
   }
+  .mini-card-title {
+    font-size: 21px;
+  }
+  .mini-card-title-flex {
+    max-width: 200px;
+  }
   .media-a-info {
     font-size: 25px;
   }
@@ -1140,6 +1177,12 @@ body {
   .body-container {
     max-width: 225px;
     max-height: 337.5px;
+  }
+  .mini-card-title-flex {
+    max-width: 125px;
+  }
+  .mini-card-title {
+    font-size: 13px;
   }
 
   .mini-cur-content-img {
@@ -1195,9 +1238,12 @@ body {
     max-height: 412.5px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 150px;
     max-height: 225px;
+  }
+  .mini-card-title {
+    font-size: 13px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1241,9 +1287,12 @@ body {
     max-height: 450px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 150px;
     max-height: 225px;
+  }
+  .mini-card-title {
+    font-size: 15px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1334,9 +1383,12 @@ body {
     max-height: 450px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 125px;
     max-height: 187.5px;
+  }
+  .mini-card-title {
+    font-size: 13px;
   }
   .media-a-info {
     font-size: 20px;
@@ -1379,7 +1431,7 @@ body {
     max-height: 337.5px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 200px;
     max-height: 300px;
   }
@@ -1423,9 +1475,12 @@ body {
     max-height: 325px;
   }
   .mini-card,
-  .mini-cur-content-img {
+  .mini-cur-content-img, .mini-card-title-flex {
     max-width: 200px;
     max-height: 300px;
+  }
+  .mini-card-title {
+    font-size: 20px;
   }
   .media-a-info {
     font-size: 15px;
@@ -1484,6 +1539,12 @@ body {
   .body-container {
     max-width: 400px;
     max-height: 600px;
+  }
+  .mini-card-title-flex {
+    max-width: 200px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
 
   .body-container {
