@@ -1,6 +1,6 @@
-#content-img img {
+.content-img img {
     /* width: 100%; <--------------- ENABLE FOR MOBILE */
-    width: 500px;
+    /* width: 500px; */
 }
 
 #discover{
@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    position: relative;
 }
 
 #media-info{
@@ -51,7 +51,39 @@
 }
 
 .discover-btn {
-    height: 3rem;
+    height: 7rem;
+}
+
+.media-main {
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+}
+
+.moving.media-main {
+    transition: none;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+.removed {
+    display: none;
+}
+
+.front {
+    z-index: 5 !important;
+}
+
+.back {
+    z-index: 4 !important;
+}
+
+.content-description {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: .3s;
 }
 
 /* #play-btn {

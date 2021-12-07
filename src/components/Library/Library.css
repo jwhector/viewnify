@@ -1,0 +1,65 @@
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: Fade_In .5s ease;
+}
+
+.card-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    color: white;
+    background-size: 100%;
+    background-repeat: repeat;
+    text-align: center;
+    border-radius: 25px;
+    transition: .3s;
+    opacity: 1;
+    margin: 0 auto;
+    animation: Slide_Up .5s ease;
+}
+
+.card-modal h2 {
+    font-size: 42px;
+    margin-bottom: 1rem;
+}
+
+.ReactModal__Overlay--before-close{
+    animation: Fade_Out .5s ease;
+}
+
+.modal-in, .close-btn {
+    margin: 5px;
+
+    
+}
+
+@keyframes Fade_In {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes Slide_Up {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    0% {
+        transform: translateY(15%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes Fade_Out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

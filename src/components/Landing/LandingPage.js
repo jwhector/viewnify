@@ -27,7 +27,7 @@ export default function LandingPage(props) {
             {/* <img id="home-img" alt="Two people on phones, connected via Viewnify." src="" /> */}
             <img id="logo-img" alt="Viewnify 'V' logo." src={logo} />
             <h2 id="slogan" className="title-txt">Everyone's entertained.<span className="tm">™</span></h2>
-            <button id="signup-btn" onClick={setSignup} className="styled-btn title-txt">Sign Up</button>
+            <button id="signup-btn" onClick={setSignup} className="styled-btn title-txt">Join Now</button>
             <LoginModal setToken={props.setToken} modalOpen={modalOpen} closeModal={closeModal} isLogin={isLogin} />
         </div>
         </div>
