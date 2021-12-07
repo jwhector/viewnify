@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { cgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi"
 import useToken from "../../useToken";
+import Preferences from '../Preferences/PreferencesPage'
+import ReactModal from 'react-modal';
 
 export const lightTheme = {
   body: '#ededed',
@@ -131,7 +133,11 @@ background: ${(props) => {
 }
 
 `
+
+
+
 export default function Burger(props) {
+  const [modalOpen, setModalOpen] = useState(false);
   const showSettings = (event) => {
     event.preventDefault()
   }
@@ -142,17 +148,37 @@ export default function Burger(props) {
     window.location.reload(true);
   }
 
+  const openModal = () => {
+    setModalOpen(true);
+  }
+  
+  const clearModal = () => {
+    setModalOpen(false);
+  }
+
   return (
     <Menu>
         <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
         <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
         <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
         <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
-        <NavLink exact activeClassName="main-links" to="/preferences" id="preferences">Preferences</NavLink>
+        {/* <NavLink exact activeClassName="main-links" to="/preferences" id="preferences">Preferences</NavLink> */}
+        <button onClick={openModal}>Open Model</button>
         <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">Log Out</NavLink>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
-      
+        <ReactModal isOpen={modalOpen}
+          className="preferences-modal"
+          overlayClassName="preferences-modal-overlay"
+          onRequestClose={clearModal}
+          closeTimeoutMS={200}
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
+          style={{ overlay: { background: `radial-gradient(circle, black 33%, rgba(0,0,0,0.5) 100%)` } }}
+          >
+            <Preferences token={props.token} />
+          </ReactModal>
+
         {/* <button id='watch-party' className='main-links' >Watch Party</button>
         <button id='library' className='main-links' >Library</button>
         <button id='chatroom' className='main-links' >Chat</button>

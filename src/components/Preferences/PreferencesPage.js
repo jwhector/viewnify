@@ -1,20 +1,43 @@
 import React, { useState } from 'react'
+import './Preferences.css';
 
-export default function Library(props) {
+const genreMap = {
+  "Action": 28,
+  "Adventure": 12,
+  "Animation": 16,
+  "Comedy": 35,
+  "Crime": 80,
+  "Drama": 18,
+  "Family": 10751,
+  "Fantasy": 14,
+  "History": 36,
+  "Horror": 27,
+  "Music": 10402,
+  "Mystery": 9648,
+  "Romance": 10749,
+  "Science Fiction": 878,
+  "TV Movie": 10770,
+  "Thriller": 53,
+  "War": 10752,
+  "Western": 37,
+  }
+
+export default function Preferences(props) {
   const [genres, setGenres] = useState([]);
   const [streaming_service, setStreamer] = useState([]);
 
   const fillGenres = (e) => {
     // e.preventDefault()
     const genresHolder = [...genres]
-    genresHolder.push(e.target.value)
+    genresHolder.push(genreMap[e.target.textContent])
+    console.log(genresHolder);
     setGenres(genresHolder)
   }
 
   const fillStreamer = (e) => {
     // preventDefault()
     const streamerHolder = [...streaming_service]
-    streamerHolder.push(e.target.value)
+    streamerHolder.push(e.target.textContent)
     setStreamer(streamerHolder)
   }
 
@@ -39,7 +62,7 @@ export default function Library(props) {
 
 
   return (
-    <div>
+    <div className="preferences-container">
       <div className="genres">
         <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Action</button>
         <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Adventure</button>
