@@ -20,6 +20,7 @@ function WatchPartyList(props) {
     const partyList = parties.map((party, idx) => {        
         return (
             <li key={party.id} className="watchparty-list-item" style={{ color: 'white' }}  dataIdx={idx} >
+                <p>This party's name is ${party.name}</p>
                 <p>This party has limit: {party.limit}</p>
                 <p onClick={props.getMedia} url={party.url}>This party's URL is: {party.url}</p>
                 <p>The members of this party are:</p>
@@ -84,7 +85,7 @@ function WatchParty(props) {
         }
       }).then(res => {
           if (!res.ok) return;
-        res.json().then(results => {
+            res.json().then(results => {
             console.log(results);
             setWatchparties(results);
         });
@@ -134,7 +135,6 @@ function WatchParty(props) {
                     genres: getGenres(result.genre_ids),
                     poster_path: result.poster_path,
                     backdrop_path: result.backdrop_path
-                    // popularity
                 });
                 imageHolder.push(
                     `https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -150,6 +150,28 @@ function WatchParty(props) {
         return genre_ids.map(genre_id => genreMap[`${genre_id}`]);
     }
 
+    const createParty = () => {
+        fetch('http://localhost:3005/api/watchparty/', {
+            method: 'POST', 
+            mode: 'cors', 
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer: ${props.token}`
+            },
+            body: JSON.stringify({name: 'YoloSwaggy'})
+        }).then(res => {
+            if (res.ok) {
+                res.json().then((watchpartyData => {
+                    console.log(watchparties);
+                    console.log(watchpartyData);
+                    setWatchparties([...watchparties, watchpartyData]);
+                })).catch(err => console.log(err));
+            }
+        }).catch(err => console.log(err));
+    }
+
     const openModal = (e) => {
         const idx = e.target.getAttribute('dataIndex');
         setModalIdx(idx);
@@ -162,8 +184,11 @@ function WatchParty(props) {
 
     return (
         <div className="watch-party">
-            <h2>Watch Parties</h2>
-            <hr />
+            <div className="watch-party-header">
+                <h2>Watch Parties</h2>
+                <hr />
+                <button className="create-party-btn" onClick={createParty}>Create a Watch Party</button>
+            </div>
             <div className="watch-party-list">
                 <WatchPartyList watchparties={watchparties} getMedia={getMedia} />
             </div>
