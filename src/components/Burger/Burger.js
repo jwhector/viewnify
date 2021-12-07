@@ -171,9 +171,9 @@ export default function Burger(props) {
   return (
 
     <Menu isOpen={menuOpen}>
-        <NavLink exact activeClassName="main-links" to="/discover" onClick={() => this.closeMenu()} id='discover-btn'>Discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" onClick={() => this.closeMenu()} id='watch-party'>Watch Party</NavLink>
-        <NavLink exact activeClassName="main-links" to="/library" onClick={() => this.closeMenu()} id="library">Library</NavLink>
+        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>Discover</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>Watch Party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/library" id="library">Library</NavLink>
         <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink>
         <NavLink exact activeClassName="main-links" to='' onClick={openModal}  id="preferences">Preferences</NavLink>
         <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">Log Out</NavLink>
