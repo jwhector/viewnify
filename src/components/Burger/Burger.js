@@ -170,7 +170,7 @@ export default function Burger(props) {
 
     <Menu isOpen={menuOpen}>
         <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn'>discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>watch Party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party'>watch party</NavLink>
         <NavLink exact activeClassName="main-links" to="/library" id="library">library</NavLink>
         <NavLink exact activeClassName="main-links" to='' onClick={openModal}  id="preferences-btn">categories</NavLink>
         <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">log out</NavLink>

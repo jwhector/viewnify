@@ -28,6 +28,8 @@ export default function Swipe(props) {
   const [isFront_a, setIsFront_a] = useState(true);
   const [draggable, setDraggable] = useState(true);
   const cardContainerRef = useRef(null);
+  const playRef = useRef(null);
+  const pauseRef = useRef(null);
   // const cardInfoRef = useRef(null);
 
     
@@ -169,37 +171,67 @@ export default function Swipe(props) {
     });
   };
 
+  function handleButtonClick(event) {
+      if (!draggable) return;
+      const like = event.target.classList.contains('play-bg');
+      var el = cardContainerRef.current.querySelector('.media-main.front');
+      var moveOutWidth = document.body.clientWidth * 1.5;
+
+      const imgEl = el.querySelector('.content-img');
+      const descEl = el.querySelector('.content-description');
+      const overviewEl = el.querySelector(".content-overview-p3");
+  
+      if (like) {
+        el.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+        saveLike();
+      } else {
+        el.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+        saveDislike();
+      }
+
+      setDraggable(false);
+      setIsFront_a(!isFront_a);
+      imgEl.classList.remove('hidden');
+      descEl.classList.add('hidden');
+      overviewEl.classList.add('hidden');
+  
+      props.setIsFirstInFocus(!props.isFirstInFocus);
+      returnCard(el);
+  
+      event.preventDefault();
+  }
+
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
         <Card idx={bIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-B'} isFront={!isFront_a} isDiscover={true} />
         <Card idx={aIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-A'} isFront={isFront_a} isDiscover={true} />
         <div className='btn-container'>
-          <div className='pause-btn'>
+          <div className='pause-btn' onClick={handleButtonClick}>
             <div className='bar-container'>
               <div className='pause-bars'></div>
               <div className='pause-bars'></div>
             </div>
           </div>
-          <div className='play-btn'>
+          <div className='play-btn' onClick={handleButtonClick}>
             <img className='play-img' src={playIco} />
-            <div className='btn-background'></div>
+            <div className='btn-background play-bg'></div>
           </div>
         </div>
     
         <div className="watch-container">{/* <h4>ryan</h4> */}</div>
       </div>
-      <div
+      {/* <div
           id="play-pause"
           style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
         >
-          <div id="play-btn" onClick={saveDislike}>
+          <div id="pause-btn" onClick={handleButtonClick}>
             <img className="discover-btn pause-ico" src={pauseIco} />
           </div>
-          <div id="play-btn" onClick={saveLike}>
+          <div id="play-btn" onClick={handleButtonClick}>
             <img className="discover-btn play-ico" src={playIco} />
           </div>
-        </div>
+        </div> */}
     </div>
   );
 }
