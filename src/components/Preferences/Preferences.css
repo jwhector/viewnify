@@ -77,14 +77,14 @@
     z-index: 1;
 }
 
-#preferences-btn {
+.preferences-btn {
     padding: 7px 20px 7px 20px;
     background:white;
     color:rgba(226, 43, 255, 1);
     margin: 10px
 }
 
-#preferences-btn:focus{
+.preferences-btn:focus{
     background-color: rgba(226, 43, 255, 1);
     color: white;
 }

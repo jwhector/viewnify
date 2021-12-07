@@ -20,8 +20,8 @@ function MiniCards(props) {
 
             <li key={medium.id}><MiniCard dataIndex={idx} openModal={props.openModal} poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} />
 
-            <div class="mini-card-title-flex">
-            <p class="mini-card-title">{title}</p>
+            <div className="mini-card-title-flex">
+            <p className="mini-card-title">{title}</p>
             </div>
 
             </li>

@@ -20,6 +20,7 @@ function WatchPartyList(props) {
     const partyList = parties.map((party, idx) => {        
         return (
             <li key={party.id} className="watchparty-list-item" style={{ color: 'white' }}  dataIdx={idx} >
+                <p>This party's name is ${party.name}</p>
                 <p>This party has limit: {party.limit}</p>
                 <p onClick={props.getMedia} url={party.url}>This party's URL is: {party.url}</p>
                 <p>The members of this party are:</p>
@@ -159,7 +160,7 @@ function WatchParty(props) {
             'Content-Type': 'application/json',
             Authorization: `Bearer: ${props.token}`
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({name: 'YoloSwaggy'})
         }).then(res => {
             if (res.ok) {
                 res.json().then((watchpartyData => {
