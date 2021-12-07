@@ -380,7 +380,8 @@ body {
 }
 
 .watch-party-list {
-  border: 2px white solid;
+  border-top: 2px white solid;
+  border-bottom: 2px white solid;
 }
 
 .party-url {
