@@ -119,6 +119,7 @@ export default function Library(props) {
       });
 
     const getGenres = (genre_ids) => {
+        if (!genre_ids) return;
         return genre_ids.map(genre_id => genreMap[`${genre_id}`]);
     }
 
