@@ -240,7 +240,7 @@ function WatchParty(props) {
             <div className="watch-party-header">
                 <h2>Watch Parties</h2>
                 <hr />
-                <input ref={inputField} className="name-party-input" type ="text" placeholder="name party" value={inputVal} onChange={(e) => setInputVal(e.target.value)}></input>
+                <input ref={inputField} className="name-party-input" type ="text" placeholder="name party..." value={inputVal} onChange={(e) => setInputVal(e.target.value)}></input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
                 <p className="or">or</p>
                 <button className="join-party-btn" onClick={joinParty}>join party</button>
