@@ -115,7 +115,7 @@ background: ${(props) => {
   transition: 0.3s;
   }
 
-#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, #logout,.watch-header, .create-party, .discover, .watch-content {
+#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, #logout,.watch-header, .create-party, .discover, .watch-content, #preferences-btn {
   transition: 0.3s;
   box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
