@@ -44,7 +44,7 @@ export default function LoginModal(props) {
         setEmail('');
         setPassword('');
         if (token) {
-            console.log(email, password);
+            // console.log(email, password);
             clearModal();
             props.setToken({ 'token': token });
             // props.setGenres(u)
