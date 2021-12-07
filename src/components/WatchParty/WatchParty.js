@@ -213,6 +213,7 @@ function WatchParty(props) {
 
                 </input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
+                <button className="join-party-btn" onClick={createParty}>join party</button>
             </div>
             {/* <div className="party-search-bar">
                 <input type="text" placeholder="search" value={searchItem} onChange={handleChange} />

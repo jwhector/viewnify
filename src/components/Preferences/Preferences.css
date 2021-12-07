@@ -104,9 +104,9 @@
     margin: 10px
 }
 
-.create-party-btn{
+.create-party-btn, .join-party-btn{
     padding: 20px;
-    /* width: 15%; */
+    width: 150px;
     max-width: 200px;
     min-width: 100px;
     background:white;
