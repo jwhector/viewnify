@@ -169,8 +169,8 @@ export default function Swipe(props) {
   return (
     <div className="body-container" ref={cardContainerRef}>
       <div className="card">
-        <Card idx={bIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-B'} isFront={!isFront_a} />
-        <Card idx={aIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-A'} isFront={isFront_a} />
+        <Card idx={bIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-B'} isFront={!isFront_a} isDiscover={true} />
+        <Card idx={aIdx} complementary={props.complementary} images={props.images} media={props.media} bgColor={props.bgColor} aOrB={'media-A'} isFront={isFront_a} isDiscover={true} />
         <div className='btn-container'>
           <div className='pause-btn'>
             <div className='bar-container'>
