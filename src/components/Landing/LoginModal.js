@@ -3,7 +3,7 @@ import ReactModal from 'react-modal';
 
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:3005/api/users/login', {
+    return fetch('https://viewnify-server.herokuapp.com/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ async function loginUser(credentials) {
 
 async function signupUser(credentials) {
     console.log(credentials);
-    return fetch('http://localhost:3005/api/users', {
+    return fetch('https://viewnify-server.herokuapp.com/api/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -91,7 +91,7 @@ function WatchParty(props) {
     const fac = new FastAverageColor();
 
     useEffect(() => {
-        fetch('http://localhost:3005/api/watchparty/party/all', {
+        fetch('https://viewnify-server.herokuapp.com/api/watchparty/party/all', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer: ${props.token}`
@@ -127,7 +127,7 @@ function WatchParty(props) {
         const url = e.target.getAttribute('url');
         console.log(url);
         
-        fetch(`http://localhost:3005/api/watchparty/compare/${url}`, {
+        fetch(`https://viewnify-server.herokuapp.com/api/watchparty/compare/${url}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer: ${props.token}`
@@ -168,7 +168,7 @@ function WatchParty(props) {
 
     const createParty = () => {
         if (!inputVal.length || !inputField.current) return;
-        fetch('http://localhost:3005/api/watchparty/', {
+        fetch('https://viewnify-server.herokuapp.com/api/watchparty/', {
             method: 'POST', 
             mode: 'cors', 
             cache: 'no-cache',
@@ -192,7 +192,7 @@ function WatchParty(props) {
 
     const joinParty = () => {
         if (!urlInput.length || !urlField.current) return;
-        fetch(`http://localhost:3005/api/watchparty/join/${urlInput}`, {
+        fetch(`https://viewnify-server.herokuapp.com/api/watchparty/join/${urlInput}`, {
             method: 'POST', 
             mode: 'cors', 
             cache: 'no-cache',
