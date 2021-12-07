@@ -14,6 +14,7 @@ body {
   flex-direction: column;
 }
 
+
 #nav {
   display: flex;
   justify-content: center;
@@ -314,6 +315,10 @@ p {
   box-shadow: 2px 2px 4px 0 #e22bff;
   transition: 0.2s;
 }
+
+ /* .card-info {
+  color: yellow;
+} */
 
 .profile-pic {
   justify-content: center;
@@ -643,6 +648,14 @@ body {
   font-family: 'Quicksand';
 }
 
+.content-overview-p3 {
+  color: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
 .watch-header,
 .create-party,
 .discover,
@@ -718,7 +731,7 @@ body {
   right: 0;
 }
 
-.card-content {
+.card-content  {
   position: relative;
 }
 
@@ -781,7 +794,7 @@ body {
   opacity: 0;
 }
 
-.media-a-info {
+.media-a-info  {
   font-size: 22px;
   text-align: center;
   flex-grow: 1;
@@ -795,7 +808,7 @@ body {
   overflow-x: hidden; */
 }
 
-.release-rating {
+.release-rating  {
   /* display: flex; */
   flex-direction: row;
   justify-content: space-between;
@@ -914,7 +927,10 @@ body {
   .mini-card-title {
     font-size: 13px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 13px;
+  }
+  .media-a-info  {
     font-size: 13px;
   }
   .release-rating {
@@ -963,7 +979,10 @@ body {
     max-height: 190px;
     font-size: 14px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 18px;
+  }
+  .media-a-info  {
     font-size: 13px;
   }
   .release-rating {
@@ -997,6 +1016,7 @@ body {
   }
 }
 
+
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
@@ -1018,7 +1038,10 @@ body {
   .mini-card-title {
     font-size: 15px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 18px;
+  }
+  .media-a-info  {
     font-size: 16px;
   }
   .release-rating {
@@ -1067,7 +1090,7 @@ body {
     max-width: 130px;
     max-height: 190px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 13px;
   }
   .release-rating {
@@ -1121,7 +1144,10 @@ body {
   .mini-card-title-flex {
     max-width: 200px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 25px;
+  }
+  .media-a-info  {
     font-size: 25px;
   }
   .release-rating {
@@ -1174,6 +1200,9 @@ body {
   .mini-card-title {
     font-size: 13px;
   }
+  .content-overview-p3 {
+    font-size: 13px;
+  }
 
   .mini-cur-content-img {
     width: 125px;
@@ -1184,7 +1213,7 @@ body {
     max-width: 125px;
     max-height: 187.5px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 15px;
   }
   .release-rating {
@@ -1235,7 +1264,10 @@ body {
   .mini-card-title {
     font-size: 13px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 14px;
+  }
+  .media-a-info  {
     font-size: 15px;
   }
   .release-rating {
@@ -1284,7 +1316,7 @@ body {
   .mini-card-title {
     font-size: 15px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 15px;
   }
   .release-rating {
@@ -1323,7 +1355,7 @@ body {
     max-width: 300px;
     max-height: 450px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 18px;
   }
 }
@@ -1343,8 +1375,8 @@ body {
 @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) {
   .cur-content-img,
   .body-container {
-    max-width: 450px;
-    max-height: 675px;
+    max-width: 400px;
+    max-height: 600px;
   }
   .content-img {
     width: 400px;
@@ -1377,10 +1409,13 @@ body {
     max-width: 125px;
     max-height: 187.5px;
   }
+  .content-overview-p3 {
+    font-size: 18px;
+  }
   .mini-card-title {
     font-size: 13px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 20px;
   }
   .release-rating {
@@ -1425,7 +1460,10 @@ body {
     max-width: 200px;
     max-height: 300px;
   }
-  .media-a-info {
+  .content-overview-p3 {
+    font-size: 13px;
+  }
+  .media-a-info  {
     font-size: 15px;
   }
   .release-rating {
@@ -1472,7 +1510,7 @@ body {
   .mini-card-title {
     font-size: 20px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 15px;
   }
   .release-rating {
@@ -1501,8 +1539,11 @@ body {
     max-width: 400px;
     max-height: 500px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 20px;
+  }
+  .content-overview-p3 {
+    font-size: 22px;
   }
   .release-rating {
     font-size: 20px;
@@ -1541,7 +1582,7 @@ body {
     max-width: 400px;
     max-height: 600px;
   }
-  .media-a-info {
+  .media-a-info  {
     font-size: 20px;
   }
   .release-rating {

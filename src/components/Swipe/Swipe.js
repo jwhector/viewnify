@@ -79,6 +79,7 @@ export default function Swipe(props) {
 
       const imgEl = el.querySelector('.content-img');
       const descEl = el.querySelector('.content-description');
+      const overviewEl = el.querySelector(".content-overview-p3");
 
       hammertime.on("pan", function (event) {
         if (event.deltaX === 0) return;
@@ -133,6 +134,8 @@ export default function Swipe(props) {
           setIsFront_a(!isFront_a);
           imgEl.classList.remove('hidden');
           descEl.classList.add('hidden');
+          overviewEl.classList.add('hidden');
+      
           props.setIsFirstInFocus(!props.isFirstInFocus);
           returnCard(el);
         }
