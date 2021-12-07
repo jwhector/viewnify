@@ -4,29 +4,47 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     animation: Fade_In .5s ease;
-    z-index: 1;
+    opacity: 1;
+    z-index: 3;
 }
 
 .preferences-modal {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    height: 60%;
+    color: black;
+    font-family: "Quicksand", sans-serif;
     justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    color: white;
-    background-size: 100%;
-    background-repeat: repeat;
+    background: radial-gradient(circle, rgba(89, 0, 148, 0.9) 33%, rgb(0,0,0) 100%);
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
     text-align: center;
     border-radius: 25px;
-    transition: .3s;
     opacity: 1;
-    margin: 0 auto;
-    animation: Slide_Up .5s ease;
+    box-shadow: 2px 2px 10px 1px #a535ff;
+    animation: Fade_In .5s ease;
+    opacity: 1;
+}
+
+#bg-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    max-width: 30%;
+    height: auto;
+    opacity: .9;
+    
+
 }
 
 .preferences-modal h2 {
@@ -38,8 +56,52 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preferences-container h3 {
+    font-size: 35px;
+    color: white;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.genres, .streaming_services {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    z-index: 1;
+}
+
+#preferences-btn {
+    padding: 7px 20px 7px 20px;
+    background:white;
+    color:rgba(226, 43, 255, 1);
+    margin: 10px
+}
+
+#preferences-btn:focus{
+    background-color: rgba(226, 43, 255, 1);
+    color: white;
+}
+
+.save {
+    width: 100%;
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    z-index: 1;
+}
+
+#save-btn {
+    padding: 20px;
+    width: 25%;
+    background:white;
+    color:rgba(226, 43, 255, 1);
+    margin: 10px
 }
 
 .ReactModal__Overlay--before-close{
@@ -47,9 +109,7 @@
 }
 
 .modal-in, .close-btn {
-    margin: 5px;
-
-    
+    margin: 5px;    
 }
 
 @keyframes Fade_In {
