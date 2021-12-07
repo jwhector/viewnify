@@ -24,9 +24,7 @@ import {
   GlobalStyles,
 } from "./components/Burger/Burger";
 import styled, { css } from "styled-components";
-import axios from 'axios';
-import { cgSun } from "react-icons/cg";
-import { HiMoon } from "react-icons/hi"
+
 
 
 const StyledApp = styled.div`
