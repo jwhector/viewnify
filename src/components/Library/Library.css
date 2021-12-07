@@ -1,8 +1,4 @@
 .card-modal-overlay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,8 +14,9 @@
 .card-modal {
     display: flex;
     flex-direction: column;
-    width: 21.5%;
-    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
     color: white;
     background-size: 100%;
     background-repeat: repeat;
@@ -28,7 +25,7 @@
     transition: .3s;
     transform: translateY(20%);
     opacity: 1;
-    margin-bottom: 15%;
+    margin: 0 auto;
     animation: Slide_Up .5s ease;
 }
 
@@ -43,10 +40,6 @@
     
 }
 
-.ReactModalPortal{
-    animation: Fade_Out .5s ease;
-}
-
 @keyframes Fade_In {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -59,7 +52,7 @@
         transform: translateY(60%);
     }
     100% {
-        transform: translateY(20%);
+        transform: translateY(0);
     }
 }
 
