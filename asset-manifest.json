@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/viewnify/static/css/main.754bf734.chunk.css",
+    "main.js": "/viewnify/static/js/main.46b59c64.chunk.js",
+    "main.js.map": "/viewnify/static/js/main.46b59c64.chunk.js.map",
+    "runtime-main.js": "/viewnify/static/js/runtime-main.1ccfdd36.js",
+    "runtime-main.js.map": "/viewnify/static/js/runtime-main.1ccfdd36.js.map",
+    "static/js/2.008e05cc.chunk.js": "/viewnify/static/js/2.008e05cc.chunk.js",
+    "static/js/2.008e05cc.chunk.js.map": "/viewnify/static/js/2.008e05cc.chunk.js.map",
+    "index.html": "/viewnify/index.html",
+    "static/css/main.754bf734.chunk.css.map": "/viewnify/static/css/main.754bf734.chunk.css.map",
+    "static/js/2.008e05cc.chunk.js.LICENSE.txt": "/viewnify/static/js/2.008e05cc.chunk.js.LICENSE.txt",
+    "static/media/viewnify-logo.c1f447fb.png": "/viewnify/static/media/viewnify-logo.c1f447fb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ccfdd36.js",
+    "static/js/2.008e05cc.chunk.js",
+    "static/css/main.754bf734.chunk.css",
+    "static/js/main.46b59c64.chunk.js"
+  ]
+}
