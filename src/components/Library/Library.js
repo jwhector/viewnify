@@ -108,6 +108,7 @@ export default function Library(props) {
                 className="card-modal"
                 overlayClassName="card-modal-overlay"
                 onRequestClose={clearModal}
+                closeTimeoutMS={200}
                 shouldCloseOnEsc={true}
                 shouldCloseOnOverlayClick={true}
                 style={{ overlay: { background: `radial-gradient(circle, ${bgColor} 33%, rgba(0,0,0,0.5) 100%)` } }}
