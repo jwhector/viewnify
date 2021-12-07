@@ -108,12 +108,18 @@ export default function Card(props) {
             }}
           >
             <div className="release-rating card-info">
-              <p className="release-date card-info">
-                 {props.media[props.idx]?.release_date}
-              </p>
-              <p className="rating card-info">
               {/* <img src={Logo} className="viewnify-rating" /> */}
-                 ⭐️{props.media[props.idx]?.rating}
+              <p className="genre-card-info">
+                 {props.media[props.idx]?.genres}
+              </p>
+              <p className="star-card-info">
+                 ⭐️
+              </p>
+              <p className="rating-card-info">
+                 {props.media[props.idx]?.rating}
+              </p>
+              <p className="release-date-card-info">
+                 {props.media[props.idx]?.release_date}
               </p>
             </div>
             {/* <p className="card-info">{props.media[props.idx]?.overview}</p> */}
