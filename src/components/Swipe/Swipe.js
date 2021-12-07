@@ -7,7 +7,7 @@ import Card from '../Card/Card';
 import { AutoInit } from "materialize-css";
 
 async function fetchChoice(type, mediaData, token) {
-  fetch(`http://localhost:3005/api/${type}`, {
+  fetch(`https://viewnify-server.herokuapp.com/api/${type}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer: ${token}`,

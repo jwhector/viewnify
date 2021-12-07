@@ -50,7 +50,7 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      fetch("http://localhost:3005/api/users", {
+      fetch("https://viewnify-server.herokuapp.com/api/users", {
         method: "GET",
         headers: {
             'Authorization': `Bearer: ${token}`
@@ -69,7 +69,7 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:3005/api/users/verify', {
+      fetch('https://viewnify-server.herokuapp.com/api/users/verify', {
         method: 'GET',
         headers: {
           Authorization: `Bearer: ${token}`,

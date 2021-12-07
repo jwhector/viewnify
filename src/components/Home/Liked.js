@@ -11,7 +11,7 @@ export default function Liked(props) {
             e.preventDefault();
             const likeMovie = { tmbd, user}
             
-            fetch('http://localhost:3005/user', {
+            fetch('https://viewnify-server.herokuapp.com/user', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json "},
                 body: JSON.stringify(likeMovie)
