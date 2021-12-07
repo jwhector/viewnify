@@ -121,6 +121,12 @@ background: ${(props) => {
   
 }
 
+.name-party-input, .join-party-input, .create-party-btn, .join-party-btn {
+  transition: 0.3s;
+  background-color: ${(props) => props.theme.navBtnBackground};
+  
+}
+
  .MuiToolbar-root, .MTableHeader-header-13, .MuiTableCell-head, .MuiTableFooter-root, .MTablePaginationInner-root-14   {
   color: ${(props) => props.theme.fontColor} !important;
   background-color: ${(props) => props.theme.MuiPaperRoot} !important;
