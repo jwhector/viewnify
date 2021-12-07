@@ -1,4 +1,4 @@
-.card-modal-overlay {
+.preferences-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,15 +9,15 @@
     justify-content: center;
     align-items: center;
     animation: Fade_In .5s ease;
+    z-index: 1;
 }
 
-.card-modal {
+.preferences-modal {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 100%;
-
     color: white;
     background-size: 100%;
     background-repeat: repeat;
@@ -29,9 +29,17 @@
     animation: Slide_Up .5s ease;
 }
 
-.card-modal h2 {
+.preferences-modal h2 {
     font-size: 42px;
     margin-bottom: 1rem;
+}
+
+.preferences-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .ReactModal__Overlay--before-close{
