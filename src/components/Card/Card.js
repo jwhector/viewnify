@@ -72,7 +72,7 @@ export default function Card(props) {
             <div className="media-a-info" style={{background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`,}}>
                 <div className="release-rating card-info">
                 <p className="release-date card-info">Release Date: {props.media[props.idx]?.release_date}</p>
-                <p className="rating card-info">Rating: {props.media[props.idx]?.rating}</p>
+                {/* <p className="rating card-info">Rating: {props.media[props.idx]?.rating}</p> */}
                 </div>
                 <p className="card-info">{props.media[props.idx]?.overview}</p>
             </div>
