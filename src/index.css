@@ -142,7 +142,9 @@ body {
 #chatroom,
 #invite,
 #logout,
-#preferences, #logout
+#preferences,
+#logout,
+#preferences-btn
 {
   justify-content: center;
   align-items: center;

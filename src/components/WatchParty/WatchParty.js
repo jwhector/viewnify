@@ -44,6 +44,27 @@ function MiniCards(props) {
     return <ul className="library-list">{miniCards}</ul>
 }
 
+const genreMap = {
+    "Action": 28,
+    "Adventure": 12,
+    "Animation": 16,
+    "Comedy": 35,
+    "Crime": 80,
+    "Drama": 18,
+    "Family": 10751,
+    "Fantasy": 14,
+    "History": 36,
+    "Horror": 27,
+    "Music": 10402,
+    "Mystery": 9648,
+    "Romance": 10749,
+    "Science Fiction": 878,
+    "TV Movie": 10770,
+    "Thriller": 53,
+    "War": 10752,
+    "Western": 37,
+}
+
 function WatchParty(props) {
     const [watchparties, setWatchparties] = useState([]);
     const [media, setMedia] = useState([]);
@@ -106,10 +127,11 @@ function WatchParty(props) {
                     tmdb_id: result.id,
                     image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
                     backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
-                    title: result.original_title,
+                    title: result.title,
                     release_date: result.release_date,
                     overview: result.overview,
-                    rating: result.rating,
+                    rating: result.vote_average,
+                    genres: getGenres(result.genre_ids),
                     poster_path: result.poster_path,
                     backdrop_path: result.backdrop_path
                     // popularity
@@ -122,6 +144,10 @@ function WatchParty(props) {
                 setMedia(mediaHolder);
             });
         });
+    }
+
+    const getGenres = (genre_ids) => {
+        return genre_ids.map(genre_id => genreMap[genre_id]);
     }
 
     const openModal = (e) => {

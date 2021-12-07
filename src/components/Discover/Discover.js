@@ -7,6 +7,27 @@ import Color from "color";
 import Swipe from '../Swipe/Swipe';
 import { UserContext } from '../../App';
 
+const genreMap = {
+  "Action": 28,
+  "Adventure": 12,
+  "Animation": 16,
+  "Comedy": 35,
+  "Crime": 80,
+  "Drama": 18,
+  "Family": 10751,
+  "Fantasy": 14,
+  "History": 36,
+  "Horror": 27,
+  "Music": 10402,
+  "Mystery": 9648,
+  "Romance": 10749,
+  "Science Fiction": 878,
+  "TV Movie": 10770,
+  "Thriller": 53,
+  "War": 10752,
+  "Western": 37,
+  }
+
 export default function Discover(props) {
   const [images, setImages] = useState([]);
   const [curIdx, setCurIdx] = useState(0);
@@ -71,10 +92,11 @@ export default function Discover(props) {
             tmdb_id: result.id,
             image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
             backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
-            title: result.original_title,
+            title: result.title,
             release_date: result.release_date,
             overview: result.overview,
-            rating: result.rating,
+            rating: result.vote_average,
+            genres: getGenres(result.genre_ids)
           });
           imageHolder.push(
             `https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -83,6 +105,10 @@ export default function Discover(props) {
         setImages(imageHolder);
         setMedia(mediaHolder);
       });
+  }
+
+  const getGenres = (genre_ids) => {
+    return genre_ids.map(genre_id => genreMap[genre_id]);
   }
 
   const getEntries = async () => {
