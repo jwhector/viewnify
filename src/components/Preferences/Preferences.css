@@ -109,7 +109,7 @@
     width: 150px;
     max-width: 200px;
     min-width: 100px;
-    background:white;
+    /* background:white; */
     color:rgba(226, 43, 255, 1);
     margin: 10px;
     font-size: 1rem;
@@ -124,7 +124,7 @@
     width: 105.5px;
     /* min-width: 100px;
     max-width: 160px; */
-    background:white;
+    /* background:white; */
     color:rgba(226, 43, 255, 1);
     margin: 10px;
     font-size: 1rem;
