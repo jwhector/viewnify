@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Invite from '../Invite/Invite';
 import FastAverageColor from 'fast-average-color';
 import Color from 'color';
@@ -21,7 +21,7 @@ function WatchPartyList(props) {
         return (
             <li key={party.id} className="watchparty-list-item" style={{ color: 'white' }}  dataIdx={idx} >
                 <div className="party-name">
-                <p className="party-name"><p>name:</p> ${party.name}</p>
+                <p className="party-name"><p>name:</p> {party.name}</p>
                 </div>
                 <div className="party-members">
                 <p>members:</p>
@@ -83,6 +83,8 @@ function WatchParty(props) {
     const [modalIdx, setModalIdx] = useState(0);
     const [bgColor, setBgColor] = useState('#ededed');
     const [complementary, setComplementary] = useState('#ededed');
+    const [inputVal, setInputVal] = useState('');
+    const inputField = useRef(null);
 
     const fac = new FastAverageColor();
 
@@ -163,6 +165,7 @@ function WatchParty(props) {
     }
 
     const createParty = () => {
+        if (!inputVal.length || !inputField.current) return;
         fetch('http://localhost:3005/api/watchparty/', {
             method: 'POST', 
             mode: 'cors', 
@@ -172,7 +175,7 @@ function WatchParty(props) {
             'Content-Type': 'application/json',
             Authorization: `Bearer: ${props.token}`
             },
-            body: JSON.stringify({name: 'YoloSwaggy'})
+            body: JSON.stringify({name: inputVal})
         }).then(res => {
             if (res.ok) {
                 res.json().then((watchpartyData => {
@@ -181,6 +184,7 @@ function WatchParty(props) {
                     setWatchparties([...watchparties, watchpartyData]);
                 })).catch(err => console.log(err));
             }
+            setInputVal('');
         }).catch(err => console.log(err));
     }
 
@@ -209,9 +213,7 @@ function WatchParty(props) {
             <div className="watch-party-header">
                 <h2>Watch Parties</h2>
                 <hr />
-                <input className="name-party-input" type ="text" placeholder="name party..." value={''} onChange={''}>
-
-                </input>
+                <input ref={inputField} className="name-party-input" type ="text" placeholder="name party" value={inputVal} onChange={(e) => setInputVal(e.target.value)}></input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
                 <p className="or">or</p>
                 <button className="join-party-btn" onClick={createParty}>join party</button>
