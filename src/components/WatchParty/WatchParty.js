@@ -209,11 +209,13 @@ function WatchParty(props) {
             <div className="watch-party-header">
                 <h2>Watch Parties</h2>
                 <hr />
-                <input className="name-party-input" type ="text" placeholder="name party" value={''} onChange={''}>
+                <input className="name-party-input" type ="text" placeholder="name party..." value={''} onChange={''}>
 
                 </input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
+                <p className="or">or</p>
                 <button className="join-party-btn" onClick={createParty}>join party</button>
+                <input className="join-party-input" type="text" placeholder="...enter url" />
             </div>
             {/* <div className="party-search-bar">
                 <input type="text" placeholder="search" value={searchItem} onChange={handleChange} />

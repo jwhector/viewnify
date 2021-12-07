@@ -119,9 +119,9 @@
 }
 
 
-.name-party-input {
+.name-party-input, .join-party-input {
     padding: 20px;
-    width: 100px;
+    width: 105.5px;
     /* min-width: 100px;
     max-width: 160px; */
     background:white;
@@ -130,6 +130,11 @@
     font-size: 1rem;
     align-items: center;
     justify-content: center;
+    font-family: Quicksand;
+}
+
+.or {
+    color: #ededed;
     font-family: Quicksand;
 }
 
