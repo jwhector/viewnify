@@ -639,6 +639,7 @@ body {
 .info-title {
   max-height: 100%;
   overflow: hidden;
+  font-family: 'Quicksand';
 }
 
 .watch-header,
@@ -794,11 +795,17 @@ body {
 }
 
 .release-rating {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   font-size: 15px;
+  font-family: 'Quicksand';
+}
+
+.card-info {
+  font-family: 'Quicksand';
+  margin: 0px 15px 0px 15px;
 }
 
 .release-date {
