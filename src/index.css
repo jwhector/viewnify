@@ -78,6 +78,11 @@ body {
   font-weight: 600;
 }
 
+.background-container {
+  position: relative;
+  line-height: 1;
+}
+
 #login-btn {
   position: absolute;
   right: 0;
@@ -399,6 +404,7 @@ body {
   border-radius: 33px 33px 0 0;
   line-height: 0;
   transition: 0.3s;
+  position: relative;
 }
 
 #content-description {
@@ -711,9 +717,13 @@ body {
   right: 0;
 }
 
+.card-content {
+  position: relative;
+}
+
 .content-description {
   line-height: 1;
-  height: 675px;
+  height: 100%;
   background: #ededed;
   display: flex;
   flex-direction: column;
@@ -726,6 +736,8 @@ body {
 
 .content-background {
   flex-grow: 0;
+  width: 100%;
+  display: block;
 }
 
 .bottom-border {
@@ -734,8 +746,8 @@ body {
 }
 
 .content-gradient-overlay {
-  width: 450px;
-  height: 675px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 8;
   transition: 0.3s;
@@ -749,7 +761,7 @@ body {
 }
 
 .content-title {
-  height: 37.5%;
+  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
@@ -864,6 +876,7 @@ body {
 .mini-cur-content-img {
   /* width: 300px;
   height: 450px; */
+  display: block;
 }
 
 .mini-card-title {
@@ -892,7 +905,7 @@ body {
   }
   .content-title {
     font-size: 20px;
-    height: 21.3%;
+    /* height: 21.3%; */
   }
   .btn-container {
     height: 75px;
@@ -940,7 +953,7 @@ body {
   }
   .content-title {
     font-size: 22px;
-    height: 25%;
+    /* height: 25%; */
   }
   .btn-container {
     height: 0px;
@@ -992,7 +1005,7 @@ body {
   }
   .content-title {
     font-size: 30px;
-    height: 27%;
+    /* height: 27%; */
   }
   .btn-container {
     height: 0px;
@@ -1041,7 +1054,7 @@ body {
   }
   .content-title {
     font-size: 22px;
-    height: 25%;
+    /* height: 25%; */
   }
   .btn-container {
     height: 0px;
@@ -1089,7 +1102,7 @@ body {
   }
   .content-title {
     font-size: 40px;
-    height: 37.5%;
+    /* height: 37.5%; */
   }
   .btn-container {
     height: 0px;
@@ -1146,7 +1159,7 @@ body {
   }
   .content-title {
     font-size: 20px;
-    height: 24%;
+    /* height: 24%; */
   }
   .btn-container {
     height: 35px;
@@ -1194,7 +1207,7 @@ body {
   }
   .content-title {
     font-size: 22px;
-    height: 27.4%;
+    /* height: 27.4%; */
   }
   .btn-container {
     height: 0px;
@@ -1240,7 +1253,7 @@ body {
   }
   .content-title {
     font-size: 22px;
-    height: 27.4%;
+    /* height: 27.4%; */
   }
   .btn-container {
     height: 0px;
@@ -1333,7 +1346,7 @@ body {
   }
   .content-title {
     font-size: 35px;
-    height: 35.5%;
+    /* height: 35.5%; */
   }
   .btn-container {
     height: 0px;
@@ -1378,7 +1391,7 @@ body {
   }
   .content-title {
     font-size: 20px;
-    height: 18.5%;
+    /* height: 18.5%; */
   }
   .btn-container {
     height: 40px;
@@ -1422,7 +1435,7 @@ body {
   }
   .content-title {
     font-size: 40px;
-    height: 37.5%;
+    /* height: 37.5%; */
   }
   .btn-container {
     height: 125px;
@@ -1451,7 +1464,7 @@ body {
   }
   .content-title {
     font-size: 40px;
-    height: 37.5%;
+    /* height: 37.5%; */
   }
   .btn-container {
     height: 187px;
@@ -1485,7 +1498,7 @@ body {
   }
   .content-title {
     font-size: 40px;
-    height: 33.5%;
+    /* height: 33.5%; */
   }
   .btn-container {
     height: 0px;
