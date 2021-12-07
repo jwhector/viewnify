@@ -113,7 +113,7 @@ export default function Card(props) {
               </p>
               <p className="rating card-info">
               {/* <img src={Logo} className="viewnify-rating" /> */}
-                 {props.media[props.idx]?.rating}
+                 ⭐️{props.media[props.idx]?.rating}
               </p>
             </div>
             {/* <p className="card-info">{props.media[props.idx]?.overview}</p> */}
