@@ -187,7 +187,7 @@ export default function Burger(props) {
           shouldCloseOnEsc={true}
           shouldCloseOnOverlayClick={true}
           >
-            <Preferences token={props.token} />
+            <Preferences token={props.token} closeModal={clearModal} />
           </ReactModal>
 
         {/* <button id='watch-party' className='main-links' >Watch Party</button>

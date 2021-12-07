@@ -24,26 +24,45 @@ const genreMap = {
   }
 
 export default function Preferences(props) {
-  const [genres, setGenres] = useState([]);
-  const [streaming_service, setStreamer] = useState([]);
+  const [genres, setGenres] = useState(new Set());
+  const [streaming_service, setStreamer] = useState(new Set());
 
   const fillGenres = (e) => {
     // e.preventDefault()
-    const genresHolder = [...genres]
-    genresHolder.push(genreMap[e.target.textContent])
-    console.log(genresHolder);
-    setGenres(genresHolder)
+    // console.log(e.target.textContent);
+    const genre_id = genreMap[e.target.textContent];
+    if (genres.has(genre_id)) {
+      // console.log('ALREADY HAS')
+      e.target.style.backgroundColor = 'white';
+      e.target.style.color = 'rgba(226, 43, 255, 1)';
+      const genresHolder = new Set([...genres]);
+      genresHolder.delete(genre_id);
+      setGenres(genresHolder);
+    } else {
+      e.target.style.backgroundColor = 'rgba(226, 43, 255, 1)';
+      e.target.style.color = 'white';
+      const genresHolder = new Set([...genres]);
+      genresHolder.add(genre_id);
+      console.log(genresHolder);
+      setGenres(genresHolder)
+    }
   }
 
   const fillStreamer = (e) => {
+    if (streaming_service.has(e.target.textContent)) {
+      e.target.style.backgroundColor = 'white';
+      const streamerHolder = new Set([...streaming_service]).delete(e.target.textContent);
+      setGenres(streamerHolder);
+      return;
+    }
     // preventDefault()
-    const streamerHolder = [...streaming_service]
-    streamerHolder.push(e.target.textContent)
-    setStreamer(streamerHolder)
+    // const streamerHolder = [...streaming_service]
+    // streamerHolder.push(e.target.textContent)
+    // setStreamer(streamerHolder)
   }
 
   const savePreferences = async () => {
-    const genresString = genres.toString()
+    const genresString = [...genres].toString()
     const streamerString = streaming_service.toString()
     const entries = await fetch(
       'http://localhost:3005/api/users', {
@@ -58,6 +77,7 @@ export default function Preferences(props) {
       body: JSON.stringify({ genres: genresString, streaming_service: streamerString }) // body data type must match "Content-Type" header
     }
     );
+    props.closeModal();
     return entries.json();
   };
 
@@ -68,36 +88,36 @@ export default function Preferences(props) {
       <h3>Genres</h3>
       
       <div className="genres">
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Action</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Adventure</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Animation</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Comedy</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Crime</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Drama</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Family</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Fantasy</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">History</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Horror</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Music</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Mystery</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Romance</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Science Fiction</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">TV Movie</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Thriller</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">War</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt">Western</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Action</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Adventure</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Animation</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Comedy</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Crime</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Drama</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Family</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Fantasy</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">History</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Horror</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Music</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Mystery</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Romance</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Science Fiction</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">TV Movie</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Thriller</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">War</button>
+        <button activeClassName="main-links" onClick={fillGenres} className="styled-btn title-txt preferences-btn">Western</button>
       </div>
 
       <h3>Platforms</h3>
 
       <div className="streaming_services">
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Netflix</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Amazon Prime Video</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Disney Plus</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">HBO Go</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Hulu</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Apple TV Plus</button>
-        <button id='preferences-btn' activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt">Paramount Plus</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Netflix</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Amazon Prime VclassNameeo</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Disney Plus</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">HBO Go</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Hulu</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Apple TV Plus</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Paramount Plus</button>
       </div>
 
       <div className='save'>
