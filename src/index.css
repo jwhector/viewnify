@@ -138,7 +138,7 @@ body {
 }
 
 .watchparty-list-item {
-  border: 2px white solid;
+  /* border: 2px white solid; */
 }
 
 .watch-party-list {
@@ -380,7 +380,8 @@ body {
 }
 
 .watch-party-list {
-  border: 2px white solid;
+  border-top: 2px white solid;
+  border-bottom: 2px white solid;
 }
 
 .party-url {

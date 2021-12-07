@@ -118,6 +118,22 @@
     font-family: Quicksand;
 }
 
+.party-url{
+    cursor: pointer;
+    border: 1px solid;
+    line-height: 2;
+    margin: 5 auto;
+}
+
+.party-url:hover {
+    opacity: .7;
+    color:rgba(226, 43, 255, 1);
+}
+
+.party-name, .party-members, .party-limit {
+    line-height: 2;
+}
+
 
 .name-party-input, .join-party-input {
     padding: 20px;
