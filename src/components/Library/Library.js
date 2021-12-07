@@ -15,7 +15,13 @@ function MiniCards(props) {
         const runtime = medium.runtime;
         const overview = medium.overview;
         const rating = medium.vote_average;
-        return <li key={medium.id}><MiniCard dataIndex={idx} openModal={props.openModal} poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} /></li>
+
+        return (
+
+            <li key={medium.id}><MiniCard dataIndex={idx} openModal={props.openModal} poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} />
+            <p class="mini-card-title">{title}</p>
+            </li>
+            )
     });
     return <ul className="library-list">{miniCards}</ul>
 }
