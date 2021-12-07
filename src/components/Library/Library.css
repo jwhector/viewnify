@@ -4,33 +4,29 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.75);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
+    animation: Fade_In .5s ease;
 }
 
 .card-modal {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* max-width: 300px; */
-    color: white;
-    /* justify-self: center; */
     justify-content: space-around;
-    /* background: radial-gradient(circle, rgba(104, 63, 255, 1) 0%, rgba(226, 43, 255, 1) 100%); */
+    align-items: center;
+    width: 100%;
+    color: white;
     background-size: 100%;
     background-repeat: repeat;
-    /* padding: 2rem; */
     text-align: center;
     border-radius: 25px;
     transition: .3s;
     transform: translateY(20%);
     opacity: 1;
-    align-items: center;
-    
+    margin: 0 auto;
+    animation: Slide_Up .5s ease;
 }
 
 .card-modal h2 {
@@ -42,4 +38,25 @@
     margin: 5px;
 
     
+}
+
+@keyframes Fade_In {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes Slide_Up {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    0% {
+        transform: translateY(60%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes Fade_Out {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
