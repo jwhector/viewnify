@@ -142,7 +142,9 @@ body {
 #chatroom,
 #invite,
 #logout,
-#preferences, #logout
+#preferences,
+#logout,
+#preferences-btn
 {
   justify-content: center;
   align-items: center;
@@ -896,8 +898,7 @@ body {
 .mini-card-title {
   font-size: 20px;
   margin-top: 5.5px;
-  color: #872ed0;
-  width: 100%;
+  color: #872ed0
 }
 
 @media only screen and (device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {

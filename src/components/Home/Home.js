@@ -37,6 +37,7 @@ export const darkTheme = {
 export default function Home(props) {
 
   const [theme, setTheme] = useState("light");
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -65,9 +66,13 @@ export default function Home(props) {
     }
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
     <div className="home" id="homer">
-      <Menu themeToggler={themeToggler} token={props.token}/>
+      <Menu isOpen={menuOpen} closeMenu={closeMenu} themeToggler={themeToggler} token={props.token}/>
       <div className="right-container">
         {renderPage()}
       </div>
