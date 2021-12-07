@@ -30,9 +30,29 @@ function MiniCards(props) {
     return <ul className="library-list">{miniCards}</ul>
 }
 
-/* PROPS
-    
-*/
+
+const genreMap = {
+    "28": "Action",
+    "12": "Adventure",
+    "16": "Animation",
+    "35": "Comedy",
+    "80": "Crime",
+    "18": "Drama",
+    "10751": "Family",
+    "14": "Fantasy",
+    "36": "History",
+    "27": "Horror",
+    "10402": "Music",
+    "9648": "Mystery",
+    "10749": "Romance",
+    "878": "Science Fiction",
+    "10770": "TV Movie",
+    "53": "Thriller",
+    "10752": "War",
+    "37": "Western",
+  }
+
+
 ReactModal.setAppElement('#root');
 
 export default function Library(props) {
@@ -61,10 +81,11 @@ export default function Library(props) {
                 tmdb_id: result.id,
                 image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
                 backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
-                title: result.original_title,
+                title: result.title,
                 release_date: result.release_date,
                 overview: result.overview,
-                rating: result.rating,
+                rating: result.vote_average,
+                genres: getGenres(result.genre_ids),
                 poster_path: result.poster_path,
                 backdrop_path: result.backdrop_path
                 // popularity
@@ -96,6 +117,10 @@ export default function Library(props) {
             });
         }
       });
+
+    const getGenres = (genre_ids) => {
+        return genre_ids.map(genre_id => genreMap[`${genre_id}`]);
+    }
 
     const openModal = (e) => {
         const idx = e.target.getAttribute('dataIndex');

@@ -80,6 +80,7 @@ export default function Card(props) {
                     <p className="card-info">{props.media[props.idx]?.overview}</p>
                 </div>
             </div>
+            
         </div>
         {props.isDiscover ? <div className="bottom-border" /> : <></>}
     </div>
