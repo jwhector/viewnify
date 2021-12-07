@@ -15,7 +15,13 @@ function MiniCards(props) {
         const runtime = medium.runtime;
         const overview = medium.overview;
         const rating = medium.vote_average;
-        return <li key={medium.id}><MiniCard dataIndex={idx} openModal={props.openModal} poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} /></li>
+
+        return (
+
+            <li key={medium.id}><MiniCard dataIndex={idx} openModal={props.openModal} poster={poster} backdrop={backdrop} title={title} runtime={runtime} overview={overview} rating={rating} />
+            <p class="mini-card-title">{title}</p>
+            </li>
+            )
     });
     return <ul className="library-list">{miniCards}</ul>
 }
@@ -108,6 +114,7 @@ export default function Library(props) {
                 className="card-modal"
                 overlayClassName="card-modal-overlay"
                 onRequestClose={clearModal}
+                closeTimeoutMS={200}
                 shouldCloseOnEsc={true}
                 shouldCloseOnOverlayClick={true}
                 style={{ overlay: { background: `radial-gradient(circle, ${bgColor} 33%, rgba(0,0,0,0.5) 100%)` } }}
