@@ -7,8 +7,8 @@ import MiniCard from '../Card/MiniCard';
 import ReactModal from 'react-modal';
 
 function WatchPartyList(props) {
-    const parties = props.watchparties;
 
+    const parties = props.watchparties;
     if (!parties) return '';
 
     function getMembers(party) {
@@ -20,11 +20,19 @@ function WatchPartyList(props) {
     const partyList = parties.map((party, idx) => {        
         return (
             <li key={party.id} className="watchparty-list-item" style={{ color: 'white' }}  dataIdx={idx} >
-                <p>This party's name is ${party.name}</p>
-                <p>This party has limit: {party.limit}</p>
-                <p onClick={props.getMedia} url={party.url}>This party's URL is: {party.url}</p>
-                <p>The members of this party are:</p>
+                <div className="party-name">
+                <p className="party-name"><p>name:</p> ${party.name}</p>
+                </div>
+                <div className="party-members">
+                <p>members:</p>
                 <ul>{getMembers(party)}</ul>
+                </div>
+                <div className="party-limit">
+                <p className="party-name"><p>limit:</p>{party.limit}</p>
+                </div>
+                <div className="party-url">
+                <p className="party-url" onClick={props.getMedia} url={party.url}> <p>URL:</p> {party.url}</p>
+                </div>
             </li>
         )
     });
@@ -186,13 +194,32 @@ function WatchParty(props) {
         setModalOpen(false);
     }
 
+    // const [searchItem, setSearchItem] = useState('');
+    // const handleChange = event => {
+    //     setSearchItem(event.target.value);
+    // };
+    // // useEffect(() => {
+    // //     const searchResults = media.filter(media => media.includes(searchItem)
+    // //     );
+    // //     setSearchItem(searchResults);
+    // // }, [searchItem]);
+
     return (
         <div className="watch-party">
             <div className="watch-party-header">
                 <h2>Watch Parties</h2>
                 <hr />
-                <button className="create-party-btn" onClick={createParty}>Create a Watch Party</button>
+                <input className="name-party-input" type ="text" placeholder="name party" value={''} onChange={''}>
+
+                </input>
+                <button className="create-party-btn" onClick={createParty}>create party</button>
             </div>
+            {/* <div className="party-search-bar">
+                <input type="text" placeholder="search" value={searchItem} onChange={handleChange} />
+                <ul>
+                    <li>hello</li>
+                </ul>
+            </div> */}
             <div className="watch-party-list">
                 <WatchPartyList watchparties={watchparties} getMedia={getMedia} />
             </div>

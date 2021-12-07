@@ -137,6 +137,17 @@ body {
   background-color: #ededed;
 }
 
+.watchparty-list-item {
+  border: 2px white solid;
+}
+
+.watch-party-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #discover-btn,
 #watch-party,
 #library,
@@ -359,6 +370,14 @@ p {
 html,
 body {
   margin: 0;
+}
+
+.watch-party-list {
+  border: 2px white solid;
+}
+
+.party-url {
+  border: 2p white solid;
 }
 
 #watch-party-left {

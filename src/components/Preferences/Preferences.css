@@ -104,6 +104,53 @@
     margin: 10px
 }
 
+.create-party-btn{
+    padding: 20px;
+    /* width: 15%; */
+    max-width: 200px;
+    min-width: 100px;
+    background:white;
+    color:rgba(226, 43, 255, 1);
+    margin: 10px;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: Quicksand;
+}
+
+
+.name-party-input {
+    padding: 20px;
+    width: 100px;
+    /* min-width: 100px;
+    max-width: 160px; */
+    background:white;
+    color:rgba(226, 43, 255, 1);
+    margin: 10px;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: Quicksand;
+}
+
+.watchparty-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+}
+
+.watchparty-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95vw;
+    border: none !important;
+}
+
 .ReactModal__Overlay--before-close{
     animation: Fade_Out .5s ease;
 }
