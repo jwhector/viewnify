@@ -10,6 +10,7 @@ import WatchParty from "./components/WatchParty/WatchParty";
 import Library from "./components/Library/Library";
 import Chatroom from "./components/Chatroom/Chatroom";
 import Invite from "./components/Invite/Invite";
+import PreferencesPage from "./components/Preferences/PreferencesPage"
 import {
   BrowserRouter as Router,
   NavLink,
@@ -133,7 +134,8 @@ function App() {
             <Route path="/library" element={<Home page="library" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/invite" element={<Home page="invite" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} setComplementary={setComplementary} />
-            <Route path="/" element={<Home page="logout" user={user} token={token} />} setComplementary={setComplementary} />
+            <Route path="/preferences" element={<Home page="preferences" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} setComplementary={setComplementary} />
+            {/* <Route path="/" element={<Home page="logout" user={user} token={token} />} setComplementary={setComplementary} /> */}
             
             </Routes>
 
