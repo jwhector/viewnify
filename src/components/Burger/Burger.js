@@ -23,7 +23,8 @@ export const lightTheme = {
   darkLightFont: '#ad33ff',
   darkLightText: '☽',
   bottomBorder: 'linear-gradient (0deg, #ededed 0%, transparent 20%)',
-  miniBox: '#000000'
+  miniBox: '#000000',
+  miniCardTitle: "#872ed0"
 
 }
 // #EDEDED for text
@@ -48,6 +49,7 @@ export const darkTheme = {
   bottomBorder: 'black',
   navBtnBackground: "#212121",
   miniBox: '#ededed',
+  miniCardTitle: "#ededed"
 
 
 };
@@ -81,6 +83,10 @@ background-color: ${(props) => props.theme.rightContainer};
 transition: 0.3s;
 }
 
+.mini-card-title-flex {
+  text: ${(props) => props.theme.miniCardTitle};
+}
+
 #play-pause {
 background-color: ${(props) => props.theme.playPause};
 transition: 0.3s;
@@ -93,6 +99,10 @@ background: ${(props) => {
   console.log(props)
   return props.theme.bmMenu
 }};
+}
+
+.mini-card:hover {
+  background-color: ${(props) => props.theme.fontColor};
 }
 
 #dark-light {
