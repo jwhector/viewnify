@@ -43,7 +43,6 @@ export default function Preferences(props) {
       e.target.style.color = 'white';
       const genresHolder = new Set([...genres]);
       genresHolder.add(genre_id);
-      console.log(genresHolder);
       setGenres(genresHolder)
     }
   }
@@ -78,6 +77,7 @@ export default function Preferences(props) {
     }
     );
     props.closeModal();
+    if (window.location.href.endsWith('discover')) window.location.reload();
     return entries.json();
   };
 
