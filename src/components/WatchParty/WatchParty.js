@@ -239,19 +239,12 @@ function WatchParty(props) {
         <div className="watch-party">
             <div className="watch-party-header">
                 <h2>Watch Parties</h2>
-                <hr />
                 <input ref={inputField} className="name-party-input" type ="text" placeholder="name party..." value={inputVal} onChange={(e) => setInputVal(e.target.value)}></input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
                 <p className="or">or</p>
                 <button className="join-party-btn" onClick={joinParty}>join party</button>
                 <input ref={urlField} className="join-party-input" type="text" placeholder="...enter url" value={urlInput} onChange={(e) => setUrlInput(e.target.value)} />
             </div>
-            {/* <div className="party-search-bar">
-                <input type="text" placeholder="search" value={searchItem} onChange={handleChange} />
-                <ul>
-                    <li>hello</li>
-                </ul>
-            </div> */}
             <div className="watch-party-list">
                 <WatchPartyList watchparties={watchparties} getMedia={getMedia} />
             </div>
