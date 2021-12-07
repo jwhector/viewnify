@@ -23,9 +23,19 @@ const genreMap = {
   "Western": 37,
   }
 
+const streamerMap = {
+  "Netflix": 8,
+  "Amazon Prime": 119,
+  "Disney Plus": 337,
+  "HBO Max": 384,
+  "Hulu": 15,
+  "Apple TV Plus": 350,
+  "Paramount Plus": 531
+}
+
 export default function Preferences(props) {
   const [genres, setGenres] = useState(new Set());
-  const [streaming_service, setStreamer] = useState(new Set());
+  const [streaming_services, setStreamer] = useState(new Set());
 
   const fillGenres = (e) => {
     // e.preventDefault()
@@ -43,17 +53,25 @@ export default function Preferences(props) {
       e.target.style.color = 'white';
       const genresHolder = new Set([...genres]);
       genresHolder.add(genre_id);
-      console.log(genresHolder);
       setGenres(genresHolder)
     }
   }
 
   const fillStreamer = (e) => {
-    if (streaming_service.has(e.target.textContent)) {
+    const streamer_id = streamerMap[e.target.textContent];
+    if (streaming_services.has(streamer_id)) {
+      // console.log('ALREADY HAS')
       e.target.style.backgroundColor = 'white';
-      const streamerHolder = new Set([...streaming_service]).delete(e.target.textContent);
-      setGenres(streamerHolder);
-      return;
+      e.target.style.color = 'rgba(226, 43, 255, 1)';
+      const streamerHolder = new Set([...streaming_services]);
+      streamerHolder.delete(streamer_id);
+      setStreamer(streamerHolder);
+    } else {
+      e.target.style.backgroundColor = 'rgba(226, 43, 255, 1)';
+      e.target.style.color = 'white';
+      const streamerHolder = new Set([...streaming_services]);
+      streamerHolder.add(streamer_id);
+      setStreamer(streamerHolder);
     }
     // preventDefault()
     // const streamerHolder = [...streaming_service]
@@ -63,7 +81,7 @@ export default function Preferences(props) {
 
   const savePreferences = async () => {
     const genresString = [...genres].toString()
-    const streamerString = streaming_service.toString()
+    const streamerString = [...streaming_services].toString()
     const entries = await fetch(
       'http://localhost:3005/api/users', {
       method: 'PUT',
@@ -78,6 +96,7 @@ export default function Preferences(props) {
     }
     );
     props.closeModal();
+    if (window.location.href.endsWith('discover')) window.location.reload();
     return entries.json();
   };
 
@@ -112,9 +131,9 @@ export default function Preferences(props) {
 
       <div className="streaming_services">
         <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Netflix</button>
-        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Amazon Prime VclassNameeo</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Amazon Prime</button>
         <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Disney Plus</button>
-        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">HBO Go</button>
+        <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">HBO Max</button>
         <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Hulu</button>
         <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Apple TV Plus</button>
         <button activeClassName="main-links" onClick={fillStreamer} className="styled-btn title-txt preferences-btn">Paramount Plus</button>

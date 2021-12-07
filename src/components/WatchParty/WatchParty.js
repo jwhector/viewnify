@@ -33,6 +33,7 @@ function WatchPartyList(props) {
 
 function MiniCards(props) {
     const media = props.media;
+    console.log(media);
     const miniCards = media.map((medium, idx) => {
         const poster = `https://image.tmdb.org/t/p/w200${medium.poster_path}`;
         const backdrop = `https://image.tmdb.org/t/p/original${medium.backdrop_path}`;
@@ -121,23 +122,25 @@ function WatchParty(props) {
             }
         }).then(res => {
             res.json().then(results => {
+                const mediaSet = new Set([...media.map(medium => medium.tmdb_id)]);
                 const mediaHolder = [...media];
                 const imageHolder = [...images];
                 results.forEach((result) => {
-                mediaHolder.push({
-                    tmdb_id: result.id,
-                    image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
-                    backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
-                    title: result.title,
-                    release_date: result.release_date,
-                    overview: result.overview,
-                    rating: result.vote_average,
-                    genres: getGenres(result.genre_ids),
-                    poster_path: result.poster_path,
-                    backdrop_path: result.backdrop_path
-                });
-                imageHolder.push(
-                    `https://image.tmdb.org/t/p/original${result.poster_path}`
+                    if (mediaSet.has(result.id)) return;
+                    mediaHolder.push({
+                        tmdb_id: result.id,
+                        image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
+                        backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
+                        title: result.title,
+                        release_date: result.release_date,
+                        overview: result.overview,
+                        rating: result.vote_average,
+                        genres: getGenres(result.genre_ids),
+                        poster_path: result.poster_path,
+                        backdrop_path: result.backdrop_path
+                    });
+                    imageHolder.push(
+                        `https://image.tmdb.org/t/p/original${result.poster_path}`
                     );
                 });
                 setImages(imageHolder);
@@ -147,6 +150,7 @@ function WatchParty(props) {
     }
 
     const getGenres = (genre_ids) => {
+        if (!genre_ids) return;
         return genre_ids.map(genre_id => genreMap[`${genre_id}`]);
     }
 
