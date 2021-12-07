@@ -49,7 +49,7 @@ export const darkTheme = {
   bottomBorder: 'black',
   navBtnBackground: "#212121",
   miniBox: '#ededed',
-  miniCardTitle: "#ededed"
+  miniCardTitle: "#ededed",
 
 
 };
@@ -125,6 +125,10 @@ background: ${(props) => {
   transition: 0.3s;
   background-color: ${(props) => props.theme.navBtnBackground};
   
+}
+
+.mini-card-title {
+  color: ${(props) => props.theme.discoverBtn};
 }
 
  .MuiToolbar-root, .MTableHeader-header-13, .MuiTableCell-head, .MuiTableFooter-root, .MTablePaginationInner-root-14   {
