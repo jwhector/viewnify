@@ -153,6 +153,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
   overflow: scroll;
+  overflow-x: auto;
 }
 
 #discover-btn,
@@ -928,6 +929,7 @@ body {
 #library-header {
   flex-grow: 1;
   overflow:scroll;
+  overflow-x: hidden;
 }
 
 .mini-card {

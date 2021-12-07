@@ -84,7 +84,9 @@ function WatchParty(props) {
     const [bgColor, setBgColor] = useState('#ededed');
     const [complementary, setComplementary] = useState('#ededed');
     const [inputVal, setInputVal] = useState('');
+    const [urlInput, setUrlInput] = useState('');
     const inputField = useRef(null);
+    const urlField = useRef(null);
 
     const fac = new FastAverageColor();
 
@@ -188,6 +190,31 @@ function WatchParty(props) {
         }).catch(err => console.log(err));
     }
 
+    const joinParty = () => {
+        if (!urlInput.length || !urlField.current) return;
+        fetch(`http://localhost:3005/api/watchparty/join/${urlInput}`, {
+            method: 'POST', 
+            mode: 'cors', 
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer: ${props.token}`
+            },
+            body: JSON.stringify({})
+        }).then(res => {
+            if (res.ok) {
+                res.json().then((watchpartyData => {
+                    // console.log(watchparties);
+                    console.log('JOINED!');
+                    console.log(watchpartyData);
+                    // setWatchparties([...watchparties, watchpartyData]);
+                })).catch(err => console.log(err));
+            }
+            setInputVal('');
+        }).catch(err => console.log(err));
+    }
+
     const openModal = (e) => {
         const idx = e.target.getAttribute('dataIndex');
         setModalIdx(idx);
@@ -216,8 +243,8 @@ function WatchParty(props) {
                 <input ref={inputField} className="name-party-input" type ="text" placeholder="name party" value={inputVal} onChange={(e) => setInputVal(e.target.value)}></input>
                 <button className="create-party-btn" onClick={createParty}>create party</button>
                 <p className="or">or</p>
-                <button className="join-party-btn" onClick={createParty}>join party</button>
-                <input className="join-party-input" type="text" placeholder="...enter url" />
+                <button className="join-party-btn" onClick={joinParty}>join party</button>
+                <input ref={urlField} className="join-party-input" type="text" placeholder="...enter url" value={urlInput} onChange={(e) => setUrlInput(e.target.value)} />
             </div>
             {/* <div className="party-search-bar">
                 <input type="text" placeholder="search" value={searchItem} onChange={handleChange} />

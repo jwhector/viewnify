@@ -96,7 +96,7 @@ export default function Discover(props) {
             release_date: result.release_date,
             overview: result.overview,
             rating: result.vote_average,
-            genres: getGenres(result.genre_ids)
+            genres: getGenres(result.genre_ids).trim()
           });
           imageHolder.push(
             `https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -108,7 +108,9 @@ export default function Discover(props) {
   }
 
   const getGenres = (genre_ids) => {
-    return genre_ids.map(genre_id => genreMap[`${genre_id}`]);
+    let str = '';
+    genre_ids.forEach(genre_id => str = str.concat(`, ${genreMap[genre_id]}`));
+    return str;
   }
 
   const getEntries = async () => {
