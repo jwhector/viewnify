@@ -136,12 +136,14 @@ body {
 #library,
 #chatroom,
 #invite,
-#preferences {
+#logout,
+#preferences, #logout
+{
   justify-content: center;
   align-items: center;
   list-style-type: none;
   /* border-spacing: 50px; */
-  margin-top: 5.3rem;
+  margin-top: 3.4rem;
   font-family: Quicksand;
   color: #00000080;
   flex-direction: row;
@@ -847,6 +849,7 @@ body {
   height: 450px; */
   border-radius: 18px;
   overflow: hidden;
+  /* border: solid 1px white; */
   /* border: solid 2px #ededed; */
   /* box-shadow: 3px 3px 3px white; */
 }
@@ -857,9 +860,9 @@ body {
 }
 
 .mini-card-title {
-  width: 150px;
-  font-size: 8px;
-  margin-top: 3.5px;
+  width: 100%;
+  font-size: 10px;
+  margin-top: 5.5px;
   color: #a1a1a1;
 }
 
@@ -903,8 +906,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 2rem;
+  #preferences, #logout {
+    margin-top: 1.2rem;
   }
 }
 
@@ -951,8 +954,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 3rem;
+  #preferences, #logout {
+    margin-top: 2.1rem;
   }
 }
 
@@ -1003,8 +1006,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 3.6rem;
+  #preferences, #logout {
+    margin-top: 2.7rem;
   }
 }
 
@@ -1052,8 +1055,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 4.4rem;
+  #preferences, #logout {
+    margin-top: 3.4rem;
   }
 }
 
@@ -1100,8 +1103,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 6.6rem;
+  #preferences, #logout {
+    margin-top: 5.2rem;
   }
 }
 
@@ -1159,8 +1162,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 2.6rem;
+  #preferences, #logout {
+    margin-top: 1.8rem;
   }
 }
 
@@ -1205,8 +1208,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 3.6rem;
+  #preferences, #logout {
+    margin-top: 2.6rem;
   }
 }
 
@@ -1251,8 +1254,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 4.6rem;
+  #preferences, #logout {
+    margin-top: 3.5rem;
   }
 }
 
@@ -1299,8 +1302,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 9.8rem;
+  #preferences, #logout {
+    margin-top: 8.1rem;
   }
 }
 
@@ -1344,8 +1347,8 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences {
-    margin-top: 3.6rem;
+  #preferences, #logout {
+    margin-top: 2.5rem;
   }
 }
 
@@ -1389,8 +1392,8 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences {
-      margin-top: 2.9rem;
+    #preferences, #logout {
+      margin-top: 1.9rem;
     } 
 }
 
@@ -1422,8 +1425,8 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences {
-      margin-top: 2.4rem;
+    #preferences, #logout {
+      margin-top: 1.5rem;
     } 
 }
 
@@ -1451,8 +1454,8 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences {
-      margin-top: 4.3rem;
+    #preferences, #logout {
+      margin-top: 3.4rem;
     } 
 }
 
@@ -1485,8 +1488,8 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences {
-      margin-top: 5.1rem;
+    #preferences, #logout {
+      margin-top: 3.9rem;
     } 
 }
 

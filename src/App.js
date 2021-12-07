@@ -10,6 +10,7 @@ import WatchParty from "./components/WatchParty/WatchParty";
 import Library from "./components/Library/Library";
 import Chatroom from "./components/Chatroom/Chatroom";
 import Invite from "./components/Invite/Invite";
+import PreferencesPage from "./components/Preferences/PreferencesPage"
 import {
   BrowserRouter as Router,
   NavLink,
@@ -67,6 +68,7 @@ function App() {
     }
   }, [token]);
 
+
   useEffect(() => {
     if (token) {
       fetch('http://localhost:3005/api/users/verify', {
@@ -110,6 +112,7 @@ function App() {
     );
   }
 
+  
   return (
     <UserContext.Provider value={user}>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -125,12 +128,14 @@ function App() {
           <Router>
             <Routes>
 
-            <Route path="/" element={<Home page="discover" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} />
+            <Route path="/" element={<Home page="discover" user={user} token={token}  complementary={complementary} setComplementary={setComplementary} />} />
             <Route path="/discover" element={<Home page="discover" user={user}  token={token} complementary={complementary} setComplementary={setComplementary} />} />
             <Route path="/watchparty" element={<Home page="watchparty" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/library" element={<Home page="library" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/chatroom" element={<Home page="chatroom" user={user}  token={token} setComplementary={setComplementary} />} />
             <Route path="/invite" element={<Home page="invite" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} setComplementary={setComplementary} />
+            <Route path="/preferences" element={<Home page="preferences" user={user} token={token} complementary={complementary} setComplementary={setComplementary} />} setComplementary={setComplementary} />
+            {/* <Route path="/" element={<Home page="logout" user={user} token={token} />} setComplementary={setComplementary} /> */}
             
             </Routes>
 
