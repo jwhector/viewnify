@@ -104,12 +104,12 @@
     margin: 10px
 }
 
-.create-party-btn{
+.create-party-btn, .join-party-btn{
     padding: 20px;
-    /* width: 15%; */
+    width: 150px;
     max-width: 200px;
     min-width: 100px;
-    background:white;
+    /* background:white; */
     color:rgba(226, 43, 255, 1);
     margin: 10px;
     font-size: 1rem;
@@ -119,17 +119,22 @@
 }
 
 
-.name-party-input {
+.name-party-input, .join-party-input {
     padding: 20px;
-    width: 100px;
+    width: 105.5px;
     /* min-width: 100px;
     max-width: 160px; */
-    background:white;
+    /* background:white; */
     color:rgba(226, 43, 255, 1);
     margin: 10px;
     font-size: 1rem;
     align-items: center;
     justify-content: center;
+    font-family: Quicksand;
+}
+
+.or {
+    color: #ededed;
     font-family: Quicksand;
 }
 
