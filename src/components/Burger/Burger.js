@@ -115,7 +115,7 @@ background: ${(props) => {
   transition: 0.3s;
   }
 
-#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, #logout,.watch-header, .create-party, .discover, .watch-content {
+#discover-btn, #watch-party, #library, #chatroom, #invite, #preferences, #logout,.watch-header, .create-party, .discover, .watch-content, #preferences-btn {
   transition: 0.3s;
   box-shadow: ${(props) => props.theme.boxShadow};
   color: ${(props) => props.theme.discoverBtn};
@@ -168,13 +168,13 @@ export default function Burger(props) {
 
   return (
     <Menu isOpen={props.menuOpen}>
-        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn' onClick={props.closeMenu}>Discover</NavLink>
-        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party' onClick={props.closeMenu}>Watch Party</NavLink>
-        <NavLink exact activeClassName="main-links" to="/library" id="library" onClick={props.closeMenu}>Library</NavLink>
+        <NavLink exact activeClassName="main-links" to="/discover" id='discover-btn' onClick={props.closeMenu}>discover</NavLink>
+        <NavLink exact activeClassName="main-links" to="/watchparty" id='watch-party' onClick={props.closeMenu}>watch party</NavLink>
+        <NavLink exact activeClassName="main-links" to="/library" id="library" onClick={props.closeMenu}>library</NavLink>
         {/* <NavLink exact activeClassName="main-links" to="/invite" id="invite">Invite</NavLink> */}
         {/* <NavLink exact activeClassName="main-links" to="/preferences" id="preferences">Preferences</NavLink> */}
-        <button id="preferences-btn" onClick={openModal} onClick={props.closeMenu}>Open Modal</button>
-        <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">Log Out</NavLink>
+        <button id="preferences-btn" onClick={openModal} onClick={props.closeMenu}>genres</button>
+        <NavLink exact activeClassName="main-links" to="/" onClick={removeToken} id="logout">log out</NavLink>
         {/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
         
         <ReactModal isOpen={modalOpen}

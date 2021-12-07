@@ -142,9 +142,8 @@ body {
 #chatroom,
 #invite,
 #logout,
-#preferences,
-#logout,
-#preferences-btn
+#preferences-btn,
+#logout
 {
   justify-content: center;
   align-items: center;
@@ -944,7 +943,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 1.2rem;
   }
 }
@@ -993,7 +992,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 2.1rem;
   }
 }
@@ -1048,7 +1047,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 2.7rem;
   }
 }
@@ -1097,7 +1096,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 3.4rem;
   }
 }
@@ -1151,7 +1150,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 5.2rem;
   }
 }
@@ -1216,7 +1215,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 1.8rem;
   }
 }
@@ -1265,7 +1264,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 2.6rem;
   }
 }
@@ -1314,7 +1313,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 3.5rem;
   }
 }
@@ -1362,7 +1361,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 8.1rem;
   }
 }
@@ -1410,7 +1409,7 @@ body {
   #library,
   #chatroom,
   #invite,
-  #preferences, #logout {
+  #preferences-btn, #logout {
     margin-top: 2.5rem;
   }
 }
@@ -1455,7 +1454,7 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences, #logout {
+    #preferences-btn, #logout {
       margin-top: 1.9rem;
     } 
 }
@@ -1491,7 +1490,7 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences, #logout {
+    #preferences-btn, #logout {
       margin-top: 1.5rem;
     } 
 }
@@ -1520,7 +1519,7 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences, #logout {
+    #preferences-btn, #logout {
       margin-top: 3.4rem;
     } 
 }
@@ -1560,7 +1559,7 @@ body {
     #library,
     #chatroom,
     #invite,
-    #preferences, #logout {
+    #preferences-btn, #logout {
       margin-top: 3.9rem;
     } 
 }
