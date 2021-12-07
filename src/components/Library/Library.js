@@ -67,7 +67,7 @@ export default function Library(props) {
 
 
     useEffect(() => {
-        fetch('http://localhost:3005/api/likes/user/tmdb', {
+        fetch('https://viewnify-server.herokuapp.com/api/likes/user/tmdb', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer: ${props.token}`

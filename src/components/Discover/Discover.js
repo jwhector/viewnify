@@ -115,7 +115,7 @@ export default function Discover(props) {
 
   const getEntries = async () => {
     const entries = await fetch(
-      'http://localhost:3005/tmdbSearch', {
+      'https://viewnify-server.herokuapp.com/tmdbSearch', {
         method: 'POST', 
         mode: 'cors', 
         cache: 'no-cache',

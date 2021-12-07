@@ -83,7 +83,7 @@ export default function Preferences(props) {
     const genresString = [...genres].toString()
     const streamerString = [...streaming_services].toString()
     const entries = await fetch(
-      'http://localhost:3005/api/users', {
+      'https://viewnify-server.herokuapp.com/api/users', {
       method: 'PUT',
       mode: 'cors',
       cache: 'no-cache',
