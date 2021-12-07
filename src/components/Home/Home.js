@@ -67,7 +67,7 @@ export default function Home(props) {
 
   return (
     <div className="home" id="homer">
-      <Menu themeToggler={themeToggler}/>
+      <Menu themeToggler={themeToggler} token={props.token}/>
       <div className="right-container">
         {renderPage()}
       </div>
