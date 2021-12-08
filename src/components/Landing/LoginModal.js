@@ -13,7 +13,7 @@ async function loginUser(credentials) {
 }
 
 async function signupUser(credentials) {
-    console.log(credentials);
+    // console.log(credentials);
     return fetch('https://viewnify-server.herokuapp.com/api/users', {
         method: 'POST',
         headers: {
@@ -56,7 +56,7 @@ export default function LoginModal(props) {
     const handleSignup = async e => {
         e.preventDefault();
 
-        console.log(email, password, confirmPassword);
+        // console.log(email, password, confirmPassword);
 
         if (password.length < 8) {
             setConfirmText('Your password must be at least 8 characters long. Please try again.');
@@ -81,7 +81,7 @@ export default function LoginModal(props) {
                     return;
                 }
 
-                console.log(user);
+                // console.log(user);
                 props.setToken({ 'token': token });
                 clearModal();
                 // props.closeModal();
