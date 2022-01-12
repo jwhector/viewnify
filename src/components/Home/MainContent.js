@@ -4,7 +4,7 @@ export default function Home(props) {
 
 return (
     <>
-    <nav id="viewnify">viewnify</nav>
+    <nav id="viewnify"></nav>
     <div class="side-bar">
       <div class="buttons">
       <ul class="main-links">
