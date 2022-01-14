@@ -1,89 +1,89 @@
 .content-img img {
-    /* width: 100%; <--------------- ENABLE FOR MOBILE */
-    /* width: 500px; */
+	/* width: 100%; <--------------- ENABLE FOR MOBILE */
+	/* width: 500px; */
 }
 
-#discover{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    /* justify-content: space-between; */
-    width: 100%;
-    height: 100%;
+#discover {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 0;
+	/* justify-content: space-between; */
+	width: 100%;
+	height: 100%;
 }
 
-.int-container{
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.int-container {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
-#media-info{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    /* align-self: flex-end; */
-    right: 0;
-    height: 100%;
-    width: 30%;
-    top: 0;
-    background-color: rgba(.5,.5,.5,.8);
-    z-index: 2;
+#media-info {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	/* align-self: flex-end; */
+	right: 0;
+	height: 100%;
+	width: 30%;
+	top: 0;
+	background-color: rgba(0.5, 0.5, 0.5, 0.8);
+	z-index: 2;
 }
 
 .bg-img {
-    /* height: 100%;
+	/* height: 100%;
     width: 100%; */
-    flex-grow: 1;
-    background-color: rgba(.5,.5,.5,.5);
-    background-image: url('https://image.tmdb.org/t/p/original/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg');
-    /* position: absolute; */
-    background-size: cover;
-    background-position: center;
-    -webkit-filter: blur(3px) opacity(.9);
-    filter: opacity(.9) blur(3px);
-    /* top: 0;
+	flex-grow: 1;
+	background-color: rgba(0.5, 0.5, 0.5, 0.5);
+	background-image: url('https://image.tmdb.org/t/p/original/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg');
+	/* position: absolute; */
+	background-size: cover;
+	background-position: center;
+	-webkit-filter: blur(3px) opacity(0.9);
+	filter: opacity(0.9) blur(3px);
+	/* top: 0;
     left: 0; */
-    z-index:1;
+	z-index: 1;
 }
 
 .discover-btn {
-    height: 7rem;
+	height: 7rem;
 }
 
 .media-main {
-    will-change: transform;
-    transition: all 0.3s ease-in-out;
-    position: absolute;
+	will-change: transform;
+	transition: all 0.3s ease-in-out;
+	position: absolute;
 }
 
 .moving.media-main {
-    transition: none;
-    cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
-    cursor: grabbing;
+	transition: none;
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+	cursor: grabbing;
 }
 
 .removed {
-    display: none;
+	display: none;
 }
 
 .front {
-    z-index: 5 !important;
+	z-index: 5 !important;
 }
 
 .back {
-    z-index: 4 !important;
+	z-index: 4 !important;
 }
 
 .content-description {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    transition: .3s;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	transition: 0.3s;
 }
 
 /* #play-btn {
