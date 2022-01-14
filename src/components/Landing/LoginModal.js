@@ -12,7 +12,6 @@ async function loginUser(credentials) {
 }
 
 async function signupUser(credentials) {
-	console.log(credentials);
 	return fetch('https://viewnify-server.herokuapp.com/api/users', {
 		method: 'POST',
 		headers: {
