@@ -3,7 +3,6 @@ import "./discover.css";
 
 import FastAverageColor from "fast-average-color";
 import Color from "color";
-// import swipe from "../Swipe/swipefn";
 import Swipe from '../Swipe/Swipe';
 import { UserContext } from '../../App';
 

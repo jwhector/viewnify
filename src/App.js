@@ -3,17 +3,8 @@ import NavBar from "./components/NavBar";
 import LandingPage from "./components/Landing/LandingPage";
 import useToken from "./useToken";
 import Home from "./components/Home/Home";
-import Liked from "./components/Home/Liked";
-import Button from "./components/Home/Button";
-import Discover from "./components/Discover/Discover";
-import WatchParty from "./components/WatchParty/WatchParty";
-import Library from "./components/Library/Library";
-import Chatroom from "./components/Chatroom/Chatroom";
-import Invite from "./components/Invite/Invite";
-import PreferencesPage from "./components/Preferences/PreferencesPage"
 import {
   BrowserRouter as Router,
-  NavLink,
   Route,
   Routes,
 } from "react-router-dom";
@@ -32,8 +23,6 @@ const StyledApp = styled.div`
 `;
 
 const UserContext = React.createContext(undefined);
-
-// async function login()
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -58,7 +47,6 @@ function App() {
       }).then(async res => {
         if (res.ok) {
           const data = await res.json();
-          // console.log(data);
           delete data.password;
           setUser(data);
         }
@@ -102,7 +90,6 @@ function App() {
       </ThemeProvider>
     );
   } else if (!user) {
-    // location.href = `${process.env.PUBLIC_URL}/discover`;
     return (
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <NavBar showLogin={false} themeToggler={themeToggler} />

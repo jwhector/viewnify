@@ -38,11 +38,8 @@ export default function Preferences(props) {
   const [streaming_services, setStreamer] = useState(new Set());
 
   const fillGenres = (e) => {
-    // e.preventDefault()
-    // console.log(e.target.textContent);
     const genre_id = genreMap[e.target.textContent];
     if (genres.has(genre_id)) {
-      // console.log('ALREADY HAS')
       e.target.style.backgroundColor = 'white';
       e.target.style.color = 'rgba(226, 43, 255, 1)';
       const genresHolder = new Set([...genres]);
@@ -60,7 +57,6 @@ export default function Preferences(props) {
   const fillStreamer = (e) => {
     const streamer_id = streamerMap[e.target.textContent];
     if (streaming_services.has(streamer_id)) {
-      // console.log('ALREADY HAS')
       e.target.style.backgroundColor = 'white';
       e.target.style.color = 'rgba(226, 43, 255, 1)';
       const streamerHolder = new Set([...streaming_services]);
@@ -73,10 +69,6 @@ export default function Preferences(props) {
       streamerHolder.add(streamer_id);
       setStreamer(streamerHolder);
     }
-    // preventDefault()
-    // const streamerHolder = [...streaming_service]
-    // streamerHolder.push(e.target.textContent)
-    // setStreamer(streamerHolder)
   }
 
   const savePreferences = async () => {
@@ -140,7 +132,7 @@ export default function Preferences(props) {
       </div>
 
       <div className='save'>
-      <button id='save-btn' activeClassName="main-links" onClick={savePreferences} className="styled-btn title-txt">Save</button>
+        <button id='save-btn' activeClassName="main-links" onClick={savePreferences} className="styled-btn title-txt">Save</button>
       </div>
       <img id="bg-img" alt="Viewnify 'V' logo." src={logo} />
     </div>
