@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Invite from '../Invite/Invite';
 import FastAverageColor from 'fast-average-color';
 import Color from 'color';
 import Card from '../Card/Card';
@@ -26,8 +25,7 @@ function WatchPartyList(props) {
 				key={party.id}
 				className='watchparty-list-item'
 				style={{ color: 'white' }}
-				dataIdx={idx}
-			>
+				dataIdx={idx}>
 				<div className='party-name'>
 					<p className='party-name'>
 						<p>name:</p> {party.name}
@@ -47,8 +45,7 @@ function WatchPartyList(props) {
 					<p
 						className='party-url'
 						onClick={props.getMedia}
-						url={party.url}
-					>
+						url={party.url}>
 						{' '}
 						<p>URL:</p> {party.url}
 					</p>
@@ -276,16 +273,6 @@ function WatchParty(props) {
 		setModalOpen(false);
 	};
 
-	// const [searchItem, setSearchItem] = useState('');
-	// const handleChange = event => {
-	//     setSearchItem(event.target.value);
-	// };
-	// // useEffect(() => {
-	// //     const searchResults = media.filter(media => media.includes(searchItem)
-	// //     );
-	// //     setSearchItem(searchResults);
-	// // }, [searchItem]);
-
 	return (
 		<div className='watch-party'>
 			<div className='watch-party-header'>
@@ -296,8 +283,7 @@ function WatchParty(props) {
 					type='text'
 					placeholder='name party...'
 					value={inputVal}
-					onChange={(e) => setInputVal(e.target.value)}
-				></input>
+					onChange={(e) => setInputVal(e.target.value)}></input>
 				<button className='create-party-btn' onClick={createParty}>
 					create party
 				</button>
@@ -334,8 +320,7 @@ function WatchParty(props) {
 					overlay: {
 						background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`
 					}
-				}}
-			>
+				}}>
 				<Card
 					idx={modalIdx}
 					complementary={complementary}

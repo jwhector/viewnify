@@ -32,7 +32,7 @@ export default function Discover(props) {
 	const [media, setMedia] = useState([]);
 	const [bgColor, setBgColor] = useState('');
 	const [curPage, setCurPage] = useState(1);
-	const [bgColor_b, setBgColor_b] = useState('');
+	// const [bgColor_b, setBgColor_b] = useState('');
 	const [isFirstInFocus, setIsFirstInFocus] = useState(true);
 	const discoverBg_a = useRef(null);
 	const discoverBg_b = useRef(null);

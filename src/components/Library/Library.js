@@ -155,8 +155,7 @@ export default function Library(props) {
 					overlay: {
 						background: `radial-gradient(circle, ${bgColor} 33%, rgba(0,0,0,0.5) 100%)`
 					}
-				}}
-			>
+				}}>
 				<Card
 					idx={modalIdx}
 					complementary={complementary}

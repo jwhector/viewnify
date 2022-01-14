@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import LoginModal from './Landing/LoginModal';
 import Color from 'color';
-//3005
 
 export default function NavBar(props) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [shadowColor, setShadowColor] = useState('#683fff80');
 
-	// const shadowColor = props.complementary || '#683fff80';
 	useEffect(() => {
 		if (props.complementary !== '#683fff80') {
 			let myColor = Color(props.complementary);
@@ -16,10 +14,9 @@ export default function NavBar(props) {
 		} else {
 			setShadowColor(props.complementary);
 		}
-		// console.log(shadowColor);
 	}, [props.complementary]);
 
-	const setLogin = (e) => {
+	const setLogin = () => {
 		setModalOpen(true);
 	};
 
@@ -44,8 +41,7 @@ export default function NavBar(props) {
 					<button
 						onClick={setLogin}
 						id='login-btn'
-						className='styled-btn title-txt'
-					>
+						className='styled-btn title-txt'>
 						Log In
 					</button>
 					<LoginModal

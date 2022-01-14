@@ -78,6 +78,7 @@ export default function Home(props) {
 				closeMenu={closeMenu}
 				themeToggler={themeToggler}
 				token={props.token}
+				setToken={props.setToken}
 			/>
 			<div className='right-container'>{renderPage()}</div>
 		</div>

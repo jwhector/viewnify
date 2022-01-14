@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { stack as Menu } from 'react-burger-menu';
-import { render } from '@testing-library/react';
 import { NavLink } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
-import useToken from '../../useToken';
+// import useToken from '../../useToken';
 import Preferences from '../Preferences/PreferencesPage';
 import ReactModal from 'react-modal';
 
@@ -93,9 +91,9 @@ transition: 0.3s;
   transition: 0.3s;
   z-index: 1;
 background: ${(props) => {
-	console.log(props);
-	return props.theme.bmMenu;
-}};
+		console.log(props);
+		return props.theme.bmMenu;
+	}};
 }
 
 .mini-card:hover {
@@ -152,14 +150,10 @@ background: ${(props) => {
 export default function Burger(props) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
-	const showSettings = (event) => {
-		event.preventDefault();
-	};
-	const { token, setToken } = useToken();
 	const removeToken = () => {
 		localStorage.removeItem('token');
-		setToken(null);
-		window.location.reload(true);
+		props.setToken(null);
+		// window.location.reload(true);
 	};
 
 	const openModal = () => {
@@ -177,24 +171,21 @@ export default function Burger(props) {
 				exact
 				activeClassName='main-links'
 				to='/discover'
-				id='discover-btn'
-			>
+				id='discover-btn'>
 				discover
 			</NavLink>
 			<NavLink
 				exact
 				activeClassName='main-links'
 				to='/watchparty'
-				id='watch-party'
-			>
+				id='watch-party'>
 				watch party
 			</NavLink>
 			<NavLink
 				exact
 				activeClassName='main-links'
 				to='/library'
-				id='library'
-			>
+				id='library'>
 				library
 			</NavLink>
 			<NavLink
@@ -202,8 +193,7 @@ export default function Burger(props) {
 				activeClassName='main-links'
 				to=''
 				onClick={openModal}
-				id='preferences-btn'
-			>
+				id='preferences-btn'>
 				categories
 			</NavLink>
 			<NavLink
@@ -211,11 +201,9 @@ export default function Burger(props) {
 				activeClassName='main-links'
 				to='/'
 				onClick={removeToken}
-				id='logout'
-			>
+				id='logout'>
 				log out
 			</NavLink>
-			{/* <button id="dark-light"onClick={() => props.themeToggler()}>Change Theme</button> */}
 
 			<ReactModal
 				isOpen={modalOpen}
@@ -224,15 +212,9 @@ export default function Burger(props) {
 				onRequestClose={clearModal}
 				closeTimeoutMS={200}
 				shouldCloseOnEsc={true}
-				shouldCloseOnOverlayClick={true}
-			>
+				shouldCloseOnOverlayClick={true}>
 				<Preferences token={props.token} closeModal={clearModal} />
 			</ReactModal>
-
-			{/* <button id='watch-party' className='main-links' >Watch Party</button>
-        <button id='library' className='main-links' >Library</button>
-        <button id='chatroom' className='main-links' >Chat</button>
-        <button id='invite' className='invite-link' >Invite</button> */}
 		</Menu>
 	);
 }

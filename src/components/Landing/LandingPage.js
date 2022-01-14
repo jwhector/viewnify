@@ -8,7 +8,7 @@ export default function LandingPage(props) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [isLogin, setIsLogin] = useState(false);
 
-	const setSignup = (e) => {
+	const setSignup = () => {
 		setIsLogin(false);
 		setModalOpen(true);
 	};
@@ -21,7 +21,7 @@ export default function LandingPage(props) {
 	ReactModal.setAppElement('#root');
 
 	return (
-		<div class='fade'>
+		<div className='fade'>
 			<div id='landing'>
 				{/* <img id="home-img" alt="Two people on phones, connected via Viewnify." src="" /> */}
 				<img id='logo-img' alt="Viewnify 'V' logo." src={logo} />
@@ -31,8 +31,7 @@ export default function LandingPage(props) {
 				<button
 					id='signup-btn'
 					onClick={setSignup}
-					className='styled-btn title-txt'
-				>
+					className='styled-btn title-txt'>
 					Join Now
 				</button>
 				<LoginModal

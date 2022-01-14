@@ -112,8 +112,7 @@ export default function LoginModal(props) {
 				onRequestClose={clearModal}
 				shouldCloseOnEsc={true}
 				shouldCloseOnOverlayClick={true}
-				style={{ overlay: { zIndex: 3 } }}
-			>
+				style={{ overlay: { zIndex: 3 } }}>
 				<h2 className='title-txt'>Log In</h2>
 				<h3>{confirmText}</h3>
 				<input
@@ -146,8 +145,7 @@ export default function LoginModal(props) {
 			onRequestClose={clearModal}
 			shouldCloseOnEsc={true}
 			shouldCloseOnOverlayClick={true}
-			style={{ overlay: { zIndex: 3 } }}
-		>
+			style={{ overlay: { zIndex: 3 } }}>
 			<h2 className='title-txt'>Sign Up</h2>
 			<h3>{confirmText}</h3>
 			<input

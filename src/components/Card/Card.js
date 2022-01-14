@@ -83,8 +83,7 @@ export default function Card(props) {
 				props.isFront ? 'front' : 'back'
 			}`}
 			style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
-			ref={elem}
-		>
+			ref={elem}>
 			<div className='card-content'>
 				<div className='content-img'>
 					<div className='content-gradient-overlay' />
@@ -109,8 +108,7 @@ export default function Card(props) {
 						className='media-a-info'
 						style={{
 							background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
-						}}
-					>
+						}}>
 						<div className='release-rating card-info'>
 							{/* <img src={Logo} className="viewnify-rating" /> */}
 							<p className='genre-card-info'>
@@ -131,8 +129,7 @@ export default function Card(props) {
 					className='content-description content-overview-p3 hidden'
 					style={{
 						background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
-					}}
-				>
+					}}>
 					<p className='card-info'>
 						{props.media[props.idx]?.overview}
 					</p>

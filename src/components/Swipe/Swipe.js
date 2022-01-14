@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import playIco from './play_ico.png';
-import pauseIco from './pause_ico.png';
 import Hammer from 'hammerjs';
 import waitForElementTransition from 'wait-for-element-transition';
 import Card from '../Card/Card';
-import { AutoInit } from 'materialize-css';
 
 async function fetchChoice(type, mediaData, token) {
 	fetch(`https://viewnify-server.herokuapp.com/api/${type}`, {
@@ -28,9 +26,6 @@ export default function Swipe(props) {
 	const [isFront_a, setIsFront_a] = useState(true);
 	const [draggable, setDraggable] = useState(true);
 	const cardContainerRef = useRef(null);
-	const playRef = useRef(null);
-	const pauseRef = useRef(null);
-	// const cardInfoRef = useRef(null);
 
 	useEffect(() => {
 		if (cardContainerRef.current) {
@@ -52,7 +47,7 @@ export default function Swipe(props) {
 
 	const saveLike = () => {
 		fetchChoice('likes', props.media[props.curIdx], props.token).then(
-			(data) => {
+			() => {
 				props.setCurIdx(props.curIdx + 1);
 			}
 		);
@@ -60,7 +55,7 @@ export default function Swipe(props) {
 
 	const saveDislike = () => {
 		fetchChoice('dislikes', props.media[props.curIdx], props.token).then(
-			(data) => {
+			() => {
 				props.setCurIdx(props.curIdx + 1);
 			}
 		);
@@ -245,17 +240,6 @@ export default function Swipe(props) {
 
 				<div className='watch-container'>{/* <h4>ryan</h4> */}</div>
 			</div>
-			{/* <div
-          id="play-pause"
-          style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
-        >
-          <div id="pause-btn" onClick={handleButtonClick}>
-            <img className="discover-btn pause-ico" src={pauseIco} />
-          </div>
-          <div id="play-btn" onClick={handleButtonClick}>
-            <img className="discover-btn play-ico" src={playIco} />
-          </div>
-        </div> */}
 		</div>
 	);
 }

@@ -104,127 +104,109 @@ export default function Preferences(props) {
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Action
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Adventure
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Animation
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Comedy
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Crime
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Drama
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Family
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Fantasy
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					History
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Horror
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Music
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Mystery
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Romance
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Science Fiction
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					TV Movie
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Thriller
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					War
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillGenres}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Western
 				</button>
 			</div>
@@ -235,50 +217,43 @@ export default function Preferences(props) {
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Netflix
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Amazon Prime
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Disney Plus
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					HBO Max
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Hulu
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Apple TV Plus
 				</button>
 				<button
 					activeClassName='main-links'
 					onClick={fillStreamer}
-					className='styled-btn title-txt preferences-btn'
-				>
+					className='styled-btn title-txt preferences-btn'>
 					Paramount Plus
 				</button>
 			</div>
@@ -288,8 +263,7 @@ export default function Preferences(props) {
 					id='save-btn'
 					activeClassName='main-links'
 					onClick={savePreferences}
-					className='styled-btn title-txt'
-				>
+					className='styled-btn title-txt'>
 					Save
 				</button>
 			</div>

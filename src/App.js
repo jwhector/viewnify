@@ -101,11 +101,6 @@ function App() {
 			<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
 				<StyledApp className='styleme'>
 					<GlobalStyles />
-
-					{/* <NavBar showLogin={false} themeToggler={themeToggler}/>
-        <Router>
-          <Routes> */}
-
 					<NavBar
 						showLogin={false}
 						complementary={complementary}
@@ -121,6 +116,7 @@ function App() {
 										page='discover'
 										user={user}
 										token={token}
+										setToken={setToken}
 										complementary={complementary}
 										setComplementary={setComplementary}
 									/>
@@ -133,6 +129,7 @@ function App() {
 										page='discover'
 										user={user}
 										token={token}
+										setToken={setToken}
 										complementary={complementary}
 										setComplementary={setComplementary}
 									/>
@@ -145,6 +142,7 @@ function App() {
 										page='watchparty'
 										user={user}
 										token={token}
+										setToken={setToken}
 										setComplementary={setComplementary}
 									/>
 								}
@@ -156,6 +154,7 @@ function App() {
 										page='library'
 										user={user}
 										token={token}
+										setToken={setToken}
 										setComplementary={setComplementary}
 									/>
 								}
@@ -167,6 +166,7 @@ function App() {
 										page='chatroom'
 										user={user}
 										token={token}
+										setToken={setToken}
 										setComplementary={setComplementary}
 									/>
 								}
@@ -178,6 +178,7 @@ function App() {
 										page='invite'
 										user={user}
 										token={token}
+										setToken={setToken}
 										complementary={complementary}
 										setComplementary={setComplementary}
 									/>
@@ -191,6 +192,7 @@ function App() {
 										page='preferences'
 										user={user}
 										token={token}
+										setToken={setToken}
 										complementary={complementary}
 										setComplementary={setComplementary}
 									/>
