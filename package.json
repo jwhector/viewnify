@@ -1,5 +1,4 @@
 {
-  "homepage": "http://jwhector.github.io/viewnify",
   "name": "viewnify",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +18,7 @@
     "color": "^3.2.1",
     "complementary-color": "^1.0.1",
     "complementary-colors": "^1.0.6",
+    "dotenv": "^11.0.0",
     "fast-average-color": "^7.0.1",
     "fast-average-color-node": "^2.1.0",
     "hammerjs": "^2.0.8",

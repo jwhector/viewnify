@@ -8,7 +8,7 @@ export default function MiniCard(props) {
   return (
     <div className="mini-card">
         {/* <div className="content-gradient-overlay" /> */}
-        <div className="mini-content-img">
+        <div className="mini-content-img" id="mini-card-img">
             <img onClick={props.openModal} dataIndex={props.dataIndex} className="mini-cur-content-img" src={props.poster} />
         </div>
     </div>

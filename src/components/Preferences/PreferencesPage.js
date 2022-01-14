@@ -21,7 +21,7 @@ const genreMap = {
   "Thriller": 53,
   "War": 10752,
   "Western": 37,
-  }
+}
 
 const streamerMap = {
   "Netflix": 8,

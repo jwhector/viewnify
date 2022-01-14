@@ -50,8 +50,6 @@ export const darkTheme = {
   navBtnBackground: "#212121",
   miniBox: '#ededed',
   miniCardTitle: "#ededed",
-
-
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -168,9 +166,11 @@ export default function Burger(props) {
   }
 
   const openModal = () => {
+    setMenuOpen(false)
     setModalOpen(true);
-    setMenuOpen(false);
+    // setMenuOpen(false);
   }
+
   
   const clearModal = () => {
     setModalOpen(false);
