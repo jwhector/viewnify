@@ -1,13 +1,12 @@
-#media-info{
-    /* change to display:flex */
-    display: none;
-    flex-direction: column;
-    margin-left: auto;
-    /* align-self: flex-end; */
-    right: 0;
-    height: 100%;
-    width: 30%;
-    top: 0;
-    background-color:#ededed;
+#media-info {
+	/* change to display:flex */
+	display: none;
+	flex-direction: column;
+	margin-left: auto;
+	/* align-self: flex-end; */
+	right: 0;
+	height: 100%;
+	width: 30%;
+	top: 0;
+	background-color: #ededed;
 }
-
