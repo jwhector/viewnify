@@ -53,6 +53,7 @@ export default function Discover(props) {
 				.catch((err) => {
 					console.log(err);
 				});
+/*eslint-disable*/
 			// if (images[curIdx + 1]) {
 			// 	fac.getColorAsync(images[curIdx + 1])
 			// 		.then((color) => {
@@ -62,6 +63,7 @@ export default function Discover(props) {
 			// 			console.log(err);
 			// 		});
 			// }
+  /*eslint-enable*/
 		}
 	});
 
