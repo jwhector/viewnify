@@ -21,7 +21,7 @@ body {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	cursor: cursor 39 39, auto;
+	cursor: 39 39, auto;
 }
 
 #root > div {

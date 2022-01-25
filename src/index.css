@@ -115,7 +115,7 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	flex-grow: 1;
 	text-align: center;
 	display: flex;
@@ -128,7 +128,7 @@ body {
 	float: left;
 	flex-direction: column;
 	justify-content: center;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	max-width: 375px;
 	min-width: 325px;
 	text-align: center;
@@ -136,9 +136,9 @@ body {
 	background-color: #ededed;
 }
 
-.watchparty-list-item {
-	/* border: 2px white solid; */
-}
+/* .watchparty-list-item {
+	border: 2px white solid;
+} */
 
 .watch-party-list {
 	display: flex;
@@ -168,7 +168,7 @@ body {
 	list-style-type: none;
 	/* border-spacing: 50px; */
 	margin-top: 3.4rem;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	color: #00000080;
 	flex-direction: row;
 	border-bottom: solid 1.7px #a435ff;
@@ -198,7 +198,7 @@ body {
 	align-items: center;
 	list-style-type: none;
 	border-spacing: 50px;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	color: #f70bc1;
 	flex-direction: row;
 	border: 1px #683fff;
@@ -309,10 +309,10 @@ element.style {
 	font-size: 25px;
 }
 
-.main-links,
+/* .main-links,
 .invite-link {
-	/* margin: 3rem auto; */
-}
+	margin: 3rem auto;
+} */
 
 .invite-link {
 	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
@@ -324,7 +324,7 @@ p {
 	align-items: center;
 	justify-content: center;
 	margin-top: 21px;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 }
 
 .main-links:hover,
@@ -364,7 +364,7 @@ p {
 	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
 		0% no-repeat padding-box;
 	color: #ffffff;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	font-size: 40px;
 	text-align: center;
 	justify-content: left;
@@ -384,7 +384,7 @@ body {
 }
 
 .party-url {
-	border: 2p white solid;
+	border: 2px white solid;
 }
 
 #watch-party-left {
@@ -691,7 +691,7 @@ body {
 	list-style-type: none;
 	border-spacing: 50px;
 	margin: 1rem;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	color: #00000080;
 	flex-direction: row;
 	border: 1px #683fff;
@@ -972,723 +972,12 @@ body {
 	color: #872ed0;
 }
 
-@media only screen and (device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 300px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 110px;
-		max-height: 165px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 21.3%; */
-	}
-	.btn-container {
-		height: 75px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 17px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 0px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.2rem;
-	}
-}
 
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title {
-		max-width: 130px;
-		max-height: 190px;
-		font-size: 14px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 11px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 25%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 8px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.1rem;
-	}
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-	/* .cur-content-img {
-      max-width: 400px;
-      min-height: 500px;
-    } */
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 15px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.media-a-info {
-		font-size: 16px;
-	}
-	.release-rating {
-		font-size: 14px;
-	}
-	.content-title {
-		font-size: 30px;
-		/* height: 27%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.7rem;
-	}
-}
-
-/* Portr
-
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 130px;
-		max-height: 190px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 11px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 25%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.4rem;
-	}
-}
-
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-	.cur-content-img,
-	.body-container {
-		max-width: 450px;
-		max-height: 675px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 21px;
-	}
-	.mini-card-title-flex {
-		max-width: 200px;
-	}
-	.content-overview-p3 {
-		font-size: 25px;
-	}
-	.media-a-info {
-		font-size: 25px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 22.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 5.2rem;
-	}
-}
-
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-/* Portrait and Landscape */
-
-/* Galaxy Fold */
-
-/* Moto G4 */
-@media only screen and (device-width: 360px) and (device-height: 640px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 337.5px;
-	}
-	.mini-card-title-flex {
-		max-width: 125px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-
-	.mini-cur-content-img {
-		width: 125px;
-		height: 187.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 125px;
-		max-height: 187.5px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 24%; */
-	}
-	.btn-container {
-		height: 35px;
-		max-width: 225px;
-		max-height: 225px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 17.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.8rem;
-	}
-}
-
-/* Galaxy S5 and Pixel 2 */
-@media only screen and (device-width: 411px) and (device-height: 731px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 275px;
-		max-height: 412.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 14px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 27.4%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 17.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.6rem;
-	}
-}
-
-/* Pixel 2 XL */
-@media only screen and (device-width: 411px) and (device-height: 823px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 15px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 27.4%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.5rem;
-	}
-}
-
-@media only screen and (device-width: 375px) and (device-height: 812px) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.media-a-info {
-		font-size: 18px;
-	}
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
-	.cur-content-img {
-		max-width: 500px;
-		max-height: 675px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 200px;
-		max-height: 300px;
-	}
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.content-img {
-		width: 400px;
-		max-height: 100%;
-	}
-
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 8.1rem;
-	}
-}
-
-@media only screen and (min-device-width: 540px) and (max-device-height: 720px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 125px;
-		max-height: 187.5px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.release-rating {
-		font-size: 15px;
-	}
-	.content-title {
-		font-size: 35px;
-		/* height: 35.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 22.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.5rem;
-	}
-}
-
-@media only screen and (device-width: 280px) and (max-device-height: 653px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 337.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 18.5%; */
-	}
-	.btn-container {
-		height: 40px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 24px;
-		left: 12.5px;
-		top: 24px;
-	}
-	#dark-light {
-		right: -9px;
-		height: 28px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.9rem;
-	}
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 600px) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 325px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	.mini-card-title {
-		font-size: 20px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 125px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.5rem;
-	}
-}
-
-@media only screen and (device-width: 1280px) and (device-height: 800px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 500px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.content-overview-p3 {
-		font-size: 22px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 187px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.4rem;
-	}
-}
-
-@media only screen and (min-device-width: 1280px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.mini-card-title-flex {
-		max-width: 200px;
-		align-items: center;
-		text-align: center;
-		justify-content: center;
-	}
-
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 33.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 5.2rem;
-	}
-}
 
 .MuiPaper-root,
 .MuiToolbar-root,
 .MuiTypography-body2 {
-	font-family: Quicksand !important;
+	font-family: 'Quicksand' !important;
 }
 
 .MuiInputBase-root,
@@ -1697,7 +986,7 @@ body {
 .MuiTypography-h6,
 .MuiTableRow-root,
 .MuiButtonBase-root {
-	font-family: Quicksand !important;
+	font-family: 'Quicksand' !important;
 }
 
 .MTableHeader-header-13 {
