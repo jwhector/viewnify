@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './discover.css';
+import './Discover.css';
 
 import FastAverageColor from 'fast-average-color';
 import Color from 'color';
