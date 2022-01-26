@@ -2,15 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Hammer from 'hammerjs';
 // import Logo from '../Landing/viewnify-logo.png';
 
-/* PROPS
-    idx
-    complementary
-    images
-    media { backdrop, title, (((release data))), (((rating))), overview }
-    bgColor
-    aOrB
-    isFront
-*/
 export default function Card(props) {
 	const elem = useRef(null);
 

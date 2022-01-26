@@ -124,18 +124,6 @@ body {
 	background-color: #ededed;
 }
 
-.side-bar {
-	float: left;
-	flex-direction: column;
-	justify-content: center;
-	font-family: 'Quicksand';
-	max-width: 375px;
-	min-width: 325px;
-	text-align: center;
-	margin: 0;
-	background-color: #ededed;
-}
-
 /* .watchparty-list-item {
 	border: 2px white solid;
 } */
@@ -153,40 +141,6 @@ body {
 	flex-grow: 1;
 	overflow: scroll;
 	overflow-x: auto;
-}
-
-#discover-btn,
-#watch-party,
-#library,
-#chatroom,
-#invite,
-#logout,
-#preferences-btn,
-#logout {
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
-	/* border-spacing: 50px; */
-	margin-top: 3.4rem;
-	font-family: 'Quicksand';
-	color: #00000080;
-	flex-direction: row;
-	border-bottom: solid 1.7px #a435ff;
-	/* border-top: solid 1.7px #a435ff; */
-	transition: 0.2s;
-	width: 100%;
-	top: 416px;
-	/* margin-top: 30px; */
-	left: 196px;
-	height: 59px;
-	background: #ffffff;
-	box-shadow: 0px 1px 1px 0.25px #d32dff;
-
-	opacity: 1 !important;
-	text-decoration: none;
-	text-align: center;
-	font-size: 20px;
-	display: flex !important;
 }
 
 /* a.main-links:hover {
@@ -419,13 +373,6 @@ body {
 	z-index: 1;
 	width: 80%;
 	max-width: 450px;
-}
-
-.media-main {
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	z-index: 3;
 }
 
 /* TODO: CREATE MOBILE BREAKPOINTS BASED ON HEIGHT */
