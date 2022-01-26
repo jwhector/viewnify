@@ -24,6 +24,7 @@ export const lightTheme = {
 	miniBox: '#000000',
 	miniCardTitle: '#872ed0'
 };
+
 // #EDEDED for text
 export const darkTheme = {
 	body: '#0E0E0E',

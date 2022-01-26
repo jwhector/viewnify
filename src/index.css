@@ -115,7 +115,7 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	flex-grow: 1;
 	text-align: center;
 	display: flex;
@@ -124,21 +124,9 @@ body {
 	background-color: #ededed;
 }
 
-.side-bar {
-	float: left;
-	flex-direction: column;
-	justify-content: center;
-	font-family: Quicksand;
-	max-width: 375px;
-	min-width: 325px;
-	text-align: center;
-	margin: 0;
-	background-color: #ededed;
-}
-
-.watchparty-list-item {
-	/* border: 2px white solid; */
-}
+/* .watchparty-list-item {
+	border: 2px white solid;
+} */
 
 .watch-party-list {
 	display: flex;
@@ -155,40 +143,6 @@ body {
 	overflow-x: auto;
 }
 
-#discover-btn,
-#watch-party,
-#library,
-#chatroom,
-#invite,
-#logout,
-#preferences-btn,
-#logout {
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
-	/* border-spacing: 50px; */
-	margin-top: 3.4rem;
-	font-family: Quicksand;
-	color: #00000080;
-	flex-direction: row;
-	border-bottom: solid 1.7px #a435ff;
-	/* border-top: solid 1.7px #a435ff; */
-	transition: 0.2s;
-	width: 100%;
-	top: 416px;
-	/* margin-top: 30px; */
-	left: 196px;
-	height: 59px;
-	background: #ffffff;
-	box-shadow: 0px 1px 1px 0.25px #d32dff;
-
-	opacity: 1 !important;
-	text-decoration: none;
-	text-align: center;
-	font-size: 20px;
-	display: flex !important;
-}
-
 /* a.main-links:hover {
   color: purple;
 } */
@@ -198,7 +152,7 @@ body {
 	align-items: center;
 	list-style-type: none;
 	border-spacing: 50px;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	color: #f70bc1;
 	flex-direction: row;
 	border: 1px #683fff;
@@ -241,6 +195,7 @@ element.style {
 	position: absolute;
 	border-radius: 33px;
 	z-index: 9;
+	margin-bottom: 20%;
 }
 
 .btn-background {
@@ -309,10 +264,10 @@ element.style {
 	font-size: 25px;
 }
 
-.main-links,
+/* .main-links,
 .invite-link {
-	/* margin: 3rem auto; */
-}
+	margin: 3rem auto;
+} */
 
 .invite-link {
 	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
@@ -324,7 +279,7 @@ p {
 	align-items: center;
 	justify-content: center;
 	margin-top: 21px;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 }
 
 .main-links:hover,
@@ -364,7 +319,7 @@ p {
 	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
 		0% no-repeat padding-box;
 	color: #ffffff;
-	font-family: Quicksand;
+	font-family: 'Quicksand';
 	font-size: 40px;
 	text-align: center;
 	justify-content: left;
@@ -384,7 +339,7 @@ body {
 }
 
 .party-url {
-	border: 2p white solid;
+	border: 2px white solid;
 }
 
 #watch-party-left {
@@ -412,7 +367,7 @@ body {
 	align-self: center;
 	flex-direction: column;
 	left: 0px;
-	max-height: calc(100vh - 48px);
+	max-height: calc(100vh - 80px);
 	min-height: 375px;
 	opacity: 1;
 	z-index: 1;
@@ -420,16 +375,10 @@ body {
 	max-width: 450px;
 }
 
-.media-main {
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	z-index: 3;
-}
-
+/* TODO: CREATE MOBILE BREAKPOINTS BASED ON HEIGHT */
 .content-img {
-	/* width: 450px;
-  height: 600px; */
+	width: 450px;
+	height: 500px;
 	object-fit: cover;
 	overflow: hidden;
 	z-index: -1;
@@ -449,6 +398,7 @@ body {
 	box-shadow: 4px 4px 8px 4px #e22bff;
 }
 
+/* TODO: ADD MARGIN BASED ON HEIGHT FOR BUTTON ALIGNMENT */
 .card {
 	transition: all 0.3s ease-in-out;
 	cursor: -webkit-grab;
@@ -463,6 +413,7 @@ body {
 	z-index: 1;
 	line-height: 0;
 	position: relative;
+	margin-bottom: 70px;
 }
 
 .card .watch-container {
@@ -471,7 +422,6 @@ body {
 
 .card p {
 	margin: 10px;
-	/* overflow: scroll; */
 	padding: 10px;
 }
 
@@ -514,6 +464,10 @@ body {
 	position: absolute;
 	overflow: hidden;
 	/* width: 100%; */
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 3;
 }
 
 #play-btn {
@@ -608,120 +562,17 @@ body {
 	height: 100%;
 }
 
-.bm-burger-button {
-	position: fixed;
-	width: 36px;
-	height: 29px;
-	left: 25px;
-	top: 23px;
-}
-
-.bm-burger-bars {
-	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
-		0% no-repeat padding-box;
-}
-
-.bm-burger-bars-hover {
-	background: transparent linear-gradient(180deg, #f70bc1 0%, #7503fa 100%) 0%
-		0% no-repeat padding-box;
-}
-
-.bm-cross-button {
-	height: 24px;
-	width: 24px;
-	visibility: hidden;
-}
-
-.bm-cross {
-	background: #bdc3c7;
-}
-
-.bm-menu-wrap {
-	position: fixed;
-	height: 100%;
-	z-index: 2 !important;
-}
-
-.bm-menu {
-	background: #ededed;
-	/* padding: 2.5em 1.5em 0; */
-	font-size: 1.15em;
-	overflow: hidden;
-}
-
-.bm-morph-shape {
-	fill: #373a47;
-}
-
-.bm-item-list {
-	color: #b8b7ad;
-	padding: 0px;
-	overflow: hidden;
-}
-
-.bm-item {
-	display: inline-block;
-}
-
-.bm-overlay {
-	background: #0e0e0e;
-	z-index: 2 !important;
-}
-
-.info-title {
-	max-height: 100%;
-	overflow: hidden;
-	font-family: 'Quicksand';
-}
-
-.content-overview-p3 {
-	color: #ededed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.5rem;
-}
-
-.watch-header,
-.create-party,
-.discover,
-.watch-content {
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
-	border-spacing: 50px;
-	margin: 1rem;
-	font-family: Quicksand;
-	color: #00000080;
-	flex-direction: row;
-	border: 1px #683fff;
-	transition: 0.2s;
-	width: 55%;
-	max-width: 175px;
-	top: 416px;
-	margin-top: 61px;
-	left: 196px;
-	height: 59px;
-	background: #ffffff;
-	box-shadow: 0.25px 0.2px 1px 1px #a535ff;
-	border-radius: 32px;
-	opacity: 1 !important;
-	text-decoration: none;
-	text-align: center;
-	font-size: 20px;
-	display: flex !important;
-}
-
 .genre-card-info,
 .star-card-info,
 .rating-card-info {
 	font-size: 1.2rem;
 }
+
 .release-date-card-info {
 	font-size: 1rem;
 }
 
-.user-watch,
+/* .user-watch,
 .match-watch {
 	position: relative;
 	height: 200px;
@@ -739,7 +590,7 @@ body {
 .user-watch {
 	position: relative;
 	overflow: hidden;
-}
+} */
 
 .profile-circles {
 	justify-content: space-between;
@@ -903,792 +754,11 @@ body {
 	z-index: 9;
 	transform: translateX(8%);
 }
-/* iPhone 5/5S/5C/5SE */
-/* iPhone 5/SE  */
-
-.library-grid {
-}
-
-.library-list {
-	/* height: 100vh;
-  width: 100vw; */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	height: 0px;
-}
-
-.library-list li {
-	margin: 25px 25px 0px 25px;
-	padding-bottom: 25px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-#library-header {
-	flex-grow: 1;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-
-.mini-card {
-	/* width: 300px;
-  height: 450px; */
-	border-radius: 18px;
-	overflow: hidden;
-	/* border: solid 1px white; */
-	/* border: solid 2px #ededed; */
-	/* box-shadow: 3px 3px 3px white; */
-}
-
-.mini-card:hover {
-	cursor: pointer;
-	opacity: 0.2;
-	transition: 0.3s;
-	color: white;
-}
-
-.mini-cur-content-img {
-	/* width: 300px;
-  height: 450px; */
-	display: block;
-}
-
-.mini-card-title-flex {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	margin-top: 5%;
-}
-
-.mini-card-title {
-	/* max-width: 300px; */
-	/* width: 100%; */
-	font-size: 1.25rem;
-	margin-top: 5.5px;
-	color: #872ed0;
-}
-
-@media only screen and (device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 300px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 110px;
-		max-height: 165px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 21.3%; */
-	}
-	.btn-container {
-		height: 75px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 17px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 0px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.2rem;
-	}
-}
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title {
-		max-width: 130px;
-		max-height: 190px;
-		font-size: 14px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 11px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 25%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 8px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.1rem;
-	}
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-	/* .cur-content-img {
-      max-width: 400px;
-      min-height: 500px;
-    } */
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 15px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.media-a-info {
-		font-size: 16px;
-	}
-	.release-rating {
-		font-size: 14px;
-	}
-	.content-title {
-		font-size: 30px;
-		/* height: 27%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.7rem;
-	}
-}
-
-/* Portr
-
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 130px;
-		max-height: 190px;
-	}
-	.media-a-info {
-		font-size: 13px;
-	}
-	.release-rating {
-		font-size: 11px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 25%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.4rem;
-	}
-}
-
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-	.cur-content-img,
-	.body-container {
-		max-width: 450px;
-		max-height: 675px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 21px;
-	}
-	.mini-card-title-flex {
-		max-width: 200px;
-	}
-	.content-overview-p3 {
-		font-size: 25px;
-	}
-	.media-a-info {
-		font-size: 25px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 22.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 5.2rem;
-	}
-}
-
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-/* Portrait and Landscape */
-
-/* Galaxy Fold */
-
-/* Moto G4 */
-@media only screen and (device-width: 360px) and (device-height: 640px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 337.5px;
-	}
-	.mini-card-title-flex {
-		max-width: 125px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-
-	.mini-cur-content-img {
-		width: 125px;
-		height: 187.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 125px;
-		max-height: 187.5px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 24%; */
-	}
-	.btn-container {
-		height: 35px;
-		max-width: 225px;
-		max-height: 225px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 17.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.8rem;
-	}
-}
-
-/* Galaxy S5 and Pixel 2 */
-@media only screen and (device-width: 411px) and (device-height: 731px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 275px;
-		max-height: 412.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.content-overview-p3 {
-		font-size: 14px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 27.4%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 17.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.6rem;
-	}
-}
-
-/* Pixel 2 XL */
-@media only screen and (device-width: 411px) and (device-height: 823px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 150px;
-		max-height: 225px;
-	}
-	.mini-card-title {
-		font-size: 15px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 22px;
-		/* height: 27.4%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 27px;
-		top: 23.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.5rem;
-	}
-}
-
-@media only screen and (device-width: 375px) and (device-height: 812px) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.media-a-info {
-		font-size: 18px;
-	}
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
-	.cur-content-img {
-		max-width: 500px;
-		max-height: 675px;
-	}
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 200px;
-		max-height: 300px;
-	}
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.content-img {
-		width: 400px;
-		max-height: 100%;
-	}
-
-	.mini-card,
-	.mini-cur-content-img {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 8.1rem;
-	}
-}
-
-@media only screen and (min-device-width: 540px) and (max-device-height: 720px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 300px;
-		max-height: 450px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 125px;
-		max-height: 187.5px;
-	}
-	.content-overview-p3 {
-		font-size: 18px;
-	}
-	.mini-card-title {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.release-rating {
-		font-size: 15px;
-	}
-	.content-title {
-		font-size: 35px;
-		/* height: 35.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 28px;
-		left: 30px;
-		top: 22.5px;
-	}
-	#dark-light {
-		right: 10px;
-		height: 32px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 2.5rem;
-	}
-}
-
-@media only screen and (device-width: 280px) and (max-device-height: 653px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 225px;
-		max-height: 337.5px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	.content-overview-p3 {
-		font-size: 13px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 20px;
-		/* height: 18.5%; */
-	}
-	.btn-container {
-		height: 40px;
-	}
-	.bm-burger-button {
-		position: fixed;
-		width: 36px;
-		height: 24px;
-		left: 12.5px;
-		top: 24px;
-	}
-	#dark-light {
-		right: -9px;
-		height: 28px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.9rem;
-	}
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 600px) {
-	.cur-content-img {
-		max-width: 300px;
-		max-height: 325px;
-	}
-	.mini-card,
-	.mini-cur-content-img,
-	.mini-card-title-flex {
-		max-width: 200px;
-		max-height: 300px;
-	}
-	.mini-card-title {
-		font-size: 20px;
-	}
-	.media-a-info {
-		font-size: 15px;
-	}
-	.release-rating {
-		font-size: 12px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 125px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 1.5rem;
-	}
-}
-
-@media only screen and (device-width: 1280px) and (device-height: 800px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 500px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.content-overview-p3 {
-		font-size: 22px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 37.5%; */
-	}
-	.btn-container {
-		height: 187px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 3.4rem;
-	}
-}
-
-@media only screen and (min-device-width: 1280px) {
-	.cur-content-img,
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.mini-card-title-flex {
-		max-width: 200px;
-		align-items: center;
-		text-align: center;
-		justify-content: center;
-	}
-
-	.body-container {
-		max-width: 400px;
-		max-height: 600px;
-	}
-	.media-a-info {
-		font-size: 20px;
-	}
-	.release-rating {
-		font-size: 20px;
-	}
-	.content-title {
-		font-size: 40px;
-		/* height: 33.5%; */
-	}
-	.btn-container {
-		height: 0px;
-	}
-	#discover-btn,
-	#watch-party,
-	#library,
-	#chatroom,
-	#invite,
-	#preferences-btn,
-	#logout {
-		margin-top: 5.2rem;
-	}
-}
 
 .MuiPaper-root,
 .MuiToolbar-root,
 .MuiTypography-body2 {
-	font-family: Quicksand !important;
+	font-family: 'Quicksand' !important;
 }
 
 .MuiInputBase-root,
@@ -1697,7 +767,7 @@ body {
 .MuiTypography-h6,
 .MuiTableRow-root,
 .MuiButtonBase-root {
-	font-family: Quicksand !important;
+	font-family: 'Quicksand' !important;
 }
 
 .MTableHeader-header-13 {
