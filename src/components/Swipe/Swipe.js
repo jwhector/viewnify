@@ -44,7 +44,6 @@ export default function Swipe(props) {
 			props.setCurPage(props.curPage + 1);
 		}
 	}, [props.curIdx]);
-
 	const saveLike = () => {
 		fetchChoice('likes', props.media[props.curIdx], props.token).then(
 			() => {
