@@ -23,7 +23,7 @@ module.exports = {
 		'react/no-unescaped-entities': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'no-useless-escape': 'off',
-		'no-tabs': ['error', { allowIndentationTabs: true }],
+		'no-tabs': 0,
 		'react/prop-types': [0]
 	}
 };
