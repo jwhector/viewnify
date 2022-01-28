@@ -72,7 +72,7 @@ export default function Library(props) {
 	const fac = new FastAverageColor();
 
 	useEffect(() => {
-		fetch('https://viewnify-server.herokuapp.com/api/likes/user/tmdb', {
+		fetch(`${process.env.REACT_APP_SERVER_URL}/api/likes/user/tmdb`, {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer: ${props.token}`

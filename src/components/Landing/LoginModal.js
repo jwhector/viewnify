@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
+import './LandingPage.css';
 
 async function loginUser(credentials) {
-	return fetch('https://viewnify-server.herokuapp.com/api/users/login', {
+	return fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -12,7 +13,7 @@ async function loginUser(credentials) {
 }
 
 async function signupUser(credentials) {
-	return fetch('https://viewnify-server.herokuapp.com/api/users', {
+	return fetch(`${process.env.REACT_APP_SERVER_URL}/api/users`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

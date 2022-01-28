@@ -34,7 +34,7 @@ function App() {
 
 	useEffect(() => {
 		if (token) {
-			fetch('https://viewnify-server.herokuapp.com/api/users', {
+			fetch(process.env.REACT_APP_SERVER_URL + '/api/users', {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer: ${token}`
@@ -52,9 +52,9 @@ function App() {
 	}, [token]);
 
 	useEffect(() => {
-		// console.log(process.env.SERVER_NAME);
+		// console.log(process.env.REACT_APP_SERVER_NAME);
 		if (token) {
-			fetch(process.env.REACT_APP_SERVER_URL + '/api/users/verify', {
+			fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/verify`, {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer: ${token}`
@@ -104,7 +104,7 @@ function App() {
 				<StyledApp className='styleme'>
 					<GlobalStyles />
 					<NavBar
-						showLogin={false}
+						showLogin={token ? false : true}
 						complementary={complementary}
 						setComplementary={setComplementary}
 						themeToggler={themeToggler}

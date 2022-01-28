@@ -112,20 +112,47 @@ export default function Discover(props) {
 	};
 
 	const getEntries = async () => {
-		const entries = await fetch(
-			'https://viewnify-server.herokuapp.com/tmdbSearch',
-			{
-				method: 'POST',
-				mode: 'cors',
-				cache: 'no-cache',
-				credentials: 'same-origin',
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer: ${props.token}`
-				},
-				body: JSON.stringify({ format: 'movie', curPg: { curPage } }) // body data type must match "Content-Type" header
-			}
-		);
+		let entries;
+		if (props.token) {
+			entries = await fetch(
+				`${process.env.REACT_APP_SERVER_URL}/tmdbSearch`,
+				{
+					method: 'POST',
+					mode: 'cors',
+					cache: 'no-cache',
+					credentials: 'same-origin',
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer: ${props.token}`
+					},
+					body: JSON.stringify({ format: 'movie', curPg: { curPage } }) // body data type must match "Content-Type" header
+				}
+			);
+		} else {
+			const format = 'movie';
+			const genres = '27';
+			const streaming_service = '8,15';
+			const cached_watched = [];
+			const cached_likes = [];
+			const cached_dislikes = [];
+
+			console.log(process.env.REACT_APP_SERVER_URL);
+			
+			entries = await fetch(
+				`${process.env.REACT_APP_SERVER_URL}/unauthTmdbSearch`,
+				{
+					method: 'POST',
+					mode: 'cors',
+					cache: 'no-cache',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ format: format, curPg: { curPage }, genres: genres, streaming_service: streaming_service, cached_watched: cached_watched, cached_likes: cached_likes, cached_dislikes: cached_dislikes }) // body data type must match "Content-Type" header
+				}
+			).catch(err => {
+				console.log(err);
+			});
+		}
 		return entries.json();
 	};
 

@@ -5,7 +5,7 @@ import waitForElementTransition from 'wait-for-element-transition';
 import Card from '../Card/Card';
 
 async function fetchChoice(type, mediaData, token) {
-	fetch(`https://viewnify-server.herokuapp.com/api/${type}`, {
+	fetch(`${process.env.REACT_APP_SERVER_URL}/api/${type}`, {
 		method: 'POST',
 		headers: {
 			Authorization: `Bearer: ${token}`,
@@ -39,7 +39,6 @@ export default function Swipe(props) {
 	});
 
 	useEffect(() => {
-		console.log(props.media.length);
 		if (props.curIdx > props.media.length - 2 && props.media.length > 0) {
 			props.setCurPage(props.curPage + 1);
 		}
