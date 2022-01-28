@@ -34,7 +34,7 @@ function App() {
 
 	useEffect(() => {
 		if (token) {
-			fetch(process.env.REACT_APP_SERVER_URL + '/api/users', {
+			fetch(`${process.env.REACT_APP_SERVER_URL}/api/users`, {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer: ${token}`
