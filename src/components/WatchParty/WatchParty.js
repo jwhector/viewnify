@@ -122,7 +122,7 @@ function WatchParty(props) {
 
 	useEffect(() => {
 		fetch(
-			'https://viewnify-server.herokuapp.com/api/watchparty/party/all',
+			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/party/all`,
 			{
 				method: 'GET',
 				headers: {
@@ -160,7 +160,7 @@ function WatchParty(props) {
 		console.log(url);
 
 		fetch(
-			`https://viewnify-server.herokuapp.com/api/watchparty/compare/${url}`,
+			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/compare/${url}`,
 			{
 				method: 'GET',
 				headers: {
@@ -205,7 +205,7 @@ function WatchParty(props) {
 
 	const createParty = () => {
 		if (!inputVal.length || !inputField.current) return;
-		fetch('https://viewnify-server.herokuapp.com/api/watchparty/', {
+		fetch(`${process.env.REACT_APP_SERVER_URL}/api/watchparty/`, {
 			method: 'POST',
 			mode: 'cors',
 			cache: 'no-cache',
@@ -234,7 +234,7 @@ function WatchParty(props) {
 	const joinParty = () => {
 		if (!urlInput.length || !urlField.current) return;
 		fetch(
-			`https://viewnify-server.herokuapp.com/api/watchparty/join/${urlInput}`,
+			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/join/${urlInput}`,
 			{
 				method: 'POST',
 				mode: 'cors',
