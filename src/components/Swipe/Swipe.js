@@ -5,19 +5,26 @@ import waitForElementTransition from 'wait-for-element-transition';
 import Card from '../Card/Card';
 
 async function fetchChoice(type, mediaData, token) {
-	fetch(`${process.env.REACT_APP_SERVER_URL}/api/${type}`, {
-		method: 'POST',
-		headers: {
-			Authorization: `Bearer: ${token}`,
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(mediaData)
-	})
-		.then((res) => {
-			console.log(res);
-			return res.json();
+	console.log(type, mediaData);
+	if (token) {
+		fetch(`${process.env.REACT_APP_SERVER_URL}/api/${type}`, {
+			method: 'POST',
+			headers: {
+				Authorization: `Bearer: ${token}`,
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(mediaData)
 		})
-		.catch((err) => console.log(err));
+			.then((res) => {
+				console.log(res);
+				return res.json();
+			})
+			.catch((err) => console.log(err));
+	} else {
+		const curMedia = JSON.parse(localStorage.getItem(type));
+		if (curMedia) localStorage.setItem(type, JSON.stringify([...curMedia, mediaData]));
+		else localStorage.setItem(type, JSON.stringify([mediaData]));
+	}
 }
 
 export default function Swipe(props) {

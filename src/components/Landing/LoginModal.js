@@ -33,6 +33,11 @@ export default function LoginModal(props) {
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [confirmText, setConfirmText] = useState('');
+	const [isLogin, setIsLogin] = useState(true);
+
+	const flipSignUp = () => {
+		setIsLogin(!isLogin);
+	};
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -55,8 +60,6 @@ export default function LoginModal(props) {
 	const handleSignup = async (e) => {
 		e.preventDefault();
 
-		console.log(email, password, confirmPassword);
-
 		if (password.length < 8) {
 			setConfirmText(
 				'Your password must be at least 8 characters long. Please try again.'
@@ -73,8 +76,8 @@ export default function LoginModal(props) {
 					// username: 'testtesttesties',
 					password: password,
 					email: email,
-					genres: '12,35,80',
-					streaming_service: 'Netflix'
+					genres: '',
+					streaming_service: ''
 				}).catch((err) => console.error(err));
 
 				if (!token || !user) {
@@ -99,7 +102,7 @@ export default function LoginModal(props) {
 		props.closeModal();
 	};
 
-	const isLogin = props.isLogin;
+	// const isLogin = props.isLogin;
 
 	ReactModal.setAppElement('#root');
 
@@ -132,6 +135,12 @@ export default function LoginModal(props) {
 				{/* <p>or</p> */}
 				<button className='submit-btn' onClick={handleLogin}>
 					Submit
+				</button>
+				<h3>
+					Don't have an account?
+				</h3>
+				<button className='submit-btn' onClick={flipSignUp}>
+					Sign Up
 				</button>
 			</ReactModal>
 		);
@@ -172,6 +181,12 @@ export default function LoginModal(props) {
 			{/* <p>or</p> */}
 			<button className='submit-btn' onClick={handleSignup}>
 				Submit
+			</button>
+			<h3>
+				Already have an account?
+			</h3>
+			<button className='submit-btn' onClick={flipSignUp}>
+				Log In
 			</button>
 		</ReactModal>
 	);

@@ -130,14 +130,15 @@ export default function Discover(props) {
 			);
 		} else {
 			const format = 'movie';
-			const genres = '27';
-			const streaming_service = '8,15';
+			const genres = '';
+			const streaming_service = '';
 			const cached_watched = [];
-			const cached_likes = [];
-			const cached_dislikes = [];
+			const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')).map(media => media.tmdb_id) : [];
+			const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];
 
-			console.log(process.env.REACT_APP_SERVER_URL);
-			
+			console.log(cached_likes);
+			console.log(cached_dislikes);
+
 			entries = await fetch(
 				`${process.env.REACT_APP_SERVER_URL}/unauthTmdbSearch`,
 				{

@@ -108,6 +108,7 @@ function App() {
 						complementary={complementary}
 						setComplementary={setComplementary}
 						themeToggler={themeToggler}
+						setToken={setToken}
 					/>
 					<Router>
 						<Routes>
