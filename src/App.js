@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
-import LandingPage from './components/Landing/LandingPage';
+// import LandingPage from './components/Landing/LandingPage';
 import useToken from './useToken';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -11,6 +11,7 @@ import {
 	GlobalStyles
 } from './components/Burger/Burger';
 import styled from 'styled-components';
+import 'dotenv/config';
 
 const StyledApp = styled.div`
 	color: ${(props) => props.theme.background};
@@ -19,21 +20,21 @@ const StyledApp = styled.div`
 const UserContext = React.createContext(undefined);
 
 function App() {
-	const [theme, setTheme] = useState('light');
+	const [theme, setTheme] = useState('dark');
 
 	const themeToggler = () => {
 		theme === 'light' ? setTheme('dark') : setTheme('light');
 	};
 
 	const { token, setToken } = useToken();
-	const [genres, setGenres] = useState('');
-	const [providers, setProviders] = useState('');
+	// const [genres, setGenres] = useState('');
+	// const [providers, setProviders] = useState('');
 	const [user, setUser] = useState({});
 	const [complementary, setComplementary] = useState('#ffffff');
 
 	useEffect(() => {
 		if (token) {
-			fetch('https://viewnify-server.herokuapp.com/api/users', {
+			fetch(`${process.env.REACT_APP_SERVER_URL}/api/users`, {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer: ${token}`
@@ -51,8 +52,9 @@ function App() {
 	}, [token]);
 
 	useEffect(() => {
+		// console.log(process.env.REACT_APP_SERVER_NAME);
 		if (token) {
-			fetch('https://viewnify-server.herokuapp.com/api/users/verify', {
+			fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/verify`, {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer: ${token}`
@@ -68,33 +70,33 @@ function App() {
 		}
 	});
 
-	if (!token) {
-		return (
-			<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-				<div id='main'>
-					<NavBar
-						showLogin={true}
-						setToken={setToken}
-						themeToggler={themeToggler}
-					/>
-					<LandingPage
-						token={token}
-						setToken={setToken}
-						genres={genres}
-						setGenres={setGenres}
-						providers={providers}
-						setProviders={setProviders}
-					/>
-				</div>
-			</ThemeProvider>
-		);
-	} else if (!user) {
-		return (
-			<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-				<NavBar showLogin={false} themeToggler={themeToggler} />
-			</ThemeProvider>
-		);
-	}
+	// if (!token) {
+	// 	return (
+	// 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+	// 			<div id='main'>
+	// 				<NavBar
+	// 					showLogin={true}
+	// 					setToken={setToken}
+	// 					themeToggler={themeToggler}
+	// 				/>
+	// 				<LandingPage
+	// 					token={token}
+	// 					setToken={setToken}
+	// 					genres={genres}
+	// 					setGenres={setGenres}
+	// 					providers={providers}
+	// 					setProviders={setProviders}
+	// 				/>
+	// 			</div>
+	// 		</ThemeProvider>
+	// 	);
+	// } else if (!user) {
+	// 	return (
+	// 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+	// 			<NavBar showLogin={false} themeToggler={themeToggler} />
+	// 		</ThemeProvider>
+	// 	);
+	// }
 
 	return (
 		<UserContext.Provider value={user}>
@@ -102,10 +104,11 @@ function App() {
 				<StyledApp className='styleme'>
 					<GlobalStyles />
 					<NavBar
-						showLogin={false}
+						showLogin={token ? false : true}
 						complementary={complementary}
 						setComplementary={setComplementary}
 						themeToggler={themeToggler}
+						setToken={setToken}
 					/>
 					<Router>
 						<Routes>

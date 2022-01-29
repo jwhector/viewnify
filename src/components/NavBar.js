@@ -48,7 +48,7 @@ export default function NavBar(props) {
 						setToken={props.setToken}
 						modalOpen={modalOpen}
 						closeModal={closeModal}
-						isLogin={true}
+						// isLogin={true}
 					/>
 				</>
 			) : (
