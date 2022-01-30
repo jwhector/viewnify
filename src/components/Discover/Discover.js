@@ -92,7 +92,9 @@ export default function Discover(props) {
 					release_date: result.release_date,
 					overview: result.overview,
 					rating: result.vote_average,
-					genres: getGenres(result.genre_ids).trim()
+					genres: getGenres(result.genre_ids).trim(),
+					poster_path: result.poster_path,
+					backdrop_path: result.backdrop_path
 				});
 				imageHolder.push(
 					`https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -153,11 +155,9 @@ export default function Discover(props) {
 						headers: {
 							'Content-Type': 'application/json',
 						},
-						body: JSON.stringify({ format: format, curPg: { curPage }, genres: genres, streaming_service: streaming_service, cached_watched: cached_watched, cached_likes: cached_likes, cached_dislikes: cached_dislikes }) // body data type must match "Content-Type" header
+						body: JSON.stringify({ format: format, curPg: { curPage }, genres: genres, streaming_service: streaming_service, cached_watched: cached_watched, cached_likes: cached_likes, cached_dislikes: cached_dislikes })
 					}
-				).catch(err => {
-					console.log(err);
-				});
+				);
 			} catch (err) {
 				console.error(err);
 			}
