@@ -183,91 +183,6 @@ element.style {
 	display: flex;
 }
 
-.btn-container {
-	background-color: transparent;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-grow: 1;
-	width: 90%;
-	height: 75px;
-	bottom: 0;
-	position: absolute;
-	border-radius: 33px;
-	z-index: 9;
-	margin-bottom: 20%;
-}
-
-.btn-background {
-	display: flex;
-	justify-content: center;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	z-index: 8;
-	border: 3px solid #006cd8;
-}
-
-.pause-btn {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	width: 100px;
-	height: 100px;
-	border: 3px solid #a535ff;
-	border-radius: 50%;
-	box-shadow: 0px 3px 6px #00000029;
-	z-index: 6;
-}
-
-.bar-container {
-	width: 65px;
-	height: 100px;
-	position: absolute;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	z-index: 9;
-}
-
-.pause-bars {
-	display: flex;
-	width: 16px;
-	height: 70px;
-	background: transparent linear-gradient(0deg, #7503fa 0%, #f70bc1 100%) 0%
-		0% no-repeat padding-box;
-	border-radius: 5px;
-}
-
-.play-pause {
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
-	border-spacing: 50px;
-	margin: 0;
-	margin: 75px;
-	flex-direction: row;
-	display: none;
-	border: 1px #683fff;
-	transition: 0.2s;
-	width: 50%;
-	top: 416px;
-	left: 196px;
-	width: 200px;
-	height: 59px;
-	box-shadow: 0px 3px 6px #00000080;
-	border-radius: 32px;
-	opacity: 1;
-	text-decoration: none;
-	text-align: center;
-	font-size: 25px;
-}
-
-/* .main-links,
-.invite-link {
-	margin: 3rem auto;
-} */
 
 .invite-link {
 	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
@@ -361,25 +276,25 @@ body {
 }
 
 .body-container {
+	max-width: 450px;
 	display: flex;
 	justify-content: center;
-	justify-self: center;
 	align-self: center;
 	flex-direction: column;
-	left: 0px;
-	max-height: calc(100vh - 80px);
-	min-height: 375px;
 	opacity: 1;
 	z-index: 1;
 	width: 80%;
-	max-width: 450px;
+	max-height: 650px;
 }
 
 /* TODO: CREATE MOBILE BREAKPOINTS BASED ON HEIGHT */
 .content-img {
-	width: 450px;
-	height: 500px;
-	object-fit: cover;
+	width: 100%;
+	height: 637px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* object-fit: cover; */
 	overflow: hidden;
 	z-index: -1;
 	border-radius: 33px 33px 0 0;
@@ -413,7 +328,6 @@ body {
 	z-index: 1;
 	line-height: 0;
 	position: relative;
-	margin-bottom: 70px;
 }
 
 .card .watch-container {
@@ -463,7 +377,7 @@ body {
 	transition: all 0.3s ease-in-out;
 	position: absolute;
 	overflow: hidden;
-	/* width: 100%; */
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -555,13 +469,6 @@ body {
 	pointer-events: none;
 }
 
-.buttons {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	height: 100%;
-}
-
 .genre-card-info,
 .star-card-info,
 .rating-card-info {
@@ -651,7 +558,7 @@ body {
 
 .bottom-border {
 	background-color: black;
-	height: 125px;
+	height: 150px;
 }
 
 .content-gradient-overlay {
@@ -733,11 +640,6 @@ body {
 	top: 0;
 	transition: 1s;
 	transition-timing-function: linear;
-}
-
-.cur-content-img {
-	width: 450px;
-	height: 675px;
 }
 
 .play-btn {
