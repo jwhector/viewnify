@@ -74,26 +74,32 @@ export default function Preferences(props) {
 	const savePreferences = async () => {
 		const genresString = [...genres].toString();
 		const streamerString = [...streaming_services].toString();
-		const entries = await fetch(
-			`${process.env.REACT_APP_SERVER_URL}/api/users`,
-			{
-				method: 'PUT',
-				mode: 'cors',
-				cache: 'no-cache',
-				credentials: 'same-origin',
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer: ${props.token}`
-				},
-				body: JSON.stringify({
-					genres: genresString,
-					streaming_service: streamerString
-				}) // body data type must match "Content-Type" header
-			}
-		);
+		// let entries;
+		if (props.token) {
+			await fetch(
+				`${process.env.REACT_APP_SERVER_URL}/api/users`,
+				{
+					method: 'PUT',
+					mode: 'cors',
+					cache: 'no-cache',
+					credentials: 'same-origin',
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer: ${props.token}`
+					},
+					body: JSON.stringify({
+						genres: genresString,
+						streaming_service: streamerString
+					})
+				}
+			);
+		} else {
+			sessionStorage.setItem('genres', genresString);
+			sessionStorage.setItem('streaming_service', streamerString);
+		}
 		props.closeModal();
 		if (window.location.href.endsWith('discover')) window.location.reload();
-		return entries.json();
+		// return entries.json();
 	};
 
 	return (

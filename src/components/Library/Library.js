@@ -72,37 +72,11 @@ export default function Library(props) {
 	const fac = new FastAverageColor();
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_SERVER_URL}/api/likes/user/tmdb`, {
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer: ${props.token}`
-			}
-		}).then((res) => {
-			res.json().then((results) => {
-				const mediaHolder = [...media];
-				const imageHolder = [...images];
-				results.forEach((result) => {
-					mediaHolder.push({
-						tmdb_id: result.id,
-						image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
-						backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
-						title: result.title,
-						release_date: result.release_date,
-						overview: result.overview,
-						rating: result.vote_average,
-						genres: getGenres(result.genre_ids),
-						poster_path: result.poster_path,
-						backdrop_path: result.backdrop_path
-						// popularity
-					});
-					imageHolder.push(
-						`https://image.tmdb.org/t/p/original${result.poster_path}`
-					);
-				});
-				setImages(imageHolder);
-				setMedia(mediaHolder);
-			});
-		});
+		if (props.token) {
+			getLikesAuth();
+		} else {
+			getLikesUnauth();
+		}
 	}, []);
 
 	useEffect(() => {
@@ -117,10 +91,65 @@ export default function Library(props) {
 					setComplementary(myColor.hex());
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error(err);
 				});
 		}
 	});
+
+	const getLikesAuth = () => {
+		fetch(`${process.env.REACT_APP_SERVER_URL}/api/likes/user/tmdb`, {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer: ${props.token}`
+			}
+		}).then((res) => {
+			res.json()
+				.then(results => populateLibrary(results))
+				.catch(err => console.error(err));
+		}).catch(err => console.error(err));
+	};
+
+	const getLikesUnauth = () => {
+		if (localStorage.getItem('likes')) {
+			const mediaHolder = [...media];
+			const imageHolder = [...images];
+			const results = JSON.parse(localStorage.getItem('likes'));
+			results.forEach((result) => {
+				mediaHolder.push(result);
+				imageHolder.push(result.image);
+			});
+			console.log(mediaHolder);
+			setMedia(mediaHolder);
+			setImages(imageHolder);
+		} else {
+			populateLibrary([]);
+		}
+	};
+
+	const populateLibrary = (results) => {
+		const mediaHolder = [...media];
+		const imageHolder = [...images];
+		results.forEach((result) => {
+			mediaHolder.push({
+				tmdb_id: result.id,
+				image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
+				backdrop: `https://image.tmdb.org/t/p/original${result.backdrop_path}`,
+				title: result.title,
+				release_date: result.release_date,
+				overview: result.overview,
+				rating: result.vote_average,
+				genres: getGenres(result.genre_ids),
+				poster_path: result.poster_path,
+				backdrop_path: result.backdrop_path
+				// popularity
+			});
+			imageHolder.push(
+				`https://image.tmdb.org/t/p/original${result.poster_path}`
+			);
+		});
+		setImages(imageHolder);
+		setMedia(mediaHolder);
+	};
 
 	const getGenres = (genre_ids) => {
 		if (!genre_ids) return;

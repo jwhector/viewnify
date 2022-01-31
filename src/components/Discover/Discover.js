@@ -78,7 +78,7 @@ export default function Discover(props) {
 	const fillMedia = () => {
 		getEntries().then((results) => {
 			if (!results.length) {
-				setCurPage(curPage + 1);
+				// setCurPage(curPage + 1);
 				return;
 			}
 			const mediaHolder = [...media];
@@ -92,7 +92,9 @@ export default function Discover(props) {
 					release_date: result.release_date,
 					overview: result.overview,
 					rating: result.vote_average,
-					genres: getGenres(result.genre_ids).trim()
+					genres: getGenres(result.genre_ids).trim(),
+					poster_path: result.poster_path,
+					backdrop_path: result.backdrop_path
 				});
 				imageHolder.push(
 					`https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -114,45 +116,51 @@ export default function Discover(props) {
 	const getEntries = async () => {
 		let entries;
 		if (props.token) {
-			entries = await fetch(
-				`${process.env.REACT_APP_SERVER_URL}/tmdbSearch`,
-				{
-					method: 'POST',
-					mode: 'cors',
-					cache: 'no-cache',
-					credentials: 'same-origin',
-					headers: {
-						'Content-Type': 'application/json',
-						Authorization: `Bearer: ${props.token}`
-					},
-					body: JSON.stringify({ format: 'movie', curPg: { curPage } }) // body data type must match "Content-Type" header
-				}
-			);
+			try {
+				entries = await fetch(
+					`${process.env.REACT_APP_SERVER_URL}/tmdbSearch`,
+					{
+						method: 'POST',
+						mode: 'cors',
+						cache: 'no-cache',
+						credentials: 'same-origin',
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer: ${props.token}`
+						},
+						body: JSON.stringify({ format: 'movie', curPg: { curPage } }) // body data type must match "Content-Type" header
+					}
+				);
+			} catch (err) {
+				console.error(err);
+			}
 		} else {
 			const format = 'movie';
-			const genres = '';
-			const streaming_service = '';
+			const genres = sessionStorage.getItem('genres') ? sessionStorage.getItem('genres') : '';
+			const streaming_service = sessionStorage.getItem('streaming_service') ? sessionStorage.getItem('streaming_service') : '';
 			const cached_watched = [];
 			const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')).map(media => media.tmdb_id) : [];
 			const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];
 
-			console.log(cached_likes);
-			console.log(cached_dislikes);
+			// console.log(cached_likes);
+			// console.log(cached_dislikes);
 
-			entries = await fetch(
-				`${process.env.REACT_APP_SERVER_URL}/unauthTmdbSearch`,
-				{
-					method: 'POST',
-					mode: 'cors',
-					cache: 'no-cache',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({ format: format, curPg: { curPage }, genres: genres, streaming_service: streaming_service, cached_watched: cached_watched, cached_likes: cached_likes, cached_dislikes: cached_dislikes }) // body data type must match "Content-Type" header
-				}
-			).catch(err => {
-				console.log(err);
-			});
+			try {
+				entries = await fetch(
+					`${process.env.REACT_APP_SERVER_URL}/unauthTmdbSearch`,
+					{
+						method: 'POST',
+						mode: 'cors',
+						cache: 'no-cache',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ format: format, curPg: { curPage }, genres: genres, streaming_service: streaming_service, cached_watched: cached_watched, cached_likes: cached_likes, cached_dislikes: cached_dislikes })
+					}
+				);
+			} catch (err) {
+				console.error(err);
+			}
 		}
 		return entries.json();
 	};
