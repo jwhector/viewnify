@@ -58,7 +58,6 @@ function WatchPartyList(props) {
 
 function MiniCards(props) {
 	const media = props.media;
-	console.log(media);
 	const miniCards = media.map((medium, idx) => {
 		const poster = `https://image.tmdb.org/t/p/w200${medium.poster_path}`;
 		const backdrop = `https://image.tmdb.org/t/p/original${medium.backdrop_path}`;
