@@ -197,14 +197,14 @@ export default function Burger(props) {
 				id='preferences-btn'>
 				categories
 			</NavLink>
-			<NavLink
+			{props.token ? <NavLink
 				exact
 				activeClassName='main-links'
 				to='/'
 				onClick={removeToken}
 				id='logout'>
 				log out
-			</NavLink>
+			</NavLink> : <></>}
 
 			<ReactModal
 				isOpen={modalOpen}
