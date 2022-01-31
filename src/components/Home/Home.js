@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+import './home.css';
 import Discover from '../Discover/Discover';
 import Menu from '../Burger/Burger';
 import { useState } from 'react';
