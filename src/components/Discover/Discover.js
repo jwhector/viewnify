@@ -136,8 +136,8 @@ export default function Discover(props) {
 			}
 		} else {
 			const format = 'movie';
-			const genres = '';
-			const streaming_service = '';
+			const genres = sessionStorage.getItem('genres') ? sessionStorage.getItem('genres') : '';
+			const streaming_service = sessionStorage.getItem('streaming_service') ? sessionStorage.getItem('streaming_service') : '';
 			const cached_watched = [];
 			const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')).map(media => media.tmdb_id) : [];
 			const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];

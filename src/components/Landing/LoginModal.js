@@ -71,13 +71,17 @@ export default function LoginModal(props) {
 				setEmail('');
 				setPassword('');
 				setConfirmPassword('');
+				const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')) : [];
+				const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')) : [];
 				const { token, user } = await signupUser({
 					first_name: 'test',
 					// username: 'testtesttesties',
 					password: password,
 					email: email,
 					genres: '',
-					streaming_service: ''
+					streaming_service: '',
+					cached_likes: cached_likes,
+					cached_dislikes: cached_dislikes
 				}).catch((err) => console.error(err));
 
 				if (!token || !user) {
