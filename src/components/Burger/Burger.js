@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 // import useToken from '../../useToken';
 import Preferences from '../Preferences/PreferencesPage';
 import ReactModal from 'react-modal';
+import './Burger.css';
 
 export const lightTheme = {
 	body: '#ededed',

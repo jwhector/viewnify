@@ -96,10 +96,7 @@ export default function Card(props) {
 						</div>
 					</div>
 					<div
-						className='media-a-info'
-						style={{
-							background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
-						}}>
+						className='media-a-info'>
 						<div className='release-rating card-info'>
 							{/* <img src={Logo} className="viewnify-rating" /> */}
 							<p className='genre-card-info'>
@@ -119,7 +116,7 @@ export default function Card(props) {
 				<div
 					className='content-description content-overview-p3 hidden'
 					style={{
-						background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
+						background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 0%)`
 					}}>
 					<p className='card-info'>
 						{props.media[props.idx]?.overview}
