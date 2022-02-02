@@ -57,6 +57,23 @@
 	align-items: center;
 	text-align: center;
 	z-index: 3;
+	opacity: 1;
+	box-shadow: 4px 4px 8px 0 #e22bff;
+	border-radius: 33px;
+	background-color: black;
+	color: #00000080;
+	will-change: transform;
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 3;
+}
+
+.media-main:hover {
+	box-shadow: 4px 4px 8px 4px #e22bff;
 }
 
 .moving.media-main {

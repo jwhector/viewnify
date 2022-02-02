@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Hammer from 'hammerjs';
 // import Logo from '../Landing/viewnify-logo.png';
+import './Card.css';
 
 export default function Card(props) {
 	const elem = useRef(null);

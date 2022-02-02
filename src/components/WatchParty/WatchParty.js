@@ -4,6 +4,7 @@ import Color from 'color';
 import Card from '../Card/Card';
 import MiniCard from '../Card/MiniCard';
 import ReactModal from 'react-modal';
+import './WatchParty.css';
 
 function WatchPartyList(props) {
 	const parties = props.watchparties;
