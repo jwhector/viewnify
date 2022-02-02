@@ -68,9 +68,8 @@
 	position: absolute;
 	right: 10px;
 	height: 34px;
-	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0%
-		0% no-repeat padding-box;
-	background-image: url('./components/transparent.png');
+	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0% 0% no-repeat padding-box;
+	background-image: url('./transparent.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	object-fit: cover;
