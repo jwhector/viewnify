@@ -83,10 +83,11 @@
 
 .content-overview-p3 {
 	color: #ededed;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 1.5rem;
+	line-height: 1.2 !important;
+	height: 100%;
 }
 
 .watch-header,
