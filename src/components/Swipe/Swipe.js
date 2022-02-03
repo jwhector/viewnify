@@ -178,7 +178,7 @@ export default function Swipe(props) {
 
 	function handleButtonClick(event) {
 		if (!draggable) return;
-		const like = event.target.classList.contains('play-bg');
+		const like = event.target.classList.contains('play-img');
 		var el = cardContainerRef.current.querySelector('.media-main.front');
 		var moveOutWidth = document.body.clientWidth * 1.5;
 

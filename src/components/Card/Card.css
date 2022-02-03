@@ -91,3 +91,51 @@
 .media-a-info::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+.media-main {
+	transition: all 0.3s ease-in-out;
+	position: absolute;
+	opacity: 1;
+	box-shadow: 4px 4px 8px 0 #e22bff;
+	border-radius: 33px;
+	background-color: black;
+	color: #00000080;
+	will-change: transform;
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+	width: 400px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 3;
+}
+
+.media-main:hover {
+	box-shadow: 4px 4px 8px 4px #e22bff;
+}
+
+.moving.media-main {
+	transition: none;
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+	cursor: grabbing;
+}
+
+.removed {
+	display: none;
+}
+
+.front {
+	z-index: 5 !important;
+}
+
+.back {
+	z-index: 4 !important;
+}
+
+.content-description {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	transition: 0.3s;
+}
