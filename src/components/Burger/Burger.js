@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 // import useToken from '../../useToken';
 import Preferences from '../Preferences/PreferencesPage';
 import ReactModal from 'react-modal';
+import './Burger.css';
 
 export const lightTheme = {
 	body: '#ededed',
@@ -169,37 +170,37 @@ export default function Burger(props) {
 	return (
 		<Menu isOpen={menuOpen}>
 			<NavLink
-				exact
-				activeClassName='main-links'
+				exact='true'
+				activeclassname='main-links'
 				to='/discover'
 				id='discover-btn'>
 				discover
 			</NavLink>
 			<NavLink
-				exact
-				activeClassName='main-links'
+				exact='true'
+				activeclassname='main-links'
 				to='/watchparty'
 				id='watch-party'>
 				watch party
 			</NavLink>
 			<NavLink
-				exact
-				activeClassName='main-links'
+				exact='true'
+				activeclassname='main-links'
 				to='/library'
 				id='library'>
 				library
 			</NavLink>
 			<NavLink
-				exact
-				activeClassName='main-links'
+				exact='true'
+				activeclassname='main-links'
 				to=''
 				onClick={openModal}
 				id='preferences-btn'>
 				categories
 			</NavLink>
 			{props.token ? <NavLink
-				exact
-				activeClassName='main-links'
+				exact='true'
+				activeclassname='main-links'
 				to='/'
 				onClick={removeToken}
 				id='logout'>

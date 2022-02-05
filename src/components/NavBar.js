@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LoginModal from './Landing/LoginModal';
 import Color from 'color';
+import './NavBar.css';
 
 export default function NavBar(props) {
 	const [modalOpen, setModalOpen] = useState(false);

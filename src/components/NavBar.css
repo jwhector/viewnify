@@ -1,0 +1,116 @@
+#nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ededed 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 4px #683fff80;
+	opacity: 1;
+	height: 72px;
+	position: relative;
+	z-index: 3;
+}
+
+.title-txt {
+	font-family: 'Quicksand', sans-serif;
+	color: #7503fa;
+}
+
+.text-logo {
+	font-family: 'Quicksand', sans-serif;
+	background-color: purple;
+	background-image: linear-gradient(
+		105deg,
+		#ff948d 0%,
+		#fa9093 0%,
+		#ee85a6 0%,
+		#db74c5 0%,
+		#bf5cf0 0%,
+		#b755ff 0%,
+		#c843ff 0%,
+		#e22bff 0%,
+		#683fff 100%,
+		#e62aff 100%
+	);
+	background-size: 100%;
+	background-repeat: repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	font-size: 42px;
+	font-weight: 300;
+	height: 100%;
+	text-align: center;
+	z-index: 2;
+}
+
+#login-btn {
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+	margin-top: 7px;
+}
+
+#dark-light {
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	border-spacing: 50px;
+	font-family: 'Quicksand';
+	color: #f70bc1;
+	flex-direction: row;
+	border: 1px #683fff;
+	transition: 0.2s;
+	margin: 1rem;
+	width: 10%;
+	max-width: 75px;
+	min-width: 45px;
+	position: absolute;
+	right: 10px;
+	height: 34px;
+	background: transparent linear-gradient(180deg, #7503fa 0%, #f70bc1 100%) 0% 0% no-repeat padding-box;
+	background-image: url('./transparent.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	object-fit: cover;
+	box-shadow: 2px 2px 1px 0.7px #a535ff;
+	border-radius: 32px;
+	opacity: 1;
+	text-decoration: none;
+	text-align: center;
+	font-size: 25px;
+	display: flex;
+}
+
+.vertical-ctr {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 10px;
+}
+
+.shadowed {
+	position: absolute;
+	color: rgba(0, 0, 0, 0);
+	margin-left: auto;
+	text-shadow: 1px 1.5px 1.5px rgb(187, 180, 180);
+	z-index: 1;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.styled-btn {
+	/* background: radial-gradient(
+    circle,
+    rgba(104, 63, 255, 1) 0%,
+    rgba(226, 43, 255, 1) 100%
+  ); */
+	border: none;
+	border-radius: 15px;
+	/* color: white; */
+	font-size: 24px;
+	box-shadow: gray 1px 1px 2px;
+	font-weight: 500;
+	font-family: 'Quicksand';
+}
