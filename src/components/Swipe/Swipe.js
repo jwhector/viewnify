@@ -21,9 +21,9 @@ async function fetchChoice(type, mediaData, token) {
 			})
 			.catch((err) => console.log(err));
 	} else {
-		const curMedia = JSON.parse(localStorage.getItem(type));
-		if (curMedia) localStorage.setItem(type, JSON.stringify([...curMedia, mediaData]));
-		else localStorage.setItem(type, JSON.stringify([mediaData]));
+		const curMedia = JSON.parse(sessionStorage.getItem(type));
+		if (curMedia) sessionStorage.setItem(type, JSON.stringify([...curMedia, mediaData]));
+		else sessionStorage.setItem(type, JSON.stringify([mediaData]));
 	}
 }
 

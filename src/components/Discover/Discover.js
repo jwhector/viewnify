@@ -77,13 +77,14 @@ export default function Discover(props) {
 
 	const fillMedia = () => {
 		getEntries().then((results) => {
-			if (!results.length) {
-				// setCurPage(curPage + 1);
+			console.log(results);
+			if (!results.results.length && curPage < results.pages) {
+				setCurPage(curPage + 1);
 				return;
 			}
 			const mediaHolder = [...media];
 			const imageHolder = [...images];
-			results.forEach((result) => {
+			results.results.forEach((result) => {
 				mediaHolder.push({
 					tmdb_id: result.id,
 					image: `https://image.tmdb.org/t/p/original${result.poster_path}`,
@@ -102,6 +103,9 @@ export default function Discover(props) {
 			});
 			setImages(imageHolder);
 			setMedia(mediaHolder);
+			if (media.length === 1) {
+				setCurPage(curPage + 1);
+			}
 		});
 	};
 
@@ -139,8 +143,8 @@ export default function Discover(props) {
 			const genres = sessionStorage.getItem('genres') ? sessionStorage.getItem('genres') : '';
 			const streaming_service = sessionStorage.getItem('streaming_service') ? sessionStorage.getItem('streaming_service') : '';
 			const cached_watched = [];
-			const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')).map(media => media.tmdb_id) : [];
-			const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];
+			const cached_likes = sessionStorage.getItem('likes') ? JSON.parse(sessionStorage.getItem('likes')).map(media => media.tmdb_id) : [];
+			const cached_dislikes = sessionStorage.getItem('dislikes') ? JSON.parse(sessionStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];
 
 			// console.log(cached_likes);
 			// console.log(cached_dislikes);
