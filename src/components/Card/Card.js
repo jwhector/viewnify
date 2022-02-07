@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Hammer from 'hammerjs';
 // import Logo from '../Landing/viewnify-logo.png';
+import './Card.css';
 
 export default function Card(props) {
 	const elem = useRef(null);
@@ -76,12 +77,12 @@ export default function Card(props) {
 			style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
 			ref={elem}>
 			<div className='card-content'>
-				<div className='content-img'>
+				<div className='content-img' style={{backgroundImage: `url(${props.images[props.idx]})`}}>
 					<div className='content-gradient-overlay' />
-					<img
+					{/* <img
 						className='cur-content-img'
 						src={props.images[props.idx]}
-					/>
+					/> */}
 				</div>
 				<div className='content-description hidden'>
 					<div className='background-container'>
@@ -96,10 +97,7 @@ export default function Card(props) {
 						</div>
 					</div>
 					<div
-						className='media-a-info'
-						style={{
-							background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
-						}}>
+						className='media-a-info'>
 						<div className='release-rating card-info'>
 							{/* <img src={Logo} className="viewnify-rating" /> */}
 							<p className='genre-card-info'>
@@ -119,7 +117,7 @@ export default function Card(props) {
 				<div
 					className='content-description content-overview-p3 hidden'
 					style={{
-						background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 3%)`
+						background: `linear-gradient(180deg, ${props.bgColor} 0%, transparent 0%)`
 					}}>
 					<p className='card-info'>
 						{props.media[props.idx]?.overview}

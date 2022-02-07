@@ -3,6 +3,7 @@ import playIco from './play_ico.png';
 import Hammer from 'hammerjs';
 import waitForElementTransition from 'wait-for-element-transition';
 import Card from '../Card/Card';
+import './Swipe.css';
 
 async function fetchChoice(type, mediaData, token) {
 	console.log(type, mediaData);
@@ -177,7 +178,7 @@ export default function Swipe(props) {
 
 	function handleButtonClick(event) {
 		if (!draggable) return;
-		const like = event.target.classList.contains('play-bg');
+		const like = event.target.classList.contains('play-img');
 		var el = cardContainerRef.current.querySelector('.media-main.front');
 		var moveOutWidth = document.body.clientWidth * 1.5;
 
@@ -230,7 +231,9 @@ export default function Swipe(props) {
 					isFront={isFront_a}
 					isDiscover={true}
 				/>
-				<div className='btn-container'>
+			</div>
+			<div className='btn-container'>
+				<div id="buttons">
 					<div className='pause-btn' onClick={handleButtonClick}>
 						<div className='bar-container'>
 							<div className='pause-bars'></div>
@@ -242,8 +245,6 @@ export default function Swipe(props) {
 						<div className='btn-background play-bg'></div>
 					</div>
 				</div>
-
-				<div className='watch-container'>{/* <h4>ryan</h4> */}</div>
 			</div>
 		</div>
 	);

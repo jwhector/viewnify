@@ -11,7 +11,7 @@ export default function MiniCard(props) {
 			<div className='mini-content-img'>
 				<img
 					onClick={props.openModal}
-					dataIndex={props.dataIndex}
+					dataindex={props.dataIndex}
 					className='mini-cur-content-img'
 					src={props.poster}
 				/>

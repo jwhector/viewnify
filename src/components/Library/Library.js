@@ -168,7 +168,7 @@ export default function Library(props) {
 
 	return (
 		<div className='library' id='library-header'>
-			<h2>Library</h2>
+			{/* <h2>Library</h2> */}
 			<div className='library-grid'>
 				<MiniCards media={media} openModal={openModal} />
 			</div>

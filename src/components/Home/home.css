@@ -3,6 +3,19 @@
 	flex: 1;
 }
 
+.right-container {
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Quicksand';
+	flex-grow: 1;
+	text-align: center;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	background-color: #ededed;
+}
+
 .bm-burger-button {
 	position: fixed;
 	width: 36px;
@@ -39,7 +52,6 @@
 
 .bm-menu {
 	background: #ededed;
-	/* padding: 2.5em 1.5em 0; */
 	font-size: 1.15em;
 	overflow: hidden;
 }
@@ -71,10 +83,11 @@
 
 .content-overview-p3 {
 	color: #ededed;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 1.5rem;
+	line-height: 1.2 !important;
+	height: 100%;
 }
 
 .watch-header,
@@ -118,17 +131,14 @@
 	justify-content: center;
 	align-items: center;
 	list-style-type: none;
-	/* border-spacing: 50px; */
 	margin-top: 3.4rem;
 	font-family: 'Quicksand';
 	color: #00000080;
 	flex-direction: row;
 	border-bottom: solid 1.7px #a435ff;
-	/* border-top: solid 1.7px #a435ff; */
 	transition: 0.2s;
 	width: 100%;
 	top: 416px;
-	/* margin-top: 30px; */
 	left: 196px;
 	height: 59px;
 	background: #ffffff;
