@@ -51,6 +51,8 @@ export default function LoginModal(props) {
 			// console.log(email, password);
 			clearModal();
 			props.setToken({ token: token });
+			sessionStorage.removeItem('likes');
+			sessionStorage.removeItem('dislikes');
 			// props.setGenres(u)
 		} else {
 			setConfirmText('Email or password incorrect!');
@@ -71,8 +73,9 @@ export default function LoginModal(props) {
 				setEmail('');
 				setPassword('');
 				setConfirmPassword('');
-				const cached_likes = localStorage.getItem('likes') ? JSON.parse(localStorage.getItem('likes')) : [];
-				const cached_dislikes = localStorage.getItem('dislikes') ? JSON.parse(localStorage.getItem('dislikes')) : [];
+				const cached_likes = sessionStorage.getItem('likes') ? JSON.parse(sessionStorage.getItem('likes')) : [];
+				const cached_dislikes = sessionStorage.getItem('dislikes') ? JSON.parse(sessionStorage.getItem('dislikes')) : [];
+				
 				const { token, user } = await signupUser({
 					first_name: 'test',
 					// username: 'testtesttesties',
@@ -88,6 +91,9 @@ export default function LoginModal(props) {
 					setConfirmText('That email is already taken!');
 					return;
 				}
+
+				sessionStorage.removeItem('likes');
+				sessionStorage.removeItem('dislikes');
 
 				console.log(user);
 				props.setToken({ token: token });

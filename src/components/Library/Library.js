@@ -110,10 +110,10 @@ export default function Library(props) {
 	};
 
 	const getLikesUnauth = () => {
-		if (localStorage.getItem('likes')) {
+		if (sessionStorage.getItem('likes')) {
 			const mediaHolder = [...media];
 			const imageHolder = [...images];
-			const results = JSON.parse(localStorage.getItem('likes'));
+			const results = JSON.parse(sessionStorage.getItem('likes'));
 			results.forEach((result) => {
 				mediaHolder.push(result);
 				imageHolder.push(result.image);
