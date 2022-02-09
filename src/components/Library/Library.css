@@ -94,8 +94,8 @@
 
 #library-header {
 	flex-grow: 1;
-	/* overflow: scroll;
-	overflow-x: hidden; */
+	overflow: scroll;
+	/* overflow-x: hidden; */
 }
 
 .mini-card {
