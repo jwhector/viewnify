@@ -1,20 +1,20 @@
+#btn-container {
+	display: flex;
+	z-index: 9;
+	margin: 0px 15px 3px 15px;
+}
+
 #buttons{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.btn-container {
-	display: flex;
-	z-index: 9;
-    margin: 0px 10px;
-}
-
 .btn-background {
 	display: flex;
 	justify-content: center;
-	height: 100px;
-	width: 100px;
+	height: 80px;
+	width: 80px;
 	border-radius: 50%;
 	z-index: 8;
 	border: 3px solid #006cd8;
@@ -23,9 +23,9 @@
 .pause-btn {
 	display: flex;
 	justify-content: center;
-	position: relative;
-	width: 100px;
-	height: 100px;
+	align-items: center;
+	width: 80px;
+	height: 80px;
 	border: 3px solid #a535ff;
 	border-radius: 50%;
 	box-shadow: 0px 3px 6px #00000029;
@@ -38,15 +38,15 @@
 	position: absolute;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	z-index: 9;
 }
 
 .pause-bars {
 	display: flex;
-	width: 16px;
-	height: 70px;
+	width: 13px;
+	height: 50px;
 	background: transparent linear-gradient(0deg, #7503fa 0%, #f70bc1 100%) 0%
 		0% no-repeat padding-box;
 	border-radius: 5px;
@@ -62,21 +62,19 @@
 
 .play-img {
 	position: absolute;
-	height: 70px;
+	height: 50px;
 	z-index: 9;
 	transform: translateX(8%);
 }
 
 .body-container {
-	max-width: 450px;
 	display: flex;
-	justify-content: center;
-	align-self: center;
+	justify-content: space-between;
 	flex-direction: column;
 	opacity: 1;
 	z-index: 1;
-	width: 80%;
-	max-height: 650px;
+	width: 20rem;
+	height: 36rem;
 }
 
 .moving.card {
@@ -111,7 +109,7 @@
 
 .bottom-border {
 	background-color: black;
-	height: 150px;
+	height: 6rem;
 }
 
 .content-gradient-overlay {
@@ -176,8 +174,8 @@
 }
 
 .release-rating {
-	/* display: flex; */
-	flex-direction: row;
+	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
 	font-size: 15px;
@@ -186,7 +184,10 @@
 
 .card-info {
 	font-family: 'Quicksand';
-	margin: 0px 15px 0px 15px;
+	display: flex;
+	width: 18rem;
+	height: 30rem;
+	font-size: 75%;
 }
 
 .release-date {

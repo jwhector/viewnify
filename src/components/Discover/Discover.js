@@ -171,30 +171,28 @@ export default function Discover(props) {
 
 	return (
 		<div id='discover'>
-			<div className='int-container'>
-				<div
-					className={`discover-bg ${isFirstInFocus ? '' : ''}`}
-					ref={discoverBg_a}
-					style={{
-						background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`
-					}}
-				/>
-				<Swipe
-					media={media}
-					images={images}
-					curIdx={curIdx}
-					setCurIdx={setCurIdx}
-					bgColor={bgColor}
-					complementary={props.complementary}
-					token={props.token}
-					curPage={curPage}
-					setCurPage={setCurPage}
-					discoverBg_a={discoverBg_a}
-					discoverBg_b={discoverBg_b}
-					isFirstInFocus={isFirstInFocus}
-					setIsFirstInFocus={setIsFirstInFocus}
-				/>
-			</div>
+			<div
+				className={`discover-bg ${isFirstInFocus ? '' : ''}`}
+				ref={discoverBg_a}
+				style={{
+					background: `radial-gradient(circle, ${bgColor} 33%, #000000 100%)`
+				}}
+			/>
+			<Swipe
+				media={media}
+				images={images}
+				curIdx={curIdx}
+				setCurIdx={setCurIdx}
+				bgColor={bgColor}
+				complementary={props.complementary}
+				token={props.token}
+				curPage={curPage}
+				setCurPage={setCurPage}
+				discoverBg_a={discoverBg_a}
+				discoverBg_b={discoverBg_b}
+				isFirstInFocus={isFirstInFocus}
+				setIsFirstInFocus={setIsFirstInFocus}
+			/>
 		</div>
 	);
 }
