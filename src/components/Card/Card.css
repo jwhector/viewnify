@@ -9,23 +9,11 @@
 	height: 637px;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
-	overflow: hidden;
+	background-size:cover;
 	z-index: -1;
 	border-radius: 33px 33px 0 0;
 	line-height: 0;
 	transition: 0.3s;
-	position: relative;
-}
-
-.content-description {
-	width: 100%;
-    line-height: 1;
-	height: 100%;
-	background: #ededed;
-	display: flex;
-	flex-direction: column;
-	z-index: 8;
 }
 
 /* TODO: ADD MARGIN BASED ON HEIGHT FOR BUTTON ALIGNMENT */
@@ -42,11 +30,7 @@
 	align-items: center;
 	z-index: 1;
 	line-height: 0;
-	position: relative;
-}
-
-.card .watch-container {
-	position: absolute;
+	/* position: relative; */
 }
 
 .card p {
@@ -79,18 +63,6 @@
 	font-size: 1rem;
 }
 
-.media-a-info::-webkit-scrollbar {
-	width: 4px;
-}
-.media-a-info::-webkit-scrollbar-track {
-	background: transparent;
-}
-.media-a-info::-webkit-scrollbar-thumb {
-	background: #888;
-}
-.media-a-info::-webkit-scrollbar-thumb:hover {
-	background: #555;
-}
 
 .media-main {
 	transition: all 0.3s ease-in-out;
@@ -101,7 +73,6 @@
 	background-color: black;
 	color: #00000080;
 	will-change: transform;
-	transition: all 0.3s ease-in-out;
 	overflow: hidden;
 	width: 450px;
 	justify-content: center;
@@ -121,21 +92,4 @@
 	cursor: grabbing;
 }
 
-.removed {
-	display: none;
-}
 
-.front {
-	z-index: 5 !important;
-}
-
-.back {
-	z-index: 4 !important;
-}
-
-.content-description {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	transition: 0.3s;
-}
