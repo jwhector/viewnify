@@ -92,6 +92,11 @@
 	color: white;
 }
 
+.preferences-btn:hover{
+	box-shadow: 2px 2px 4px 0 #e22bff;
+	transition: 0.2s;
+}
+
 .save {
 	width: 100%;
 	border-top: 1px solid white;
@@ -107,75 +112,9 @@
 	margin: 10px;
 }
 
-.create-party-btn,
-.join-party-btn {
-	padding: 20px;
-	width: 150px;
-	max-width: 200px;
-	min-width: 100px;
-	/* background:white; */
-	color: rgba(226, 43, 255, 1);
-	margin: 10px;
-	font-size: 1rem;
-	align-items: center;
-	justify-content: center;
-	font-family: Quicksand;
-}
-
-.party-url {
-	cursor: pointer;
-	border: 1px solid;
-	line-height: 2;
-	margin: 5 auto;
-}
-
-.party-url:hover {
-	opacity: 0.7;
-	color: rgba(226, 43, 255, 1);
-}
-
-.party-name,
-.party-members,
-.party-limit {
-	line-height: 2;
-}
-
-.name-party-input,
-.join-party-input {
-	padding: 20px;
-	width: 105.5px;
-	/* min-width: 100px;
-    max-width: 160px; */
-	/* background:white; */
-	color: rgba(226, 43, 255, 1);
-	margin: 10px;
-	font-size: 1rem;
-	align-items: center;
-	justify-content: center;
-	font-family: Quicksand;
-}
-
 .or {
 	color: #ededed;
 	font-family: Quicksand;
-}
-
-.watchparty-list {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 10vh;
-}
-
-.watchparty-list-item {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 95vw;
-	border: none !important;
 }
 
 .ReactModal__Overlay--before-close {

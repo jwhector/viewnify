@@ -15,6 +15,69 @@
 	overflow-x: auto;
 }
 
+.watchparty-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 10vh;
+}
+
+.watchparty-list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 95vw;
+	border: none !important;
+}
+
 .party-url {
 	border: 2px white solid;
+	cursor: pointer;
+	border: 1px solid;
+	line-height: 2;
+	margin: 5 auto;
+}
+
+.party-url:hover {
+	opacity: 0.7;
+	color: rgba(226, 43, 255, 1);
+}
+
+.party-name,
+.party-members,
+.party-limit {
+	line-height: 2;
+}
+
+.create-party-btn,
+.join-party-btn {
+	padding: 20px;
+	width: 150px;
+	max-width: 200px;
+	min-width: 100px;
+	/* background:white; */
+	color: rgba(226, 43, 255, 1);
+	margin: 10px;
+	font-size: 1rem;
+	align-items: center;
+	justify-content: center;
+	font-family: Quicksand;
+}
+
+.name-party-input,
+.join-party-input {
+	padding: 20px;
+	width: 105.5px;
+	/* min-width: 100px;
+    max-width: 160px; */
+	/* background:white; */
+	color: rgba(226, 43, 255, 1);
+	margin: 10px;
+	font-size: 1rem;
+	align-items: center;
+	justify-content: center;
+	font-family: Quicksand;
 }
