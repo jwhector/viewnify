@@ -17,20 +17,19 @@
 .preferences-modal {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	height: 60%;
+	width: 70%;
+	height: fit-content;
 	color: black;
 	font-family: 'Quicksand', sans-serif;
-	justify-content: space-around;
+	align-items: center;
 	background: radial-gradient(
 		circle,
 		rgba(89, 0, 148, 0.9) 33%,
 		rgb(0, 0, 0) 100%
 	);
-	background-size: contain;
+	background-size:none;
 	background-position-x: center;
 	background-repeat: no-repeat;
-	padding: 2rem;
 	text-align: center;
 	border-radius: 25px;
 	opacity: 1;
@@ -42,20 +41,21 @@
 #bg-img {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-self: center;
 	position: absolute;
-	max-width: 30%;
-	height: auto;
+	max-width: 50%;
+	max-height:50%;
 	opacity: 0.9;
 }
 
-.preferences-modal h2 {
+/* .preferences-modal h2 {
 	font-size: 42px;
 	margin-bottom: 1rem;
-}
+} */
 
 .preferences-container {
-	height: 100%;
+	height: 90%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -65,7 +65,7 @@
 .preferences-container h3 {
 	font-size: 35px;
 	color: white;
-	margin-bottom: 10px;
+	margin: 20px 0px;
 	z-index: 1;
 }
 
@@ -76,15 +76,17 @@
 	justify-content: center;
 	align-items: center;
 	border-top: 1px solid white;
-	padding-top: 1rem;
+	padding: 1rem 0px;
 	z-index: 1;
 }
 
 .preferences-btn {
-	padding: 7px 20px 7px 20px;
+	padding: 5px 10px 5px 10px;
 	background: white;
 	color: rgba(226, 43, 255, 1);
-	margin: 10px;
+	margin: 5px;
+	width: fit-content;
+	font-size: 1.2em;
 }
 
 .preferences-btn:focus {
@@ -100,12 +102,12 @@
 .save {
 	width: 100%;
 	border-top: 1px solid white;
-	padding-top: 1rem;
+	padding-top: 20px;
 	z-index: 1;
 }
 
 #save-btn {
-	padding: 20px;
+	padding: 10px;
 	width: 25%;
 	background: white;
 	color: rgba(226, 43, 255, 1);
