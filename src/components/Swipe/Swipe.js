@@ -234,7 +234,7 @@ export default function Swipe(props) {
 					isDiscover={true}
 				/>
 			</div>
-			<div className='btn-container'>
+			<div id='btn-container'>
 				<div id="buttons">
 					<div className='pause-btn' onClick={handleButtonClick}>
 						<div className='bar-container'>
@@ -243,6 +243,7 @@ export default function Swipe(props) {
 						</div>
 					</div>
 					<div className='play-btn' onClick={handleButtonClick}>
+						{/* don't change this class!!! vvv */}
 						<img className='play-img' src={playIco} />
 						<div className='btn-background play-bg'></div>
 					</div>
