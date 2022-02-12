@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { stack as Menu } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-// import useToken from '../../useToken';
 import Preferences from '../Preferences/PreferencesPage';
 import ReactModal from 'react-modal';
 import './Burger.css';
@@ -151,16 +150,21 @@ background: ${(props) => {
 
 export default function Burger(props) {
 	const [modalOpen, setModalOpen] = useState(false);
-	const [menuOpen, setMenuOpen] = useState(false);
+	// const [menuOpen, setMenuOpen] = useState(false);
 	const removeToken = () => {
 		localStorage.removeItem('token');
 		props.setToken(null);
+		closeMenu();
 		// window.location.reload(true);
 	};
 
 	const openModal = () => {
 		setModalOpen(true);
-		setMenuOpen(false);
+		// setMenuOpen(false);
+	};
+
+	const closeMenu = () => {
+		// setMenuOpen(false);
 	};
 
 	const clearModal = () => {
@@ -168,26 +172,29 @@ export default function Burger(props) {
 	};
 
 	return (
-		<Menu isOpen={menuOpen}>
+		<Menu isOpen={props.menuOpen}>
 			<NavLink
 				exact='true'
 				activeclassname='main-links'
 				to='/discover'
-				id='discover-btn'>
+				id='discover-btn'
+				onClick={props.closeMenu}>
 				discover
 			</NavLink>
 			<NavLink
 				exact='true'
 				activeclassname='main-links'
 				to='/watchparty'
-				id='watch-party'>
+				id='watch-party'
+				onClick={props.closeMenu}>
 				watch party
 			</NavLink>
 			<NavLink
 				exact='true'
 				activeclassname='main-links'
 				to='/library'
-				id='library'>
+				id='library'
+				onClick={props.closeMenu}>
 				library
 			</NavLink>
 			<NavLink
