@@ -1,4 +1,15 @@
 /* TODO: media queries */
+@media screen and (max-width:1060px){
+    .library-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:737px) {
+    .library-list{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
 /* @media screen and (max-height:1000px) {
     .media-main{
         height:70vh;
