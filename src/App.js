@@ -27,8 +27,6 @@ function App() {
 	};
 
 	const { token, setToken } = useToken();
-	// const [genres, setGenres] = useState('');
-	// const [providers, setProviders] = useState('');
 	const [user, setUser] = useState({});
 	const [complementary, setComplementary] = useState('#ffffff');
 
@@ -69,34 +67,6 @@ function App() {
 				.catch((err) => console.log(err));
 		}
 	});
-
-	// if (!token) {
-	// 	return (
-	// 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-	// 			<div id='main'>
-	// 				<NavBar
-	// 					showLogin={true}
-	// 					setToken={setToken}
-	// 					themeToggler={themeToggler}
-	// 				/>
-	// 				<LandingPage
-	// 					token={token}
-	// 					setToken={setToken}
-	// 					genres={genres}
-	// 					setGenres={setGenres}
-	// 					providers={providers}
-	// 					setProviders={setProviders}
-	// 				/>
-	// 			</div>
-	// 		</ThemeProvider>
-	// 	);
-	// } else if (!user) {
-	// 	return (
-	// 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-	// 			<NavBar showLogin={false} themeToggler={themeToggler} />
-	// 		</ThemeProvider>
-	// 	);
-	// }
 
 	return (
 		<UserContext.Provider value={user}>

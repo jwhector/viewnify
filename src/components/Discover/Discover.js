@@ -53,17 +53,6 @@ export default function Discover(props) {
 				.catch((err) => {
 					console.log(err);
 				});
-/*eslint-disable*/
-			// if (images[curIdx + 1]) {
-			// 	fac.getColorAsync(images[curIdx + 1])
-			// 		.then((color) => {
-			// 			setBgColor_b(color.hex);
-			// 		})
-			// 		.catch((err) => {
-			// 			console.log(err);
-			// 		});
-			// }
-  /*eslint-enable*/
 		}
 	});
 
@@ -106,6 +95,8 @@ export default function Discover(props) {
 			if (media.length === 1) {
 				setCurPage(curPage + 1);
 			}
+		}).catch(err => {
+			console.error(err);
 		});
 	};
 
@@ -137,6 +128,7 @@ export default function Discover(props) {
 				);
 			} catch (err) {
 				console.error(err);
+				return;
 			}
 		} else {
 			const format = 'movie';
@@ -146,8 +138,6 @@ export default function Discover(props) {
 			const cached_likes = sessionStorage.getItem('likes') ? JSON.parse(sessionStorage.getItem('likes')).map(media => media.tmdb_id) : [];
 			const cached_dislikes = sessionStorage.getItem('dislikes') ? JSON.parse(sessionStorage.getItem('dislikes')).map(media => media.tmdb_id) : [];
 
-			// console.log(cached_likes);
-			// console.log(cached_dislikes);
 
 			try {
 				entries = await fetch(
@@ -164,8 +154,11 @@ export default function Discover(props) {
 				);
 			} catch (err) {
 				console.error(err);
+				return;
 			}
 		}
+
+		if (!entries) throw new Error('No entries found.');
 		return entries.json();
 	};
 
