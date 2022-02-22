@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { stack as Menu } from 'react-burger-menu';
-// import { BurgerIcon } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Preferences from '../Preferences/PreferencesPage';
@@ -169,11 +168,11 @@ export default function Burger(props) {
 	const clearModal = () => setModalOpen(false);
 
 	const toggleMenu = () => {
-		console.log('i am going to toggle');
 		if(menuOpen === true){
 			setMenuOpen(false);
+		}else{
+			setMenuOpen(true);
 		}
-		setMenuOpen(true);
 	};
 	
 	return (
@@ -181,6 +180,7 @@ export default function Burger(props) {
 			<Menu
 				isOpen={menuOpen}
 				onOpen={toggleMenu}
+				onClose={toggleMenu}
 			>
 				<NavLink
 					exact='true'
@@ -237,7 +237,6 @@ export default function Burger(props) {
 					<Preferences token={props.token} closeModal={clearModal} />
 				</ReactModal>
 			</Menu>
-			{/* <BurgerIcon/> */}
 		</>
 	);
 }
