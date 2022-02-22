@@ -11,7 +11,7 @@ import Invite from '../Invite/Invite';
 
 export default function Home(props) {
 	const [theme, setTheme] = useState('light');
-	const [menuOpen, setMenuOpen] = useState(false);
+	// const [menuOpen, setMenuOpen] = useState(false);
 
 	const themeToggler = () => {
 		theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -44,15 +44,15 @@ export default function Home(props) {
 		}
 	};
 
-	const closeMenu = () => {
-		setMenuOpen(false);
-	};
+	// const closeMenu = () => {
+	// 	setMenuOpen(false);
+	// };
 
 	return (
 		<div className='home' id='homer'>
 			<Menu
-				isOpen={menuOpen}
-				closeMenu={closeMenu}
+				// isOpen={menuOpen}
+				// closeMenu={closeMenu}
 				themeToggler={themeToggler}
 				token={props.token}
 				setToken={props.setToken}

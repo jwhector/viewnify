@@ -38,6 +38,7 @@
 	opacity: 1;
 }
 
+/* TODO: Fix the V growing outside of the modal */
 #bg-img {
 	display: flex;
 	justify-content: center;
@@ -47,11 +48,6 @@
 	max-height:50%;
 	opacity: 0.9;
 }
-
-/* .preferences-modal h2 {
-	font-size: 42px;
-	margin-bottom: 1rem;
-} */
 
 .preferences-container {
 	height: 90%;
