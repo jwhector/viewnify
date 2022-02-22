@@ -150,7 +150,7 @@ background: ${(props) => {
 
 export default function Burger(props) {
 	const [modalOpen, setModalOpen] = useState(false);
-	// const [menuOpen, setMenuOpen] = useState(false);
+
 	const removeToken = () => {
 		localStorage.removeItem('token');
 		props.setToken(null);
@@ -164,7 +164,7 @@ export default function Burger(props) {
 	};
 
 	const closeMenu = () => {
-		// setMenuOpen(false);
+		
 	};
 
 	const clearModal = () => {
@@ -172,13 +172,17 @@ export default function Burger(props) {
 	};
 
 	return (
-		<Menu isOpen={props.menuOpen}>
+		<Menu 
+			isOpen={false}
+		>
 			<NavLink
 				exact='true'
 				activeclassname='main-links'
 				to='/discover'
 				id='discover-btn'
-				onClick={props.closeMenu}>
+				// onClick={closeMenu}
+				onClick={clearModal}
+			>
 				discover
 			</NavLink>
 			<NavLink
@@ -186,7 +190,8 @@ export default function Burger(props) {
 				activeclassname='main-links'
 				to='/watchparty'
 				id='watch-party'
-				onClick={props.closeMenu}>
+				// onClick={closeMenu}
+			>
 				watch party
 			</NavLink>
 			<NavLink
@@ -194,7 +199,8 @@ export default function Burger(props) {
 				activeclassname='main-links'
 				to='/library'
 				id='library'
-				onClick={props.closeMenu}>
+				// onClick={closeMenu}
+			>
 				library
 			</NavLink>
 			<NavLink
