@@ -22,12 +22,6 @@ p {
 	font-family: 'Quicksand';
 }
 
-.main-links:hover,
-.invite-link:hover {
-	box-shadow: 2px 2px 4px 0 #e22bff;
-	transition: 0.2s;
-}
-
 .MuiPaper-root,
 .MuiToolbar-root,
 .MuiTypography-body2 {

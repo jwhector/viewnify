@@ -105,7 +105,6 @@ export default function Preferences(props) {
 	return (
 		<div className='preferences-container'>
 			<h3>Genres</h3>
-
 			<div className='genres'>
 				<button
 					activeClassName='main-links'
