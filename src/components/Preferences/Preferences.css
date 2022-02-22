@@ -39,6 +39,7 @@
 }
 
 /* TODO: Fix the V growing outside of the modal */
+/* TODO: Center the text on the inside of modal */
 #bg-img {
 	display: flex;
 	justify-content: center;

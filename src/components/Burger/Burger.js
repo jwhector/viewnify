@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { stack as Menu } from 'react-burger-menu';
+// import { BurgerIcon } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Preferences from '../Preferences/PreferencesPage';
@@ -150,86 +151,93 @@ background: ${(props) => {
 
 export default function Burger(props) {
 	const [modalOpen, setModalOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	const removeToken = () => {
 		localStorage.removeItem('token');
 		props.setToken(null);
-		closeMenu();
-		// window.location.reload(true);
+		setMenuOpen(false);
 	};
 
 	const openModal = () => {
 		setModalOpen(true);
-		// setMenuOpen(false);
+		setMenuOpen(false);
 	};
 
-	const closeMenu = () => {
-		
-	};
+	const closeMenu = () => setMenuOpen(false);
 
-	const clearModal = () => {
-		setModalOpen(false);
-	};
+	const clearModal = () => setModalOpen(false);
 
+	const toggleMenu = () => {
+		console.log('i am going to toggle');
+		if(menuOpen === true){
+			setMenuOpen(false);
+		}
+		setMenuOpen(true);
+	};
+	
 	return (
-		<Menu 
-			isOpen={false}
-		>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/discover'
-				id='discover-btn'
-				// onClick={closeMenu}
-				onClick={clearModal}
+		<>
+			<Menu
+				isOpen={menuOpen}
+				onOpen={toggleMenu}
 			>
-				discover
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/watchparty'
-				id='watch-party'
-				// onClick={closeMenu}
-			>
-				watch party
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/library'
-				id='library'
-				// onClick={closeMenu}
-			>
-				library
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to=''
-				onClick={openModal}
-				id='preferences-btn'>
-				categories
-			</NavLink>
-			{props.token ? <NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/'
-				onClick={removeToken}
-				id='logout'>
-				log out
-			</NavLink> : <></>}
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/discover'
+					id='discover-btn'
+					onClick={closeMenu}
+				>
+					discover
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/watchparty'
+					id='watch-party'
+					onClick={closeMenu}
+				>
+					watch party
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/library'
+					id='library'
+					onClick={closeMenu}
+				>
+					library
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to=''
+					onClick={openModal}
+					id='preferences-btn'>
+					categories
+				</NavLink>
+				{props.token ? <NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/'
+					onClick={removeToken}
+					id='logout'>
+					log out
+				</NavLink> : <></>}
 
-			<ReactModal
-				isOpen={modalOpen}
-				className='preferences-modal'
-				overlayClassName='preferences-modal-overlay'
-				onRequestClose={clearModal}
-				closeTimeoutMS={200}
-				shouldCloseOnEsc={true}
-				shouldCloseOnOverlayClick={true}>
-				<Preferences token={props.token} closeModal={clearModal} />
-			</ReactModal>
-		</Menu>
+				<ReactModal
+					isOpen={modalOpen}
+					className='preferences-modal'
+					overlayClassName='preferences-modal-overlay'
+					onRequestClose={clearModal}
+					closeTimeoutMS={200}
+					shouldCloseOnEsc={true}
+					shouldCloseOnOverlayClick={true}>
+					<Preferences token={props.token} closeModal={clearModal} />
+				</ReactModal>
+			</Menu>
+			{/* <BurgerIcon/> */}
+		</>
 	);
 }
