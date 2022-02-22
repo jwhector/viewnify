@@ -106,6 +106,8 @@ export default function Discover(props) {
 			if (media.length === 1) {
 				setCurPage(curPage + 1);
 			}
+		}).catch(err => {
+			console.error(err);
 		});
 	};
 
@@ -137,6 +139,7 @@ export default function Discover(props) {
 				);
 			} catch (err) {
 				console.error(err);
+				return;
 			}
 		} else {
 			const format = 'movie';
@@ -164,8 +167,11 @@ export default function Discover(props) {
 				);
 			} catch (err) {
 				console.error(err);
+				return;
 			}
 		}
+
+		if (!entries) throw new Error('No entries found.');
 		return entries.json();
 	};
 

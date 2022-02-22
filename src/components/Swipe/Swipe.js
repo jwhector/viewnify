@@ -7,6 +7,7 @@ import './Swipe.css';
 
 async function fetchChoice(type, mediaData, token) {
 	console.log(type, mediaData);
+	if (!mediaData) throw new Error('No media data!');
 	if (token) {
 		fetch(`${process.env.REACT_APP_SERVER_URL}/api/${type}`, {
 			method: 'POST',
@@ -47,16 +48,24 @@ export default function Swipe(props) {
 	});
 
 	useEffect(() => {
+		if (!props.media[props.curIdx]) setDraggable(false);
+		else setDraggable(true);
+	}, [props.media]);
+
+	useEffect(() => {
 		if (props.curIdx > props.media.length - 2 && props.media.length > 0) {
 			props.setCurPage(props.curPage + 1);
 		}
 	}, [props.curIdx]);
+
 	const saveLike = () => {
 		fetchChoice('likes', props.media[props.curIdx], props.token).then(
 			() => {
 				props.setCurIdx(props.curIdx + 1);
 			}
-		);
+		).catch(err => {
+			console.error(err);
+		});
 	};
 
 	const saveDislike = () => {
@@ -64,7 +73,9 @@ export default function Swipe(props) {
 			() => {
 				props.setCurIdx(props.curIdx + 1);
 			}
-		);
+		).catch(err => {
+			console.error(err);
+		});
 	};
 
 	const addSwipe = (tinderContainer, allCards) => {
@@ -82,9 +93,9 @@ export default function Swipe(props) {
 			const gradientEl = el.querySelector('.content-gradient-overlay');
 
 			hammertime.on('pan', function (event) {
+				if (!draggable) return;
 				if (event.deltaX === 0) return;
 				if (event.center.x === 0 && event.center.y === 0) return;
-				if (!draggable) return;
 
 				el.classList.add('moving');
 
@@ -103,6 +114,7 @@ export default function Swipe(props) {
 			});
 
 			hammertime.on('panend', function (event) {
+				if (!draggable) return;
 				el.classList.remove('moving');
 
 				var moveOutWidth = document.body.clientWidth;
