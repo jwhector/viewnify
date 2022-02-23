@@ -6,12 +6,10 @@ import { useState } from 'react';
 import WatchParty from '../WatchParty/WatchParty';
 import Library from '../Library/Library';
 import Chatroom from '../Chatroom/Chatroom';
-import Invite from '../Invite/Invite';
-
 
 export default function Home(props) {
 	const [theme, setTheme] = useState('light');
-	const [menuOpen, setMenuOpen] = useState(false);
+	// const [menuOpen, setMenuOpen] = useState(false);
 
 	const themeToggler = () => {
 		theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -39,20 +37,17 @@ export default function Home(props) {
 		if (props.page === 'chatroom') {
 			return <Chatroom token={props.token} />;
 		}
-		if (props.page === 'invite') {
-			return <Invite token={props.token} />;
-		}
 	};
 
-	const closeMenu = () => {
-		setMenuOpen(false);
-	};
+	// const closeMenu = () => {
+	// 	setMenuOpen(false);
+	// };
 
 	return (
 		<div className='home' id='homer'>
 			<Menu
-				isOpen={menuOpen}
-				closeMenu={closeMenu}
+				// isOpen={menuOpen}
+				// closeMenu={closeMenu}
 				themeToggler={themeToggler}
 				token={props.token}
 				setToken={props.setToken}

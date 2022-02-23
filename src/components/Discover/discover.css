@@ -15,14 +15,6 @@
 	transition-timing-function: linear;
 }
 
-/* .int-container {
-	display: flex;
-	flex-grow: 1;
-	justify-content: center;
-	align-items: center;
-	margin-top: 30px;
-} */
-
 .moving.media-main {
 	transition: none;
 	cursor: -webkit-grabbing;
@@ -37,28 +29,3 @@
 .back {
 	z-index: 4 !important;
 }
-
-/* #media-info {
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
-	right: 0;
-	height: 100%;
-	width: 30%;
-	top: 0;
-	background-color: rgba(0.5, 0.5, 0.5, 0.8);
-	z-index: 2;
-} */
-
-/* .bg-img {
-	flex-grow: 1;
-	background-color: rgba(0.5, 0.5, 0.5, 0.5);
-	background-image: url('https://image.tmdb.org/t/p/original/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg');
-	background-size: cover;
-	background-position: center;
-	-webkit-filter: blur(3px) opacity(0.9);
-	filter: opacity(0.9) blur(3px);
-	z-index: 1;
-} */
-
-
