@@ -6,9 +6,12 @@ import MiniCard from '../Card/MiniCard';
 import ReactModal from 'react-modal';
 import './WatchParty.css';
 
+// List of available Watch Parties.
 function WatchPartyList(props) {
 	const parties = props.watchparties;
 	if (!parties) return '';
+
+	console.log(parties);
 
 	function getMembers(party) {
 		return party.members.map((member) => {
@@ -120,7 +123,13 @@ function WatchParty(props) {
 
 	const fac = new FastAverageColor();
 
+	const searchParams = new URLSearchParams(window.location.search);
+
 	useEffect(() => {
+		console.log(searchParams.get('join'));
+		if (searchParams.has('join')) {
+			joinParty(searchParams.get('join'));
+		}
 		fetch(
 			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/party/all`,
 			{
@@ -135,7 +144,7 @@ function WatchParty(props) {
 				console.log(results);
 				setWatchparties(results);
 			});
-		});
+		}).catch(err => console.error(err));
 	}, []);
 
 	useEffect(() => {
@@ -231,10 +240,11 @@ function WatchParty(props) {
 			.catch((err) => console.log(err));
 	};
 
-	const joinParty = () => {
-		if (!urlInput.length || !urlField.current) return;
+	const joinParty = (id) => {
+		const partyId = id ? id : urlInput;
+		if (!partyId.length) return;
 		fetch(
-			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/join/${urlInput}`,
+			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/join/${partyId}`,
 			{
 				method: 'POST',
 				mode: 'cors',
