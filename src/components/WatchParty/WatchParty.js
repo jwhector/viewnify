@@ -16,7 +16,7 @@ function WatchPartyList(props) {
 	function getMembers(party) {
 		return party.members.map((member) => {
 			return (
-				<li key={member.user.id}>
+				<li key={member.user_id}>
 					{member.user.email.split('@').shift()}
 				</li>
 			);
@@ -24,35 +24,30 @@ function WatchPartyList(props) {
 	}
 
 	const partyList = parties.map((party, idx) => {
+		console.log(party.id);
 		return (
 			<li
 				key={party.id}
 				className='watchparty-list-item'
 				style={{ color: 'white' }}
-				dataIdx={idx}>
+				dataidx={idx}>
 				<div className='party-name'>
-					<p className='party-name'>
-						<p>name:</p> {party.name}
-					</p>
+					<p>name:</p> {party.name}
 				</div>
 				<div className='party-members'>
 					<p>members:</p>
 					<ul>{getMembers(party)}</ul>
 				</div>
 				<div className='party-limit'>
-					<p className='party-name'>
-						<p>limit:</p>
-						{party.limit}
-					</p>
+					<p>limit:</p>
+					{party.limit}
 				</div>
-				<div className='party-url'>
-					<p
-						className='party-url'
-						onClick={props.getMedia}
-						url={party.url}>
-						{' '}
-						<p>URL:</p> {party.url}
-					</p>
+				<div
+					className='party-url'
+					onClick={props.getMedia}
+					url={party.url}>
+					{' '}
+					<p>URL:</p> {party.url}
 				</div>
 			</li>
 		);

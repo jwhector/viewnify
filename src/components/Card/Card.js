@@ -7,7 +7,6 @@ export default function Card(props) {
 	const elem = useRef(null);
 
 	useEffect(() => {
-		console.log(props.idx);
 		let hammertimeTap;
 		if (elem.current !== null) {
 			hammertimeTap = handleTap();
