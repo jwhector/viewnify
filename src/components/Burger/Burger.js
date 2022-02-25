@@ -150,80 +150,93 @@ background: ${(props) => {
 
 export default function Burger(props) {
 	const [modalOpen, setModalOpen] = useState(false);
-	// const [menuOpen, setMenuOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
+
 	const removeToken = () => {
 		localStorage.removeItem('token');
 		props.setToken(null);
-		closeMenu();
-		// window.location.reload(true);
+		setMenuOpen(false);
 	};
 
 	const openModal = () => {
 		setModalOpen(true);
-		// setMenuOpen(false);
+		setMenuOpen(false);
 	};
 
-	const closeMenu = () => {
-		// setMenuOpen(false);
-	};
+	const closeMenu = () => setMenuOpen(false);
 
-	const clearModal = () => {
-		setModalOpen(false);
-	};
+	const clearModal = () => setModalOpen(false);
 
+	const toggleMenu = () => {
+		if(menuOpen === true){
+			setMenuOpen(false);
+		}else{
+			setMenuOpen(true);
+		}
+	};
+	
 	return (
-		<Menu isOpen={props.menuOpen}>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/discover'
-				id='discover-btn'
-				onClick={props.closeMenu}>
-				discover
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/watchparty'
-				id='watch-party'
-				onClick={props.closeMenu}>
-				watch party
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/library'
-				id='library'
-				onClick={props.closeMenu}>
-				library
-			</NavLink>
-			<NavLink
-				exact='true'
-				activeclassname='main-links'
-				to=''
-				onClick={openModal}
-				id='preferences-btn'>
-				categories
-			</NavLink>
-			{props.token ? <NavLink
-				exact='true'
-				activeclassname='main-links'
-				to='/'
-				onClick={removeToken}
-				id='logout'>
-				log out
-			</NavLink> : <></>}
+		<>
+			<Menu
+				isOpen={menuOpen}
+				onOpen={toggleMenu}
+				onClose={toggleMenu}
+			>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/discover'
+					id='discover-btn'
+					onClick={closeMenu}
+				>
+					discover
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/watchparty'
+					id='watch-party'
+					onClick={closeMenu}
+				>
+					watch party
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/library'
+					id='library'
+					onClick={closeMenu}
+				>
+					library
+				</NavLink>
+				<NavLink
+					exact='true'
+					activeclassname='main-links'
+					to=''
+					onClick={openModal}
+					id='preferences-btn'>
+					categories
+				</NavLink>
+				{props.token ? <NavLink
+					exact='true'
+					activeclassname='main-links'
+					to='/'
+					onClick={removeToken}
+					id='logout'>
+					log out
+				</NavLink> : <></>}
 
-			<ReactModal
-				isOpen={modalOpen}
-				className='preferences-modal'
-				overlayClassName='preferences-modal-overlay'
-				onRequestClose={clearModal}
-				closeTimeoutMS={200}
-				shouldCloseOnEsc={true}
-				shouldCloseOnOverlayClick={true}>
-				<Preferences token={props.token} closeModal={clearModal} />
-			</ReactModal>
-		</Menu>
+				<ReactModal
+					isOpen={modalOpen}
+					className='preferences-modal'
+					overlayClassName='preferences-modal-overlay'
+					onRequestClose={clearModal}
+					closeTimeoutMS={200}
+					shouldCloseOnEsc={true}
+					shouldCloseOnOverlayClick={true}>
+					<Preferences token={props.token} closeModal={clearModal} />
+				</ReactModal>
+			</Menu>
+		</>
 	);
 }
