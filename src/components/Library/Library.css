@@ -100,7 +100,7 @@
 
 #library-header {
 	flex-grow: 1;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .mini-card {
@@ -133,3 +133,20 @@
 	color: #872ed0;
 	width: 100%;
 }
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgb(104 63 255);
+  }
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+	width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+	background-color: rgb(104 63 255);
+	border-radius: 20px;
+	border: 3px solid transparent;
+  }

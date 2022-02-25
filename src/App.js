@@ -19,11 +19,15 @@ const StyledApp = styled.div`
 
 const UserContext = React.createContext(undefined);
 
+const savedTheme = localStorage.getItem('theme');
+
 function App() {
-	const [theme, setTheme] = useState('dark');
+	const [theme, setTheme] = savedTheme ? useState(savedTheme) : useState('dark');
 
 	const themeToggler = () => {
-		theme === 'light' ? setTheme('dark') : setTheme('light');
+		const newTheme = (theme === 'light') ? 'dark' : 'light';
+		localStorage.setItem('theme', newTheme);
+		setTheme(newTheme);
 	};
 
 	const { token, setToken } = useToken();

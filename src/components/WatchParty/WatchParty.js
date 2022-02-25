@@ -6,14 +6,17 @@ import MiniCard from '../Card/MiniCard';
 import ReactModal from 'react-modal';
 import './WatchParty.css';
 
+// List of available Watch Parties.
 function WatchPartyList(props) {
 	const parties = props.watchparties;
 	if (!parties) return '';
 
+	console.log(parties);
+
 	function getMembers(party) {
 		return party.members.map((member) => {
 			return (
-				<li key={member.user.id}>
+				<li key={member.user_id}>
 					{member.user.email.split('@').shift()}
 				</li>
 			);
@@ -21,35 +24,30 @@ function WatchPartyList(props) {
 	}
 
 	const partyList = parties.map((party, idx) => {
+		console.log(party.id);
 		return (
 			<li
 				key={party.id}
 				className='watchparty-list-item'
 				style={{ color: 'white' }}
-				dataIdx={idx}>
+				dataidx={idx}>
 				<div className='party-name'>
-					<p className='party-name'>
-						<p>name:</p> {party.name}
-					</p>
+					<p>name:</p> {party.name}
 				</div>
 				<div className='party-members'>
 					<p>members:</p>
 					<ul>{getMembers(party)}</ul>
 				</div>
 				<div className='party-limit'>
-					<p className='party-name'>
-						<p>limit:</p>
-						{party.limit}
-					</p>
+					<p>limit:</p>
+					{party.limit}
 				</div>
-				<div className='party-url'>
-					<p
-						className='party-url'
-						onClick={props.getMedia}
-						url={party.url}>
-						{' '}
-						<p>URL:</p> {party.url}
-					</p>
+				<div
+					className='party-url'
+					onClick={props.getMedia}
+					url={party.url}>
+					{' '}
+					<p>URL:</p> {party.url}
 				</div>
 			</li>
 		);
@@ -120,7 +118,13 @@ function WatchParty(props) {
 
 	const fac = new FastAverageColor();
 
+	const searchParams = new URLSearchParams(window.location.search);
+
 	useEffect(() => {
+		console.log(searchParams.get('join'));
+		if (searchParams.has('join')) {
+			joinParty(searchParams.get('join'));
+		}
 		fetch(
 			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/party/all`,
 			{
@@ -135,7 +139,7 @@ function WatchParty(props) {
 				console.log(results);
 				setWatchparties(results);
 			});
-		});
+		}).catch(err => console.error(err));
 	}, []);
 
 	useEffect(() => {
@@ -231,10 +235,11 @@ function WatchParty(props) {
 			.catch((err) => console.log(err));
 	};
 
-	const joinParty = () => {
-		if (!urlInput.length || !urlField.current) return;
+	const joinParty = (id) => {
+		const partyId = id ? id : urlInput;
+		if (!partyId.length) return;
 		fetch(
-			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/join/${urlInput}`,
+			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/join/${partyId}`,
 			{
 				method: 'POST',
 				mode: 'cors',
