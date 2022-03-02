@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from 'react';
 import FastAverageColor from 'fast-average-color';
 import Color from 'color';
@@ -114,7 +113,6 @@ function WatchParty(props) {
 	const [complementary, setComplementary] = useState('#ededed');
 	const [inputVal, setInputVal] = useState('');
 	const [urlInput, setUrlInput] = useState('');
-	const [newParty, setNewParty] = useState(false);
 	const inputField = useRef(null);
 	const urlField = useRef(null);
 
@@ -280,29 +278,9 @@ function WatchParty(props) {
 		setModalOpen(false);
 	};
 
-	const handleNewPartyButton = () => {
-		setNewParty(!newParty);
-	};
-
 	return (
 		<div className='watch-party'>
-			<div id='watch-party-user-section'>
-				<div className='user-avatar'>
-					<div id='avatar-placeholder'></div>
-				</div>
-				<button id='create-watch-party' onClick={handleNewPartyButton}>
-					Create New Watch Party
-				</button>
-			</div>
-			<div id='watch-party-parties'>
-				<ul id='watch-party-list'>
-
-				</ul>
-			</div>
-			<div id='watch-party-create' className={newParty ? 'open-new-party-modal' : ''}>
-				<input id='name-watch-party'></input>
-			</div>
-			{/* <div className='watch-party-header'>
+			<div className='watch-party-header'>
 				<h2>Watch Parties</h2>
 				<input
 					ref={inputField}
@@ -356,7 +334,7 @@ function WatchParty(props) {
 					bgColor={bgColor}
 					media={media}
 				/>
-			</ReactModal> */}
+			</ReactModal>
 		</div>
 	);
 }

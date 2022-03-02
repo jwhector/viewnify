@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
-// import LandingPage from './components/Landing/LandingPage';
 import useToken from './useToken';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -54,7 +53,6 @@ function App() {
 	}, [token]);
 
 	useEffect(() => {
-		// console.log(process.env.REACT_APP_SERVER_NAME);
 		if (token) {
 			fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/verify`, {
 				method: 'GET',

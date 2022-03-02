@@ -9,7 +9,8 @@
 
 .watch-party {
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
+	width: 100%;
 	flex-grow: 1;
 	overflow: scroll;
 	overflow-x: auto;
@@ -80,4 +81,57 @@
 	align-items: center;
 	justify-content: center;
 	font-family: Quicksand;
+}
+
+#watch-party-parties {
+	width: 70%;
+}
+
+#watch-party-user-section {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+	box-shadow: 2px 0px 2px red;
+}
+
+.user-avatar {
+	border-radius: 100%;
+	overflow: hidden;
+	width: 10rem;
+	height: 10rem;
+	/* margin: auto; */
+}
+
+#avatar-placeholder {
+	width: 10rem;
+	height: 10rem;
+	background-color: red;
+}
+
+#watch-party-create {
+	width: 0%;
+	height: 90%;
+	border-radius: 10% 0 0 10%;
+	position: absolute;
+	right: 0;
+	background-color: #ededed;
+	box-shadow: -2px 0px 2px red;
+	/* animation: slide-in-from-right .9s; */
+}
+
+.open-new-party-modal {
+	animation: slide-in-from-right .9s forwards;
+}
+
+@keyframes slide-in-from-right {
+	0% {
+		width: 0%;
+	}
+
+	100% {
+		width: 60%;
+	}
 }
