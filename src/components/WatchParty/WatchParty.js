@@ -25,13 +25,14 @@ function WatchPartyList(props) {
 	}
 
 	const partyList = parties.map((party, idx) => {
-		console.log(party.id);
 		return (
 			<li
 				key={party.id}
 				className='watchparty-list-item'
 				style={{ color: 'white' }}
 				dataidx={idx}>
+				{/* <img className='party-avatar'></img> */}
+				<div className='party-avatar'></div>
 				<div className='party-name'>
 					<p>name:</p> {party.name}
 				</div>
@@ -43,13 +44,13 @@ function WatchPartyList(props) {
 					<p>limit:</p>
 					{party.limit}
 				</div>
-				{/* <div
+				<div
 					className='party-url'
 					onClick={props.getMedia}
 					url={party.url}>
 					{' '}
 					<p>URL:</p> {party.url}
-				</div> */}
+				</div>
 			</li>
 		);
 	});
@@ -124,9 +125,6 @@ function WatchParty(props) {
 
 	useEffect(() => {
 		console.log(searchParams.get('join'));
-		if (searchParams.has('join')) {
-			joinParty(searchParams.get('join'));
-		}
 		fetch(
 			`${process.env.REACT_APP_SERVER_URL}/api/watchparty/party/all`,
 			{
@@ -140,6 +138,9 @@ function WatchParty(props) {
 			res.json().then((results) => {
 				console.log(results);
 				setWatchparties(results);
+				if (searchParams.has('join')) {
+					joinParty(searchParams.get('join'));
+				}
 			});
 		}).catch(err => console.error(err));
 	}, []);
@@ -159,6 +160,7 @@ function WatchParty(props) {
 					console.log(err);
 				});
 		}
+		console.log(watchparties);
 	});
 
 	const getMedia = (e) => {
