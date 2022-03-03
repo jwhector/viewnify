@@ -112,14 +112,23 @@
 }
 
 #watch-party-create {
-	width: 0%;
+	width: 60%;
 	height: 90%;
 	border-radius: 10% 0 0 10%;
 	position: absolute;
-	right: 0;
+	right: -75%;
 	background-color: #ededed;
 	box-shadow: -2px 0px 2px red;
 	/* animation: slide-in-from-right .9s; */
+}
+
+#watch-party-title {
+	align-items: center;
+	justify-content: center;
+	margin-top: 21px;
+	font-size: 2.5rem;
+	font-family: 'Quicksand';
+	color: white;
 }
 
 .open-new-party-modal {
@@ -128,10 +137,10 @@
 
 @keyframes slide-in-from-right {
 	0% {
-		width: 0%;
+		right: -100%;
 	}
 
 	100% {
-		width: 60%;
+		right: 0%;
 	}
 }

@@ -43,13 +43,13 @@ function WatchPartyList(props) {
 					<p>limit:</p>
 					{party.limit}
 				</div>
-				<div
+				{/* <div
 					className='party-url'
 					onClick={props.getMedia}
 					url={party.url}>
 					{' '}
 					<p>URL:</p> {party.url}
-				</div>
+				</div> */}
 			</li>
 		);
 	});
@@ -295,12 +295,24 @@ function WatchParty(props) {
 				</button>
 			</div>
 			<div id='watch-party-parties'>
-				<ul id='watch-party-list'>
-
-				</ul>
+				<h2 id='watch-party-title'>Watch Parties</h2>
+				<WatchPartyList
+					watchparties={watchparties}
+					getMedia={getMedia}
+				/>
 			</div>
 			<div id='watch-party-create' className={newParty ? 'open-new-party-modal' : ''}>
-				<input id='name-watch-party'></input>
+				<h2>Create New Watch Party</h2>
+				<input
+					ref={inputField}
+					className='name-party-input'
+					type='text'
+					placeholder='name party...'
+					value={inputVal}
+					onChange={(e) => setInputVal(e.target.value)}></input>
+				<button className='create-party-btn' onClick={createParty}>
+					create party
+				</button>
 			</div>
 			{/* <div className='watch-party-header'>
 				<h2>Watch Parties</h2>
