@@ -103,10 +103,12 @@ export default function Card(props) {
 							<p className='genre-card-info'>
 								{props.media[props.idx]?.genres}
 							</p>
-							<p className='star-card-info'>⭐️</p>
-							<p className='rating-card-info'>
-								{props.media[props.idx]?.rating}
-							</p>
+							<div style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
+								<p className='star-card-info'>⭐️</p>
+								<p className='rating-card-info'>
+									{props.media[props.idx]?.rating}
+								</p>
+							</div>
 							<p className='release-date-card-info'>
 								{props.media[props.idx]?.release_date}
 							</p>

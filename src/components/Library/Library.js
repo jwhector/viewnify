@@ -38,6 +38,7 @@ function MiniCards(props) {
 	return <ul className='library-list'>{miniCards}</ul>;
 }
 
+// eslint-disable-next-line no-unused-vars
 const genreMap = {
 	28: 'Action',
 	12: 'Adventure',
@@ -149,6 +150,7 @@ export default function Library(props) {
 		});
 		setImages(imageHolder);
 		setMedia(mediaHolder);
+		console.log(mediaHolder);
 	};
 
 	const getGenres = (genre_ids) => {

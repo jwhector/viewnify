@@ -102,9 +102,12 @@ export default function Discover(props) {
 
 	const getGenres = (genre_ids) => {
 		let str = '';
+		if (!genre_ids.length) return str;
+		str = genreMap[genre_ids.shift()];
 		genre_ids.forEach(
 			(genre_id) => (str = str.concat(`, ${genreMap[genre_id]}`))
 		);
+		console.log(str);
 		return str;
 	};
 
