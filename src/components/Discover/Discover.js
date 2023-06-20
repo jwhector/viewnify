@@ -26,6 +26,7 @@ const genreMap = {
 	37: 'Western'
 };
 
+
 export default function Discover(props) {
 	const [images, setImages] = useState([]);
 	const [curIdx, setCurIdx] = useState(0);
@@ -36,25 +37,42 @@ export default function Discover(props) {
 	const [isFirstInFocus, setIsFirstInFocus] = useState(true);
 	const discoverBg_a = useRef(null);
 	const discoverBg_b = useRef(null);
-
+	
 	const fac = new FastAverageColor();
+	
+	// eslint-disable-next-line no-unused-vars
+	function imageReceived({ target: downloadedImg }) {
+		fac.getColorAsync(downloadedImg)
+			.then((color) => {
+				console.log('BG COLOR: ', color);
+				setBgColor(color.hex);
+				let myColor = Color(color.hex);
+				myColor = myColor.lighten(0.5);
+				myColor = myColor.saturate(1);
+				myColor = myColor.negate();
+				props.setComplementary(myColor.hex());
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+	// const content = document.querySelector('#media-main-img');
 
 	useEffect(() => {
 		if (images[curIdx]) {
-			fac.getColorAsync(images[curIdx])
-				.then((color) => {
-					setBgColor(color.hex);
-					let myColor = Color(color.hex);
-					myColor = myColor.lighten(0.5);
-					myColor = myColor.saturate(1);
-					myColor = myColor.negate();
-					props.setComplementary(myColor.hex());
-				})
-				.catch((err) => {
-					console.log(err);
-				});
+			// fetch(images[curIdx], {
+			// 	mode: 'cors',
+			// 	method: 'GET',
+			// 	headers: {
+			// 		'Origin': '*',
+			// 	}
+			// });
+			const downloadedImg = new Image();
+			downloadedImg.crossOrigin = 'anonymous';
+			downloadedImg.addEventListener('load', imageReceived, false);
+			downloadedImg.src = images[curIdx];
 		}
-	});
+	}, [images, curIdx]);
 
 	useEffect(() => {
 		fillMedia();
@@ -87,7 +105,7 @@ export default function Discover(props) {
 					backdrop_path: result.backdrop_path
 				});
 				imageHolder.push(
-					`https://image.tmdb.org/t/p/original${result.poster_path}`
+					`https://image.tmdb.org/t/p/w500${result.poster_path}`
 				);
 			});
 			setImages(imageHolder);

@@ -77,7 +77,8 @@ export default function Card(props) {
 			style={{ boxShadow: `4px 4px 8px ${props.complementary}` }}
 			ref={elem}>
 			<div className='card-content'>
-				<div className='content-img' style={{backgroundImage: `url(${props.images[props.idx]})`}}>
+				<div className='content-img'>
+					<img className='content-img' id='media-main-img' crossOrigin='anonymous' src={props.images[props.idx]} />
 					<div className='content-gradient-overlay' />
 					{/* <img
 						className='cur-content-img'
